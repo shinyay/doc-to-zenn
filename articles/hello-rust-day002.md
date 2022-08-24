@@ -105,3 +105,24 @@ cargo --version
 cargo 1.63.0 (fd9c4297c 2022-07-01)
 ```
 
+この `cargo` を使って Rust プログラムのビルドやコードが依存しているライブラリにダウンロードなどを実施することが可能です。
+
+#### cargo サブコマンド
+
+|コマンド|説明|
+|-------|---|
+|build|Compile the current package|
+|check|Analyze the current package and report errors, but don't build object files|
+|clean|Remove the target directory|
+|doc|Build this package's and its dependencies' documentation|
+|new|Create a new cargo package|
+|init|Create a new cargo package in an existing directory|
+|add|Add dependencies to a manifest file|
+|run| Run a binary or example of the local package|
+|test|Run the tests|
+|bench|Run the benchmarks|
+|update|Update dependencies listed in Cargo.lock|
+|search|Search registry for crates|
+|publish|Package and upload this package to the registry|
+|install|Install a Rust binary. Default location is $HOME/.cargo/bin|
+|uninstall|Uninstall a Rust binary|
