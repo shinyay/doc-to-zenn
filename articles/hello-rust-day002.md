@@ -136,3 +136,11 @@ cargo new hello-rust
      Created binary (application) `hello-rust` package
 ```
 
+以下のような構造のプロジェクトが作成されます。
+
+```shell
+hello-rust
+├── Cargo.toml
+└── src
+   └── main.rs
+```
