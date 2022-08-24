@@ -86,3 +86,22 @@ rustup update
 rustup self uninstall
 ```
 
+### 参考
+
+- [The rustup book](https://rust-lang.github.io/rustup/index.html)
+
+## Rust のビルドやパッケージ管理の仕組み
+
+Java であれば **Maven** や **Gradle**, Python であれば **pip**, また Node であれば **npm** のように各プログラム言語にはその言語で使用するパッケージを管理するためのツールが提供されています。Rust では、**Cargo** というパッケージ管理ツールを使用します。
+
+### Cargo
+
+この **Cargo** は `rustup` で Rust をインストールした際に同時に導入されています。
+
+以下のコマンドで確認してみてください。
+
+```shell
+cargo --version
+cargo 1.63.0 (fd9c4297c 2022-07-01)
+```
+
