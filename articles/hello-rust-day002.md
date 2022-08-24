@@ -127,3 +127,12 @@ cargo 1.63.0 (fd9c4297c 2022-07-01)
 |install|Rustのバイナリをインストール|
 |uninstall|Rustのバイナリをアンインストール|
 
+#### Cargo を用いた Rust プロジェクトテンプレートの作成
+
+`cargo new <PROJECT_NAME>` でプロジェクトテンプレートを作成できます。
+
+```shell
+cargo new hello-rust
+     Created binary (application) `hello-rust` package
+```
+
