@@ -29,7 +29,7 @@ published: true
   - [What is the AWS SDK for Rust?](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
 - **Cloudflare Worker** (<https://blog.cloudflare.com/workers-rust-sdk>) で採用
   - Cloudflare の CDN エッジサーバ上でスクリプトを実行させるサーバーレスのサービスです。
-- Google の [**Rust Foundation**](https://opensource.googleblog.com/2021/02/google-joins-rust-foundation.html)加入
+- Google の [**Rust Foundation**](https://opensource.googleblog.com/2021/02/google-joins-rust-foundation.html) 加入
   - [Rust Foundation](https://foundation.rust-lang.org/)
 - オラクルは Goの問題点を克服するために Rust を用いたコンテナランタイムを開発
   - [Building a Container Runtime in Rust](https://orablogs-jp.blogspot.com/2017/07/building-container-runtime-in-rust.html)
