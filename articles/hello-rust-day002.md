@@ -30,7 +30,7 @@ Java で言うところの、`JDK` や `JRE` のようなもののことです�
 
 - [rustup](https://rustup.rs/)
 
-以下のコマンドを実行し rustup を取得してインストールが実行されます。
+以下のコマンドを実行して rustup を取得してインストールが実行されます。
 
 ```shell
 curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
@@ -42,24 +42,47 @@ curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
 Rust is installed now. Great!
 ```
 
+インストールが完了したら、以下のコマンドを実行してバージョンを確認してみましょう。
+
+```shell
+rustc --version
+rustc 1.63.0 (4b91a6ea7 2022-08-08)
+```
+
 #### rustup サブコマンド
 
 |コマンド|説明|
 |-------|---|
-|show|Show the active and installed toolchains or profiles|
-|update|Update Rust toolchains and rustup|
-|check|Check for updates to Rust toolchains and rustup|
-|default|Set the default toolchain|
-|toolchain|Modify or query the installed toolchains|
-|target|Modify a toolchain's supported targets|
-|component|Modify a toolchain's installed components|
-|override|Modify directory toolchain overrides|
-|run|Run a command with an environment configured for a given toolchain|
-|which|Display which binary will be run for a given command|
-|doc|Open the documentation for the current toolchain|
-|man|View the man page for a given command|
-|self|Modify the rustup installation|
-|set|Alter rustup settings|
-|completions|Generate tab-completion scripts for your shell|
-|help|Prints this message or the help of the given subcommand(s)|
+|show|インストールされているツールチェインやプロファイルを表示|
+|update|Rustツールチェーンとrustupを更新|
+|check|Rustツールチェーンとrustupの更新を確認|
+|default|デフォルトのツールチェーンを設定|
+|toolchain|インストールされたツールチェーンを変更または問い合わせ|
+|target|ツールチェインのサポートされるターゲットを変更|
+|component|ツールチェインのインストールされたコンポーネントを変更|
+|override|ディレクトリツールチェーンオーバーライドを変更|
+|run|えられたツールチェイン用に設定された環境でコマンドを実行|
+|which|与えられたコマンドに対してどのバイナリが実行されるかを表示|
+|doc|現在のツールチェインのドキュメントを表示|
+|man|与えられたコマンドのマニュアルページを表示|
+|self|rustupのインストールを修正|
+|set|rustupの設定を変更|
+|completions|シェル用のタブ補完スクリプトを生成|
+|help|ヘルプを表示|
+
+#### Rust のアップデート
+
+`rustup` の以下のサブコマンドを実行することでアップデートが可能です。
+
+```shell
+rustup update
+```
+
+#### Rust のアンインストール
+
+`rustup` の以下のサブコマンドを実行することでアンインストールが可能です。
+
+```shell
+rustup self uninstall
+```
 
