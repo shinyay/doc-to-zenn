@@ -41,3 +41,25 @@ curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
 ```shell
 Rust is installed now. Great!
 ```
+
+#### rustup サブコマンド
+
+|コマンド|説明|
+|-------|---|
+|show|Show the active and installed toolchains or profiles|
+|update|Update Rust toolchains and rustup|
+|check|Check for updates to Rust toolchains and rustup|
+|default|Set the default toolchain|
+|toolchain|Modify or query the installed toolchains|
+|target|Modify a toolchain's supported targets|
+|component|Modify a toolchain's installed components|
+|override|Modify directory toolchain overrides|
+|run|Run a command with an environment configured for a given toolchain|
+|which|Display which binary will be run for a given command|
+|doc|Open the documentation for the current toolchain|
+|man|View the man page for a given command|
+|self|Modify the rustup installation|
+|set|Alter rustup settings|
+|completions|Generate tab-completion scripts for your shell|
+|help|Prints this message or the help of the given subcommand(s)|
+
