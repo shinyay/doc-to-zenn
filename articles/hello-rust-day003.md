@@ -71,6 +71,65 @@ Visual Studio Code の公式ドキュメントに Rust についての説明が�
 - 豊富なアシスト機能（コードアクション）
 - エラーからの提案の適用
 
+### VS Code で Rust プロジェクトの表示
+
+Day 2 で作成した `hello-rust` プロジェクトを VS Code で開いてみます。
+
+拡張機能 適用後
+![](https://storage.googleapis.com/zenn-user-upload/2909d489777a-20220825.png)
+
+拡張機能 適用前
+![](https://storage.googleapis.com/zenn-user-upload/b10ce609d440-20220825.png)
+
+コードのカラーリングは微妙に変化してますね。
+
+### VS Code で Rust の操作
+
+拡張機能が提供している機能を少し試してみようと思います。
+
+#### ビルドと実行
+
+VS Code にターミナル(⌃⇧\`) を開きます。そのターミナル上で `cargo` を使用してビルドと実行を行います。
+
+ビルド:
+
+```shell
+cargo build
+```
+
+実行:
+
+```shell
+cargo run
+```
+
+![](https://storage.googleapis.com/zenn-user-upload/3c50a78c3037-20220825.png)
+
+#### ヒント表示
+
+文字を入力するタイミングで予測してキーワードを表示してくれます。
+
+![](https://storage.googleapis.com/zenn-user-upload/472b7cb84359-20220825.png)
+
+#### ドキュメントのホバー表示
+
+キーワードにマウスカーソルを合わせると説明が表示されます。
+
+![](https://storage.googleapis.com/zenn-user-upload/b290918fb75f-20220825.png)
+
+#### コード補完
+
+途中まで入力すると予測して補完をしてくれます。
+
+![](https://storage.googleapis.com/zenn-user-upload/9679442d7c97-20220825.png)
+
+#### セマンティクス シンタックス ハイライト
+
+画像の例では、セマンティクスを判断して、**不変**と**可変**の変数の表示方法が変更されています。
+可変変数に下線がひかれて表示されています。
+
+![](https://storage.googleapis.com/zenn-user-upload/aa5a803afe82-20220825.png)
+
 ## IntelliJ IDEA
 
 ## Day 3 のまとめ
