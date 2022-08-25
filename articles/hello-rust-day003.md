@@ -140,4 +140,14 @@ cargo run
 
 ### インストール
 
+以下のリンクから Rust プラグインのマーケットプレイスにアクセスできます。
+
+- [Rust](https://plugins.jetbrains.com/plugin/8182-rust)
+
+![](https://storage.googleapis.com/zenn-user-upload/e5821e96260f-20220825.png)
+
+そのマーケットプレイスプレイスから IntelliJ IDEA へのインストールを行います。
+
+![](https://storage.googleapis.com/zenn-user-upload/931692d5d514-20220825.png)
+
 ## Day 3 のまとめ
