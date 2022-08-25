@@ -33,10 +33,29 @@ Day 2 では、Rust 公式ドキュメントが紹介しているエディタ一
 
 インストール済だったのはこちら:
 
-- **VS Code**
+- **Visual Studio Code**
+
 - **IntelliJ IDEA**
 
-## VS Code
+## Visual Studio Code
+
+Visual Studio Code の公式ドキュメントに Rust についての説明がありました。それを見ながら Visual Studio Code を設定してみようと思います。
+
+- [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
+
+拡張機能ビュー (⇧⌘X) を開いて、`Rust` で検索をして拡張機能を探します。
+すると、Rust の公式から提供されている **Rust** という拡張機能が見つかると思います。
+
+![](https://storage.googleapis.com/zenn-user-upload/943a574d2794-20220825.png)
+
+説明を見てもらうと分かるようにこの拡張機能は廃止されていました。
+
+> This extension is deprecated. Use the rust-analyzer extension instead.
+
+代わりに **rust-analyzer** を使うようにガイドされていました。今日参照している VS Code の公式ドキュメントでは rust-analyzer のみの導入手順になっています。しかし、個人で紹介されている手順などを見てみると、 Rust 拡張機能の導入が紹介されているものも目にしました。rust-analyzer だけでよい、ということで先に進めようと思います。
+
+![](https://storage.googleapis.com/zenn-user-upload/5173ed466165-20220825.png)
+
 
 ## IntelliJ IDEA
 
