@@ -18,14 +18,15 @@ Day 2 では、Rust 公式ドキュメントが紹介しているエディタ一
 - [Tools](https://www.rust-lang.org/tools)
 
 以下のエディタが掲載されていました。
-
-|VS Code|<https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer>|
-|Sublime Text|https://github.com/rust-lang/rust-enhanced>|
-|Atom|https://github.com/rust-lang/atom-ide-rust>|
-|IntelliJ IDEA|https://plugins.jetbrains.com/plugin/8182-rust>|
-|Eclipse|https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-rust-developers-includes-incubating-components>|
-|Vim|https://github.com/rust-lang/rust.vim>|
-|Emacs|https://github.com/rust-lang/rust-mode>|
-|geany|https://geany.org/about/filetypes/>|
+|エディタ名|リンク|
+|--------|-----|
+|VS Code|https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer|
+|Sublime Text|https://github.com/rust-lang/rust-enhanced|
+|Atom|https://github.com/rust-lang/atom-ide-rust|
+|IntelliJ IDEA|https://plugins.jetbrains.com/plugin/8182-rust|
+|Eclipse|https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-rust-developers-includes-incubating-components|
+|Vim|https://github.com/rust-lang/rust.vim|
+|Emacs|https://github.com/rust-lang/rust-mode|
+|geany|https://geany.org/about/filetypes/|
 
 ## Day 3 のまとめ
