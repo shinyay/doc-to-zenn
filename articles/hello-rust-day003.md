@@ -20,14 +20,14 @@ Day 2 では、Rust 公式ドキュメントが紹介しているエディタ一
 以下のエディタが掲載されていました。
 |エディタ名|リンク|
 |--------|-----|
-|VS Code|https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer|
-|Sublime Text|https://github.com/rust-lang/rust-enhanced|
-|Atom|https://github.com/rust-lang/atom-ide-rust|
-|IntelliJ IDEA|https://plugins.jetbrains.com/plugin/8182-rust|
-|Eclipse|https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-rust-developers-includes-incubating-components|
-|Vim|https://github.com/rust-lang/rust.vim|
-|Emacs|https://github.com/rust-lang/rust-mode|
-|geany|https://geany.org/about/filetypes/|
+|VS Code|<https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer>|
+|Sublime Text|<https://github.com/rust-lang/rust-enhanced>|
+|Atom|<https://github.com/rust-lang/atom-ide-rust>|
+|IntelliJ IDEA|<https://plugins.jetbrains.com/plugin/8182-rust>|
+|Eclipse|<https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-rust-developers-includes-incubating-components>|
+|Vim|<https://github.com/rust-lang/rust.vim>|
+|Emacs|<https://github.com/rust-lang/rust-mode>|
+|geany|<https://geany.org/about/filetypes/>|
 
 全部試してみたいところですけど、手元の Mac にインストールしているエディタが２つ含まれていたので、それを使ってみたいと思います。
 
@@ -40,6 +40,8 @@ Day 2 では、Rust 公式ドキュメントが紹介しているエディタ一
 ## Visual Studio Code
 
 Visual Studio Code の公式ドキュメントに Rust についての説明がありました。それを見ながら Visual Studio Code を設定してみようと思います。
+
+### インストール
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 
@@ -56,6 +58,7 @@ Visual Studio Code の公式ドキュメントに Rust についての説明が�
 
 ![](https://storage.googleapis.com/zenn-user-upload/5173ed466165-20220825.png)
 
+### 特長
 
 ## IntelliJ IDEA
 
