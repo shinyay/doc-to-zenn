@@ -29,4 +29,15 @@ Day 2 では、Rust 公式ドキュメントが紹介しているエディタ一
 |Emacs|https://github.com/rust-lang/rust-mode|
 |geany|https://geany.org/about/filetypes/|
 
+全部試してみたいところですけど、手元の Mac にインストールしているエディタが２つ含まれていたので、それを使ってみたいと思います。
+
+インストール済だったのはこちら:
+
+- **VS Code**
+- **IntelliJ IDEA**
+
+## VS Code
+
+## IntelliJ IDEA
+
 ## Day 3 のまとめ
