@@ -132,4 +132,12 @@ cargo run
 
 ## IntelliJ IDEA
 
+**IntelliJ Rust** というプラグインが JetBrains 公式になります。
+
+- [IntelliJ Rust](https://www.jetbrains.com/rust/)
+
+このプラグインを入れるだけで Rust 開発に対応した IntellJ になりそうです。
+
+### インストール
+
 ## Day 3 のまとめ
