@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 3]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 3]コードエディタどうする？"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
@@ -58,7 +58,7 @@ Visual Studio Code の公式ドキュメントに Rust についての説明が�
 
 ![](https://storage.googleapis.com/zenn-user-upload/5173ed466165-20220825.png)
 
-### 特長
+### rust-analyzer の特長
 
 拡張機能の紹介には以下のような機能が紹介されていました。
 
@@ -85,7 +85,7 @@ Day 2 で作成した `hello-rust` プロジェクトを VS Code で開いてみ
 
 ### VS Code で Rust の操作
 
-拡張機能が提供している機能を少し試してみようと思います。
+**rust-analyzer** が提供している機能を少し試してみようと思います。
 
 #### ビルドと実行
 
@@ -125,7 +125,7 @@ cargo run
 
 #### セマンティクス シンタックス ハイライト
 
-画像の例では、セマンティクスを判断して、**不変**と**可変**の変数の表示方法が変更されています。
+画像の例では、セマンティクスを判断して、**不変**と**可変**の変数の表示方法が区別されています。
 可変変数に下線がひかれて表示されています。
 
 ![](https://storage.googleapis.com/zenn-user-upload/aa5a803afe82-20220825.png)
@@ -150,4 +150,40 @@ cargo run
 
 ![](https://storage.googleapis.com/zenn-user-upload/931692d5d514-20220825.png)
 
+### IntelliJ Rust で Rust の操作
+
+Rust プラグインが提供している機能を少し試してみようと思います。
+
+#### ヒント表示
+
+VS Code 同様に 1文字入力すると、予測キーワードの一覧が表示されます。
+
+![](https://storage.googleapis.com/zenn-user-upload/3b396ce96308-20220825.png)
+
+#### ドキュメントのホバー表示
+
+キーワードにマウスカーソルを合わせると説明が表示されます。
+
+![](https://storage.googleapis.com/zenn-user-upload/b30a6547c741-20220825.png)
+
+#### コード補完
+
+途中まで入力すると予測して補完をしてくれます。
+
+![](https://storage.googleapis.com/zenn-user-upload/d19750ce80da-20220825.png)
+
+#### セマンティクス シンタックス ハイライト
+
+これも VS Code 同様に、**不変**と**可変**の変数の表示方法が区別されています。
+
+![](https://storage.googleapis.com/zenn-user-upload/8d13e253ead9-20220825.png)
+
+#### Cargo メニュー
+
+`cargo` コマンドを直接 IntelliJ 上から実行することが可能になっています。
+
+![](https://storage.googleapis.com/zenn-user-upload/f588f5a29411-20220825.png)
+
 ## Day 3 のまとめ
+
+今日は VS Code と IntelliJ IDEA にそれぞれ Rust 用のプラグインをいれて Rust のコード開発対応を行ってみました。そして機能確認をしながら、ちょこっと Rust のコードを書いてみたりしていました。とりあえず、今日で Rust のコード編集の環境は整ったので明日からは少しずつ Rust の言語仕様について勉強していこうかなって思います。
