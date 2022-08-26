@@ -65,11 +65,27 @@ Cargo の公式ドキュメントを参照してみます。
 
 生成されたコードを見ていきます。
 
+エントリーポイントになる `main.rs` が以下のコードを含んで生成されています。
+
 ```rust
 fn main() {
     println!("Hello, world!");
 }
 ```
+
+### 実行
+
+**Cargo** メニューを選択します。
+
+![](https://storage.googleapis.com/zenn-user-upload/6ace46a6b13b-20220826.png)
+
+そして、`cargo run` をダブルクリックします。
+
+![](https://storage.googleapis.com/zenn-user-upload/b401ce32f59e-20220826.png)
+
+IntelliJ のコンソールに実行結果がひょうじされます。
+
+![](https://storage.googleapis.com/zenn-user-upload/a5b99ef9b693-20220826.png)
 
 #### main.rs
 
