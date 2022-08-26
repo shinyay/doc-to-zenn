@@ -50,7 +50,7 @@ Cargo の公式ドキュメントを参照してみます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/3da9d6f83d39-20220826.png)
 
-## ハロー・ワールド基本
+## ハロー・ワールド 基本
 
 生成されたプロジェクトテンプレートを見ていきます。
 
@@ -64,6 +64,8 @@ Cargo の公式ドキュメントを参照してみます。
 ### 生成コード
 
 生成されたコードを見ていきます。
+
+#### main.rs
 
 エントリーポイントになる `main.rs` が以下のコードを含んで生成されています。
 
@@ -83,14 +85,29 @@ fn main() {
 
 ![](https://storage.googleapis.com/zenn-user-upload/b401ce32f59e-20220826.png)
 
-IntelliJ のコンソールに実行結果がひょうじされます。
+IntelliJ のコンソールに実行結果が表示されます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/a5b99ef9b693-20220826.png)
 
-#### main.rs
+## ハロー・ワールド ほんの少しだけ応用
 
+応用とまでは全く言わないと思いますが、ほんの少しだけ自動生成されたコードを編集しようと思います。明日以降 Rust の言語仕様を学んでいこうと思いますけど、プログラム言語で大事なのは「構文」「関数」「変数」などかなと思っています。どんな言語であったとしても、最低限まずその３点を抑えれば何か書けますよね。
 
+そこで、Rust の学習をすすめていく上でまず参考にするのはここなんでしょうね。
 
-## ハロー・ワールドちょっと応用
+- [Rust Getting started](https://www.rust-lang.org/learn/get-started)
+
+![](https://storage.googleapis.com/zenn-user-upload/3ec016637afa-20220826.png)
+
+ここを見つつ学ぼうと思います。
+
+### 変数と関数
+
+まず Rust での変数定義についての確認をします。
+
+- [Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
+
+Rust では変数が標準で不変なんですね。Kotlin だと `val` と `var` で区別してましたけど、原則 `val` 扱いというのは僕好みな仕様です。
+そして、不変な読み取り専用の変数を可変にするには、`mut` キーワードをつければよいということですね。
 
 ## Day 4 のまとめ
