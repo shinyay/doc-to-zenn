@@ -15,6 +15,17 @@ Day 3 な昨日、VS Code と IntelliJ IDEA に Rust プラグインをインス
 
 ## プロジェクト作成
 
+IntelliJ IDEA　を使ってプロジェクト作成を行っていきます。
+
+先日 `cargo` を使ってプロジェクトを作成するときには以下のコマンドを実行しました。
+
+```shell
+cargo new <PROJECT_NAME>
+```
+
+![](https://storage.googleapis.com/zenn-user-upload/450b01967ccf-20220826.png)
+
+
 ## ハロー・ワールド基本
 
 ## ハロー・ワールドちょっと応用
