@@ -151,3 +151,6 @@ fn hello(x: &str) {
 ![](https://storage.googleapis.com/zenn-user-upload/4be61e55fdd8-20220826.png)
 
 ## Day 4 のまとめ
+
+今日は、ハロー・ワールドを作成・実施するというものでした。言語仕様などまだろくに知らなくても作成できるような内容ですよね。
+明日からは Rust の世界にちょっとずつ Deep Dive していきたいなと思います。
