@@ -103,11 +103,51 @@ IntelliJ のコンソールに実行結果が表示されます。
 
 ### 変数と関数
 
+応用といいつつも基本なことを確認していきます、
+
+#### 変数
+
 まず Rust での変数定義についての確認をします。
 
 - [Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
 
 Rust では変数が標準で不変なんですね。Kotlin だと `val` と `var` で区別してましたけど、原則 `val` 扱いというのは僕好みな仕様です。
 そして、不変な読み取り専用の変数を可変にするには、`mut` キーワードをつければよいということですね。
+
+#### 関数
+
+次に関数について確認をします。
+
+- [Functions](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html)
+
+Rust での関数の宣言方法は、全文字を小文字にし、単語区切りにアンダースコアを使う **スネークケース**なんですね。
+そして、定義するキーワードは `fn` ということで覚えました。
+
+#### 実践
+
+以下のようにしてみました。
+
+- **mut** キーワードを使った可変変数の定義
+- 可変変数への値の代入
+- ユーザー定義関数の呼び出しと引数
+
+```rust
+fn main() {
+    let mut greeting = "Hello, world!";
+    println!("{}", greeting);
+
+    greeting = "Hello, Rust!";
+
+    hello(greeting);
+}
+
+fn hello(x: &str) {
+    println!("The value of x is: {}", x)
+}
+```
+
+これを実行すると問題なく動きました。
+
+![](https://storage.googleapis.com/zenn-user-upload/4be61e55fdd8-20220826.png)
 
 ## Day 4 のまとめ
