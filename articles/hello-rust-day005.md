@@ -1,9 +1,9 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 5]参考資料"
+title: "100日後にRustをちょっと知ってる人になる: [Day 5]参考コンテンツを探してみる"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 
 ## Day 5 のテーマ
@@ -39,11 +39,22 @@ Rust の学習と調べただけでも、いろいろなコンテンツがでて
 ### 書籍
 
 - [Programming Rust, 2nd Edition](https://learning.oreilly.com/library/view/programming-rust-2nd/9781492052586/)
+![](https://storage.googleapis.com/zenn-user-upload/e0823fa173fe-20220827.png)
 
 - [Rust in Action](https://learning.oreilly.com/library/view/rust-in-action/9781617294556/)
+![](https://storage.googleapis.com/zenn-user-upload/afb388a499c4-20220827.png)
 
 - [The Rust Programming Language (Covers Rust 2018)](https://learning.oreilly.com/library/view/the-rust-programming/9781098122539/)
+![](https://storage.googleapis.com/zenn-user-upload/1bc030633c16-20220827.png)
 
 - [Hands-on Rust](https://learning.oreilly.com/library/view/hands-on-rust/9781680508796/)
+![](https://storage.googleapis.com/zenn-user-upload/ebde3bc996ea-20220827.png)
+
+- [Beginning Rust: Get Started with Rust 2021 Edition](https://learning.oreilly.com/library/view/beginning-rust-get/9781484272084/)
+![](https://storage.googleapis.com/zenn-user-upload/3aa028ea68ad-20220827.png)
 
 ## Day 5 のまとめ
+
+Rust に関するコンテンツはかなり充実していることが今回調べてみてわかりました。
+書籍も数多く出版されていることもわかりました。少しずつこれらのコンテンツを読破していきたいなと思います。
+(今日は参考コンテンツを探したりしただけで、実質そこまで学んでないのが本当のところです…)
