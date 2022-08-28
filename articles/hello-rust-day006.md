@@ -50,6 +50,18 @@ fn main() {
 use std::io;
 ```
 
+入力を受け取るときには、`read_line` メソッドを呼び出しています。
+
+- [read_line](https://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line)
+
+```rust
+pub fn read_line(&self, buf: &mut String) -> Result<usize>
+```
+
+引数に**可変変数**の文字列を**参照**で渡されていることが分かります。参照渡ししたデータは何度もメモリにコピーしなくても済むため経済的です。
+
+`&` キーワードにより、それがついている引数は**参照**であることを表します。
+
 #### 不変変数(immutable) と 可変変数(mutable)
 
 Rust では変数はデフォルトでは、**不変変数(immutable)**です。
