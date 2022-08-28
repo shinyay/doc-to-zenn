@@ -50,4 +50,13 @@ fn main() {
 use std::io;
 ```
 
+#### 不変変数(immutable) と 可変変数(mutable)
+
+Rust では変数はデフォルトでは、**不変変数(immutable)**です。
+その変数を **可変変数(mutable)** にする場合は、変数名の前に `mut` をつけて定義します。
+
+```rust
+let mut guess = String::new();
+```
+
 ## Day 5 のまとめ
