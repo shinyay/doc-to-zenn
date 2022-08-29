@@ -16,7 +16,9 @@ fn main() {
     io::stdin()
         .read_line(&mut guess)
         .expect("読み込みに失敗しました。");
-        
+    
+    let guess: u32 = guess.trim().parse().expect("数値を入力してください");
+    
     println!("次のように予測しています: {}", guess);
 
     match guess.cmp(&secret_number) {
