@@ -1,4 +1,4 @@
-use std::io;
+use std::{io, cmp::Ordering};
 
 use rand::Rng;
 
@@ -18,4 +18,10 @@ fn main() {
         .expect("読み込みに失敗しました。");
         
     println!("次のように予測しています: {}", guess);
+
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("小さい"),
+        Ordering::Greater => println!("大きい"),
+        Ordering::Equal => println!("正解!"),        
+    }
 }
