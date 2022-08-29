@@ -79,6 +79,24 @@ Rust のモジュールシステムをここで調べてみました。
 - [match制御フロー](https://doc.rust-lang.org/book/ch06-02-match.html)
 - [Ordering列挙子](https://doc.rust-lang.org/std/cmp/enum.Ordering.html)
 
+`Ordering` も `enum` の1つで `Less`, `Greater`, `Equal` の3つの列挙子を持っています。
+そして、`cmp` メソッドが比較した2つの値から `Ordering` 列挙型の列挙子を返します。
+`match式`は、Java で言うところの Case分のようなものですね。パターンを照合して合致したら、そのときの結果を返すというものです。
 
+### 型の変換
+
+Rust は強い静的型システムを持ち、型推論も行う言語です。
+そのため、比較しようとしている以下の部分で文字列と数値の比較ができずエラーにこのままだとなってしまいます。
+
+```rust
+match guess.cmp(&secret_number)
+```
+
+`guess` が文字列、`secret_number` が数値型です。
+そこで、`guess` を数値型に変換を行う処理を追加します。
+
+```rust
+let guess: u32 = guess.trim().parse().expect("数値を入力してください");
+```
 
 ## Day 7 のまとめ
