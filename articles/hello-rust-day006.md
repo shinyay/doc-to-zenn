@@ -6,7 +6,7 @@ topics: [rust]
 published: true
 ---
 
-## Day 5 のテーマ
+## Day 6 のテーマ
 
 [The Rust Programming Language](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html) の第2章で数当てゲームの実装をしながら、Rust プログラミングの基本を学ぶということが行われています。
 
@@ -80,7 +80,7 @@ let mut guess = String::new();
 println!("次のように予測しています: {}", guess);
 ```
 
-## Day 5 のまとめ
+## Day 6 のまとめ
 
 数当てゲーム見ながら、Rust の言語仕様を見ながら勉強をすすめました。コードを書きながら言語仕様を見るのはたのしいですね。
 今日参考にしていた数当てゲームは全部終わったのですけど、まだ知らない仕様のところを見切れてないので続きは明日にしようと思います。
