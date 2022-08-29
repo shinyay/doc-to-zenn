@@ -48,4 +48,13 @@ $ cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 2m 59s
 ```
 
+`rand` クレートの提供する `thread_rng` 関数を使用して乱数を生成します。
+
+- [thread_rng](https://rust-random.github.io/rand/rand/fn.thread_rng.html)
+- [gen_range](https://rust-random.github.io/rand/rand/trait.Rng.html#method.gen_range)
+
+```rust
+let secret_number = rand::thread_rng().gen_range(1..101);
+```
+
 ## Day 7 のまとめ
