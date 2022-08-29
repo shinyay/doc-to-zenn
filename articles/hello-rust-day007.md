@@ -99,4 +99,28 @@ match guess.cmp(&secret_number)
 let guess: u32 = guess.trim().parse().expect("数値を入力してください");
 ```
 
+ここでは、`String` が持つ `parse` メソッドを使用して数値変換を行っています。
+
+- [parse](https://doc.rust-lang.org/std/primitive.str.html#method.parse)
+
+#### 変数のシャドーイング
+
+Rust では既に宣言済みの変数と同じ名前の変数を新しく宣言することができます。
+ここでは、`guess` が繰り返し宣言されました。これを **シャドーイング** と呼びます。
+このとき、新しく宣言された同一名の変数は、前の変数を覆い隠すような動作になります。
+
+例：
+```rust
+fn main() {
+    let x = 1;
+    let x = x + 2;
+    let x = x * 3;
+    println!("The value of x is: {}", x);
+}
+```
+
+このようなケースの場合、答えは `9` が表示されます。
+覆い隠すということが分かれば、どのように `x`  に値が格納されていったか想像できますよね。
+
 ## Day 7 のまとめ
+
