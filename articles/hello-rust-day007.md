@@ -29,6 +29,8 @@ Rust の**クレート**とはコンパイルの単位でコードの集まり�
 rand = "0.8.3"
 ```
 
+このプロジェクトを `cargo build` します。すると、必要な依存関係を **https://crates.io/**から取得しコンパイルが行われます。
+
 ```shell
 $ cargo build
     Blocking waiting for file lock on package cache
