@@ -80,6 +80,12 @@ fn main() {
 
 ビデオの流れに沿ってコードを振り返ってみます。
 
-####
+#### パッケージリスト
+
+冒頭に `use` キーワードを使用して、このプログラム中で使用するパッケージのリストを宣言しています。
+
+##### 参考リンク
+
+- [Packages and Crates](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html)
 
 ## Day 8 のまとめ
