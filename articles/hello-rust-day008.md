@@ -96,7 +96,10 @@ use rand::Rng;
 - [std::cmp::Ordering](https://doc.rust-lang.org/std/cmp/enum.Ordering.html)
 - [rand::Rng](https://docs.rs/rand/0.8.5/rand/trait.Rng.html)
 
+##### パッケージとクレート
 
+**クレート**は Rust コンパイラが一度に考慮する最小量のコードです。
+**パッケージ**は一連の機能を提供する 1 つ以上のクレートのバンドルです。
 
 ##### 参考リンク
 
