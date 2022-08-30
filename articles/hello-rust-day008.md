@@ -101,12 +101,20 @@ use rand::Rng;
 **クレート**は Rust コンパイラが一度に考慮する最小量のコードです。
 **パッケージ**は一連の機能を提供する 1 つ以上のクレートのバンドルです。
 
-##### 参考リンク
+###### 参考リンク
 
 - [Packages and Crates](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html)
 
 #### アプリケーションのエントリポイント
 
-`main.rs` というコード
+`main.rs` というコードの中に、以下の関数が定義されています。
+
+```rust
+fn main()
+```
+
+この関数が、この Rust プログラムのエントリポイントです。
+Java の `public static void main (String[] args)` と同じように最初に呼ばれる場所になっています。
+
 
 ## Day 8 のまとめ
