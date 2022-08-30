@@ -82,10 +82,28 @@ fn main() {
 
 #### パッケージリスト
 
-冒頭に `use` キーワードを使用して、このプログラム中で使用するパッケージのリストを宣言しています。
+冒頭に `use` キーワードを使用して、このプログラム中で使用するパッケージやクレートのリストを宣言しています。
+
+```rust
+use std::{io, cmp::Ordering};
+use rand::Rng;
+```
+
+これは Java の `import` 文と同じようなものと考えると分かりやすいですね。
+上記の定義だと以下のモジュールや Enum を使用していることを表しています。
+
+- [std::io](https://doc.rust-lang.org/std/io/index.html)
+- [std::cmp::Ordering](https://doc.rust-lang.org/std/cmp/enum.Ordering.html)
+- [rand::Rng](https://docs.rs/rand/0.8.5/rand/trait.Rng.html)
+
+
 
 ##### 参考リンク
 
 - [Packages and Crates](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html)
+
+#### アプリケーションのエントリポイント
+
+`main.rs` というコード
 
 ## Day 8 のまとめ
