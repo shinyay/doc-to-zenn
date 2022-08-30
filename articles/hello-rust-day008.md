@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 8]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 8]数当てゲーム振り返り"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
