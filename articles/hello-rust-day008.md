@@ -74,6 +74,12 @@ fn main() {
 }
 ```
 
+### Looking at a simple Rust program を見ながら振り返り
 
+一度自分でコードを書いて仕様も見てと学習をしたものなので、[Looking at a simple Rust program](https://www.youtube.com/watch?v=84FuMPhoqfo)の解説を聞くと復習になって理解が深まりました。
+
+ビデオの流れに沿ってコードを振り返ってみます。
+
+####
 
 ## Day 8 のまとめ
