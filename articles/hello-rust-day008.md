@@ -132,7 +132,7 @@ Rust で定義する変数はデフォルトで不変として定義されてい
 
 - [Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
 
-#### 列挙型 Result
+#### 列挙型 Result / Orderring
 
 入力値（文字列）を数値に変換する際に `parse()` 関数を使用しています。
 
@@ -151,4 +151,45 @@ pub enum Result<T, E> {
 }
 ```
 
+また、入力値と生成した値の比較をするときには `cmp()` 関数を使用しています。
+
+```rust
+fn cmp(&self, other: &u32) -> Ordering
+```
+
+この戻り値のタイプになっている `Ordering` が列挙型になっています。そして含まれる値が、`Less`, `Equal`, `Greater` です。
+
+```rust
+pub enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+```
+
+#### match 制御フロー演算子
+
+`Result` や `Ordering` のように列挙型で戻ってくる値を `match` 演算子を使用して判定を行っています。Java の case 文のような使い方です。
+
+```rust
+let guess: u32 = match guess.trim().parse() {
+    Ok(num) => num,
+    Err(_) => continue,
+```
+
+```rust
+match guess.cmp(&secret_number) {
+    Ordering::Less => println!("小さい"),
+    Ordering::Greater => println!("大きい"),
+    Ordering::Equal => {
+        println!("正解!");
+        break;
+    }
+}
+```
+
 ## Day 8 のまとめ
+
+今日は Day 7 までにコーディングと言語仕様の確認をしていた数当てゲーム内容を、別の方が説明されているのを見て復習を行いました。
+一度自分で確認をした言語仕様について別の方の説明を聞くと理解が深まると感じました。
+同じ内容のことも別の説明を聞いたり、情報を読んだりしながら理解を深めたいと思います。
