@@ -24,6 +24,8 @@ published: false
 
 ## 変数
 
+### 可変性
+
 Rust では変数はデフォルトで**不変** (Immutable) になっています。
 
 同じ名前の変数に２回値を設定すようとする、以下のコードを実行しようとすると、
@@ -39,11 +41,19 @@ fn main() {
 
 次のようなエラーが発生します。
 
-```
+```shell
 error[E0384]: cannot assign twice to immutable variable `x`
 
   |     x = "Hello Rust";
   |     ^^^^^^^^^^^^^^^^ cannot assign twice to immutable variable
+```
+
+Rust では、値が変更しないということをコンパイラが担保してくれるため、意図しないところで値が変わってしまい発生するバグを回避することができるのです。
+
+この変数を可変として定義し、値を変更可能にする場合は、`mut` キーワードを使用します。
+
+```rust
+let mut x = "Hello World";
 ```
 
 ## データ型
