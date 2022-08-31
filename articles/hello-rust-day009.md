@@ -24,6 +24,28 @@ published: false
 
 ## 変数
 
+Rust では変数はデフォルトで**不変** (Immutable) になっています。
+
+同じ名前の変数に２回値を設定すようとする、以下のコードを実行しようとすると、
+
+```rust
+fn main() {
+    let x = "Hello World";
+    println!("xの値は {} です", x);
+    x = "Hello Rust";
+    println!("xの値は {} です", x);
+}
+```
+
+次のようなエラーが発生します。
+
+```
+error[E0384]: cannot assign twice to immutable variable `x`
+
+  |     x = "Hello Rust";
+  |     ^^^^^^^^^^^^^^^^ cannot assign twice to immutable variable
+```
+
 ## データ型
 
 ## 関数
