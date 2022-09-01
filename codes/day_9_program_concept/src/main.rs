@@ -20,4 +20,9 @@ fn main() {
     println!("yの値: {}", y);
     println!("3番目の値: {}", tup.2);
 
+    let s1 = String::from("Hello, Rust!");
+    let s2 = s1;
+//    println!("s1は{}です。", s1);
+    println!("s2は{}です。", s2);
 }
+
