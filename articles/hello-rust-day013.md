@@ -23,4 +23,22 @@ published: false
 
 - **3 と 5 の両方の倍数**である数値については、数値の代わりに `FizzBu​​zz` を出力します。
 
+### 基本的な FizzBuzz
+
+`for` ループと `if`-`else` ステートメントを使って以下のように記載してみました。
+
+```rust
+for x in 1..=100 {
+    if x % 3 == 0 && x % 5 == 0 {
+        println!("FizzBuzz")
+    } else if x % 3 == 0 {
+        println!("Fizz")
+    } else if x % 5 == 0 {
+        println!("Buzz")
+    } else {
+        println!("{}", x)
+    }
+}
+```
+
 ## Day 13 のまとめ
