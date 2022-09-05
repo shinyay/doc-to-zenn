@@ -37,4 +37,8 @@ VS Code のマーケットプレイスから **GitHub Codespaces** を見つけ�
 
 ![](https://storage.googleapis.com/zenn-user-upload/7c1ea546d932-20220905.png)
 
+Extension をインストールすると、Remote Explorer のアイコンがサイドバーに表示されます。
+
+![](https://storage.googleapis.com/zenn-user-upload/0c034df4d105-20220905.png)
+
 ## Day 14 のまとめ
