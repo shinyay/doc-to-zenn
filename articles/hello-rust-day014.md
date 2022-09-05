@@ -26,4 +26,15 @@ Day 2 で開発環境 "VS Code" と "IntelliJ IDEA" の環境を整えて今は�
 
 ![](https://storage.googleapis.com/zenn-user-upload/e2c520146e96-20220905.png)
 
+また、この GitHub Codespaces は **VS Code** にExtension をインストールすると、オンラインの内容とローカルの内容が同期されるということなので VS Code に Extension もあわせてインストールしようと思います。
+
+- [GitHub Codespaces Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
+[![](https://storage.googleapis.com/zenn-user-upload/6edaef0be174-20220905.png)](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
+
+## GitHub Codespaces Extension インストール
+
+VS Code のマーケットプレイスから **GitHub Codespaces** を見つけてインストールを行います。
+
+![](https://storage.googleapis.com/zenn-user-upload/7c1ea546d932-20220905.png)
+
 ## Day 14 のまとめ
