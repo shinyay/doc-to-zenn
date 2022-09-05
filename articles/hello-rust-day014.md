@@ -37,8 +37,12 @@ VS Code のマーケットプレイスから **GitHub Codespaces** を見つけ�
 
 ![](https://storage.googleapis.com/zenn-user-upload/7c1ea546d932-20220905.png)
 
-Extension をインストールすると、Remote Explorer のアイコンがサイドバーに表示されます。
+Extension をインストールすると、Remote Explorer のアイコンがサイドバーに表示されます。そこから自分の GitHub アカウントとの認証を行います。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0c034df4d105-20220905.png)
+
+認証ができたら、接続対象のリポジトリに表示されるアイコンをクリックして Codespacesに登録している内容を VS Code で開きます。
+
+![](https://storage.googleapis.com/zenn-user-upload/784934dd38ee-20220905.png)
 
 ## Day 14 のまとめ
