@@ -41,7 +41,13 @@ Extension をインストールすると、Remote Explorer のアイコンがサ
 
 ![](https://storage.googleapis.com/zenn-user-upload/0c034df4d105-20220905.png)
 
-認証ができたら、接続対象のリポジトリに表示されるアイコンをクリックして Codespacesに登録している内容を VS Code で開きます。
+認証ができたら、新規で Codespaces 環境を作るか、GitHub 上で既に Codespaces 環境として用意しているものを選択します。
+
+新規作成する場合は、新規作成用のアイコンから GitHub 上に作成済みで Codespaces で利用したいリポジトリを選択します。
+
+![](https://storage.googleapis.com/zenn-user-upload/fd757cd65792-20220905.png)
+
+接続対象のリポジトリに表示されるアイコンをクリックして Codespacesに登録している内容を VS Code で開きます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/784934dd38ee-20220905.png)
 
