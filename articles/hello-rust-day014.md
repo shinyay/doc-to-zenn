@@ -55,6 +55,8 @@ Extension をインストールすると、Remote Explorer のアイコンがサ
 
 ![](https://storage.googleapis.com/zenn-user-upload/d30741851b2f-20220905.png)
 
+オンライン上のエディタとローカルの VS Code がほぼリアルタイムで同期され、編集したコードが反映されるようになります。
+
 ## Rust 対応
 
 言語サポートを見ると、Rust が入ってなさそうなところが気になりました。そこを確認してみたいと思います。
