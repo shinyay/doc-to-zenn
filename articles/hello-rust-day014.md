@@ -55,4 +55,10 @@ Extension をインストールすると、Remote Explorer のアイコンがサ
 
 ![](https://storage.googleapis.com/zenn-user-upload/d30741851b2f-20220905.png)
 
+## Rust 対応
+
+言語サポートを見ると、Rust が入ってなさそうなところが気になりました。そこを確認してみたいと思います。
+
+![](https://storage.googleapis.com/zenn-user-upload/09ff05edf85d-20220905.png)
+
 ## Day 14 のまとめ
