@@ -69,9 +69,14 @@ Codespaces のターミナルから `rustc` や `cargo` CLI を確認してみ�
 
 Codespaces の実行環境の実態は、GitHub 管理下の仮想マシンに **[dev container](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)** と呼ばれる開発環境用のコンテナを立てて、そこに VS Code や ブラウザから接続をして利用しています。
 
-- [](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)
+[](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)
 
 ![](https://storage.googleapis.com/zenn-user-upload/c77ff1070898-20220905.png)
 
-## dev container
+この **dev container** に Rust 開発に必要なランタイムを導入するようなカスタマイズをするとよさそうです。
+というわけで、明日は dev container のカスタマイズを行って、Rust の開発環境を立てたいと思います。
+
 ## Day 14 のまとめ
+
+GitHub Codespaces が予想以上に便利そうだということが分かりました。今までろくに使ってこなかったのが正直もったいなかったと反省中。最近では自宅勤務しかほぼしないので電車の移動中にコードを見たりすることがなくなりましたけど、Codespaces があれば移動中にデバッグまでできそうですよね。
+あとは、dev container のカスタマイズ方法を理解したら、いろいろな開発環境ができそうだと期待が膨らんできたので明日はいろいろと試してみたいと思ってます。
