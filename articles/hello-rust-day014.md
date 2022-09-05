@@ -47,8 +47,12 @@ Extension をインストールすると、Remote Explorer のアイコンがサ
 
 ![](https://storage.googleapis.com/zenn-user-upload/fd757cd65792-20220905.png)
 
-接続対象のリポジトリに表示されるアイコンをクリックして Codespacesに登録している内容を VS Code で開きます。
+既存の Cosespaces 環境を利用する場合は、一覧表示される Codespaces のリポジトリに表示される接続アイコンをクリックして Codespacesに登録している内容を VS Code で開きます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/784934dd38ee-20220905.png)
+
+以下のように Codespaces の内容が VS Code で編集できるようになります。
+
+![](https://storage.googleapis.com/zenn-user-upload/d30741851b2f-20220905.png)
 
 ## Day 14 のまとめ
