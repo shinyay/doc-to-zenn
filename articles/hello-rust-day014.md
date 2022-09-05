@@ -57,10 +57,21 @@ Extension をインストールすると、Remote Explorer のアイコンがサ
 
 オンライン上のエディタとローカルの VS Code がほぼリアルタイムで同期され、編集したコードが反映されるようになります。
 
-## Rust 対応
+## Rust 用の開発環境
 
 言語サポートを見ると、Rust が入ってなさそうなところが気になりました。そこを確認してみたいと思います。
 
 ![](https://storage.googleapis.com/zenn-user-upload/09ff05edf85d-20220905.png)
 
+Codespaces のターミナルから `rustc` や `cargo` CLI を確認してみたのですが、Rust関連の開発環境が入ってないようですね。Codespaces の環境に Rust の開発用環境をいれる必要があるってことが分かりました。
+
+## dev container
+
+Codespaces の実行環境の実態は、GitHub 管理下の仮想マシンに **[dev container](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)** と呼ばれる開発環境用のコンテナを立てて、そこに VS Code や ブラウザから接続をして利用しています。
+
+- [](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)
+
+![](https://storage.googleapis.com/zenn-user-upload/c77ff1070898-20220905.png)
+
+## dev container
 ## Day 14 のまとめ
