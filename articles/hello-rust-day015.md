@@ -16,7 +16,7 @@ Day 14 では **GitHub Codespaces** で Rust 環境を作ることにチャレ�
 
 というわけで、今日は **dev container** を使って Rust 環境を作ろうと思います。
 
-## dev container
+## dev container の作成
 
 **dev container** はプロジェクトルートに以下のような構成でファイルを配置して設定を行います。
 
@@ -34,7 +34,6 @@ Day 14 では **GitHub Codespaces** で Rust 環境を作ることにチャレ�
 ### VS Code からの作成
 
 VS Code にインストールした Codespaces の拡張機能では、**dev container** を作成する機能が提供されています。それを使用して `.devcontainer` を作成していきます。
-
 
 #### 1. コマンドパレットから dev container 作成メニューの選択
 
@@ -63,7 +62,7 @@ VS Code にインストールした Codespaces の拡張機能では、**dev con
 
 ![](https://storage.googleapis.com/zenn-user-upload/b4e6fd4d3034-20220906.png)
 
-#### 4.dev container 設定
+#### 4. dev container 設定
 
 **devcontainer.json** に定義されると思われる、dev container に含める CLI やツールをここで選択できるようです。
 
@@ -77,10 +76,79 @@ dev container に含める **Docker Engine** のバージョンを選択しま�
 
 ![](https://storage.googleapis.com/zenn-user-upload/da5209acd16e-20220906.png)
 
+#### 5. .devcontainer の確認
+
+以下のようにプロジェクトルートに ***.devcontainer** が作成されます。
+
+![](https://storage.googleapis.com/zenn-user-upload/69d2ad717164-20220906.png)
+
+**JSON** と **Dockerfile** にアクセスすると、閲覧・編集支援の以下のプラグインのインストールがリコメンドされたので、両方ともインストールしました。
+
+- [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
 ![](https://storage.googleapis.com/zenn-user-upload/de12d42af444-20220906.png)
+
+- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
 ![](https://storage.googleapis.com/zenn-user-upload/7899d5de9cc5-20220906.png)
 
-![](https://storage.googleapis.com/zenn-user-upload/69d2ad717164-20220906.png)
+## dev container の確認
+
+以下のような構成で **.devcontainer** が作成されました。
+
+```shell
+.devcontainer/
+├── Dockerfile
+└── devcontainer.json
+```
+
+作成されたファイルの内容を確認していきます。
+
+### devcontainer.json
+
+```json
+{
+	"name": "Rust",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "buster"
+		}
+	},
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	],
+
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"lldb.executable": "/usr/bin/lldb",
+				"files.watcherExclude": {
+					"**/target/**": true
+				},
+				"rust-analyzer.checkOnSave.command": "clippy"
+			},
+			
+			"extensions": [
+				"vadimcn.vscode-lldb",
+				"mutantdino.resourcemonitor",
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml",
+				"serayuzgur.crates"
+			]
+		}
+	},
+
+	"remoteUser": "vscode",
+	"features": {
+		"docker-in-docker": "latest"
+	}
+}
+
+```
+
+### Dockerfile
 
 ## Day 15 のまとめ
