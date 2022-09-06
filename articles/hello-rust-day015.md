@@ -8,11 +8,14 @@ published: false
 ## Day 15 のテーマ
 
 Day 14 では **GitHub Codespaces** で Rust 環境を作ることにチャレンジしてみました。
-昨日の結果として分かったことは次の２つでした。
+昨日の結果として分かったことは次のことでした。
 
+- 「GitHub」+「Visual Studio Code」+「Ubuntu」が動作するクラウド環境ということ
 - Codespaces で提供されるデフォルトのコンテナ環境には Rust のランタイム環境が入っていないということ
 - **[dev container](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)** という仕組みを使ってランタイム環境をカスタマイズできるということ
 
 というわけで、今日は **dev container** を使って Rust 環境を作ろうと思います。
+
+## dev container
 
 ## Day 15 のまとめ
