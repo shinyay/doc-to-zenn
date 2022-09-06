@@ -166,4 +166,23 @@ ARG VARIANT="buster"
 FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
 ```
 
+## dev container の実行
+
+エラーが出てしまいました…
+
+**rust-analyzer** の ブートストラップエラーが出ていました。
+さて、調べて直していくとしましょうか。。。
+
+```shell
+INFO [9/6/2022, 7:11:22 AM]: Using server binary at /home/vscode/.vscode-remote/extensions/rust-lang.rust-analyzer-0.3.1194-linux-x64/server/rust-analyzer
+ERROR [9/6/2022, 7:11:22 AM]: Bootstrap error Error: Failed to execute /home/vscode/.vscode-remote/extensions/rust-lang.rust-analyzer-0.3.1194-linux-x64/server/rust-analyzer --version
+    at OS (/home/vscode/.vscode-remote/extensions/rust-lang.rust-analyzer-0.3.1194-linux-x64/out/main.js:85:2328)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at xS (/home/vscode/.vscode-remote/extensions/rust-lang.rust-analyzer-0.3.1194-linux-x64/out/main.js:84:1220)
+    at fv (/home/vscode/.vscode-remote/extensions/rust-lang.rust-analyzer-0.3.1194-linux-x64/out/main.js:84:891)
+    at E._activate (/vscode/bin/linux-x64/784b0177c56c607789f9638da7b6bf3230d47a8c/out/vs/workbench/api/node/extensionHostProcess.js:85:8224)
+    at E._waitForDepsThenActivate (/vscode/bin/linux-x64/784b0177c56c607789f9638da7b6bf3230d47a8c/out/vs/workbench/api/node/extensionHostProcess.js:85:8166)
+    at E._initialize (/vscode/bin/linux-x64/784b0177c56c607789f9638da7b6bf3230d47a8c/out/vs/workbench/api/node/extensionHostProcess.js:85:7530)
+```
+
 ## Day 15 のまとめ
