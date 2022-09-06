@@ -185,4 +185,33 @@ ERROR [9/6/2022, 7:11:22 AM]: Bootstrap error Error: Failed to execute /home/vsc
     at E._initialize (/vscode/bin/linux-x64/784b0177c56c607789f9638da7b6bf3230d47a8c/out/vs/workbench/api/node/extensionHostProcess.js:85:7530)
 ```
 
+### 問題対応
+
+とりあえず、問題切り分けのために、とりあえずで入れていた **Docker in Docker** を外してみます。
+以下の部分を削除します。
+
+```json
+"features": {
+    "docker-in-docker": "latest"
+}
+```
+
+あれ？？
+外しただけで動くようになりました。
+
+![](https://storage.googleapis.com/zenn-user-upload/fef02726d70c-20220906.png)
+
+Route Cause を見つけてないのですけど…
+とりあえず、今はこれで進めておこうと思います。そもそも使う用途なく Docker in Docker を追加していたことが問題なので…
+
+## GitHub Codespaces 上で Rust を実行
+
+問題なく動作しました！
+
+![](https://storage.googleapis.com/zenn-user-upload/b36b758cb81c-20220906.png)
+
 ## Day 15 のまとめ
+
+今日は、 昨日 Day 14 に引き続いて **GitHub Codespaces** で Rust の環境を整えてみました。
+エラーが発生して戸惑ったものの、単に Rust を実行する環境だけであれば難なく作れそうなことが分かりました。
+あとは、Codespaces 上の VS Code に対する設定と、それを動かすコンテナ環境の準備の仕方 (**dec container**) が少しわかりました。この昨日は便利に活用していきたいかなと思います。
