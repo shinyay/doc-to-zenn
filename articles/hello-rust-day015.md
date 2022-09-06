@@ -149,6 +149,12 @@ dev container に含める **Docker Engine** のバージョンを選択しま�
 
 ```
 
+**customizations.vscode.extensions** に **rust-lang.rust-analyzer** が入っていました。
+
+- [rust-lang/rust-analyze](https://github.com/rust-lang/rust-analyzer)
+
+これは VS Code 上で Rust の補完を行ったりする拡張機能のようです。
+
 ### Dockerfile
 
 ## Day 15 のまとめ
