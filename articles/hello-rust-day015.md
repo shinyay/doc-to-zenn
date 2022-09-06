@@ -18,4 +18,24 @@ Day 14 では **GitHub Codespaces** で Rust 環境を作ることにチャレ�
 
 ## dev container
 
+**dev container** はプロジェクトルートに以下のような構成でファイルを配置して設定を行います。
+
+```shell
+.devcontainer/
+├── Dockerfile
+└── devcontainer.json
+```
+
+- **devcontainer.json**: Codespaces の設定ファイル
+- **Dockerfile**: dev container の実態
+
+これらの設定ファイルを用意していきます。
+
+### VS Code からの作成
+
+**⌘ + ⇧ + P** で VS Code のコマンドパレットを開きます。
+メニューに `Codespaces` と入力し、`Codespaces: Add Development Container Config...` を選択します。
+
+![](https://storage.googleapis.com/zenn-user-upload/1380768154dc-20220906.png)
+
 ## Day 15 のまとめ
