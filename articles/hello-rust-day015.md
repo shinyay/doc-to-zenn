@@ -54,6 +54,8 @@ VS Code にインストールした Codespaces の拡張機能では、**dev con
 
 #### 3. Ubuntu(Debian) ベースイメージのバージョン選択
 
+**buster** がデフォルトと表示されているので、これを選択します。
+
 |Ubutu|Debian|略称|
 |-----|------|---|
 |18.04 - 19.10|10|buster|
@@ -61,9 +63,17 @@ VS Code にインストールした Codespaces の拡張機能では、**dev con
 
 ![](https://storage.googleapis.com/zenn-user-upload/b4e6fd4d3034-20220906.png)
 
+#### 4.dev container 設定
+
+**devcontainer.json** に定義されると思われる、dev container に含める CLI やツールをここで選択できるようです。
+
 ![](https://storage.googleapis.com/zenn-user-upload/4b5a41763c2e-20220906.png)
 
+試しに dev container 内でコンテナを使用できるように **Docker in Docker** を選択してみます。
+
 ![](https://storage.googleapis.com/zenn-user-upload/ac2adb57cf1e-20220906.png)
+
+dev container に含める **Docker Engine** のバージョンを選択します。
 
 ![](https://storage.googleapis.com/zenn-user-upload/da5209acd16e-20220906.png)
 
