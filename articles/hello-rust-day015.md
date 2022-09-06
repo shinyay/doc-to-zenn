@@ -106,6 +106,8 @@ dev container に含める **Docker Engine** のバージョンを選択しま�
 
 ### devcontainer.json
 
+以下の JSON が自動生成されたものです。
+
 ```json
 {
 	"name": "Rust",
@@ -156,5 +158,12 @@ dev container に含める **Docker Engine** のバージョンを選択しま�
 これは VS Code 上で Rust の補完を行ったりする拡張機能のようです。
 
 ### Dockerfile
+
+以下の Dockerfile が自動生成されたものです。
+
+```dockerfile
+ARG VARIANT="buster"
+FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
+```
 
 ## Day 15 のまとめ
