@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 16]演算子"
+title: "100日後にRustをちょっと知ってる人になる: [Day 16]演算子 とおまけにクロージャ"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
