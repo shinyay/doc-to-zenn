@@ -1,28 +1,36 @@
 fn main() {
     println!("Hello, world!");
+    
+    let foo = Foo;
+    let bar = Bar;
+    let baz = Baz;
+
+    foo.do_something();
+    Bar::do_something(&bar);
+    FooBarBaz::do_something(&baz);
 }
 
 trait FooBarBaz {
-    fn doSomething(&self);
+    fn do_something(&self);
 }
 
 struct Foo;
 impl FooBarBaz for Foo {
-    fn doSomething(&self) {
+    fn do_something(&self) {
         println!("Foo");
     }
 }
 
 struct Bar;
 impl FooBarBaz for Bar {
-    fn doSomething(&self) {
+    fn do_something(&self) {
         println!("Bar");
     }
 }
 
 struct Baz;
 impl FooBarBaz for Baz {
-    fn doSomething(&self) {
+    fn do_something(&self) {
         println!("Baz");
     }
 }
