@@ -7,6 +7,9 @@ fn main() {
 
     foo.do_something();
     Bar::do_something(&bar);
+
+    FooBarBaz::do_something(&foo);
+    FooBarBaz::do_something(&bar);
     FooBarBaz::do_something(&baz);
 
     println!("Message: {}", foo.hello());
