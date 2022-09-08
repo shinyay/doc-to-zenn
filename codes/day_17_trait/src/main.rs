@@ -3,12 +3,12 @@ fn main() {
     
     let foo = Foo;
     let bar = Bar;
-    let baz = Baz;
+    let baz = Baz { message: "Hello, Bazz".to_owned() };
 
     foo.do_something();
     Bar::do_something(&bar);
     FooBarBaz::do_something(&baz);
-    
+
     println!("Message: {}", foo.hello());
     println!("Message: {}", bar.hello());
     println!("Message: {}", baz.hello());
@@ -39,12 +39,15 @@ impl FooBarBaz for Bar {
     }
 }
 
-struct Baz;
+struct Baz {
+    message: String
+}
+
 impl FooBarBaz for Baz {
     fn do_something(&self) {
         println!("Baz");
     }
     fn hello(&self) -> &str {
-        "Hello, Baz"
+        &self.message
     }
 }
