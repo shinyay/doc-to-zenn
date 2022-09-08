@@ -34,7 +34,36 @@ Day 16 でクロージャの扱いについて考えている中で、きちん�
 
 ```rust
 trait TraitName {
-    fn function(&self)
+    fn method_name()
+}
+```
+
+サンプル
+
+```rust
+trait FooBar {
+    fn do_something(&self);
+}
+```
+
+### トレイトの実装
+
+`impl` キーワードを使用してトレイトの実装を行います。
+`impl` キーワードの後に実装するトレイト名を宣言し、`for` キーワードを置いて実装対象の型名を指定します。型名は構造体定義を使うことが多いかなと思いました。
+
+```rust
+struct Foo;
+impl FooBar for Foo {
+    fn do_something(&self) {
+        println!("Foo");
+    }
+}
+
+struct Bar;
+impl FooBar for Bar {
+    fn do_something(&self) {
+        println!("Bar");
+    }
 }
 ```
 
