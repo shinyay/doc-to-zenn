@@ -7,4 +7,4 @@ published: false
 ---
 ## Day 18 のテーマ
 
-## Day 18 のテーマ
+## Day 18 のまとめ
