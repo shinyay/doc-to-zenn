@@ -65,7 +65,7 @@ Rust で作られたモノというものを見たことありますか？
 
 #### デザインゴール
 
-WebAssembly の
+WebAssembly のデザインゴールについて仕様の中の以下について触れられています。
 
 - [Design Goals](https://webassembly.github.io/spec/core/intro/introduction.html#design-goals)
 
@@ -85,5 +85,17 @@ WebAssembly の
 🚀 ストリーミング可能
 🚀 並列化可能
 🚀 ポータブル
+
+### Webブラウザ用途以外の Wasm (WASI)
+
+ところで、Wasm の仕様や定義を見てみましたが、ブラウザ以外の環境で動作させるための仕様やインターフェースについてはふれられていませんでした。
+Web ブラウザ以外で Wasm を動かすためのインターフェースが、[WebAssembly System Interface (WASI)](https://wasi.dev/) というものなのです。
+
+WASI の誕生について調べてみると、つぎの発表の中ではじめて宣言がなされていました。
+
+- [Standardizing WASI: A system interface to run WebAssembly outside the web](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)
+
+> WebAssembly が概念的なマシンのアセンブリ言語であるように、WebAssembly は単一のオペレーティングシステムではなく、概念的なオペレーティング システムのシステム インターフェイスを必要とします。
+このようにして、すべての異なる OS で実行できます。これが WASI であり、WebAssembly プラットフォームのシステム インターフェイスです。
 
 ## Day 18 のまとめ
