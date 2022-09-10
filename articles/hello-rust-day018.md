@@ -89,13 +89,27 @@ WebAssembly のデザインゴールについて仕様の中の以下につい�
 ### Webブラウザ用途以外の Wasm (WASI)
 
 ところで、Wasm の仕様や定義を見てみましたが、ブラウザ以外の環境で動作させるための仕様やインターフェースについてはふれられていませんでした。
-Web ブラウザ以外で Wasm を動かすためのインターフェースが、[WebAssembly System Interface (WASI)](https://wasi.dev/) というものなのです。
+Web ブラウザ以外で Wasm を動かすためのインターフェースが、**[WebAssembly System Interface (WASI)](https://wasi.dev/)** というものなのです。
 
-WASI の誕生について調べてみると、つぎの発表の中ではじめて宣言がなされていました。
+**WASI** の誕生について調べてみると、つぎの発表の中ではじめて宣言がなされていました。
 
 - [Standardizing WASI: A system interface to run WebAssembly outside the web](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)
 
 > WebAssembly が概念的なマシンのアセンブリ言語であるように、WebAssembly は単一のオペレーティングシステムではなく、概念的なオペレーティング システムのシステム インターフェイスを必要とします。
 このようにして、すべての異なる OS で実行できます。これが WASI であり、WebAssembly プラットフォームのシステム インターフェイスです。
 
+また、次の WASI の概要にも記載がありますが、このWASI によって目指しているところが、ブラウザに依存しないように設計をしブラウザ以外のプラットフォームでもWasm を動かすようにするというものです。
+
+- [WASI: WebAssembly System Interface](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-overview.md)
+
+そして、この WASI の仕様自体も現在進行系で進んでいる最中です。
+
+> Work in Progress
+WASI is currently experimental. Feedback is welcome!
+
+WASI について改めて学んでみたいと思います。
+
 ## Day 18 のまとめ
+
+今日は Rust のユースケースにもあげられている WebAssembly について調べてみました。
+Webブラウザ上で高速・安全にアプリケーションを動かす仕組みとして誕生した **WebAssembly (Wasm)** が、ブラウザ以外のプラットフォームでも動作できるように **WebAssembly System Interface(WASI)** というインターフェース仕様を進めているということが分かりました。しかし、まだまだ深いところまでは読み取れていないので、Wasm / WASI について改めて深堀りをしていきたいと思います。
