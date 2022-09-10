@@ -102,7 +102,7 @@ Web ブラウザ以外で Wasm を動かすためのインターフェースが�
 
 - [WASI: WebAssembly System Interface](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-overview.md)
 
-そして、この WASI の仕様自体も現在進行系で進んでいる最中です。
+そして、この WASI の仕様自体の策定も現在進行系で進んでいる最中です。
 
 > Work in Progress
 WASI is currently experimental. Feedback is welcome!
