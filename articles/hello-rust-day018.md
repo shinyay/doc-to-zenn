@@ -44,7 +44,7 @@ Rust で作られたモノというものを見たことありますか？
 
 - [WebAssembly Specification Release 2.0 (Draft 2022-09-01)](https://webassembly.github.io/spec/core/intro/introduction.html)
 
-> WebAssembly (abbreviated Wasm 1) is a safe, portable, low-level code format designed for efficient execution and compact representation. Its main goal is to enable high performance applications on the Web, but it does not make any Web-specific assumptions or provide Web-specific features, so it can be employed in other environments as well.
+> WebAssembly (abbreviated Wasm) is a safe, portable, low-level code format designed for efficient execution and compact representation. Its main goal is to enable high performance applications on the Web, but it does not make any Web-specific assumptions or provide Web-specific features, so it can be employed in other environments as well.
 
 - [webassembly.org](https://webassembly.org)
 
@@ -56,7 +56,7 @@ Rust で作られたモノというものを見たことありますか？
 
 また、ブラウザ等の実行環境上に、独立した仕様になっている仮想マシンを用意して動作させることができるので、様々な環境や OS に対応することができるのが WebAssembly のメリットと言えます。さらに、仮想マシンを経由しての実行となるので、ネイティブコードより安全だと言うことができます。
 
-### つまり Wasn の特徴とは?
+### つまり Wasm の特徴とは?
 
 ✅ **Java** ような **Portable Executable**
 ✅ **.NET CLI (Common Language Infrastructure)** のような **共通言語バイトコード**
