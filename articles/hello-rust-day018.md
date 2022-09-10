@@ -42,6 +42,10 @@ Rust で作られたモノというものを見たことありますか？
 
 きちんとした定義を策定された仕様から確認してみます。
 
+- [WebAssembly Specification Release 2.0 (Draft 2022-09-01)](https://webassembly.github.io/spec/core/intro/introduction.html)
+
+> WebAssembly (abbreviated Wasm 1) is a safe, portable, low-level code format designed for efficient execution and compact representation. Its main goal is to enable high performance applications on the Web, but it does not make any Web-specific assumptions or provide Web-specific features, so it can be employed in other environments as well.
+
 - [webassembly.org](https://webassembly.org)
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.
@@ -60,6 +64,10 @@ Rust で作られたモノというものを見たことありますか？
 ✅ **Lua** のような **組み込みランタイム**
 
 #### デザインゴール
+
+WebAssembly の
+
+- [Design Goals](https://webassembly.github.io/spec/core/intro/introduction.html#design-goals)
 
 **高速、安全、移植可能なセマンティクス**
 ✨ 高速
