@@ -20,6 +20,17 @@ Day 18 では **WebAssembly (Wasm)** がどういうものなのかを、仕様�
 
 - [WebAssembly System Interface (WASI)](https://wasi.dev/)
 
-今日は、**WASI** を中心にして **WebAssembly** をもう少し深くみていこうと思います。
+今日は、**WASI** を中心にして **WebAssembly** をもう少し深く見ていこうと思います。
+
+![](https://storage.googleapis.com/zenn-user-upload/054d57c458d9-20220910.png)
+
+## WebAssembly System Interface (WASI)
+
+GitHub にある WASI のリポジトリを見てみます。
+
+- [GitHub - WASI](https://github.com/WebAssembly/WASI)
+
+🙆🏻‍♂️ 標準化されたAPIのモジュール化されたコレクションである
+🙅‍♀️ モノリシックな標準システムインターフェースではない
 
 ## Day 19 のまとめ
