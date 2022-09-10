@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 19]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 19]WASI"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly, wasm]
@@ -19,5 +19,7 @@ Day 18 では **WebAssembly (Wasm)** がどういうものなのかを、仕様�
 そして、ブラウザ以外の環境でファイルやネットワーク、メモリなどのシステムリソースなどに安全にアクセスするための **API 標準仕様**として、**WebAssembly System Interface (WASI)** の策定が現在進行系で進んでいる、ということが分かりました。
 
 - [WebAssembly System Interface (WASI)](https://wasi.dev/)
+
+今日は、**WASI** を中心にして **WebAssembly** をもう少し深くみていこうと思います。
 
 ## Day 19 のまとめ
