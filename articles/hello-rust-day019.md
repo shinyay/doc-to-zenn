@@ -86,11 +86,28 @@ WASIでは、WASI API自体に互換性の問題がないことを目指し、WA
 
 WASI はモジュール方式をとっているため、WASI の全てのAPI を実装しなくてもよく、ホスト環境によって実装できないからといってAPIを排除する必要もありません。
 
+## WASI の実装
+
+この WASI はインターフェース仕様なので、これだけでは動作させることができません。WASI を実装したランタイムが必要になります。
+
+WASI の実装ランタイムとしていろいろとあるのですが、以下のものが人気のようです。
+
+- [Wasmtime](https://docs.wasmtime.dev/)
+  - [Wasmtime - Repo](https://github.com/bytecodealliance/wasmtime)
+- [Wasmer](https://wasmer.io/)
+  - [Wasmer - Repo](https://github.com/wasmerio/wasmer)
+- [Wasm3](https://wapm.io/vshymanskyy/wasm3)
+  - [Wasm3 - Repo](https://github.com/wasm3/wasm3)
+- [WasmEdge](https://wasmedge.org/)
+  - [WasmEdge](https://github.com/WasmEdge/WasmEdge)
+
+これら WASI ランタイムは `Hello World` しながら明日いててみたいなと思います。
+
 ## WebAssembly のユースケース
 
-WASI はまだまだ現在進行系で仕様策定をすすめている技術です。この WASI の発展と普及がすすむことで Web ブラウザ以外の様々なプラットフォームでの WebAssembly の利用が期待できるようになってくると思います。
+ｓて、今日見てきた **WASI** はまだまだ現在進行系で仕様策定をすすめている技術です。この WASI の発展と普及がすすむことで Web ブラウザ以外の様々なプラットフォームでの WebAssembly の利用が期待できるようになってくると思います。
 
-今後の WebAssembly のユースケースとして考えられていることがリストされていたので、それを見ておきます。
+最後に、今後の WebAssembly のユースケースとして考えられていることがリストされていたので、それを見ておきます。
 
 - [Use Cases](https://webassembly.org/docs/use-cases/)
 
