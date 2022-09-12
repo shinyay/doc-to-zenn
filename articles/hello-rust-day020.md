@@ -252,6 +252,15 @@ x86_64-wrs-vxworks
 ```
 :::
 
+Wasm に関するターゲットとしては、以下のものがあります:
+
+- wasm32-unknown-emscripten
+- wasm32-unknown-unknown
+- wasm32-wasi
+- wasm64-unknown-unknown
+
+この中から、標準ライブラリを統合している `wasm32-wasi` を使うことにします。
+これは、WASI によるスタンドアロンバイナリを作ることを目的にしているようです。
 
 ## Day 20 のまとめ
 
