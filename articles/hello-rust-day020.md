@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 20]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 20]Rust で Wasn"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly, wasm]
@@ -297,6 +297,18 @@ rustc 1.63.0 (4b91a6ea7 2022-08-08)
 |wasm32-unknown-unknown|64 bit メモリ対応 [参考](https://doc.rust-lang.org/rustc/platform-support/wasm64-unknown-unknown.html)|
 
 - [Writing WebAssembly - Rust](https://docs.wasmtime.dev/wasm-rust.html)
+
+## はじめての Wasm - Hello World
+
+というわけで、Wasm / WASI の開発・実行環境が出来上がりました。
+ここでいつもの定番な **Hello World** を作って動かしてみます。
+
+```shell
+echo \
+'fn main() {
+    println!("Hello, world!");
+}' > main.rs
+```
 
 ## Day 20 のまとめ
 
