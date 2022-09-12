@@ -28,10 +28,11 @@ Day 18, 19 と Rust のユースケースとしても注目を浴びている **
   - [Wasm3 - Repo](https://github.com/wasm3/wasm3)
 - [WasmEdge](https://wasmedge.org/)
   - [WasmEdge](https://github.com/WasmEdge/WasmEdge)
-
+- [WebAssembly Micro Runtime(WAMR)](https://github.com/bytecodealliance/wasm-micro-runtime)
 この中でも **Wasmtime** がリファレンス実装と言われているようなので、それをインストールしようと思います。
 
 ### Wasmtime のインストール
+
 
 
 ## Day 20 のまとめ
