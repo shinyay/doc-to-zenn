@@ -29,11 +29,14 @@ Day 18, 19 と Rust のユースケースとしても注目を浴びている **
 - [WasmEdge](https://wasmedge.org/)
   - [WasmEdge](https://github.com/WasmEdge/WasmEdge)
 - [WebAssembly Micro Runtime(WAMR)](https://github.com/bytecodealliance/wasm-micro-runtime)
+
 この中でも **Wasmtime** がリファレンス実装と言われているようなので、それをインストールしようと思います。
 
 ### Wasmtime のインストール
 
+**[Wasmtime](https://github.com/bytecodealliance/wasmtime)** は、WASI の仕様策定を推進している **[Bytecode Alliance](https://bytecodealliance.org/)** によるリファレンス実装です。
 
+- [Wasmtime](https://wasmtime.dev/)
 
 ## Day 20 のまとめ
 
