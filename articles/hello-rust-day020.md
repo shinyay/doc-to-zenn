@@ -262,5 +262,9 @@ Wasm に関するターゲットとしては、以下のものがあります:
 この中から、標準ライブラリを統合している `wasm32-wasi` を使うことにします。
 これは、WASI によるスタンドアロンバイナリを作ることを目的にしているようです。
 
+#### Wasm ターゲット
+
+- [Writing WebAssembly - Rust](https://docs.wasmtime.dev/wasm-rust.html)
+
 ## Day 20 のまとめ
 
