@@ -38,5 +38,17 @@ Day 18, 19 と Rust のユースケースとしても注目を浴びている **
 
 - [Wasmtime](https://wasmtime.dev/)
 
+以下を実行してインストールし、ターミナルを開き直します。
+
+```shell
+curl https://wasmtime.dev/install.sh -sSf | bash
+```
+
+ちなみに、ぼくのターミナル環境は `fish` シェルなので以下の定義を `$HOME/.config/fish/config.fish` に追加しています。
+
+```fish
+string match -r ".wasmtime" "$PATH" > /dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH
+```
+
 ## Day 20 のまとめ
 
