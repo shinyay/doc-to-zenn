@@ -310,5 +310,11 @@ echo \
 }' > main.rs
 ```
 
+コンパイルは、`--target` オプションで `wasm32-wasi` を指定して実行します。
+
+```shell
+rustc main.rs --target wasm32-wasi
+```
+
 ## Day 20 のまとめ
 
