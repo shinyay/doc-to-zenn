@@ -50,5 +50,9 @@ curl https://wasmtime.dev/install.sh -sSf | bash
 string match -r ".wasmtime" "$PATH" > /dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH
 ```
 
+### wasm32-wasi ターゲットのインストール
+
+次に Rust のソースコードをコンパイルして WebAssebmly バイナリを出力するためのターゲットを追加します。Rust は言語仕様の標準で WebAssembly をサポートしているため、`--target` フラグで目的のターゲットを指定することで生成できます。
+
 ## Day 20 のまとめ
 
