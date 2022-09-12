@@ -271,9 +271,8 @@ rustup target add wasm32-wasi
 インストールを確認してみます。
 
 ```shell
-rustup show
-```
-```shell
+$ rustup show
+
 installed targets for active toolchain
 --------------------------------------
 
@@ -314,6 +313,23 @@ echo \
 
 ```shell
 rustc main.rs --target wasm32-wasi
+```
+
+以下のように Wasm バイナリが生成されます。
+
+```shell
+$ ls -l
+
+-rw-r--r--  1 yanagiharas  staff       45 Sep 12 22:44 main.rs
+-rwxr-xr-x  1 yanagiharas  staff  2041890 Sep 12 22:47 main.wasm*
+```
+
+これを、先にインストールしておいた `wasmtime` で実行してみます。
+
+```shell
+$ wasmtime main.wasm
+
+Hello, world!
 ```
 
 ## Day 20 のまとめ
