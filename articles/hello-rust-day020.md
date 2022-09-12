@@ -262,8 +262,29 @@ Wasm に関するターゲットとしては、以下のものがあります:
 この中から、標準ライブラリを統合している `wasm32-wasi` を使うことにします。
 これは、WASI によるスタンドアロンバイナリを作ることを目的にしているようです。
 
+`rustup` を使用して `wasm32-wasi` をインストールします。
+
 ```shell
 rustup target add wasm32-wasi
+```
+
+インストールを確認してみます。
+
+```shell
+rustup show
+```
+```shell
+installed targets for active toolchain
+--------------------------------------
+
+wasm32-wasi
+x86_64-apple-darwin
+
+active toolchain
+----------------
+
+stable-x86_64-apple-darwin (default)
+rustc 1.63.0 (4b91a6ea7 2022-08-08)
 ```
 
 #### Wasm ターゲット
