@@ -264,6 +264,13 @@ Wasm に関するターゲットとしては、以下のものがあります:
 
 #### Wasm ターゲット
 
+|ターゲット名|説明|
+|----------|---|
+|wasm32-wasi|標準ライブラリと統合. スタンドアロンバイナリの生成を目的としています|
+|wasm32-unknown-unknown|WASIと同じように単一の*.wasmバイナリを生成することに重点を置いていますが、標準ライブラリはほぼスタブ化されています。println!のようなマクロは動きません。|
+|wasm32-unknown-emscripten|ウェブブラウザで動作することを意図しており、*.js ファイルと結合した *.wasm ファイルを生成し、wasmtime と互換性がありません。|
+|wasm32-unknown-unknown|64 bit メモリ対応 [参考](https://doc.rust-lang.org/rustc/platform-support/wasm64-unknown-unknown.html)|
+
 - [Writing WebAssembly - Rust](https://docs.wasmtime.dev/wasm-rust.html)
 
 ## Day 20 のまとめ
