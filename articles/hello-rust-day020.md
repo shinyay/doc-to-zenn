@@ -329,7 +329,7 @@ $ ls -l
 ```shell
 $ wasmtime main.wasm
 
-Hello, world!
+Hello WebAssembly!
 ```
 
 ## Day 20 のまとめ
