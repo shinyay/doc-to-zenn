@@ -182,7 +182,7 @@ Hello, world!
 cargo install cargo-wasi
 ```
 
-::cargo-wasi
+:::details cargo-wasi
 ```shell
     Updating crates.io index
   Downloaded cargo-wasi v0.1.26
@@ -197,9 +197,9 @@ cargo install cargo-wasi
   Installing /Users/yanagiharas/.cargo/bin/cargo-wasi
    Installed package `cargo-wasi v0.1.26` (executable `cargo-wasi`)
 ```
-::
+:::
 
-サブコマンドが追加されました。
+サブコマンドが追加されていました。
 
 ```shell
 $ cargo --list
@@ -209,6 +209,8 @@ Installed Commands:
     wasi
  :
 ```
+
+`cargo wasi` のコマンドヘルプを見てみます。見た限りだと `--target wasm32-wasi` をラップしているコマンドのようです。
 
 ```shell
 cargo wasi --help
@@ -234,4 +236,41 @@ about flags that can be passed to `cargo wasi build`, which mirrors the
 `cargo build` command.
 ```
 
+というわけで、`run` と `build` をしてみます。
+
+:::details cargo wasi run
+```shell
+$ cargo wasi run
+
+   Compiling hello-cargo-wasi v0.1.0 (/Users/yanagiharas/Works/docs/doc-to-zenn/codes/hello-cargo-wasi)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.55s
+     Running `/Users/yanagiharas/.cargo/bin/cargo-wasi target/wasm32-wasi/debug/hello-cargo-wasi.wasm`
+     Running `target/wasm32-wasi/debug/hello-cargo-wasi.wasm`
+Hello, world!
+```
+:::
+
+:::details cargo wasi build
+```shell
+$ cargo wasi build
+
+    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+```
+:::
+
+:::details cargo wasi build --release
+```shell
+$ cargo wasi build --release
+
+   Compiling hello-cargo-wasi v0.1.0 (/Users/yanagiharas/Works/docs/doc-to-zenn/codes/hello-cargo-wasi)
+    Finished release [optimized] target(s) in 0.17s
+  Optimizing with wasm-opt
+ Downloading precompiled wasm-opt version_109
+```
+:::
+
+ターゲットオプションをつけずに実行・ビルドをすることができました。
+
 ## Day 21 のまとめ
+
+今日は **Cargo** コマンドを使って Wasm ビルドを行いました。
