@@ -74,4 +74,57 @@ OPTIONS:
   :
 ```
 
+#### cargo build --target wasm32-wasi
+
+cargo で Wasm バイナリのビルドをおこなってみます。
+
+プロジェクトの作成
+```shell
+cargo new hello-wasm
+```
+
+```shell
+cargo build --target wasm32-wasi
+
+   Compiling hello-wasm v0.1.0 (/Users/yanagiharas/hello-wasm)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.83s
+```
+
+問題なくビルドが成功しました。そして、プロジェクトルートディレクトリに `target` ディレクトリが作られて成果物が以下のように生成されました。
+ただし、以下の成果物の構成はデバッグ構成になっています。
+
+```shell
+target
+├── CACHEDIR.TAG
+├── debug
+│  ├── build
+│  ├── deps
+│  ├── examples
+│  └── incremental
+└── wasm32-wasi
+   ├── CACHEDIR.TAG
+   └── debug
+      ├── build
+      ├── deps
+      │  ├── hello_wasm-65874ca78a0b301f.d
+      │  └── hello_wasm-65874ca78a0b301f.wasm
+      ├── examples
+      ├── hello-wasm.d
+      ├── hello-wasm.wasm
+      └── incremental
+         └── hello_wasm-2gw1w9gjhbk0a
+            ├── s-gdi3zdm6q6-rmj19w-1i7jph7a5jnjr
+            │  ├── 1n6ltkmxf9v4hy1w.o
+            │  ├── 2nju6fzobyf20ku7.o
+            │  ├── 3i1fz70rutg39zgl.o
+            │  ├── 37cam6tyso17g9op.o
+            │  ├── 312qucrovy5m0gyp.o
+            │  ├── 590sdpwwj3c6vwum.o
+            │  ├── dep-graph.bin
+            │  ├── lhqlb4oipl2go0q.o
+            │  ├── query-cache.bin
+            │  └── work-products.bin
+            └── s-gdi3zdm6q6-rmj19w.lock
+```
+
 ## Day 21 のまとめ
