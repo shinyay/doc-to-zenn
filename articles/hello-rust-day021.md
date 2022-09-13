@@ -210,4 +210,28 @@ Installed Commands:
  :
 ```
 
+```shell
+cargo wasi --help
+```
+
+```shell
+cargo-wasi
+Compile and run a Rust crate for the wasm32-wasi target
+
+USAGE:
+    cargo wasi build [OPTIONS]
+    cargo wasi run [OPTIONS]
+    cargo wasi test [OPTIONS]
+    cargo wasi bench [OPTIONS]
+    cargo wasi check [OPTIONS]
+    cargo wasi fix [OPTIONS]
+    cargo wasi self clean
+    cargo wasi self update-check
+
+All options accepted are the same as that of the corresponding `cargo`
+subcommands. You can run `cargo wasi build -h` for more information to learn
+about flags that can be passed to `cargo wasi build`, which mirrors the
+`cargo build` command.
+```
+
 ## Day 21 のまとめ
