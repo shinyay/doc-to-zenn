@@ -58,4 +58,20 @@ cargo -h
 |install|Rust バイナリのインストール。デフォルトのインストール先は $HOME/.cargo/bin|
 |uninstall|Rust バイナリのアンインストール|
 
+Cargo によるビルドは、`cargo build` で行います。このサブコマンドのコマンドオプションを見て見ると、`rustc` のコマンドオプション同様に `--target` オプションでターゲットトリプルを指定しています。つまりここで、`wasm32-wasi` を指定したら WebAssembly バイナリが生成できそうです。
+
+```shell
+cargo build -h
+```
+
+```shell
+USAGE:
+    cargo build [OPTIONS]
+
+OPTIONS:
+  :
+        --target <TRIPLE>           Build for the target triple
+  :
+```
+
 ## Day 21 のまとめ
