@@ -199,4 +199,15 @@ cargo install cargo-wasi
 ```
 ::
 
+サブコマンドが追加されました。
+
+```shell
+$ cargo --list
+
+Installed Commands:
+ :
+    wasi
+ :
+```
+
 ## Day 21 のまとめ
