@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 21]Cargo を使った Wasm ビルド"
+title: "100日後にRustをちょっと知ってる人になる: [Day 21]Cargo による Wasm ビルド"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly, wasm]
