@@ -127,4 +127,76 @@ target
             └── s-gdi3zdm6q6-rmj19w.lock
 ```
 
+Wasm のビルドに限ったことではないですが、`cargo build` コマンドでリリース用に最適化された正式版なビルドイメージを作る場合は `--release` オプションをつけてビルドを行います。
+
+```shell
+cargo build --target wasm32-wasi --release
+```
+
+以下のような構成でビルド成果物ができあがります。
+そして `target/wasm32-wasi/release/` ディレクトリに Wasm バイナリが生成されています。
+
+```shell
+target
+├── CACHEDIR.TAG
+├── release
+│  ├── build
+│  ├── deps
+│  ├── examples
+│  └── incremental
+└── wasm32-wasi
+   ├── CACHEDIR.TAG
+   └── release
+      ├── build
+      ├── deps
+      │  ├── hello_wasm-c09de2197fb2142c.d
+      │  └── hello_wasm-c09de2197fb2142c.wasm
+      ├── examples
+      ├── hello-wasm.d
+      ├── hello-wasm.wasm
+      └── incremental
+```
+
+以下のように実行できました。
+
+```shell
+$ wasmtime hello-wasm.wasm
+
+Hello, world!
+```
+
+## cargo-wasi を用いた Wasm ビルド
+
+ここまでは、`cargo build` コマンドの `--target` オプションを使ってのビルドを行ってきました。
+次に `cargo` に WabAssembly ビルド用のサブコマンド `cargo-wasi` を追加してみます。
+
+- [The cargo-wasi Subcommand](https://bytecodealliance.github.io/cargo-wasi/)
+
+このサブコマンドは、`wasm32-wasi` をターゲットとして Rust コードをビルドし、実行するためのデフォルトセットを提供するコマンドです。
+
+### cargo-wasi コマンドのインストール
+
+`cargo install` コマンドを使って `cargo-wasi` をインストールします。
+
+```shell
+cargo install cargo-wasi
+```
+
+::cargo-wasi
+```shell
+    Updating crates.io index
+  Downloaded cargo-wasi v0.1.26
+  Downloaded 1 crate (13.7 KB) in 1.50s
+  Installing cargo-wasi v0.1.26
+  Downloaded cargo-wasi-exe-x86_64-apple-darwin v0.1.26
+  Downloaded 1 crate (2.1 MB) in 3.52s
+   Compiling cfg-if v1.0.0
+   Compiling cargo-wasi-exe-x86_64-apple-darwin v0.1.26
+   Compiling cargo-wasi v0.1.26
+    Finished release [optimized] target(s) in 33.94s
+  Installing /Users/yanagiharas/.cargo/bin/cargo-wasi
+   Installed package `cargo-wasi v0.1.26` (executable `cargo-wasi`)
+```
+::
+
 ## Day 21 のまとめ
