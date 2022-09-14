@@ -165,6 +165,25 @@ warning: `hello-wasm` (lib) generated 1 warning
 ```
 :::
 
+実行結果の以下の箇所を見てもらえると分かるように、**wasm32-unknown-unknown** ターゲットを使用してコンパイルを行っていますね。
+
+```shell
+info: installing component 'rust-std' for 'wasm32-unknown-unknown'
+```
+
+`rustup` コマンドでも確認してみましたが、自動で**wasm32-unknown-unknown**ダウンロードされていますね。
+
+```shell
+rustup show
+
+:
+installed targets for active toolchain
+--------------------------------------
+
+wasm32-unknown-unknown
+:
+```
+
 以下のような構成に成果物が生成されます。
 
 :::details 成果物構成
@@ -615,6 +634,6 @@ npm notice Publishing to https://registry.npmjs.org/
 ```
 :::
 
-簡単に公開することができました。
+ 特に問題なく公開することができました。
 
 ## Day 22 のまとめ
