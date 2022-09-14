@@ -539,8 +539,29 @@ hello-wasm
 ```
 :::
 
-
 #### package.json
+
+npm パッケージのビルドが正常に行われました。そして、`package.json` が生成されています。
+その内容を確認してみます。
+
+```json
+{
+  "name": "hello-wasm",
+  "collaborators": [
+    "NPM_USER_ID <E_MAIL_ADDRESS>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "hello_wasm_bg.wasm",
+    "hello_wasm.js",
+    "hello_wasm_bg.js",
+    "hello_wasm.d.ts"
+  ],
+  "module": "hello_wasm.js",
+  "types": "hello_wasm.d.ts",
+  "sideEffects": false
+}
+```
 
 ### wasm-pack から npm へのログイン
 
