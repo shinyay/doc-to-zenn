@@ -119,4 +119,46 @@ hello-wasm
 
 ### wasm-pack のビルド
 
+プロジェクトテンプレートのルートディレクトリで以下のコマンドを実行します。
+
+```shell
+wasm-pack build
+```
+
+:::details 実行結果
+```shell
+[INFO]: 🎯  Checking for the Wasm target...
+info: downloading component 'rust-std' for 'wasm32-unknown-unknown'
+info: installing component 'rust-std' for 'wasm32-unknown-unknown'
+ 16.4 MiB /  16.4 MiB (100 %)  15.2 MiB/s in  1s ETA:  0s
+[INFO]: 🌀  Compiling to Wasm...
+   Compiling proc-macro2 v1.0.43
+   Compiling unicode-ident v1.0.4
+   Compiling quote v1.0.21
+   Compiling wasm-bindgen-shared v0.2.83
+   Compiling log v0.4.17
+   Compiling syn v1.0.99
+   Compiling cfg-if v1.0.0
+   Compiling once_cell v1.14.0
+   Compiling bumpalo v3.11.0
+   Compiling wasm-bindgen v0.2.83
+   Compiling wasm-bindgen-backend v0.2.83
+   Compiling wasm-bindgen-macro-support v0.2.83
+   Compiling wasm-bindgen-macro v0.2.83
+   Compiling console_error_panic_hook v0.1.7
+   Compiling hello-wasm v0.1.0 (/Users/yanagiharas/Works/hello-wasm)
+warning: function `set_panic_hook` is never used
+ --> src/utils.rs:1:8
+  |
+1 | pub fn set_panic_hook() {
+  |        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `hello-wasm` (lib) generated 1 warning
+    Finished release [optimized] target(s) in 12.02s
+[INFO]: ⬇️  Installing wasm-bindgen...
+```
+:::
+
 ## Day 22 のまとめ
