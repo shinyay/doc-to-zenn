@@ -100,5 +100,23 @@ wasm-pack new hello-wasm
 ```
 :::
 
+以下のような構成でプロジェクトテンプレートが生成されます。
+
+```shell
+hello-wasm
+├── Cargo.toml
+├── LICENSE_APACHE
+├── LICENSE_MIT
+├── README.md
+├── src
+│  ├── lib.rs
+│  └── utils.rs
+└── tests
+   └── web.rs
+```
+
+自動生成されたソースコードは後ほどみてみることにして、とりあえずビルドしてみます。
+
+### wasm-pack のビルド
 
 ## Day 22 のまとめ
