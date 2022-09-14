@@ -21,6 +21,16 @@ published: false
 - Rust 開発者は、**Node.js 開発環境を必要とせず**に JavaScript で使用する WebAssembly パッケージを作成できる
 - JavaScript 開発者は、**Rust 開発環境を必要とせず**に WebAssembly を使用できる
 
+![](https://storage.googleapis.com/zenn-user-upload/6d2e5411eed5-20220914.png)
+
+## wasm-pack
+
+![](https://storage.googleapis.com/zenn-user-upload/ddd18f0b3f3c-20220914.png)
+
 **wasm-pack** は WebAssembly をターゲットとする Rust クレートを組み立て、パッケージ化するためのツールです。これらのパッケージはnpmレジストリに公開され、他のパッケージと一緒に使用することができます。つまり、JSや他のパッケージと並べて使うことができ、様々な種類のアプリケーションで使うことができます。
+
+- [wasm-pack](https://github.com/rustwasm/wasm-pack)
+
+
 
 ## Day 22 のまとめ
