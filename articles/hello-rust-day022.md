@@ -546,7 +546,7 @@ npm パッケージのビルドが正常に行われました。そして、`pac
 
 ```json
 {
-  "name": "hello-wasm",
+  "name": "shinyay-hello-wasm",
   "collaborators": [
     "NPM_USER_ID <E_MAIL_ADDRESS>"
   ],
@@ -579,5 +579,42 @@ Email: (this IS public) YOUR_EMAIL_ADDRESS
 Logged in as <username> on registry.npmjs.org.
 ```
 :::
+
+### wasm-pack から npm へパッケージ公開
+
+`wasm-pack` コマンドから npm レジストリにパッケージを公開します。
+
+```shell
+wasm-pack publish
+```
+
+:::details 実行結果
+```shell
+npm notice
+npm notice 📦  shinyay-hello-wasm@0.1.0
+npm notice === Tarball Contents ===
+npm notice 2.8kB README.md
+npm notice 784B  hello_wasm_bg.js
+npm notice 270B  hello_wasm_bg.wasm
+npm notice 80B   hello_wasm.d.ts
+npm notice 81B   hello_wasm.js
+npm notice 313B  package.json
+npm notice === Tarball Details ===
+npm notice name:          shinyay-hello-wasm
+npm notice version:       0.1.0
+npm notice filename:      shinyay-hello-wasm-0.1.0.tgz
+npm notice package size:  2.2 kB
+npm notice unpacked size: 4.3 kB
+npm notice shasum:        f2844678ebe7d3206d[.......]502f28ab708b4
+npm notice integrity:     sha512-4VP+MvlF+49[.......]99N8DRoNWnw==
+npm notice total files:   6
+npm notice
+npm notice Publishing to https://registry.npmjs.org/
++ shinyay-hello-wasm@0.1.0
+[INFO]: 💥  published your package!
+```
+:::
+
+簡単に公開することができました。
 
 ## Day 22 のまとめ
