@@ -68,4 +68,22 @@ SUBCOMMANDS:
 ```
 :::
 
+|サブコマンド|説明|
+|----------|---|
+|build   |NPM パッケージのビルド|
+|help    |ヘルプメッセージの表示|
+|login   |NPM レジストリにユーザーアカウントを追加|
+|new     |プロジェクトテンプレートの新規作成|
+|pack    |NPM パッケージの TAR を作成 (公開はしない)|
+|publish |NPM パッケージの公開|
+|test    |WASM のテスト|
+
+### wasm-pack のクイックスタート
+
+
+
+```shell
+wasm-pack new hello-wasm
+```
+
 ## Day 22 のまとめ
