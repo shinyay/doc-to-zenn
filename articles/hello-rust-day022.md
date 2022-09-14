@@ -158,6 +158,10 @@ warning: function `set_panic_hook` is never used
 warning: `hello-wasm` (lib) generated 1 warning
     Finished release [optimized] target(s) in 12.02s
 [INFO]: ⬇️  Installing wasm-bindgen...
+[INFO]: Optimizing wasm binaries with `wasm-opt`...
+[INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
+[INFO]: ✨   Done in 0.34s
+[INFO]: 📦   Your wasm pkg is ready to publish at /Users/yanagiharas/Works/hello-wasm/pkg.
 ```
 :::
 
@@ -176,6 +180,7 @@ hello-wasm
 │  ├── hello_wasm_bg.js
 │  ├── hello_wasm_bg.wasm
 │  ├── hello_wasm_bg.wasm.d.ts
+│  ├── package.json
 │  └── README.md
 ├── README.md
 ├── src
@@ -531,6 +536,26 @@ hello-wasm
 │        └── libhello_wasm.rlib
 └── tests
    └── web.rs
+```
+:::
+
+
+#### package.json
+
+### wasm-pack から npm へのログイン
+
+npm パッケージを公開できるように npm レジストリにログインをします。
+
+```shell
+wasm-pack login
+```
+
+:::details 実行結果
+```shell
+Username: YOUR_USER_ID
+Password: YOUR_PASSWORD
+Email: (this IS public) YOUR_EMAIL_ADDRESS
+Logged in as <username> on registry.npmjs.org.
 ```
 :::
 
