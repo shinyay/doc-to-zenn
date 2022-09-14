@@ -31,6 +31,41 @@ published: false
 
 - [wasm-pack](https://github.com/rustwasm/wasm-pack)
 
+### wasm-pack インストール
 
+次のシェルでインストールを行います。
+
+```shell
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+```
+
+:::details wasm-pack -h
+```shell
+wasm-pack 0.10.3
+The various kinds of commands that `wasm-pack` can execute
+
+USAGE:
+    wasm-pack [FLAGS] [OPTIONS] <SUBCOMMAND>
+
+FLAGS:
+    -h, --help       Prints help information
+    -q, --quiet      No output printed to stdout
+    -V, --version    Prints version information
+    -v, --verbose    Log verbosity is based off the number of v used
+
+OPTIONS:
+        --log-level <log-level>    The maximum level of messages that should be logged by wasm-pack. [possible values:
+                                   info, warn, error] [default: info]
+
+SUBCOMMANDS:
+    build      🏗️  build your npm package!
+    help       Prints this message or the help of the given subcommand(s)
+    login      👤  Add an npm registry user account! (aliases: adduser, add-user)
+    new        🐑 create a new project with a template
+    pack       🍱  create a tar of your npm package but don't publish!
+    publish    🎆  pack up your npm package and publish!
+    test       👩‍🔬  test your wasm!
+```
+:::
 
 ## Day 22 のまとめ
