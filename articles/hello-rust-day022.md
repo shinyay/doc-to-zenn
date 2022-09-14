@@ -589,9 +589,104 @@ npm パッケージのビルドが正常に行われました。そして、`pac
 
 というわけで、テストコードを実行してみようと思います。
 
-```
+#### --node オプション
+
+`--node` オプションは、Node.jsでの実行を想定したテストを全て実行するものです
+
+```shell
 wasm-pack test --node
 ```
+
+:::details 実行結果
+```shell
+[INFO]: 🎯  Checking for the Wasm target...
+   Compiling cfg-if v1.0.0
+   Compiling scoped-tls v1.0.0
+   Compiling wasm-bindgen v0.2.83
+   Compiling console_error_panic_hook v0.1.7
+   Compiling js-sys v0.3.60
+   Compiling hello-wasm v0.1.0 (/Users/yanagiharas/Works/hello-wasm)
+warning: function `set_panic_hook` is never used
+ --> src/utils.rs:1:8
+  |
+1 | pub fn set_panic_hook() {
+  |        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `hello-wasm` (lib) generated 1 warning
+   Compiling wasm-bindgen-futures v0.4.33
+   Compiling wasm-bindgen-test v0.3.33
+warning: `hello-wasm` (lib test) generated 1 warning (1 duplicate)
+    Finished dev [unoptimized + debuginfo] target(s) in 5.62s
+[INFO]: ⬇️  Installing wasm-bindgen...
+warning: function `set_panic_hook` is never used
+ --> src/utils.rs:1:8
+  |
+1 | pub fn set_panic_hook() {
+  |        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `hello-wasm` (lib) generated 1 warning
+warning: `hello-wasm` (lib test) generated 1 warning (1 duplicate)
+    Finished test [unoptimized + debuginfo] target(s) in 0.12s
+     Running unittests src/lib.rs (target/wasm32-unknown-unknown/debug/deps/hello_wasm-4824064db4dae7b5.wasm)
+no tests to run!
+     Running tests/web.rs (target/wasm32-unknown-unknown/debug/deps/web-726945d3aebc3dc1.wasm)
+this test suite is only configured to run in a browser, but we're only testing node.js tests so skipping
+```
+:::
+
+#### --chrome --headless オプション
+
+`--chrome --headless` オプションは、ブラウザでの実行を想定したすべてのテストの実行するものです
+
+```shell
+wasm-pack test --chrome --headless
+```
+
+:::details 実行結果
+```shell
+[INFO]: 🎯  Checking for the Wasm target...
+warning: function `set_panic_hook` is never used
+ --> src/utils.rs:1:8
+  |
+1 | pub fn set_panic_hook() {
+  |        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `hello-wasm` (lib) generated 1 warning
+warning: `hello-wasm` (lib test) generated 1 warning (1 duplicate)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.07s
+[INFO]: ⬇️  Installing wasm-bindgen...
+[INFO]: Getting chromedriver...
+warning: function `set_panic_hook` is never used
+ --> src/utils.rs:1:8
+  |
+1 | pub fn set_panic_hook() {
+  |        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `hello-wasm` (lib) generated 1 warning
+warning: `hello-wasm` (lib test) generated 1 warning (1 duplicate)
+    Finished test [unoptimized + debuginfo] target(s) in 0.10s
+     Running unittests src/lib.rs (target/wasm32-unknown-unknown/debug/deps/hello_wasm-4824064db4dae7b5.wasm)
+no tests to run!
+     Running tests/web.rs (target/wasm32-unknown-unknown/debug/deps/web-726945d3aebc3dc1.wasm)
+Set timeout to 20 seconds...
+Running headless tests in Chrome on `http://127.0.0.1:59912/`
+Try find `webdriver.json` for configure browser's capabilities:
+Not found
+running 1 test
+
+test web::pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored
+```
+:::
 
 ### wasm-pack から npm へのログイン
 
