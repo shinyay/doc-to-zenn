@@ -80,10 +80,25 @@ SUBCOMMANDS:
 
 ### wasm-pack のクイックスタート
 
+まずは `wasm-pack` の動きを確認してみたいと思います。
 
+#### プロジェクトテンプレートの作成
+
+`hello-wasm` という名前のプロジェクトを作成します。
 
 ```shell
 wasm-pack new hello-wasm
 ```
+
+:::details 実行結果
+```shell
+[INFO]: ⬇️  Installing cargo-generate...
+🐑  Generating a new rustwasm project with name 'hello-wasm'...
+🔧   Creating project called `hello-wasm`...
+✨   Done! New project created /Users/yanagiharas/Works/hello-wasm
+[INFO]: 🐑 Generated new project at /hello-wasm
+```
+:::
+
 
 ## Day 22 のまとめ
