@@ -141,4 +141,36 @@ pub fn set_panic_hook() {
 設定あり:
 `"panicked at 'index out of bounds: the len is 3 but the index is 4', libcore/slice/mod.rs:2046:10"`
 
+### lib.rs
+
+:::details lib.rs
+```rust
+mod utils;
+
+use wasm_bindgen::prelude::*;
+
+// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
+// allocator.
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
+#[wasm_bindgen]
+extern {
+    fn alert(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn greet() {
+    alert("Hello, hello-wasm!");
+}
+```
+:::
+
+まず最初に `utils.rs` をモジュールとして取り込む宣言を最初にしています。これにより、先のユーティリティ用の `utils.rs` が、この呼出元の `lib.js` から使用できるようになります。
+
+```rust
+mod utils;
+```
+
 ## Day 23 のまとめ
