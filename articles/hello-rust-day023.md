@@ -1,9 +1,9 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 23]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 23]wasm-pack テンプレート Deep Dive"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly, wasm]
-published: false
+published: true
 ---
 ## Day 23 のテーマ
 
