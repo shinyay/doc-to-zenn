@@ -15,23 +15,101 @@ published: false
 
 ## コードリーディング
 
-昨日作成した　`hello-wasm` プロジェクトのソースコードディレクトリ `src` は以下のようになっていました。
+昨日作成した　`hello-wasm` プロジェクトを一部抜粋してました。
+
+大事になってくるのは次のコードです:
+
+- `Cargo.toml` - Cargo のマニフェスト
+- `src/lib.rs` - ライブラリモジュール
+- `src/utils.rs` - ユーティリティモジュール
 
 ```shell
-src
-├── lib.rs
-└── utils.rs
+hello-wasm
+├── Cargo.toml
+└── src
+   ├── lib.rs
+   └── utils.rs
 ```
 
-以下のようにデフォルトで 2 つのコードが出力されていました。
+### Caego.toml
 
-- lib.rs
-- utils.rs
+まず最初にこのプロジェクトのマニフェストとなる `Cargo.toml` について見てみます。
+
+:::details Cargo.toml
+```toml
+[package]
+name = "hello-wasm"
+version = "0.1.0"
+authors = ["shinyay <mail@address>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = "0.2.63"
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size when deploying.
+console_error_panic_hook = { version = "0.1.6", optional = true }
+
+# `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
+# compared to the default allocator's ~10K. It is slower than the default
+# allocator, however.
+wee_alloc = { version = "0.4.5", optional = true }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.13"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
+```
+:::
+
+まず `ceate-type` について見てみます。
+
+```toml
+[lib]
+crate-type = ["cdylib", "rlib"]
+```
+
+`crate-type=cdylib`:
+これは動的なシステムライブラリの生成を表します。他言語からロードするために使用されます。ただし WebAssembly ターゲットとしては、単に開始関数がないということを表します。
+
+`crate-type=rlib`:
+「Rustライブラリ」ファイルが生成されます。これは、中間成果物として使用され、「静的なRustライブラリ」と考えることができます。また、`wasm-pack test` でライブラリのユニットテストができるようにしています。
+
+次に、`features` について見てます。
+
+```toml
+[features]
+default = ["console_error_panic_hook"]
+```
+
+ここででデフォルトフィーチャーとして `console_error_panic_hook` が追加されています。これは、パニックメッセージを開発者コンソールにログ出力する機能です。
+
+- [Crate console_error_panic_hook](https://docs.rs/console_error_panic_hook/latest/console_error_panic_hook/)
+
+最後に `[dependencies]` アノテーションで追加されている依存関係を見ておきます。
+
+- [wasm-bindgen](https://crates.io/crates/wasm-bindgen)
+- [console_error_panic_hook](https://crates.io/crates/console_error_panic_hook)
+- [wee_alloc](https://crates.io/crates/wee_alloc)
+
+`wasm-bindgen` は、`#[wasm-bindgen]` 属性により、JavaScript と Rust で生成された wasm の間のインタフェースを表すコードをタグ付けすることができます。この属性を使って、JSをインポートし、Rustをエクスポートすることができます。
+`wee_alloc` は、小さなコードサイズのために最適化されたアロケータです。
 
 ### utils.rs
 
 utils.rs のコードの内容は以下のようになっています:
 
+:::details utils.rs
 ```rust
 pub fn set_panic_hook() {
     // When the `console_error_panic_hook` feature is enabled, we can call the
@@ -43,7 +121,24 @@ pub fn set_panic_hook() {
     #[cfg(feature = "console_error_panic_hook")]
     console_error_panic_hook::set_once();
 }
-
 ```
+:::
+
+次の箇所では、`cfg` 属性を使って条件付きコンパイルを行います。
+以下の場合は、`console_error_panic_hook` フィーチャーが設定されているかどうかをチェックするよう Rust に指示します。
+もし設定されていれば、後続の関数(`console_error_panic_hook::set_once()`)を呼び出します。もし設定されていなければ呼び出されません。
+
+```rust
+#[cfg(feature = "console_error_panic_hook")]
+```
+
+`console_error_panic_hook` の有無で出力結果が変わり、デバッグを容易にします。
+
+設定なし:
+`"RuntimeError: Unreachable executed"`
+
+
+設定あり:
+`"panicked at 'index out of bounds: the len is 3 but the index is 4', libcore/slice/mod.rs:2046:10"`
 
 ## Day 23 のまとめ
