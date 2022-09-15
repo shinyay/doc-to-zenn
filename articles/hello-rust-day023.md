@@ -173,4 +173,29 @@ pub fn greet() {
 mod utils;
 ```
 
+次に `wasm_bindgen` クレートを使用するために、 `use` キーワードをつかっています。こうすることで、クレートの内容を簡単に参照することができるようになります。以下の記述の場合は、`prelude` のスコープの機能を接頭辞なしで使用できるようになります。
+
+```rust
+use wasm_bindgen::prelude::*;
+```
+
+次の属性 `#[wasm_bindgen]` は、後続の関数が **Rust** と **JavaScript** の両方でアクセス可能であることを示すものです。
+
+```rust
+#[wasm_bindgen]
+extern {
+    fn alert(s: &str);
+}
+```
+
+`extern` キーワードは外部関数インターフェースをあらわしています。
+`alert` 関数は、文字列である&str型のパラメータsを1つだけ必要とすることがわかります。
+Rustでは、"Hello, Wasm!"のような文字列リテラルはすべて `&str` 型になります。つまり、`alert` は `alert("Hello, Wasm!");` と書くことで呼び出すことができます。
+
+- [Keyword extern](https://doc.rust-lang.org/std/keyword.extern.html)
+
 ## Day 23 のまとめ
+
+`wasm-pack` で作ったプロジェクトテンプレートを今日は見直してみました。
+Rust <-> JavaScript な相互でのやりとりに関する基本的なところの気づきをいろいろと得ることができました。
+相互でのやり取りの仕組みは分かってきたので、このテンプレートをベースに少しアレンジしたものを作ってみたいかなと思います。
