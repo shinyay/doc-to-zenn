@@ -29,4 +29,15 @@ Webpack を使うことのメリット:
 ✅ JavaScriptモジュールをブラウザで扱える形に変換可能
 ✅ 豊富なローダやプラグイン
 
+### create-rust-webpack (rust-webpack-template)
+
+**create-rust-webpack (rust-webpack-template)** を使ってプロジェクトテンプレートを作ってみます。
+
+```shell
+$ npm init rust-webpack my-app
+
+ 🦀 Rust + 🕸 WebAssembly + Webpack = ❤️
+ Installed dependencies ✅
+```
+
 ## Day 24 のまとめ
