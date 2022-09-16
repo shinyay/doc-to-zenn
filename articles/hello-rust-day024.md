@@ -40,4 +40,22 @@ $ npm init rust-webpack my-app
  Installed dependencies ✅
 ```
 
+以下のような構成でプロジェクトが生成されます。
+
+```shell
+my-app/
+├── Cargo.toml
+├── README.md
+├── js/
+│   └── index.js
+├── node_modules/
+├── package-lock.json
+├── package.json
+├── src/
+│   └── lib.rs
+├── static/
+├── tests/
+└── webpack.config.js
+```
+
 ## Day 24 のまとめ
