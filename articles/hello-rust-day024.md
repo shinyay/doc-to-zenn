@@ -141,7 +141,92 @@ Entrypoint index = index.js
 [4] (webpack)/buildin/harmony-module.js 573 bytes {1} [built]
 ```
 
-```
+### プロジェクト実行
+
+そして実行を・・・
+
+```shell
+npm start
 ```
 
+```shell
+> rust-webpack-template@0.1.0 start
+> rimraf dist pkg && webpack-dev-server --open -d
+
+🧐  Checking for wasm-pack...
+
+✅  wasm-pack is installed at /Users/yanagiharas/.cargo/bin/wasm-pack.
+
+ℹ️  Compiling your crate in development mode...
+
+ℹ ｢wds｣: Project is running at http://localhost:8080/
+ℹ ｢wds｣: webpack output is served from /
+ℹ ｢wds｣: Content not from webpack is served from /Users/yanagiharas/Works/webpack/my-app/dist
+ℹ ｢wdm｣: wait until bundle finished: /
+[INFO]: 🎯  Checking for the Wasm target...
+[INFO]: 🌀  Compiling to Wasm...
+warning: Found `debug_assertions` in `target.'cfg(...)'.dependencies`. This value is not supported for selecting dependencies and will not work as expected. To learn more visit https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#platform-specific-dependencies
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+[INFO]: ⬇️  Installing wasm-bindgen...
+[INFO]: Optional fields missing from Cargo.toml: 'repository', 'license'. These are not necessary, but recommended
+[INFO]: ✨   Done in 0.42s
+[INFO]: 📦   Your wasm pkg is ready to publish at /Users/yanagiharas/Works/webpack/my-app/pkg.
+✅  Your crate has been correctly compiled
+
+ℹ ｢wdm｣: Hash: a02ae8af04957cab26d3
+Version: webpack 4.46.0
+Time: 1237ms
+Built at: 09/16/2022 9:18:38 PM
+                           Asset       Size  Chunks                         Chunk Names
+                            0.js     22 KiB       0  [emitted]
+b40888505bd7ccb460d5.module.wasm    140 KiB       0  [emitted] [immutable]
+                      index.html  179 bytes          [emitted]
+                        index.js    825 KiB   index  [emitted]              index
+Entrypoint index = index.js
+[0] multi (webpack)-dev-server/client?http://localhost:8080 ./js/index.js 40 bytes {index} [built]
+[./js/index.js] 48 bytes {index} [built]
+[./node_modules/ansi-html-community/index.js] 4.16 KiB {index} [built]
+[./node_modules/ansi-regex/index.js] 135 bytes {index} [built]
+[./node_modules/html-entities/lib/index.js] 449 bytes {index} [built]
+[./node_modules/strip-ansi/index.js] 161 bytes {index} [built]
+[./node_modules/webpack-dev-server/client/index.js?http://localhost:8080] (webpack)-dev-server/client?http://localhost:8080 4.29 KiB {index} [built]
+[./node_modules/webpack-dev-server/client/overlay.js] (webpack)-dev-server/client/overlay.js 3.52 KiB {index} [built]
+[./node_modules/webpack-dev-server/client/socket.js] (webpack)-dev-server/client/socket.js 1.53 KiB {index} [built]
+[./node_modules/webpack-dev-server/client/utils/createSocketUrl.js] (webpack)-dev-server/client/utils/createSocketUrl.js 2.91 KiB {index} [built]
+[./node_modules/webpack-dev-server/client/utils/log.js] (webpack)-dev-server/client/utils/log.js 964 bytes {index} [built]
+[./node_modules/webpack-dev-server/client/utils/reloadApp.js] (webpack)-dev-server/client/utils/reloadApp.js 1.59 KiB {index} [built]
+[./node_modules/webpack-dev-server/client/utils/sendMessage.js] (webpack)-dev-server/client/utils/sendMessage.js 402 bytes {index} [built]
+[./node_modules/webpack/hot sync ^\.\/log$] (webpack)/hot sync nonrecursive ^\.\/log$ 170 bytes {index} [built]
+[./pkg/index.js] 97 bytes {0} [built]
+    + 23 hidden modules
+ℹ ｢wdm｣: Compiled successfully.
+ℹ ｢wdm｣: Compiling...
+ℹ ｢wdm｣: Hash: a02ae8af04957cab26d3
+Version: webpack 4.46.0
+Time: 48ms
+Built at: 09/16/2022 9:18:39 PM
+ 3 assets
+Entrypoint index = index.js
+[./pkg/index.js] 97 bytes {0} [built]
+[./pkg/index_bg.js] 4.82 KiB {0} [built]
+[./pkg/index_bg.wasm] 140 KiB {0} [built]
+    + 35 hidden modules
+ℹ ｢wdm｣: Compiled successfully.
+ℹ ｢wdm｣: Compiling...
+ℹ ｢wdm｣: wait until bundle finished: /index.js
+ℹ ｢wdm｣: Hash: a02ae8af04957cab26d3
+Version: webpack 4.46.0
+Time: 36ms
+Built at: 09/16/2022 9:18:39 PM
+ 3 assets
+Entrypoint index = index.js
+[./pkg/index.js] 97 bytes {0} [built]
+[./pkg/index_bg.js] 4.82 KiB {0} [built]
+[./pkg/index_bg.wasm] 140 KiB {0} [built]
+    + 35 hidden modules
+ℹ ｢wdm｣: Compiled successfully.
+``
+
 ## Day 24 のまとめ
+今日は正直ほぼ学びをえることをしてない点に反省…
+npm のパッケージで `rust-webpack` があることを発見して、これで Rust と Webpack を組み合わせたプロジェクトができて実行してみました。（むしろ動作確認しかしませんでした…）
