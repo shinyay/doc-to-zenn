@@ -95,4 +95,53 @@ pub fn main_js() -> Result<(), JsValue> {
 ```
 :::
 
+### Node プロジェクト ビルド
+
+Node プロジェクト のビルドを行ってみます。
+
+```shell
+npm run build
+```
+
+```shell
+> rust-webpack-template@0.1.0 build
+> rimraf dist pkg && webpack
+
+🧐  Checking for wasm-pack...
+
+✅  wasm-pack is installed at /Users/yanagiharas/.cargo/bin/wasm-pack.
+
+ℹ️  Compiling your crate in release mode...
+
+[INFO]: 🎯  Checking for the Wasm target...
+[INFO]: 🌀  Compiling to Wasm...
+warning: Found `debug_assertions` in `target.'cfg(...)'.dependencies`. This value is not supported for selecting dependencies and will not work as expected. To learn more visit https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#platform-specific-dependencies
+    Finished release [optimized] target(s) in 0.11s
+[INFO]: ⬇️  Installing wasm-bindgen...
+[INFO]: Optimizing wasm binaries with `wasm-opt`...
+[INFO]: Optional fields missing from Cargo.toml: 'repository', 'license'. These are not necessary, but recommended
+[INFO]: ✨   Done in 0.42s
+[INFO]: 📦   Your wasm pkg is ready to publish at /Users/yanagiharas/Works/webpack/my-app/pkg.
+✅  Your crate has been correctly compiled
+
+Hash: e2d0748e414083bccec3
+Version: webpack 4.46.0
+Time: 963ms
+Built at: 09/16/2022 9:15:02 PM
+                           Asset       Size  Chunks                         Chunk Names
+                            1.js   1.66 KiB       1  [emitted]
+13da791a2d775754b78b.module.wasm   10.1 KiB       1  [emitted] [immutable]
+                      index.html  179 bytes          [emitted]
+                        index.js   2.99 KiB       0  [emitted]              index
+Entrypoint index = index.js
+[0] ./js/index.js 48 bytes {0} [built]
+[1] ./pkg/index.js 97 bytes {1} [built]
+[2] ./pkg/index_bg.js 1.6 KiB {1} [built]
+[3] ./pkg/index_bg.wasm 10.1 KiB {1} [built]
+[4] (webpack)/buildin/harmony-module.js 573 bytes {1} [built]
+```
+
+```
+```
+
 ## Day 24 のまとめ
