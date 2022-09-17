@@ -55,9 +55,34 @@ pub fn greet() {
 }
 ```
 
-## Rust プロジェクト作成
+## Rust プロジェクトビルド
+
+```shell
+wasm-pack build
+```
+
+以下のように `pkg` ディレクトリ配下にビルド成果物が出力されました。
+
+:::details pkg
+```shell
+pkg
+├── day_26_rust_wasm_tutorial.d.ts
+├── day_26_rust_wasm_tutorial.js
+├── day_26_rust_wasm_tutorial_bg.js
+├── day_26_rust_wasm_tutorial_bg.wasm
+├── day_26_rust_wasm_tutorial_bg.wasm.d.ts
+├── package.json
+└── README.md
+```
+:::
+
+- `xxx.wasm`
+  - Rust コンパイラが生成した WebAssembly バイナリ
+- `xxx.js`
+  - **wasm-bindgen** により生成された Rust と JavaScript を仲介するインターフェースを公開する JavaScript コード
 
 
+## JavaScript プロジェクト作成
 
 ```shell
 npm init wasm-app www
