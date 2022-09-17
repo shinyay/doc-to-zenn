@@ -378,6 +378,12 @@ cargo install cargo-generate
 ```
 :::
 
+### Cargo Generate によるプロジェクトの作成
 
+それでは、`cargo generate` でプロジェクトを作成してみます。使用するプロジェクトテンプレートは、[[wasm-pack-template](https://github.com/rustwasm/wasm-pack-template)]
+
+```shell
+cargo generate --git https://github.com/rustwasm/wasm-pack-template
+```
 
 ## Day 25 のまとめ
