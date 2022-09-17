@@ -81,5 +81,6 @@ Installed Commands:
 Cargo Generate は、
 
 - [Cargo Generate Documentation](https://cargo-generate.github.io/cargo-generate/index.html)
+  - [Cargo Generate GitHub Repo](https://github.com/cargo-generate/cargo-generate)
 
 ## Day 25 のまとめ
