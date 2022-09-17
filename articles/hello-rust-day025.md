@@ -81,7 +81,7 @@ Installed Commands:
 Cargo Generate は、Rust プロジェクトのテンプレートとして Git レポジトリで管理されているものを利用して、Rust の新規プロジェクトを作成することができます。
 
 たとえば、[Day 24](https://zenn.dev/shinyay/articles/hello-rust-day024) でプロジェクトを作成するために使用した **create-rust-webpack (rust-webpack-template)** でもプロジェクトテンプレートとして、[rust-webpack-template](rust-webpack-template) を使用していました。
-また、[Day 24](https://zenn.dev/shinyay/articles/hello-rust-day022) では、プロジェクトてとして、[wasm-pack-template](https://github.com/rustwasm/wasm-pack-template) が使用されていました。
+また、[Day 22](https://zenn.dev/shinyay/articles/hello-rust-day022) では、プロジェクトてとして、[wasm-pack-template](https://github.com/rustwasm/wasm-pack-template) が使用されていました。
 
 - [Cargo Generate Documentation](https://cargo-generate.github.io/cargo-generate/index.html)
   - [Cargo Generate GitHub Repo](https://github.com/cargo-generate/cargo-generate)
@@ -386,4 +386,76 @@ cargo install cargo-generate
 cargo generate --git https://github.com/rustwasm/wasm-pack-template
 ```
 
+:::details 実行結果
+```shell
+🤷   Project Name : wasm-pack
+🔧   Destination: /Users/yanagiharas/Works/webpack/wasm-pack ...
+🔧   Generating template ...
+[ 1/12]   Done: .appveyor.yml
+[ 2/12]   Done: .gitignore
+[ 3/12]   Done: .travis.yml
+[ 4/12]   Done: Cargo.toml
+[ 5/12]   Done: LICENSE_APACHE
+[ 6/12]   Done: LICENSE_MIT
+[ 7/12]   Done: README.md
+[ 8/12]   Done: src/lib.rs
+[ 9/12]   Done: src/utils.rs
+[10/12]   Done: src
+[11/12]   Done: tests/web.rs
+[12/12]   Done: tests
+🔧   Moving generated files into: `/Users/yanagiharas/Works/webpack/wasm-pack`...
+💡   Initializing a fresh Git repository
+✨   Done! New project created /Users/yanagiharas/Works/webpack/wasm-pack
+```
+:::
+
+以下のような構成が作れました。
+```shell
+wasm-pack
+├── Cargo.toml
+├── LICENSE_APACHE
+├── LICENSE_MIT
+├── README.md
+├── src
+│  ├── lib.rs
+│  └── utils.rs
+└── tests
+   └── web.rs
+```
+
+つまり、`wasm-pack new` コマンドで作成した構成と同じ内容を作ることができました。
+この `cargo gemerate` コマンドの方が、テンプレートを知っていれば、様々なテンプレートからプロジェクトを新規作成できるので汎用性が高いプロジェクト作成コマンドだと思います。
+
+### Cargo Generate で指定できるプロジェクトテンプレート
+
+以下に利用できるテンプレートがいくつか紹介されていました:
+
+- [Available Templates](https://github.com/cargo-generate/cargo-generate/blob/main/TEMPLATES.md)
+|テンプレート|説明|
+|----------|---|
+|PyO3|Python ライブラリ|
+|wasm-pack|WebAssembly|
+|CLI|コマンドライン|
+|rocket-base:|Rocket を使った Web アプリケーション|
+|rust-samp-sdk|samp プラグイン|
+|actix-tera|Actix-web と Tera を使った Web アプリケーション|
+|procmacro-quickstart|手続き型マクロ|
+|bluepill|blue pill' stm32 マイクロコントローラボード mendelt |
+|cmdr|対話的なコマンドラインアプリケーション|
+|ggez|ggez を使用したゲーム|
+|generust|Actix-web サーバ, WASM クライアント, サポートコード|
+|template-rust-backend-with-electron-frontend|Electron フロントエンドで Rust ネイティブの cdylib バックエンド|
+|OrbTk|OrbTk を使ったユーザインタフェース|
+|swift-rust-xcode-template|Swift と Rust による iOSアプリ|
+|QuickStart WebAssembly|RWebassemblyアプリケーション|
+|Win32|低レベルの Win32 アプリケーション|
+|rust-starter|Clap で をブートストラップRust CLIアプリケーション|
+|rust-cli-template|ベンチマークやテスト用のボイラープレートに加えて、color_eyre とトレースが既に設定された CLI|
+|mongodb-service-template|mongodb を使った graphql サービス|
+|godot-rust-template|Godot と Rust を使ったゲーム|
+
 ## Day 25 のまとめ
+
+と、いうわけで、今日は簡単にですけれど、`cargo` のサブコマンドな `cargo-generate` を見てきました。
+Java で言うところの、**Maven** の **mvn archetype:generate** のようなものだと理解しましたよ。
+さて、この `cargo-generate` コマンド、Wasm 用なプロジェクト以外にも対応していることが分かったので、このコマンド、利用していこうと思います。
