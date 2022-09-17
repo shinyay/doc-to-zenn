@@ -83,6 +83,7 @@ Cargo Generate は、Rust プロジェクトのテンプレートとして Git �
 
 - [Cargo Generate Documentation](https://cargo-generate.github.io/cargo-generate/index.html)
   - [Cargo Generate GitHub Repo](https://github.com/cargo-generate/cargo-generate)
+  - [crates.io](https://crates.io/crates/cargo-generate)
 
 ### Cargo Generate のインストール
 
@@ -374,5 +375,7 @@ cargo install cargo-generate
    Installed package `cargo-generate v0.16.0` (executable `cargo-generate`)
 ```
 :::
+
+
 
 ## Day 25 のまとめ
