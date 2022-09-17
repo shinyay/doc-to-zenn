@@ -31,7 +31,7 @@ hello-wasm
    └── utils.rs
 ```
 
-### Caego.toml
+### Cargo.toml
 
 まず最初にこのプロジェクトのマニフェストとなる `Cargo.toml` について見てみます。
 
