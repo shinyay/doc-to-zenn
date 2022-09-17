@@ -78,7 +78,7 @@ Installed Commands:
 
 ## Cargo Generate
 
-Cargo Generate は、
+Cargo Generate は、Rust プロジェクトのテンプレートとして Git レポジトリで管理されているものを利用して、Rust の新規プロジェクトを作成することができます。
 
 - [Cargo Generate Documentation](https://cargo-generate.github.io/cargo-generate/index.html)
   - [Cargo Generate GitHub Repo](https://github.com/cargo-generate/cargo-generate)
