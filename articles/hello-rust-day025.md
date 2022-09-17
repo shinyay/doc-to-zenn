@@ -79,8 +79,10 @@ Installed Commands:
 ## Cargo Generate
 
 Cargo Generate は、Rust プロジェクトのテンプレートとして Git レポジトリで管理されているものを利用して、Rust の新規プロジェクトを作成することができます。
+たとえば、[Day 24](https://zenn.dev/shinyay/articles/hello-rust-day024) でプロジェクトを作成するために使用した **create-rust-webpack (rust-webpack-template)** でもプロジェクトテンプレートとして、[rust-webpack-template](rust-webpack-template) を使用していました。
 
 - [Cargo Generate Documentation](https://cargo-generate.github.io/cargo-generate/index.html)
   - [Cargo Generate GitHub Repo](https://github.com/cargo-generate/cargo-generate)
+
 
 ## Day 25 のまとめ
