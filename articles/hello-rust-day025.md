@@ -8,7 +8,9 @@ published: false
 
 ## Day 25 のテーマ
 
-Rust で開発を行うときに、**Cargo** は必須の CLI ですよね。それだけでもとても便利ですけど、`cargo install` で、[crates.io](https://crates.io/) からバイナリクレートをローカルにインストールして、もっと便利にすることもできます。
+Rust で開発を行うときに、**Cargo** は必須の CLI ですよね。それだけでもとても便利ですけど、`cargo install](https://doc.rust-lang.org/cargo/commands/cargo-install.html` で、[crates.io](https://crates.io/) からバイナリクレートをローカルにインストールして、もっと便利にすることもできます。
+
+- [cargo install](https://doc.rust-lang.org/cargo/commands/cargo-install.html)
 
 ちなみに、バイナリクレートとは、`src/main.rs` やバイナリとして指定された他のファイルをもつ場合に生成される **実行可能なプログラム**のことです。
 
@@ -73,5 +75,11 @@ Installed Commands:
 このように、**Cargo** をより便利にしていくことができそうなので、いろいろとバイナリクレートを探していたりします。
 
 今日は、この数日 **Rust** + **WebAssembly** をいろいろと見ているので、役に立ちそうな **Cargo Generate** をインストールして使ってみようと思います。
+
+## Cargo Generate
+
+Cargo Generate は、
+
+- [Cargo Generate Documentation](https://cargo-generate.github.io/cargo-generate/index.html)
 
 ## Day 25 のまとめ
