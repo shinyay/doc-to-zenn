@@ -46,4 +46,7 @@ Rust はコンパイラが標準で WebAssembly に対応しているので、�
 - cdylib
 - rlib
 
+また、今までのプロジェクトとは異なり、コンパイルターゲットとして、`wasm32-unknown-unknown` が想定されています。
+`wasm-pack build` を行うと暗黙的に `wasm32-unknown-unknown` が指定されてビルドされています。
+
 ## Day 27 のまとめ
