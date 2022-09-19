@@ -89,7 +89,6 @@ wasm-pack new
 
 ```shell
 cargo generate --git https://github.com/rustwasm/wasm-pack-template.git
-
 ```
 
 ### create-wasm-app
@@ -110,3 +109,6 @@ npm init rust-webpack <PROJECT_NAME>
 ```
 
 ## Day 27 のまとめ
+
+WebAssembly のプロジェクトの作り方、ビルドの仕方、そしてプロジェクトのテンプレートについて整理してみました。
+ブラウザ上での動作 (`wasm32-unknown-unknown`) を考えるか、それ以外の用途 (WASI) で考えるか (`wasm32-wasi`) で、プロジェクトの作り方とビルドの仕方が変わってくるってことですね。
