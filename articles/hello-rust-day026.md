@@ -81,17 +81,39 @@ pkg
 - `xxx.js`
   - **wasm-bindgen** により生成された Rust と JavaScript を仲介するインターフェースを公開する JavaScript コード
 
-
 ## JavaScript プロジェクト作成
+
+WebAssebmly を Web ページ上で公開するために、次の JavaScprit テンプレートを使用します。
+
+- [create-wasm-app](https://github.com/rustwasm/create-wasm-app)
+
+`www` という名前でプロジェクトを作成します。
 
 ```shell
 npm init wasm-app www
 ```
 
+次のような構成でプロジェクトが作成されます。
+
+:::details www
 ```shell
-cd www
-npm install
+www
+├── bootstrap.js
+├── index.html
+├── index.js
+├── LICENSE-APACHE
+├── LICENSE-MIT
+├── package-lock.json
+├── package.json
+├── README.md
+└── webpack.config.js
 ```
+:::
+
+## JavaScript プロジェクトカスタマイズ
+
+生成された `package.json` には、先にビルドした　WebAssebmly に対する依存関係が定義されていません。
+そこで、`dependencies` フィールドを追加してます。
 
 ```json
 {
@@ -106,4 +128,12 @@ npm install
 //...
 }
 ```
+
+
+
+```shell
+cd www
+npm install
+```
+
 ## Day 26 のまとめ
