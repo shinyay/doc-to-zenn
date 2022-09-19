@@ -96,11 +96,17 @@ cargo generate --git https://github.com/rustwasm/wasm-pack-template.git
 
 `wasm-pack` で Rust から作成された **npm** から使用する JavaScript のプロジェクトです。
 
-```
+```shell
 cd <WASM_PROJECT>
 npm init wasm-app <PROJECT_NAME>
 ```
 
 ### rust-webpack-template
+
+Rust を WebAssembly にコンパイルし、Webpack の rust-loader で Webpack のビルドパイプラインに直接フックするための定型文が全て予め設定されているプロジェクトです。
+
+```shell
+npm init rust-webpack <PROJECT_NAME>
+```
 
 ## Day 27 のまとめ
