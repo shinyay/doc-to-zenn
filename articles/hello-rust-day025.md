@@ -431,6 +431,7 @@ wasm-pack
 以下に利用できるテンプレートがいくつか紹介されていました:
 
 - [Available Templates](https://github.com/cargo-generate/cargo-generate/blob/main/TEMPLATES.md)
+
 |テンプレート|説明|
 |----------|---|
 |PyO3|Python ライブラリ|
