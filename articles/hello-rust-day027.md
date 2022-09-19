@@ -79,4 +79,28 @@ Rust による WebAssembly プロジェクトのビルドも、プロジェク�
 - [create-wasm-app](https://github.com/rustwasm/create-wasm-app)
 - [rust-webpack-template](https://github.com/rustwasm/rust-webpack-template)
 
+### wasm-pack-template
+
+`wasm-pack` で使用する Rust および WebAssembly のためのプロジェクトです。
+
+```shell
+wasm-pack new
+```
+
+```shell
+cargo generate --git https://github.com/rustwasm/wasm-pack-template.git
+
+```
+
+### create-wasm-app
+
+`wasm-pack` で Rust から作成された **npm** から使用する JavaScript のプロジェクトです。
+
+```
+cd <WASM_PROJECT>
+npm init wasm-app <PROJECT_NAME>
+```
+
+### rust-webpack-template
+
 ## Day 27 のまとめ
