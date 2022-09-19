@@ -129,11 +129,37 @@ www
 }
 ```
 
+次に、`index.js` でインポートしている対象を、先にビルドした WebAssebmply のパッケージに変更します。
 
+```js
+import * as wasm from "day-26-rust-wasm-tutorial";
+```
+
+変更は以上です。
+
+## WebAssebly と JavaScript の実行
+
+`npm run start` をして動作確認をしてみます。
 
 ```shell
 cd www
 npm install
+npm run start
 ```
 
+- [http://localhost:8080/](http://localhost:8080/)
+
+![](https://storage.googleapis.com/zenn-user-upload/9db0a16c837b-20220919.png)
+
+JavaScript によりアラートウィンドウが表示され、Rust で定義していたメッセージが表示されました。
+
 ## Day 26 のまとめ
+
+3 分以内に試せる WebAssebly と Node によるプロジェクトサンプルでした。
+
+今日使ったポイントとなるコマンドやテンプレートなどは以下のものです。
+
+- **[cargo generate*](https://github.com/cargo-generate/cargo-generate)**
+- **[wasm-pack-template](https://github.com/rustwasm/wasm-pack-template)**
+- **[create-wasm-app](https://github.com/rustwasm/create-wasm-app)**
+- **[wasm-bindgen](https://rustwasm.github.io/wasm-bindgen/)**
