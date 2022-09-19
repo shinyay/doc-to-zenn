@@ -71,6 +71,12 @@ Rust による WebAssembly プロジェクトのビルドも、プロジェク�
 - `wasm-pack build`  // wasm32-unknown-unknown 指定
 - `npm run build`
 
+## WebAssembly プロジェクトのテンプレート
 
+`npm init rust-webpack` や `npm init wasm-app` によりプロジェクト構成が自動生成されるように、WebAssemblｙでは予め定義されたプロジェクトテンプレートが以下のように公開されています。
+
+- [wasm-pack-template](https://github.com/rustwasm/wasm-pack-template)
+- [create-wasm-app](https://github.com/rustwasm/create-wasm-app)
+- [rust-webpack-template](https://github.com/rustwasm/rust-webpack-template)
 
 ## Day 27 のまとめ
