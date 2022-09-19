@@ -19,6 +19,7 @@ Rust はコンパイラが標準で WebAssembly に対応しているので、�
 - `cargo generate`
 - `wasm-pack new`
 - `npm init rust-webpack`
+- `npm init wasm-app`
 
 ### プレーンディレクトリ (`mkdir`)
 
@@ -48,5 +49,12 @@ Rust はコンパイラが標準で WebAssembly に対応しているので、�
 
 また、今までのプロジェクトとは異なり、コンパイルターゲットとして、`wasm32-unknown-unknown` が想定されています。
 `wasm-pack build` を行うと暗黙的に `wasm32-unknown-unknown` が指定されてビルドされています。
+
+### `npm init rust-webpack`
+
+これは、Rust, WebAssenbly そして **Webpack** 用の **npm** パッケージである **[create-rust-webpack](https://www.npmjs.com/package/create-rust-webpack)** によりプロジェクトが構成されます。
+`npm run build` でビルドすることで、暗黙的に `wasm-pack build` も内部で行われています。
+
+
 
 ## Day 27 のまとめ
