@@ -59,4 +59,18 @@ Rust はコンパイラが標準で WebAssembly に対応しているので、�
 
 これは、Rust で生成された WebAssembly を含む npm パッケージを使用して、Webpack でバンドルするプロジェクトを作るための **npm** テンプレート [create-wasm-app](https://github.com/rustwasm/create-wasm-app) を使ったプロジェクトです。つまり、このプロジェクト構成のみでは、Rust のコード構成が含まれていません。`wasm-pack-template` と組み合わせて、Rust と JavaScript のプロジェクトの構成にすることができます。
 
+## WebAssembly プロジェクトのビルド
+
+Rust による WebAssembly プロジェクトのビルドも、プロジェクトのタイプにより複数ありました。そこで以下のように整理しておきます。
+
+- `rustc --target wasm32-wasi`
+- `rustc --target wasm32-unknown-unknown`
+- `cargo build --target wasm32-wasi`
+- `cargo build --target wasm32-unknown-unknown`
+- `cargo wasi build` // wasm32-wasi 指定
+- `wasm-pack build`  // wasm32-unknown-unknown 指定
+- `npm run build`
+
+
+
 ## Day 27 のまとめ
