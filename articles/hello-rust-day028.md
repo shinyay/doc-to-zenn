@@ -19,7 +19,7 @@ published: false
 - 開発言語
 - ユースケース
 - ランタイム
-- 関心のある機能
+- ロードマップ
 
 また調査対象の回答者は以下のうような分類になっているようです。
 
@@ -57,8 +57,13 @@ Bytecode Alliance が提供している [WASI](https://wasi.dev/) のリファ�
 
 ![](https://storage.googleapis.com/zenn-user-upload/c550382c130b-20220920.png)
 
-## 関心のある機能
+## ロードマップ
 
+Public Proposal として公開されている仕様 [WebAssembly proposals](https://github.com/WebAssembly/proposals) に関して関心のある対象についての調査です。
+
+共有線形メモリとアトミックを追加するスレッドが最も関心を集めていました。また、例外処理の仕組みが次いで２位にきています。Rust だと Rust 自体には例外処理の仕様がないので Wasm 側にもっているのも面白いなとは思いました。
+
+![](https://storage.googleapis.com/zenn-user-upload/6e069137294c-20220921.png)
 
 ## Day 28 のまとめ
 
