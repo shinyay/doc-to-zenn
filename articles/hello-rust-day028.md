@@ -34,6 +34,10 @@ WebAssembly への関心の高まりの現れなのか、回答してくれた�
 
 ![](https://storage.googleapis.com/zenn-user-upload/41cbdc10d0eb-20220920.png)
 
+また次の結果も顕著で分かりやすいですね。次の質問は、今後 WebAssembly の開発に最も使用したい言語は何か？という調査です。今一番情報が普及しているのが Rust なので納得かなと思います。ただ、今後各言語が対応をしてきたときにも変わらず Rust がトップでいられるかどうか、そこか Rust の人気維持の踏ん張りどころなのかなって思いました。
+
+![](https://storage.googleapis.com/zenn-user-upload/581b81ae33a0-20220920.png)
+
 ## ユースケース
 
 ## ランタイム
