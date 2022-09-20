@@ -45,7 +45,7 @@ WebAssembly への関心の高まりの現れなのか、回答してくれた�
 
 ![](https://storage.googleapis.com/zenn-user-upload/5a4e931a92b0-20220920.png)
 
-
+しかし、実は サーバレスやコンテナ化、またプラグイン環境としての利用が伸びてきているんですよね。そのため、相対的に Web 開発としてのユースケースは下がってきています。実際、事心も Kubecon の中でも WebAssembly についての関心の高まりを感じることができていました。軽量かつポータブルな特徴のある WebAssembly のユースケースは、今後さらに多種多様になってくるかもしれませんね。
 
 ![](https://storage.googleapis.com/zenn-user-upload/dbb5130a1b0b-20220920.png)
 
