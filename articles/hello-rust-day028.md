@@ -12,5 +12,19 @@ published: false
 
 - [The State of WebAssembly 2022](https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html)
 
+## The State of WebAssembly 2022
+
+このサーベイは、**WebAssebmly** の開発や利用に関する 2022 時点の現在の状況について以下の項目について調査を行いまとめたものになっています。
+
+- 開発言語
+- ユースケース
+- ランタイム
+- 関心のある機能
+
+また調査対象の回答者は以下のうような分類になっているようです。
+
+![](https://storage.googleapis.com/zenn-user-upload/aae6720e482e-20220920.png)
+
+
 ## Day 28 のまとめ
 
