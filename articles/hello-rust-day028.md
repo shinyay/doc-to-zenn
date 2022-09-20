@@ -55,6 +55,7 @@ WebAssembly への関心の高まりの現れなのか、回答してくれた�
 
 Bytecode Alliance が提供している [WASI](https://wasi.dev/) のリファレンス実装と呼ばれている [wasmtime](https://github.com/bytecodealliance/wasmtime) の利用がトップですね。
 この **wasmtime** ですが、たしか今日 9/20 にバージョン 1.0 になる、という予定なのですが、僕が確認した時点ではまだなっていませんでした。(9/21 0:00)
+(ドキュメントのコミット後すぐくらいに 1.0 のアナウンスがありました [補足](#補足))
 
 ![](https://storage.googleapis.com/zenn-user-upload/c550382c130b-20220920.png)
 
