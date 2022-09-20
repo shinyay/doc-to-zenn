@@ -65,5 +65,24 @@ Public Proposal として公開されている仕様 [WebAssembly proposals](htt
 
 ![](https://storage.googleapis.com/zenn-user-upload/6e069137294c-20220921.png)
 
+次に [WASI](https://wasi.dev/) に関する仕様についての調査です。非ブラウザ環境での WebAssembly 利用の期待が高まってきているので、この WASI については重要になってきつつあります。
+
+I/O がトップで、ソケット、ファイルシステム、ネイティブ スレッドがそれに続いていました。Wasm の仕様に対する期待と比較すると、WASI の結果は各仕様に対してまんべんなく期待が高い事が分かります。WASI そのものに対する期待が高いということが分かりますね。
+
+![](https://storage.googleapis.com/zenn-user-upload/b6cdb7eb32a5-20220921.png)
+
+最後の質問が、WebAssebmly が今後将来に成功するために最も必要とされることについて質問をしています。
+ここでも、非ブラウザー用途での API がトップになっていました。これからも、やはり WASI に対する関心の高さと重要性が読み取れました。
+
+![](https://storage.googleapis.com/zenn-user-upload/07dc4c32c807-20220921.png)
+
 ## Day 28 のまとめ
 
+[The State of WebAssembly 2022](https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html) で徴されていた、以下の観点について見てみました。
+
+- 開発言語
+- ユースケース
+- ランタイム
+- ロードマップ
+
+Rust に対する注目が高まってきているということと、非ブラウザ用途での WebAssembly (WASI) に対する期待が高まってきているということが、改めて調査結果から分かりました。
