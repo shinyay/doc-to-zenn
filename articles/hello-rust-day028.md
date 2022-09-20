@@ -53,6 +53,10 @@ WebAssembly への関心の高まりの現れなのか、回答してくれた�
 
 [Day 19](http://localhost:8000/articles/hello-rust-day019) でも調べたように、WebAssembly はブラウザの利用以外でも使用されるケースが増えてきています。非ブラウザベースにユースケースのための仕様である WASI の策定もすすんできています。
 
+Bytecode Alliance が提供している [WASI](https://wasi.dev/) のリファレンス実装と呼ばれている [wasmtime](https://github.com/bytecodealliance/wasmtime) の利用がトップですね。
+
+![](https://storage.googleapis.com/zenn-user-upload/c550382c130b-20220920.png)
+
 ## 関心のある機能
 
 
