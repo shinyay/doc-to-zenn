@@ -51,7 +51,7 @@ WebAssembly への関心の高まりの現れなのか、回答してくれた�
 
 ## ランタイム
 
-image.png
+[Day 19](http://localhost:8000/articles/hello-rust-day019) でも調べたように、WebAssembly はブラウザの利用以外でも使用されるケースが増えてきています。非ブラウザベースにユースケースのための仕様である WASI の策定もすすんできています。
 
 ## 関心のある機能
 
