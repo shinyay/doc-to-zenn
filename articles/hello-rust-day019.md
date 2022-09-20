@@ -100,6 +100,7 @@ WASI の実装ランタイムとしていろいろとあるのですが、以下
   - [Wasm3 - Repo](https://github.com/wasm3/wasm3)
 - [WasmEdge](https://wasmedge.org/)
   - [WasmEdge](https://github.com/WasmEdge/WasmEdge)
+- [WebAssembly Micro Runtime (WAMR)](https://github.com/bytecodealliance/wasm-micro-runtime)
 
 これら WASI ランタイムは `Hello World` しながら明日いててみたいなと思います。
 
