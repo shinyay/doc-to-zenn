@@ -24,7 +24,9 @@ published: false
 また調査対象の回答者は以下のうような分類になっているようです。
 
 ![](https://storage.googleapis.com/zenn-user-upload/aae6720e482e-20220920.png)
+![](https://storage.googleapis.com/zenn-user-upload/2f38b6d87b1d-20220920.png)
 
+WebAssembly への関心の高まりの現れなのか、回答してくれたエンジニアは WebAssembly 経験が 1 年未満の方よりも、2〜3 年の方が多い結果となっていました。また、バックエンドスキルに長けた方が多いのが意外でした。まあ、ぼくもバックエンドスキルの方が得意なんですけどね。
 
 ## Day 28 のまとめ
 
