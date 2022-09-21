@@ -24,5 +24,11 @@ Wasmtime とは、**Bytecode Aliance** がスタンドアロンで **WebAssembly
 - **Bytecode Aliance**: WebAssembly や WASI に関する仕様の標準化策定をリードする非営利団体
 
 つまり、Wasmtime を実行環境とし、ブラウザ以外の環境でどこでも WebAssembly バイナリを動作させる事が可能になります。
+また、WASI の仕様策定をすすめている Bytecode Aliance による実装のため、参照実装としての意味合いもある WASI の実行ランタイムです。
+## Wasmtime 1.0.0 リリース
+
+冒頭にも記載したように、この **Wasmtime** が本日 (9/20) に 1.0.0 にメジャーバージョンアップしました。
+
+- [Wasmtime Reaches 1.0: Fast, Safe and Production Ready!](https://bytecodealliance.org/articles/wasmtime-1-0-fast-safe-and-production-ready)
 
 ## Day 29 のまとめ
