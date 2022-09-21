@@ -1,9 +1,9 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 29]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 29]Wasmtime 1.0.0"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly, wasm]
-published: false
+published: true
 ---
 ## Day 29 のテーマ
 
