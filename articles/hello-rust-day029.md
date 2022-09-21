@@ -43,4 +43,23 @@ Wasmtime とは、**Bytecode Aliance** がスタンドアロンで **WebAssembly
   - [Finished Proposals](https://github.com/WebAssembly/proposals/blob/main/finished-proposals.md)
   - [Inactive Proposals](https://github.com/WebAssembly/proposals/blob/main/inactive-proposals.md)
 
+### Wasmtime による想定本番ユースケース
+
+[Day 28](https://zenn.dev/shinyay/articles/hello-rust-day028) で参照していた **[The State of WebAssembly 2022](https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html)** の中でも、ユースケースとして以下のものが言及されていました:
+
+- **サーバレス**
+- **コンテナ化**
+- **プラグイン**
+
+> The use of WebAssembly for Serverless, Containerisation and as a plug-in host has climbed significantly
+
+![](https://storage.googleapis.com/zenn-user-upload/959fc6dfc1c5-20220921.png)
+
+### サーバレス
+
+今回のアナウンスの中でも、ユースケースとして同じものが挙げられていました。特に、最初に挙げられているユースケースの **サーバレス** はとてもはまるものだと思います。
+起動にかかる時間が**マイクロ秒**単位のような、非常にフットプリントが小さいアプリケーションは、スケールアウト・スケールインを前提としているようなサーバレスアプリケーションやマイクロサービスには最適なアプリケーション実行形態だと言えます。
+
+
+
 ## Day 29 のまとめ
