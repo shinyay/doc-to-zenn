@@ -31,4 +31,16 @@ Wasmtime とは、**Bytecode Aliance** がスタンドアロンで **WebAssembly
 
 - [Wasmtime Reaches 1.0: Fast, Safe and Production Ready!](https://bytecodealliance.org/articles/wasmtime-1-0-fast-safe-and-production-ready)
 
+このリリースアナウンスを少し見てみます。
+
+### プロダクション・レディ
+
+![](https://storage.googleapis.com/zenn-user-upload/6fe5383db11e-20220921.png)
+
+今回のアナウンスの中で最も強くメッセージングしているキーワードが **プロダクション・レディ** です。つまり、**Wasitime** を使用して WebAssembly を本番稼働させてもよいクオリティになっていると謳われています。実際のところは、WebAssembly / WASI の仕様が現在進行系で策定が進んでいるところなので、より高度で成熟した WASI 仕様に準じた WebAseembly アプリケーションの開発ができるようになるのは、まだ少しさきかもしれません。しかし、動作させる WASI ランタイム環境としては、**超高速**で**超安全**なプラットフォームが利用できるようになったことは、喜ばしく感じます。
+
+- [WebAssembly Proposals](https://github.com/WebAssembly/proposals/blob/main/README.md)
+  - [Finished Proposals](https://github.com/WebAssembly/proposals/blob/main/finished-proposals.md)
+  - [Inactive Proposals](https://github.com/WebAssembly/proposals/blob/main/inactive-proposals.md)
+
 ## Day 29 のまとめ
