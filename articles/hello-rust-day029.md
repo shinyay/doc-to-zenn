@@ -78,4 +78,11 @@ WASI の場合は、サンドボックス化されている(**Capability-based S
 
 ![](https://storage.googleapis.com/zenn-user-upload/cbb497b2b495-20220921.png)
 
+### Trusted Execution Environment (TEE)
+
+Trusted Execution Environment (TEE) 自体は、ぼくもあまり詳しくないのですけど、**[Intel SGX](https://www.intel.co.jp/content/www/jp/ja/architecture-and-technology/software-guard-extensions.html)** や **[Arm TrustZone](https://www.arm.com/ja/technologies/trustzone-for-cortex-a)** のように、CPU によりメモリ上に **Enclave(エンクレーブ)** と呼ばれる暗号化されセキュアに分離された領域のことです。
+WebAssembly は CPU アーキテクチャに依存せず、分離されたセキュアなサンドボックス空間として動作をするため、**TEE** としての利用が期待できると思います。
+
+![](https://storage.googleapis.com/zenn-user-upload/18f9a6defaf2-20220921.png)
+
 ## Day 29 のまとめ
