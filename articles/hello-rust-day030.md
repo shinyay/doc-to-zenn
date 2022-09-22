@@ -28,7 +28,7 @@ published: false
 
 ## リーディング
 
-
+- [Tour of Rust](https://tourofrust.com/)
 
 ## コーディング
 
