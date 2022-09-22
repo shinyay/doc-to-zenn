@@ -48,4 +48,11 @@ published: false
 
 ## ビデオ
 
+- [Rust Tutorial](https://www.youtube.com/playlist?list=PLLqEtX6ql2EyPAZ1M2_C0GgVd4A-_L4_5)
+- [Lets Get Rusty](https://www.youtube.com/c/LetsGetRusty/featured)
+- [Rust Crash Course](https://www.youtube.com/watch?v=zF34dRivLOw)
+- [Ryan Levick](https://www.youtube.com/channel/UCpeX4D-ArTrsqvhLapAHprQ)
+
 ## Day 30 のまとめ
+
+[O'Reilly プログラミングRust 第2版](https://www.oreilly.co.jp/books/9784873119786/) は、なかなかのボリュームがあって読み応えのありそうな本だと興奮しなが手にとっています。その副教材といってよいのかどうかもワカラナイですけど、いろいろと Rust を学ぶための公開されているリソースを集めて見ました。（正確には、現在進行系で集めてます。）
