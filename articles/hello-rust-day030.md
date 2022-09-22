@@ -41,6 +41,11 @@ published: false
 
 ## コーディング
 
+- [Rustlings](https://github.com/rust-lang/rustlings)
+- [Exercism](https://exercism.org/tracks/rust)
+- [Codewars](https://www.codewars.com/?language=rust)
+- [Coding Game](https://www.codingame.com/start)
+
 ## ビデオ
 
 ## Day 30 のまとめ
