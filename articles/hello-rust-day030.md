@@ -55,6 +55,14 @@ published: false
 - [timClicks](https://www.youtube.com/channel/UClny6qj9Mv7uFo9XGUGYQBA)
 - [Rust Programming Course for Beginners - Tutorial](https://www.youtube.com/watch?v=MsocPEZBd-M&t=1820s)
 
+## Git リポジトリ
+
+- [The Rust Programming Language](https://github.com/orgs/rust-lang/repositories)
+  - Rust そのものの Git リポジトリです。数多くのドキュメントやガイドがここで見つかります。
+- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)
+  - 今日ここでピックアップしたような Rust の学習用リソースのまとめの究極体です。Rust で開発されたアプリケーションも含め、膨大なリソースを見つけることができます。
+- [The Algorithms - Rust](https://github.com/TheAlgorithms/Rust)
+
 ## Day 30 のまとめ
 
 [O'Reilly プログラミングRust 第2版](https://www.oreilly.co.jp/books/9784873119786/) は、なかなかのボリュームがあって読み応えのありそうな本だと興奮しなが手にとっています。その副教材といってよいのかどうかもワカラナイですけど、いろいろと Rust を学ぶための公開されているリソースを集めて見ました。（正確には、現在進行系で集めてます。）
