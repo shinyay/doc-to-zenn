@@ -36,6 +36,8 @@ published: false
   - [The Rust Programming Language](https://doc.rust-lang.org/book/)
   - [Rust By Example](https://doc.rust-lang.org/rust-by-example/)
   - [Easy Rust](https://dhghomon.github.io/easy_rust/)
+- 有料書籍
+  - [O'Reilly プログラミングRust 第2版](https://www.oreilly.co.jp/books/9784873119786/)
 
 ## コーディング
 
