@@ -28,7 +28,14 @@ published: false
 
 ## リーディング
 
-- [Tour of Rust](https://tourofrust.com/)
+- クイックサマリー
+  - [Tour of Rust](https://tourofrust.com)
+  - [A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
+  - [A Gentle Introduction to Rust](https://stevedonovan.github.io/rust-gentle-intro/readme.html)
+- フリーオンラインブック
+  - [The Rust Programming Language](https://doc.rust-lang.org/book/)
+  - [Rust By Example](https://doc.rust-lang.org/rust-by-example/)
+  - [Easy Rust](https://dhghomon.github.io/easy_rust/)
 
 ## コーディング
 
