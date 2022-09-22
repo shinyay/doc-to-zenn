@@ -10,6 +10,7 @@ published: false
 突然ですがなのか、今更ですがなのかわかりませんけど、Rust の本を買いました。
 
 - [O'Reilly プログラミングRust 第2版](https://www.oreilly.co.jp/books/9784873119786/)
+- [O'Reilly Programming Rust, 2nd Edition](https://learning.oreilly.com/library/view/programming-rust-2nd/9781492052586/)
 
 ![](https://storage.googleapis.com/zenn-user-upload/11eb9df1a993-20220922.png)
 
