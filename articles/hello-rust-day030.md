@@ -51,7 +51,9 @@ published: false
 - [Rust Tutorial](https://www.youtube.com/playlist?list=PLLqEtX6ql2EyPAZ1M2_C0GgVd4A-_L4_5)
 - [Lets Get Rusty](https://www.youtube.com/c/LetsGetRusty/featured)
 - [Rust Crash Course](https://www.youtube.com/watch?v=zF34dRivLOw)
-- [Ryan Levick](https://www.youtube.com/channel/UCpeX4D-ArTrsqvhLapAHprQ)
+- [Streaming Rust with Ryan Levick](https://www.youtube.com/channel/UCpeX4D-ArTrsqvhLapAHprQ)
+- [timClicks](https://www.youtube.com/channel/UClny6qj9Mv7uFo9XGUGYQBA)
+- [Rust Programming Course for Beginners - Tutorial](https://www.youtube.com/watch?v=MsocPEZBd-M&t=1820s)
 
 ## Day 30 のまとめ
 
