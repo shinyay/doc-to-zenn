@@ -50,4 +50,9 @@ https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/main
 
 ### Associated functions (関連関数) とメソッド
 
+関数には**特定の型**に紐付いて定義・使用される以下の形式があります。
+
+- **メソッド**
+- **関連関数**
+
 ## Day 31 のまとめ
