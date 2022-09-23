@@ -11,13 +11,13 @@ fn is_divisible_by(x: u32, y: u32) -> bool {
 
 fn fizzbuzz(n: u32) -> () {
     if is_divisible_by(n, 15) {
-        println!("fizzbuzz");
+        println!("{}: fizzbuzz", n);
     } else if is_divisible_by(n, 3) {
-        println!("fizz")
+        println!("{}: fizz", n)
     } else if is_divisible_by(n, 5) {
-        println!("buzz")
+        println!("{}: buzz", n)
     } else {
-        println!("()")
+        println!("{}: ()", n)
     }
 }
 
