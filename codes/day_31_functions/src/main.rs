@@ -1,7 +1,8 @@
 fn main() {
+    fizzbuzz(30);
 }
 
-fn is_divisible_by(x: u32, y: u32) -> b {
+fn is_divisible_by(x: u32, y: u32) -> bool {
     if y == 0 {
         return false;
     }
