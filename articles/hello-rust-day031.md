@@ -46,6 +46,8 @@ published: false
     - 引数は、型を指定する必要あり (例: fn foobar(`n: u32`) -> u32 )
     - 戻り値は、->の後に型を指定する必要あり (例: fn foobar(n: u32) `-> u32` )
 
+https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/main.rs
+
 ```rust
 
 ```
