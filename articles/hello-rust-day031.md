@@ -59,10 +59,26 @@ https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/main
 
 ちなみに、impl ブロックの内部で定義する **関連関数**に対し絵t、 impl ブロックの外部で定義されている関数を**自由関数**と呼びます。
 
-
 https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/rectangle.rs
 
 ### 関連関数
 
+インスタンスに対して関連付けられているのではなく、型自体に関連付けられている関数です。
+そのため、新規のインスタンスを生成するコンストラクタに使われたりします。
+
+- 関連関数サンプル
+
+```rust
+impl Rectangle {
+    fn new(h: u32, w: u32) -> Rectangle {
+        Rectangle { hight: h, widthe: w }
+    }
+}
+```
+
+- 関連関数呼び出しサンプル
+
+```rust
+```
 
 ## Day 31 のまとめ
