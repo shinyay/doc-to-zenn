@@ -25,7 +25,7 @@ published: false
 11. [Crates](https://doc.rust-lang.org/rust-by-example/crates.html)
 12. [Cargo](https://doc.rust-lang.org/rust-by-example/cargo.html)
 13. [Attributes](https://doc.rust-lang.org/rust-by-example/attribute.html)
-14. [Generics](https://doc.rust-lang.org/rust-by-example/generics.html
+14. [Generics](https://doc.rust-lang.org/rust-by-example/generics.html)
 15. [Scoping rules](https://doc.rust-lang.org/rust-by-example/scope.html)
 16. [Traits](https://doc.rust-lang.org/rust-by-example/trait.html)
 17. [macro_rules!](https://doc.rust-lang.org/rust-by-example/macros.html)
@@ -37,5 +37,13 @@ published: false
 23. [Compatibility](https://doc.rust-lang.org/rust-by-example/compatibility.html)
 24. [Meta](https://doc.rust-lang.org/rust-by-example/meta.html)
 
+この中から、[Functions](https://doc.rust-lang.org/rust-by-example/fn.html) (関数) を見てみたと思います。
+
+## 関数
+
+- 関数の定義方法: `fn` キーワード
+  - 型定義:
+    - 引数は、型を指定する必要あり (例: fn fizzbuzz(`n: u32`) -> u32 )
+    - 戻り値は、->の後に型を指定する必要あり (例: fn fizzbuzz(n: u32) `-> u32` )
 
 ## Day 31 のまとめ
