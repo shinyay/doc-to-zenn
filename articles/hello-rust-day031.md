@@ -79,6 +79,7 @@ impl Rectangle {
 - 関連関数呼び出しサンプル
 
 ```rust
+let rec = Rectangle::new(3, 5);
 ```
 
 ## Day 31 のまとめ
