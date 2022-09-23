@@ -1,5 +1,8 @@
+pub mod rectangle;
+
 fn main() {
     fizzbyzz_to(30);
+    rectangle::rectangle_main();
 }
 
 fn is_divisible_by(x: u32, y: u32) -> bool {
