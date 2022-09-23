@@ -48,8 +48,6 @@ published: false
 
 https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/main.rs
 
-```rust
-
-```
+### Associated functions (関連関数) とメソッド
 
 ## Day 31 のまとめ
