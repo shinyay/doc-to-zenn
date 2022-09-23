@@ -1,5 +1,5 @@
 fn main() {
-    fizzbuzz(30);
+    fizzbyzz_to(30);
 }
 
 fn is_divisible_by(x: u32, y: u32) -> bool {
@@ -18,5 +18,11 @@ fn fizzbuzz(n: u32) -> () {
         println!("buzz")
     } else {
         println!("()")
+    }
+}
+
+fn fizzbyzz_to(upper_limit: u32) {
+    for e in 1..=upper_limit {
+        fizzbuzz(e)
     }
 }
