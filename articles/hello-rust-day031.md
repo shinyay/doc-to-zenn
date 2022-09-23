@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 31]関数 - Rust By Example"
+title: "100日後にRustをちょっと知ってる人になる: [Day 31]関連関数とメソッド - Rust By Example"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
