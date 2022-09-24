@@ -41,4 +41,11 @@ fn do_something(param: u32) -> u32 { param + 1 }
 let do_something = |param: u32| -> u32 { param + 1 };
 ```
 
+- クロージャ (型を省略)
+
+```rust
+let do_something = |param| { param + 1 };
+```
+
+
 ## Day 32 のまとめ
