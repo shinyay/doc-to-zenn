@@ -35,4 +35,10 @@ Rust ではクロージャを `||` で定義します。引数がある場合は
 fn do_something(param: u32) -> u32 { param + 1 }
 ```
 
+- クロージャ
+
+```rust
+let do_something = |param: u32| -> u32 { param + 1 };
+```
+
 ## Day 32 のまとめ
