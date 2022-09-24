@@ -41,7 +41,7 @@ fn do_something(param: u32) -> u32 { param + 1 }
 let do_something = |param: u32| -> u32 { param + 1 };
 ```
 
-- クロージャ (型を省略)
+- クロージャ (型アノテーションを省略)
 
 ```rust
 let do_something = |param| { param + 1 };
@@ -53,4 +53,19 @@ let do_something = |param| { param + 1 };
 let do_something = |param| param + 1 ;
 ```
 
+クロージャの外部にあるスコープの要素は、以下のような形で取得できます。
+
+- リファレンス: `&T`
+- ミュータブルなリファレンス: `&mut T`
+- 値そのもの: `T`
+
+```rust
+let outer_scope = String::from("スコープ");
+let print = ||println!("スコープ: {}", outer_scope);
+print();
+```
+
 ## Day 32 のまとめ
+
+Rust でのクロージャの使い方について簡単に見てみました。関数自体を引数に使ったり、戻り値として扱うようなものと考えれば利用の仕方はいろいろ増えますよね。
+スコープの扱いについて考慮だけすれば、まずはクロージャの使いこなしの第一歩なのかなと思います。
