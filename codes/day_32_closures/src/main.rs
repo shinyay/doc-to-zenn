@@ -39,6 +39,13 @@ fn main() {
 
     apply(greeting_fn);
     apply_mut(greeting_mut);
+
+    let fn_plain = create_fn();
+    let mut fn_mut = create_fnmut();
+    let fn_once = create_fnonce();
+    fn_plain();
+    fn_mut();
+    fn_once();
 }
 
 fn apply_once<F>(f: F) where F: FnOnce() {
