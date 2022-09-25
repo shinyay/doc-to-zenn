@@ -25,14 +25,21 @@ fn main() {
     let greeting = "Hello";
     // 値
     let mut bye_greeting = "Bye".to_owned();
-    let diary = || {
+
+    let greeting_fn = || {
         // 参照に対する処理のため、Fn が必要
-        println!("挨拶: {}", greeting);
+        println!("挨拶(fn): {}", greeting);
+    };
+
+    let greeting_mut = || {
         // 値の変更をするため、FnMut が必要
         bye_greeting.push_str("!!");
-        println!("挨拶: {}", bye_greeting);
+        println!("挨拶(mut): {}", bye_greeting);
     };
-    apply_once(diary);
+    // apply_once(diary);
+
+    apply(greeting_fn);
+    apply_mut(greeting_mut);
 }
 
 fn apply_once<F>(f: F) where F: FnOnce() {
