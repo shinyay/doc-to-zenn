@@ -36,7 +36,6 @@ fn main() {
         bye_greeting.push_str("!!");
         println!("挨拶(mut): {}", bye_greeting);
     };
-    // apply_once(diary);
 
     apply(greeting_fn);
     apply_mut(greeting_mut);
@@ -52,4 +51,22 @@ fn apply_mut<F>(mut f: F) where F: FnMut() {
 
 fn apply<F>(f: F) where F: Fn() {
     f();
+}
+
+fn create_fn() -> impl Fn() {
+    let text = "Fn".to_owned();
+
+    move || println!("This is a: {}", text)
+}
+
+fn create_fnmut() -> impl FnMut() {
+    let text = "FnMut".to_owned();
+
+    move || println!("This is a: {}", text)
+}
+
+fn create_fnonce() -> impl FnOnce() {
+    let text = "FnOnce".to_owned();
+
+    move || println!("This is a: {}", text)
 }
