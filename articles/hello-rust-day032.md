@@ -74,6 +74,32 @@ print();
 - `FnMut`
 - `FnOnce`
 
+言い換えると、クロージャはいずれかのトレイトのインスタンスになっています。
+
+- **Fn トレイト**
+
+```rust
+pub trait FnOnce<Args> {
+    type Output;
+    extern "rust-call" fn call_once(self, args: Args) -> Self::Output;
+}
+```
+
+- **FnMutトレイト**
+
+```rust
+pub trait FnMut<Args>: FnOnce<Args> {
+    extern "rust-call" fn call_mut(&mut self, args: Args) -> Self::Output;
+}
+```
+
+- **FnOnce トレイト**
+
+```rust
+pub trait Fn<Args>: FnMut<Args> {
+    extern "rust-call" fn call(&self, args: Args) -> Self::Output;
+}
+```
 
 ## Day 32 のまとめ
 
