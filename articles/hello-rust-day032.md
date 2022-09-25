@@ -77,6 +77,7 @@ print();
 言い換えると、クロージャはいずれかのトレイトのインスタンスになっています。
 
 - **Fn トレイト**
+  - `self` を受け取る
 
 ```rust
 pub trait FnOnce<Args> {
@@ -86,6 +87,7 @@ pub trait FnOnce<Args> {
 ```
 
 - **FnMutトレイト**
+  - `&mut self` を受け取る
 
 ```rust
 pub trait FnMut<Args>: FnOnce<Args> {
@@ -94,6 +96,7 @@ pub trait FnMut<Args>: FnOnce<Args> {
 ```
 
 - **FnOnce トレイト**
+  - `&self` を受け取る
 
 ```rust
 pub trait Fn<Args>: FnMut<Args> {
