@@ -77,17 +77,19 @@ print();
 言い換えると、クロージャはいずれかのトレイトのインスタンスになっています。
 
 - **Fn トレイト**
-  - `self` を受け取る
+  - `&self` を受け取る
+  - `FnMut` を継承する
+    - `FnOnce` を継承する
 
 ```rust
-pub trait FnOnce<Args> {
-    type Output;
-    extern "rust-call" fn call_once(self, args: Args) -> Self::Output;
+pub trait Fn<Args>: FnMut<Args> {
+    extern "rust-call" fn call(&self, args: Args) -> Self::Output;
 }
 ```
 
 - **FnMutトレイト**
   - `&mut self` を受け取る
+  - `FnOnce` を継承する
 
 ```rust
 pub trait FnMut<Args>: FnOnce<Args> {
@@ -96,11 +98,12 @@ pub trait FnMut<Args>: FnOnce<Args> {
 ```
 
 - **FnOnce トレイト**
-  - `&self` を受け取る
+  - `self` を受け取る
 
 ```rust
-pub trait Fn<Args>: FnMut<Args> {
-    extern "rust-call" fn call(&self, args: Args) -> Self::Output;
+pub trait FnOnce<Args> {
+    type Output;
+    extern "rust-call" fn call_once(self, args: Args) -> Self::Output;
 }
 ```
 
