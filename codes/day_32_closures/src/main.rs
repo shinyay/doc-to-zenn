@@ -21,4 +21,20 @@ fn main() {
     let second_print = ||println!("借用したスコープ: {}", second_scope);
     second_print();
 
+    // 参照
+    let greeting = "Hello";
+    // 値
+    let mut bye_greeting = "Bye".to_owned();
+    let diary = || {
+        // 参照に対する処理のため、Fn が必要
+        println!("挨拶: {}", greeting);
+        // 値の変更をするため、FnMut が必要
+        bye_greeting.push_str("!!");
+        println!("挨拶: {}", bye_greeting);
+    };
+    apply(diary);
+}
+
+fn apply<F>(f: F) where F: FnOnce() {
+    f();
 }
