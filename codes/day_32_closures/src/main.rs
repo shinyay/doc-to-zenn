@@ -32,9 +32,17 @@ fn main() {
         bye_greeting.push_str("!!");
         println!("挨拶: {}", bye_greeting);
     };
-    apply(diary);
+    apply_once(diary);
 }
 
-fn apply<F>(f: F) where F: FnOnce() {
+fn apply_once<F>(f: F) where F: FnOnce() {
+    f();
+}
+
+fn apply_mut<F>(mut f: F) where F: FnMut() {
+    f();
+}
+
+fn apply<F>(f: F) where F: Fn() {
     f();
 }
