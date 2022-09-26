@@ -84,6 +84,7 @@ impl<T> Point<T> {
 トレイト境界とは、ジェネリック型に対して **「このトレイトを実装していなければならない」** という制約を課すものです。
 
 ジェネリック型にトレイト境界を指定することで，その型が特定のトレイトの**インスタンス**であることを制約します。
+トレイト境界は、`Type: Trait` と記述します。
 
 - 型引数宣言部に記述
 
@@ -97,7 +98,7 @@ fn draw<T: Geometry>(geometry: &T) {
 
 ```rust
 fn draw<T>(geometry: &T)
-    where T: Summary + Display {
+    where T: Display {
     ...
 }
 ```
