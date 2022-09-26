@@ -57,4 +57,13 @@ struct Point<T> {
 }
 ```
 
+- 列挙型
+
+```rust
+enum Result<T,E> {
+    Ok(T),
+    Err(E),
+}
+```
+
 ## Day 33 のまとめ
