@@ -48,6 +48,15 @@ fn foo<T>(a: T, b:T) -> T {
 }
 ```
 
+- 列挙型
+
+```rust
+enum Result<T,E> {
+    Ok(T),
+    Err(E),
+}
+```
+
 - 構造体
 
 ```rust
@@ -57,12 +66,15 @@ struct Point<T> {
 }
 ```
 
-- 列挙型
+- メソッド
 
 ```rust
-enum Result<T,E> {
-    Ok(T),
-    Err(E),
+struct Point<T> { x: T, y: T }
+
+impl<T> Point<T> {
+    fn do_something(self) -> (T, T) {
+        (self.x, self.y)
+    }
 }
 ```
 
