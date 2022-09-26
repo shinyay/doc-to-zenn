@@ -48,5 +48,13 @@ fn foo<T>(a: T, b:T) -> T {
 }
 ```
 
+- 構造体
+
+```rust
+struct Point<T> {
+    x: T,
+    y: T
+}
+```
 
 ## Day 33 のまとめ
