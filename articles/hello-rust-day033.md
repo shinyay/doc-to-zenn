@@ -104,3 +104,11 @@ fn draw<T>(geometry: &T)
 ```
 
 ## Day 33 のまとめ
+
+今日は**ジェネリクス**の使い方について見てみました。同一の処理を型ごとに複数定義するのではなく、型定義を抽象化して再利用性を高める記述であるジェネリクスはとても便利です。
+
+以下は Rust 以外の言語でのジェネリクスについて紹介されいてるドキュメントです。考え方・使い方は当然ながらほぼ同じなので別の言語を使っていた人は比較してみると分かりやすいかもしれないですね。
+
+- [Java](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
+- [Kotlin](https://kotlinlang.org/docs/generics.html)
+- [TypeScript](https://www.typescriptlang.org/docs/handbook/2/generics.html)
