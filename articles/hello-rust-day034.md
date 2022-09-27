@@ -16,6 +16,7 @@ rustc 1.63.0 (4b91a6ea7 2022-08-08)
 $ rustup update
 ```
 
+:::details 実行結果
 ```shell
 info: syncing channel updates for 'stable-x86_64-apple-darwin'
 info: latest update on 2022-09-22, rust version 1.64.0 (a55dd71d5 2022-09-19)
@@ -52,5 +53,6 @@ info: checking for self-updates
 
 info: cleaning up downloads & tmp directories
 ```
+:::
 
 ## Day 34 のまとめ
