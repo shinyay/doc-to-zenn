@@ -5,3 +5,6 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
 published: false
 ---
+## Day 34 のテーマ
+
+## Day 34 のまとめ
