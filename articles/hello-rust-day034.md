@@ -55,4 +55,9 @@ info: cleaning up downloads & tmp directories
 ```
 :::
 
+```shell
+$ rustc --version
+rustc 1.64.0 (a55dd71d5 2022-09-19)
+```
+
 ## Day 34 のまとめ
