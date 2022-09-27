@@ -7,4 +7,9 @@ published: false
 ---
 ## Day 34 のテーマ
 
+```shell
+$ rustc --version
+rustc 1.63.0 (4b91a6ea7 2022-08-08)
+```
+
 ## Day 34 のまとめ
