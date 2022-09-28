@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 34]What’
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 34 のテーマ
 
