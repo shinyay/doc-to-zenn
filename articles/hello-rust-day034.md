@@ -211,8 +211,37 @@ async fn run() {
 }
 ```
 
+このように、`IntoFuture` を実装することで任意の型を `Future` にすることができるようになるので使い所は多くあるのではないでしょうか。
+
 ### C 互換の FFI 型 (libstd) の libcore / liballoc への移動
+
+C 言語の ABI (Application Binary Interface) を呼び出したり呼び出されたりする際に、Rust のコードは `c_uint` や `c_ulong` といった型別名を使うことで、ターゲット固有のコードや条件文を必要とせず、あらゆるターゲットで C 言語の対応する型にマッチさせることができます。
+今までは、これらの型別名は `std` でしか利用できなかったため、組み込みターゲットなど core や alloc しか利用できないコードでは、これらの型を利用することができませんでした。しかし、**1.64.0** から利用できるようになります。
+
+`CStr` および関連する型が `libcore`で、
+また `CString` および関連する型が `liballoc`に移動しました。
+
+また、次の型が `std::os::raw` だけでなく `core::ffi` および `std::ffi` で使えるようになりました。
+
+- `c_char`
+- `c_double`
+- `c_float`
+- `c_int`
+- `c_long`
+- `c_longlong`
+- `c_schar`
+- `c_short`
+- `c_uchar`
+- `c_uint`
+- `c_ulong`
+- `c_ulonglong`
+- `c_ushort`
+
 ### rustup の コンポーネント として rust-analyzer 利用可能
+### Cargo でのワークスペース共通の設定
+
+
+
 ### Cargo のワークスペース継承
 ### Cargo のマルチターゲットビルド
 ### Windows 上でのコンパイル最適化
