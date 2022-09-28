@@ -239,7 +239,11 @@ C 言語の ABI (Application Binary Interface) を呼び出したり呼び出さ
 
 ### rustup の コンポーネント として rust-analyzer 利用可能
 
-rust-analyzerは、Rustに含まれるツールのコレクションの一部として含まれるようになりました。
+`rust-analyzer` が、Rust に含まれるツールのコレクションの一部として含まれるようになりました。`rustup` コンポーネントとして利用可能になります。
+
+```shell
+rustup component add rust-analyzer
+```
 
 ### Cargo でのワークスペース共通の設定
 
@@ -299,8 +303,25 @@ tokio.workspace = true
 - `rust-version`
 - `version`
 
-### Cargo のワークスペース継承
 ### Cargo のマルチターゲットビルド
+
+複数のターゲットに対してビルドを行う際に、`cargo build` に複数の `--target` オプションを渡して、それらのターゲット全てを一度にビルドすることができるようになりました。
+また、`.cargo/config.toml` で `build.target` を複数のターゲットの配列に設定すると、デフォルトで複数のターゲットに対してビルドを行うことができます。
+
 ### Windows 上でのコンパイル最適化
+
+### glibcとkernelの最低要件の変更
+
+Linux 版の最低要件が引き上げらします。
+
+**1.64.0 から:**
+
+- glibc: `2.17`
+- kernel: `3.2`
+
+**1.64.0 以前:**
+
+- glibc: `2.11`
+- kernel: `2.6.32`
 
 ## Day 34 のまとめ
