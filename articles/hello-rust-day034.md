@@ -335,3 +335,10 @@ Linux 版の最低要件が引き上げらします。
 - [リリースノート](https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1640-2022-09-22)
 
 主要そうなところを一部だけ抜き出してみたので、全量はこちらをみてもらうといいかなと思います。
+
+### おまけ - Rust 1.64 アップデート紹介動画
+
+
+https://www.youtube.com/watch?v=4AbxFNf_Yis
+
+https://www.youtube.com/watch?v=CO5Xo76CVCk
