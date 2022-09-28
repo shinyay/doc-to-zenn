@@ -22,13 +22,14 @@ rustc 1.63.0 (4b91a6ea7 2022-08-08)
 
 `1.63.0` でした。
 
-それでは、`rustup` CLI を使ってアップデートを行います。 
+それでは、`rustup` CLI を使ってアップデートを行います。
 
 ```shell
 $ rustup update
 ```
 
 :::details 実行結果
+
 ```shell
 info: syncing channel updates for 'stable-x86_64-apple-darwin'
 info: latest update on 2022-09-22, rust version 1.64.0 (a55dd71d5 2022-09-19)
@@ -65,11 +66,21 @@ info: checking for self-updates
 
 info: cleaning up downloads & tmp directories
 ```
+
 :::
 
 ```shell
 $ rustc --version
 rustc 1.64.0 (a55dd71d5 2022-09-19)
 ```
+
+## 1.64.0 の特徴
+
+- .await 時に IntoFuture
+- C 互換の FFI 型 (libstd) の libcore / liballoc への移動
+- rustup の コンポーネント として rust-analyzer 利用可能
+- Cargo のワークスペース継承
+- Cargo のマルチターゲットビルド
+- Windows 上でのコンパイル最適化
 
 ## Day 34 のまとめ
