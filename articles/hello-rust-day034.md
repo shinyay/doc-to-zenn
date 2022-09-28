@@ -126,6 +126,14 @@ async fn run() {
 }
 ```
 
+- `[Future](https://doc.rust-lang.org/std/future/trait.Future.html)`
+- `[async](https://doc.rust-lang.org/std/keyword.async.html)`
+- `[await](https://doc.rust-lang.org/std/keyword.await.html)`
+
+#### IntoFuture
+
+- [IntoFuture](https://doc.rust-lang.org/stable/core/future/trait.IntoFuture.html)
+
 ### C 互換の FFI 型 (libstd) の libcore / liballoc への移動
 ### rustup の コンポーネント として rust-analyzer 利用可能
 ### Cargo のワークスペース継承
