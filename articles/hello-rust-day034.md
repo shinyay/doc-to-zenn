@@ -7,6 +7,10 @@ published: false
 ---
 ## Day 34 のテーマ
 
+9 月 22 日に **Rust 1.64.0** が公開されていたのは気づいていたでしょうか？ Rust を本格的に学び始めてから間もない僕にとっては、この早い頻度でアップデートされるのは驚きでした。また、この [#100DaysOfRust](https://twitter.com/search?f=live&q=(%23100DaysOfRust)%20(from%3Ayanashin18618)&src=typed_query) な取り組みを始めてから実は初めての Rust のバージョンアップになるのでした。
+
+- [マイルストン](https://github.com/rust-lang/rust/milestones)
+
 ```shell
 $ rustc --version
 rustc 1.63.0 (4b91a6ea7 2022-08-08)
