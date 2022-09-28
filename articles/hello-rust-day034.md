@@ -89,7 +89,7 @@ rustc 1.64.0 (a55dd71d5 2022-09-19)
 
 Rust 1.64.0 に含まれる改善点の中でも最も注目するべきものは、**IntoFutureトレイト**の安定化です。
 
-この `IntoFuture` は `IntoIterator` に似た特徴です。`for ... in ...` ループをサポートするのではなく、IntoFuture は `.await` の動作方法を変更します。
+この `IntoFuture` は `IntoIterator` に似た特徴です。`for ... in ...` ループをサポートするのではなく、IntoFuture では `.await` の動作方法を変更します。
 `IntoFuture` では、`.await` キーワードは `Future` 以外にも待ち受けることが可能です。
 
 #### Future トレイトによる非同期処理
@@ -127,12 +127,89 @@ async fn run() {
 ```
 
 - `[Future](https://doc.rust-lang.org/std/future/trait.Future.html)`
+
+`Future` は `async` を使用して得られる非同期処理を表します。
+
+```rust
+pub trait Future {
+    type Output;
+
+    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
+}
+```
+
 - `[async](https://doc.rust-lang.org/std/keyword.async.html)`
+
+現在のスレッドをブロックするのではなく、Futureを返します。
+`fn`、`クロージャ`、`ブロック`の前で `async` を使用すると、マークされたコードが `Future` に変わります。そのため、コードはすぐに実行されず、返された `Future` が `.await` されたときにのみ評価されます。
+
 - `[await](https://doc.rust-lang.org/std/keyword.await.html)`
+
+#### (参考)IntoIterator
+
+- [IntoIterator](https://doc.rust-lang.org/std/iter/trait.IntoIterator.html)
+
+`IntoIterator` はイテレータを得るためのトレイトです。
+
+```rust
+pub trait IntoIterator {
+    type Item;
+    type IntoIter: Iterator
+    where
+        <Self::IntoIter as Iterator>::Item == Self::Item;
+
+    fn into_iter(self) -> Self::IntoIter;
+}
+```
 
 #### IntoFuture
 
 - [IntoFuture](https://doc.rust-lang.org/stable/core/future/trait.IntoFuture.html)
+
+`IntoFuture` を用いて、任意の型を `Future` に取り込む新しいトレイトです。
+
+```rust
+use std::future::IntoFuture;
+
+pub struct Multiply {
+    num: u16,
+    factor: u16,
+}
+
+impl Multiply {
+    pub fn new(num: u16, factor: u16) -> Self {
+        Self { num, factor }
+    }
+
+    pub fn number(mut self, num: u16) -> Self {
+        self.num = num;
+        self
+    }
+
+    pub fn factor(mut self, factor: u16) -> Self {
+        self.factor = factor;
+        self
+    }
+}
+
+// IntoFuture の実装
+impl IntoFuture for Multiply {
+    type Output = u16;
+    type IntoFuture = Ready<Self::Output>;
+
+    fn into_future(self) -> Self::IntoFuture {
+        ready(self.num * self.factor)
+    }
+}
+
+async fn run() {
+  let num = Multiply::new(0, 0)
+      .number(2)
+      .factor(2)
+      .await;
+  assert_eq!(num, 4);
+}
+```
 
 ### C 互換の FFI 型 (libstd) の libcore / liballoc への移動
 ### rustup の コンポーネント として rust-analyzer 利用可能
