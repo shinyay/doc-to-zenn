@@ -238,9 +238,66 @@ C 言語の ABI (Application Binary Interface) を呼び出したり呼び出さ
 - `c_ushort`
 
 ### rustup の コンポーネント として rust-analyzer 利用可能
+
+rust-analyzerは、Rustに含まれるツールのコレクションの一部として含まれるようになりました。
+
 ### Cargo でのワークスペース共通の設定
 
+Cargo によるワークスペース作成時に、`Cargo.toml` にバージョンや概要などのパッケージ情報、また依存クレートも記述出来るようになりました。
 
+```toml
+# Cargo.toml
+
+# ワークスペースの定義
+[workspace]
+members = ["sub"]
+
+# ワークスペース共通の設定
+[workspace.package]
+version = "1.2.3"                     # ワークスペース共通のバージョン
+edition = "2021"                      # ワークスペース共通のRustエディション
+rust-version = "1.64"                 # ワークスペース共通のMSRV
+license = "GPL-3.0-or-later"          # ワークスペース共通のライセンス
+description = "something"             # ワークスペース共通の概要
+
+# ワークスペース共通の依存クレート
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+```
+
+```toml
+# sub/Cargo.toml
+[package]
+name = "sub"
+
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description.workspace = true
+
+[dependencies]
+tokio.workspace = true
+```
+
+以下のフィールドを指定かのうです。
+
+- `authors`
+- `categories`
+- `description`
+- `documentation`
+- `edition`
+- `exclude`
+- `homepage`
+- `include`
+- `keywords`
+- `license`
+- `license-file`
+- `publish`
+- `readme`
+- `repository`
+- `rust-version`
+- `version`
 
 ### Cargo のワークスペース継承
 ### Cargo のマルチターゲットビルド
