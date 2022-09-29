@@ -39,4 +39,24 @@ let listner = TcpListener::bind("127.0.0.1:8080").unwrap();
 for stream in listner.incoming() { }
 ```
 
+この例では、入力ストリームを得た時点で標準出力で `接続確立!` と出力しています。
+
+:::details ここまでのソースコード
+
+```rust
+use std::net::TcpListener;
+
+fn main() {
+    let listner = TcpListener::bind("127.0.0.1:8080").unwrap();
+
+    for stream in listner.incoming() {
+        let stream = stream.unwrap();
+        println!("接続確立!");
+    }
+}
+```
+
+:::
+
+
 ## Day 35 のまとめ
