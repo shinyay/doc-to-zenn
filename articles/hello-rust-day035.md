@@ -33,4 +33,10 @@ Rust では、ネットワーク接続するための機能が、標準ライブ
 let listner = TcpListener::bind("127.0.0.1:8080").unwrap();
 ```
 
+次の `for` ブロックでは、`incoming` メソッドにより接続ストリームを与えるイテレータを生成します。
+
+```rust
+for stream in listner.incoming() { }
+```
+
 ## Day 35 のまとめ
