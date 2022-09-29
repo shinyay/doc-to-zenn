@@ -41,11 +41,11 @@ pub fn bind<A: ToSocketAddrs>(addr: A) -> io::Result<TcpListener> {
 }
 ```
 
+一方でここでのエラーを意思する必要はありません。`unwrap` を使うことで、エラーが発生した場合には当該プログラムを停止します。
+
 ![](https://storage.googleapis.com/zenn-user-upload/2d3668c34499-20220929.png)
 
-
-
-次の `for` ブロックでは、`incoming` メソッドにより接続ストリームを与えるイテレータを生成します。
+次に、 `for` ブロックでは、`incoming` メソッドにより接続ストリームを与えるイテレータを生成します。
 
 ```rust
 for stream in listner.incoming() { }
