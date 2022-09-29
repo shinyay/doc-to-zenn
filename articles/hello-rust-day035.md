@@ -20,4 +20,11 @@ Rust では、ネットワーク接続するための機能が、標準ライブ
 
 - [std::net](https://doc.rust-lang.org/std/net/)
 
+この `std::net` が提供するものの中に、文字通り TCP をリッスンするための機能を実装した Struct `TcpListner` があります。
+
+- [TcpListner](https://doc.rust-lang.org/std/net/struct.TcpListener.html)
+
+この TcpListner により、TCP ソケットサーバとして接続を待機します。
+まず、TcpListener をソケットアドレスにバインドして作成した後に、TCP 接続の着信を待ち受けます。この接続は、`accept` を呼び出すか、`incoming` が返すイテレータを反復することで受け入れることができます。そして、この作成した TCP ソケットは、値が削除されるとクローズされます。
+
 ## Day 35 のまとめ
