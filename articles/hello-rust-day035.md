@@ -33,6 +33,18 @@ Rust では、ネットワーク接続するための機能が、標準ライブ
 let listner = TcpListener::bind("127.0.0.1:8080").unwrap();
 ```
 
+ところで、この `bind` メソッドは `Result<T, Error>` を返しています。つまり、エラーが発生することがあることを表しています。ここでのエラーは、ほとんどの場合は OS の仕様や機能に依存するものになります。たとえば、ポート `80` にで接続する場合、管理者権限が必要になるため（管理者以外の場合は、1024 ポート以上しかリッスンできません）接続は通常うまく行きません。
+
+```rust
+pub fn bind<A: ToSocketAddrs>(addr: A) -> io::Result<TcpListener> {
+    super::each_addr(addr, net_imp::TcpListener::bind).map(TcpListener)
+}
+```
+
+![](https://storage.googleapis.com/zenn-user-upload/2d3668c34499-20220929.png)
+
+
+
 次の `for` ブロックでは、`incoming` メソッドにより接続ストリームを与えるイテレータを生成します。
 
 ```rust
@@ -57,6 +69,7 @@ fn main() {
 ```
 
 :::
+
 
 
 ## Day 35 のまとめ
