@@ -26,7 +26,7 @@ Java と同様に Rust にも Web フレームワークがあります。ただ�
 |名称|公式サイト|GitHubリポジトリ|ドキュメント|
 |---|--------|---------------|----------|
 |actix-web|https://actix.rs/|https://github.com/actix/actix-web|https://docs.rs/actix-web/latest/actix_web/|
-|||||
+|rocket|https://rocket.rs/|https://github.com/SergioBenitez/rocket|https://rocket.rs/v0.5-rc/guide/introduction/|
 |||||
 |||||
 |||||
