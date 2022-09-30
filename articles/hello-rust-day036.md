@@ -27,15 +27,15 @@ Java と同様に Rust にも Web フレームワークがあります。ただ�
 |---|--------|---------------|----------|
 |actix-web|https://actix.rs/|https://github.com/actix/actix-web|https://docs.rs/actix-web/latest/actix_web/|
 |rocket|https://rocket.rs/|https://github.com/SergioBenitez/rocket|https://rocket.rs/v0.5-rc/guide/introduction/|
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
+|warp|-|https://github.com/seanmonstar/warp|https://docs.rs/warp/|
+|gotham|http://gotham.rs/|https://github.com/gotham-rs/gotham/|https://docs.rs/gotham/|
+|Thruster|-|https://github.com/trezm/Thruster|https://docs.rs/thruster|
+|Tide|-|https://github.com/rustasync/tide|https://docs.rs/tide|
+|salvo|-|https://github.com/salvo-rs/salvo|https://docs.rs/salvo/|
+|trillium|https://trillium.rs/|https://github.com/trillium-rs/trillium|https://docs.trillium.rs/|
+|axum|-|https://github.com/tokio-rs/axum|https://docs.rs/axum|
+|Poem|-|https://github.com/poem-web/poem|https://github.com/poem-web/poem/blob/master/poem/README.md|
+|Viz|https://viz.rs/|https://github.com/viz-rs/viz|https://docs.rs/viz/|
 
 
 ## Day 36 のまとめ
