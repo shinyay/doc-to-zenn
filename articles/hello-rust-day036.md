@@ -37,5 +37,19 @@ Java と同様に Rust にも Web フレームワークがあります。ただ�
 |Poem|-|https://github.com/poem-web/poem|https://github.com/poem-web/poem/blob/master/poem/README.md|
 |Viz|https://viz.rs/|https://github.com/viz-rs/viz|https://docs.rs/viz/|
 
+この中から１つだけ今日はためしてみます。
+
+## はじめての Rocket
+
+**[Rocket](https://rocket.rs/)** を試してみようと思います。
+
+### Dependency
+
+**rocket** の最新バージョンは `0.5.0-rc.2` なので、次のように `Cargo.toml` に定義します。
+
+```toml
+[dependencies]
+rocket = "0.5.0-rc.2"
+```
 
 ## Day 36 のまとめ
