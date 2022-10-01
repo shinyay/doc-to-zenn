@@ -94,7 +94,7 @@ rocket = "0.5.0-rc.2"
 など
 
 ```rust
-#[get("/")]　　　　　　　　　　  // <----- ルート
+#[get("/hello")]　　　　　　　　// <----- ルート
 fn index() -> &'static str { //  <----- ハンドラ
     "Hello, Rocket"
 }
@@ -102,16 +102,26 @@ fn index() -> &'static str { //  <----- ハンドラ
 
 ここでは、`#[get]` を用いて GET リクエストを受け取っています。もちろんそれ以外の HTTP メソッドも対応しているので、`#[post]`, `#[put]` なども使用可能です。
 
+### ルートのマウント
+
+リクエストをディスパッチする前に、ルートのマウントを行います。
+`mount` メソッドでは次の処理を行います:
+
+- ベースパスの設定
+  - 次の例では `/` と `/test`
+- ルートとベースパスの関連付けを `routes!` マクロで実施
+  - 次の例では `index` ルートを設定
 
 ```rust
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    rocket::build()
+        .mount("/", routes![index])
+        .mount("/test", routes![index])
 }
 ```
 
 以上で実装は終了です。雰囲気的には、よくある Web フレームワークの実装に似ていますよね。
 
-### 
 
 ## Day 36 のまとめ
