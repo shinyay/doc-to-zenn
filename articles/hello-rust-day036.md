@@ -45,11 +45,45 @@ Java と同様に Rust にも Web フレームワークがあります。ただ�
 
 ### Dependency
 
-**rocket** の最新バージョンは `0.5.0-rc.2` なので、次のように `Cargo.toml` に定義します。
+**rocket** の[最新バージョン](https://crates.io/crates/rocket/versions)は `0.5.0-rc.2` なので、次のように `Cargo.toml` に定義します。
 
 ```toml
 [dependencies]
 rocket = "0.5.0-rc.2"
 ```
+
+![](https://storage.googleapis.com/zenn-user-upload/a548a1ada73b-20221001.png)
+
+### Crate
+
+`rocket` が使えるように次のクレートを宣言しておきます。
+
+```rust
+#[macro_use] extern crate rocket;
+```
+
+### Rocket の動作概要
+
+**Rocket** は、暗いアウトからのリクエストを受け付け、処理を実施した後にクライアントにレスポンスを返す Web フレームワークです。以下のステップをライフサイクルとして動作します。
+
+### アクセスポイント
+
+HTTP GET によるアクセスポイントを次のように定義します。
+
+```rust
+#[get("/")]
+fn index() -> &'static str {
+    "Hello, Rocket"
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build().mount("/", routes![index])
+}
+```
+
+以上で実装は終了です。雰囲気的には、よくある Web フレームワークの実装に似ていますよね。
+
+### 
 
 ## Day 36 のまとめ
