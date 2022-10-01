@@ -11,3 +11,13 @@ fn rocket() -> _ {
         .mount("/", routes![index])
         .mount("/test", routes![index])
 }
+
+// #[rocket::main]
+// async fn main() -> Result<(), rocket::Error> {
+//     let _rocket = rocket::build()
+//         .mount("/", routes![index])
+//         .mount("/test", routes![index])
+//         .launch()
+//         .await?;
+//     Ok(())
+// }
