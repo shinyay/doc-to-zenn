@@ -127,4 +127,34 @@ fn rocket() -> _ {
 
 **Rocket** は起動すると、非同期のマルチスレッドサーバを起動します。そして、リクエストにマッチするルートにディスパッチを行い、リクエスト処理を行います。
 
+起動するには 2 つの方法があります。
+
+- `#[launch]` 属性による起動 (**推奨**)
+- `#[rocket::main]` 属性による起動
+
+#### #[launch]
+
+```rust
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+        .mount("/", routes![index])
+        .mount("/test", routes![index])
+}
+```
+
+#### #[rocket::main]
+
+```rust
+#[rocket::main]
+async fn main() -> Result<(), rocket::Error> {
+    let _rocket = rocket::build()
+        .mount("/", routes![index])
+        .mount("/test", routes![index])
+        .launch()
+        .await?;
+    Ok(())
+}
+```
+
 ## Day 36 のまとめ
