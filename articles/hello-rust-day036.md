@@ -145,6 +145,9 @@ fn rocket() -> _ {
 
 #### #[rocket::main]
 
+`#[rocket::main]` により非同期ランタイムを設定する `main` 関数を生成します
+`launch()` が返す `Future` へのハンドルが欲しいときや、`launch()` の戻り値を検査したいときに `#[rocket::main]` が役に立ちます。
+
 ```rust
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
