@@ -80,3 +80,7 @@ async fn main() -> Result<()> {
 `#[actix_web::main]` を使用して、`main` 関数を非同期で実行します。
 
 ## Day 37 のまとめ
+
+actix-web でシンプルな Hello world なアプリケーションを作ってみました。実質、十数行ほどを書くだけで作れました。この actix-web は HTTP/2 対応や、WebSocket 対応などがあるので、もっと使いこなしな実装を調べてみたいと思います。
+
+ですが、昨日少し触った Rocket 同様に Web フレームワークを使うと、Rust でも簡単に Web アプリケーションが作れるということが分かりました。
