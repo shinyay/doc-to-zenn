@@ -63,6 +63,20 @@ async fn hello() -> impl Responder {}
 ```
 
 次に、`App` インスタンスを作成し、`App::service` を使用してリクエストハンドラを登録します。
+そして、アドレスをバインドして HttpServer の起動を行います。
 
+```rust
+#[actix_web::main]
+async fn main() -> Result<()> {
+    HttpServer::new(|| {
+        App::new()
+            .service(hello)
+    })
+    .bind(("127.0.0.1", 8080))?
+    .run()
+    .await
+```
+
+`#[actix_web::main]` を使用して、`main` 関数を非同期で実行します。
 
 ## Day 37 のまとめ
