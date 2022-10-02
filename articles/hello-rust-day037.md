@@ -43,4 +43,14 @@ actix-web は非同期処理をする　Web サーバの機能をもっている
 
 何はともあれ、動くアプリケーションを作ってみようと思います。
 
+まずは `Cargo.toml` に `actix-web` への依存関係を追加しておきます。
+現在の最新バージョンを確認し追加します。
+
+![](https://storage.googleapis.com/zenn-user-upload/c3eadcb6955f-20221002.png)
+
+```toml
+[dependencies]
+actix-web = "4.2.1"
+```
+
 ## Day 37 のまとめ
