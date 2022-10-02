@@ -11,4 +11,12 @@ published: false
 
 今日も別のフレームワークを使ってみようと思います。
 
+## actix-web
+
+今日使ってみようと思うフレームワークはこちらです。
+
+- [actix-web](https://actix.rs/)
+  - [crates.io](https://crates.io/crates/actix-web)
+
+
 ## Day 37 のまとめ
