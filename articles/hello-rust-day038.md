@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 38]非同�
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 38 のテーマ
 
