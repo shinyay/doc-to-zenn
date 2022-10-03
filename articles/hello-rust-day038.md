@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 38]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 38]非同期処理クレートと Web フレームワーク"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
