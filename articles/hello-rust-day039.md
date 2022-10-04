@@ -15,10 +15,26 @@ published: false
 
 今日はこれらの非同期処理クレートについて確認してみようと思います。
 
+## hyper
+
+- **[hyper](https://hyper.rs/)**
+
+まず最初に **hyper** は実際は非同期処理のクレートではありませんでした。非同期処理ランタイムと組み合わせて動作させる 非同期、Multipart 対応の　HTTP/HTTP2 のクライアント/サーバ用のクレートです。
+
+以下のような特徴です：
+
+✅ Web サービスと対話するためのクライアント
+✅ Web サービスを構築するためのサーバ
+✅ "超"高速
+✅ ノンブロッキング・ソケットによる並行性
+✅ HTTP/1 および HTTP/2 のサポート
+
 ## tokio
+
+- **[tokio](https://tokio.rs/)**
 
 ## async-std
 
-## hyper
+- **[async-std](https://book.async.rs/)**
 
 ## Day 39 のまとめ
