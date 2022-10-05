@@ -3,7 +3,7 @@ use std::net::SocketAddr;
 use hyper::{Body, Request, Response, Server};
 use hyper::service::{make_service_fn, service_fn};
 
-async fn hello_hyper(req: Request<Body>) -> Result<Response<Body>, Infallible> {
+async fn hello_hyper(_req: Request<Body>) -> Result<Response<Body>, Infallible> {
     Ok(Response::new("Hello, hyper".into()))
 }
 
