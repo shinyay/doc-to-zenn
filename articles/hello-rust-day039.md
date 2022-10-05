@@ -31,6 +31,12 @@ published: false
 
 ### 使い方
 
+まず **hyper** のクレートのバージョンを確認します。
+
+- [crates.io](https://crates.io/crates/hyper/versions)
+
+![](https://storage.googleapis.com/zenn-user-upload/413ca7a25887-20221005.png)
+
 ## tokio
 
 - **[tokio](https://tokio.rs/)**
