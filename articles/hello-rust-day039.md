@@ -44,6 +44,13 @@ published: false
 hyper = { version = "0.14.20", features = ["full"] }
 ```
 
+前述したように、**hyper** 自体は非同期処理ランタイムではありません。そのため、ランタイムのクレートの追加が必要になります。以下のように **tokio** を追加します。
+
+```toml
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+```
+
 ## tokio
 
 - **[tokio](https://tokio.rs/)**
