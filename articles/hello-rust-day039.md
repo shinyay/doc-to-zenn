@@ -37,6 +37,13 @@ published: false
 
 ![](https://storage.googleapis.com/zenn-user-upload/413ca7a25887-20221005.png)
 
+'Cargo.toml' に依存関係を追加します。
+
+```toml
+[dependencies]
+hyper = "0.14.20"
+```
+
 ## tokio
 
 - **[tokio](https://tokio.rs/)**
