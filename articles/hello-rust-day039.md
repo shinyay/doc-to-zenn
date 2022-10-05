@@ -41,7 +41,7 @@ published: false
 
 ```toml
 [dependencies]
-hyper = "0.14.20"
+hyper = { version = "0.14.20", features = ["full"] }
 ```
 
 ## tokio
