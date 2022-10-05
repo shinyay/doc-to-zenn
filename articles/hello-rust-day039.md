@@ -37,7 +37,7 @@ published: false
 
 ![](https://storage.googleapis.com/zenn-user-upload/413ca7a25887-20221005.png)
 
-'Cargo.toml' に依存関係を追加します。
+`Cargo.toml` に依存関係を追加します。
 
 ```toml
 [dependencies]
@@ -49,6 +49,35 @@ hyper = { version = "0.14.20", features = ["full"] }
 ```toml
 [dependencies]
 tokio = { version = "1", features = ["full"] }
+```
+
+リクエストの受信とレスポンスの送信のみをする非同期関数 `async` を定義します。
+
+```rust
+async fn hello_hyper(req: Request<Body>) -> Result<Response<Body>, Infallible> {
+    Ok(Response::new("Hello, hyper".into()))
+}
+```
+
+`hyper::Response` で返信内容 `hyper::Body` をクライアントに返します。
+
+次に `tokio` を使ってソケットをリッスンします。
+
+```rust
+#[tokio::main]
+async fn main() {
+    let addr = SocketAddr::from(([127, 0, 0, 1], 8080));
+
+    let make_svc = make_service_fn(|_conn| async {
+        Ok::<_, Infallible>(service_fn(hello_hyper))
+    });
+
+    let server = Server::bind(&addr).serve(make_svc);
+
+    if let Err(e) = server.await {
+        eprintln!("server error: {}", e);
+    }
+}
 ```
 
 ## tokio
