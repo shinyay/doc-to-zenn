@@ -26,5 +26,6 @@ fn main() {
 
     let point = Point(x, y);
 
-    println!("Point X:{}, Y:{}", x, y);
+    println!("Point X:{}, Y:{}", &x, &y);
+    println!("Exist?:{}", point.exist(&x, &y));
 }
