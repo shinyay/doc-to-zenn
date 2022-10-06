@@ -50,12 +50,18 @@ fn printer<T: Display>(t: T) {
 
 ```rust
 // 32 bit の整数型の要素を２つもつ構造体
-struct Pont(i32, i32)
+struct Point(i32, i32)
 ```
 
 - トレイト
 
 ```rust
+// Point の座標があっているかどうかを確認するトレイト
+trait Position<X, Y> {
+    fn exist(&self, _: &X, _: &Y) -> bool;
+    fn h_axis(&self) -> i32;
+    fn v_axis(&self) -> i32;
+}
 ```
 
 ## Day 40 のまとめ
