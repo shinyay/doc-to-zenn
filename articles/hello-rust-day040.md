@@ -38,6 +38,8 @@ fn printer<T: Display>(t: T) {
 
 ## 関連型
 
+### 関連型を使っていない場合
+
 まず最初に次のケースでのジェネリクスの利用について考えてみてください。
 
 - あるトレイトがジェネリック型を用いて定義されている場合
@@ -50,7 +52,7 @@ fn printer<T: Display>(t: T) {
 
 ```rust
 // 32 bit の整数型の要素を２つもつ構造体
-struct Point(i32, i32)
+struct Point(i32, i32);
 ```
 
 - トレイト
@@ -79,9 +81,58 @@ impl Position<i32, i32> for Point {
     }
 
     // y座標を取得
-    fn v_axis(self) -> i32 {
+    fn v_axis(&self) -> i32 {
         self.1
     }
+}
+```
+
+- main 関数
+
+```rust
+fn main() {
+    let x = 5;
+    let y = 10;
+
+    let point = Point(x, y);
+
+    println!("Point X:{}, Y:{}", &x, &y);
+    println!("Exist?:{}", point.exist(&x, &y));
+
+    println!("Point-X:{}", point.v_axis());
+    println!("Point-X:{}", point.h_axis());
+}
+```
+
+ここまでで、一旦動くようになります。
+ですが、次のことを考えてみてください。
+
+トレイト境界として `Position` を制約された引数をもつ関数がある場合はどうなるでしょうか？
+次のように、`X` と `Y` は `Z` に含まれているにも関わらず、`X` と `Y` を 2 回書いています。
+
+```rust
+fn new_point<X, Y, Z>(point: &Z) where Z: Position<X, Y> {...}
+```
+
+冗長なので、できれば 2 回は書きたくないですよね。
+
+こういう場合に関連型を使うと便利になります。
+
+### 関連型を使う場合
+
+関連型を使うと、トレイトの中に **アウトプット型** として書くことにより可読性を向上させることができます。
+
+次のようにトレイトを定義します。
+ポイントとしては、`X` と `Y` を `type` キーワードを使って**トレイト内部で定義**するようにしています
+
+```rust
+trait Position {
+    type X;
+    type Y;
+
+    fn exist(&self, _: &Self::X, _: &Self::Y) -> bool;
+    fn h_axis(&self) -> i32;
+    fn v_axis(&self) -> i32;
 }
 ```
 
