@@ -20,6 +20,10 @@ impl Position<i32, i32> for Point{
     }
 }
 
+fn new_point<X, Y, Z>(point: &Z) where Z: Position<X, Y> {
+    println!("POINT:({},{})", point.v_axis(), point.h_axis())
+}
+
 fn main() {
     let x = 5;
     let y = 10;
@@ -30,5 +34,7 @@ fn main() {
     println!("Exist?:{}", point.exist(&x, &y));
 
     println!("Point-X:{}", point.v_axis());
-    println!("Point-X:{}", point.h_axis());
+    println!("Point-Y:{}", point.h_axis());
+
+    new_point(&point);
 }
