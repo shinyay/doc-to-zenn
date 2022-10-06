@@ -64,5 +64,26 @@ trait Position<X, Y> {
 }
 ```
 
+- 実装
+
+```rust
+impl Position<i32, i32> for Point {
+    // ２つの要素が正しいことを確認
+    fn exist(&self, x: &i32, y: &i32) -> bool {
+        (&self.0 == x) && (&self.1 == y)
+    }
+
+    // x座標を取得
+    fn h_axis(&self) -> i32 {
+        self.0
+    }
+
+    // y座標を取得
+    fn v_axis(self) -> i32 {
+        self.1
+    }
+}
+```
+
 ## Day 40 のまとめ
 
