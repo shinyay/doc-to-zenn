@@ -28,4 +28,7 @@ fn main() {
 
     println!("Point X:{}, Y:{}", &x, &y);
     println!("Exist?:{}", point.exist(&x, &y));
+
+    println!("Point-X:{}", point.v_axis());
+    println!("Point-X:{}", point.h_axis());
 }
