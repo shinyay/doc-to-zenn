@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 41]幽霊型 Phantom Type"
+title: "100日後にRustをちょっと知ってる人になる: [Day 41]幽霊型 (Phantom Type)"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
