@@ -68,4 +68,17 @@ struct PhantomStruct<X, A> {
 
 > `T` を所有する **ように振る舞う** ものをマークするために使用されるゼロサイズのタイプ。
 
+実際には `T` 型の値を格納していないのにも関わらず、`T` 型の値を格納しているように動作するようコンパイラに対して支持をするのが、この `std::marker::PhantomData` です。
+
+`PhantomData` を使用して、次のように構造体を修正します。
+
+```rust
+use std::marker::PhantomData;
+
+struct PhantomStruct<X, A> {
+    value: A,
+    phantom: PhantomData<X>
+}
+```
+
 ## Day 41 のまとめ
