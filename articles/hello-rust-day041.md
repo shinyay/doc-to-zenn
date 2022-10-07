@@ -60,4 +60,12 @@ struct PhantomStruct<X, A> {
 
 当然ながら、`X` の削除あるいは利用、または `PhantomData` を使いなさいとエラーメッセージが出力されています。
 
+以下から、`PhantomData` について見てみたいと思います。
+
+- [Struct std::marker::PhantomData](https://doc.rust-lang.org/std/marker/struct.PhantomData.html)
+
+おもしろい表現の説明がありました:
+
+> `T` を所有する **ように振る舞う** ものをマークするために使用されるゼロサイズのタイプ。
+
 ## Day 41 のまとめ
