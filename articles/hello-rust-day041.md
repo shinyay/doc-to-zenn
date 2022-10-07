@@ -81,4 +81,18 @@ struct PhantomStruct<X, A> {
 }
 ```
 
+これを次のようにインスタンスを作ります。
+
+```rust
+let _phantom1: PhantomStruct<i32, char> = PhantomStruct {
+    value: 'P', 
+    phantom: PhantomData
+};
+
+let _phantom2: PhantomStruct<i64, char> = PhantomStruct {
+    value: 'P', 
+    phantom: PhantomData
+    };
+```
+
 ## Day 41 のまとめ
