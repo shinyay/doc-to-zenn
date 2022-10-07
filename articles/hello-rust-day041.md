@@ -20,6 +20,10 @@ Haskel, Swift, TypeScript, Sacala, Elm など大体次のような内容で説�
 
 > 型パラメータを使用してコンパイル時には影響を与えるが、実行時の挙動には影響を与えない型を用いたデザインパターンの一種
 
+正直良くわからない表現です。
+
+### Rust 以外の言語での幽霊型
+
 - Haskel のケース
 
 ```haskel
@@ -36,8 +40,16 @@ case class Phantom[X, A](a: A)
 
 まだ正直よく分かりません…
 
+### Rust での幽霊型
+
 Rust で実例を見ながら考えたいと思います。
 
 
+
+```rust
+struct PhantomStruct<A, B> {
+    value: A
+}
+```
 
 ## Day 41 のまとめ
