@@ -17,5 +17,5 @@ fn main() {
         phantom: PhantomData
      };
 
-    println!("Hello, world!");
+    println!("_phantom1 == _phantom2: {}", _phantom1 == _phantom2);
 }
