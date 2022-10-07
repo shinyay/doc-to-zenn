@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 40]関連型 associated type"
+title: "100日後にRustをちょっと知ってる人になる: [Day 40]関連型 (associated type)"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
