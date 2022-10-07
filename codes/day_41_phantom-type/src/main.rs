@@ -1,4 +1,4 @@
-struct PhantomStruct<A, B> {
+struct PhantomStruct<X, A> {
     value: A
 }
 
