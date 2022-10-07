@@ -44,12 +44,14 @@ case class Phantom[X, A](a: A)
 
 Rust で実例を見ながら考えたいと思います。
 
-
+Rust でも同様に
 
 ```rust
-struct PhantomStruct<A, B> {
+struct PhantomStruct<X, A> {
     value: A
 }
+
+
 ```
 
 ## Day 41 のまとめ
