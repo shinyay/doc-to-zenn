@@ -172,5 +172,17 @@ fn main() {
 
 - [](https://doc.rust-lang.org/rustc/lints/listing/warn-by-default.html#dead-code)
 
+### deny 属性
+
+`allow` 属性とは逆に、リントチェックの内容を全てエラーとする属性です。
+
+次の例はアンチパターンとして有名なものなので、設定しないで欲しいのですが、問題があればビルドを停止させるために `deny` 属性でリントチェックの `warning` ルールを設定しています、＝。
+
+```rust
+#![deny(warnings)]
+
+// 全て正しいコード
+```
+
 ## Day 42 のまとめ
 
