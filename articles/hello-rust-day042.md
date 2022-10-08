@@ -168,5 +168,9 @@ fn main() {
 }
 ```
 
+`unused_function` 関数は使用されていないので警告が通常なら出力されますが、`#[allow(dead_code)]` によりリントチェック `dead_code` ルールを無視するようにしています。そのため警告が出力されません。
+
+- [](https://doc.rust-lang.org/rustc/lints/listing/warn-by-default.html#dead-code)
+
 ## Day 42 のまとめ
 
