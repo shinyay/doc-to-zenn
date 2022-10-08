@@ -18,6 +18,15 @@ published: false
 #[derive(Debug,PartialEq)]
 ```
 
+これをどこで使っていたかというと、幽霊型を用いていた構造体の宣言時に使っていました。
+
+```rust
+#[derive(Debug,PartialEq)]
+struct PhantomStruct<X, A> {
+    value: A,
+    phantom: PhantomData<X>
+}
+```
 
 ## Day 42 のまとめ
 
