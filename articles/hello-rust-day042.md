@@ -73,7 +73,7 @@ struct PhantomStruct<X, A> {
 
 もちろん、これらのパラメータを複数設定することが可能です。
 
-
+- `#[attribute(value1, value2, value3)]`
 
 ### 属性の用途
 
