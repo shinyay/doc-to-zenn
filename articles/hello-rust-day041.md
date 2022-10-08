@@ -47,6 +47,7 @@ Rust で実例を見ながら考えたいと思います。
 Rust でも同様に使用しない型パラメータの `X` と使用している型の `A` の組み合わせで構造体を定義します。
 
 ```rust
+#[derive(Debug,PartialEq)]
 struct PhantomStruct<X, A> {
     value: A
 }
