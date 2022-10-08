@@ -126,5 +126,21 @@ fn something_for_windows(){
 
 ### derive 属性
 
+`derive` 属性に対応したトレイトの実装を自動的に構造体や列挙型に実装することのできる属性です。
+
+`Debug` を実装する場合:
+
+`Debug`トレイトの `fmt` 関数が自動的に実装されているので、`:?`フォーマット文字列をつかうことができます。
+
+```rust
+#[derive(Debug)]
+struct Point{ x: i32, y: i32, z: i32 }
+
+fn main(){
+    let some_point = Point {x: 10, y: 20, z: 0};
+    println!("Debug: {:?}", some_point);
+}
+```
+
 ## Day 42 のまとめ
 
