@@ -28,5 +28,7 @@ struct PhantomStruct<X, A> {
 }
 ```
 
+これは `derive` という属性を構造体に付与して、`derive` が提供している性質によって `Debug` と `PartialEq` という振る舞いを追加していたのです。
+
 ## Day 42 のまとめ
 
