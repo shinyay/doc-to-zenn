@@ -149,5 +149,24 @@ Debug: Point { x: 10, y: 20, z: 0 }
 [Done] exited with code=0 in _.___ seconds
 ```
 
+### allow 属性
+
+Rust には **Lint チェック**というソースコードの静的解析をしてくれるしくみがあります。
+
+- [リント一覧](https://doc.rust-lang.org/rustc/lints/listing/index.html)
+
+そのチェック対象とされているリント項目を無視するようにするための属性です。
+
+```rust
+fn used_function() {}
+
+#[allow(dead_code)]
+fn unused_function() {}
+
+fn main() {
+    used_function();
+}
+```
+
 ## Day 42 のまとめ
 
