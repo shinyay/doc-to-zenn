@@ -142,5 +142,12 @@ fn main(){
 }
 ```
 
+```shell
+[Running] 
+Debug: Point { x: 10, y: 20, z: 0 }
+
+[Done] exited with code=0 in _.___ seconds
+```
+
 ## Day 42 のまとめ
 
