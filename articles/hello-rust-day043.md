@@ -142,5 +142,18 @@ use crate::Module1::Module2::doSomething;
 use crate::Module1::Module2::doSomething as Something;
 ```
 
+あるモジュール配下のモジュールを全て `use` キーワードで列挙するのは冗長になります。
+
+```rust
+// 冗長な書き方
+use crate::Module1::Module2::doSomething
+use crate::Module1::Module3::doSomethingElse
+```
+
+そこで、`{}` でまとめて記述することが可能です。
+
+```rust
+use crate::Module1::{Module2::doSomething, Module3::doSomethingElse}
+```
 
 ## Day 43 のまとめ
