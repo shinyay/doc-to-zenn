@@ -128,4 +128,19 @@ Java のパッケージと異なるのは、パスの指定方法に次の 2 種
 crate::Module1::Module2::doSomething
 ```
 
+### モジュールの使い方
+
+`use` キーワードを使用して、パスを指定することでモジュールを使うことができます。
+
+```rust
+use crate::Module1::Module2::doSomething;
+```
+
+また、`as` キーワードをつけることで別名を指定することが可能です。
+
+```rust
+use crate::Module1::Module2::doSomething as Something;
+```
+
+
 ## Day 43 のまとめ
