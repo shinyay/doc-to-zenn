@@ -78,4 +78,19 @@ mod Module1 {
 }
 ```
 
+また、この上記の定義だと同じモジュール内に対してのみ後悔されている状態になっています。
+そのため、外部にもモジュールを公開するためには、`pub` キーワードを使用します。
+
+```rust
+pub mod Module1 {
+    pub mod Module2 {
+        fn doSomething()
+    }
+
+    pub mod Module3 {
+        fn doSomethingElse()
+        fn doNothing()
+    }
+}
+
 ## Day 43 のまとめ
