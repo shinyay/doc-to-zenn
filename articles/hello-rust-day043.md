@@ -157,3 +157,6 @@ use crate::Module1::{Module2::doSomething, Module3::doSomethingElse}
 ```
 
 ## Day 43 のまとめ
+
+モジュールシステムは Rust でプログラムを書いていく上での構造上の基本になるものです。
+今更感がありますが、簡単に振り返ってみました。
