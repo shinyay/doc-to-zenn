@@ -37,7 +37,7 @@ Crate という単語は木枠という意味の単語で、Rust では**ソー�
 #### 実行バイナリクレート
 
 実行バイナリクレートは、**エントリポイント (main 関数)** を持つクレートです。
-`cargo` コマンドで作成したパッケージ内につくられる `main.rs` が**クレート**になり、**モジュールの基点** になるので**クレートルート**とも呼びます。
+`cargo` コマンドで作成したパッケージ内につくられる `main.rs` が**クレート**になり、**モジュールの起点** になるので**クレートルート**とも呼びます。
 
 ```shell
 modules/
@@ -84,13 +84,48 @@ mod Module1 {
 ```rust
 pub mod Module1 {
     pub mod Module2 {
-        fn doSomething()
+        pub fn doSomething()
     }
 
     pub mod Module3 {
-        fn doSomethingElse()
-        fn doNothing()
+        pub fn doSomethingElse()
+        pub fn doNothing()
     }
 }
+```
+
+### パス
+
+この公開しているモジュールを使用するために、**パス** を考慮する必要があります。パスは、Java でいうところのパッケージに似ているようなものだと思えばいいと思います。
+
+Rust のモジュールの場合、パスの起点となっているのがクレートルートになります。クレートルート名は `cargo new` で作成したパッケージ名か、あるいは `crate` とすることでルートを表しています。
+
+先程のモジュールの例だと次のような階層になります。
+
+```shell
+crare
+└── Module1
+    ├── Module2
+    │   └── doSomething
+    └── Module3
+        ├── doSomethingElse
+        └── doNothing
+```
+
+Java のパッケージと異なるのは、パスの指定方法に次の 2 種類あるところです。
+
+- 絶対パス
+  - クレートルートから指定
+- 相対パス
+  - `self` (現在のモジュール) あるいは `super` (親のモジュール) を使い相対的に指定
+
+パスの区切り文字には、`::` を使用します。
+
+`doSomething` を指定する場合は次のようになります。
+
+```rust
+// 絶対パス指定
+crate::Module1::Module2::doSomething
+```
 
 ## Day 43 のまとめ
