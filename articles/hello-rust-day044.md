@@ -30,4 +30,14 @@ struct Employee {
 }
 ```
 
+構造体のインスタンスは、構造体の各フィールドを `キー:値` という形式で束縛して生成します。
+
+```rust
+let emp = Employee {
+    username: String::from("yanashin18618"),
+    email: String::from("yanashin@email.com"),
+    employee_no = 1,
+};
+```
+
 ## Day 44 のまとめ
