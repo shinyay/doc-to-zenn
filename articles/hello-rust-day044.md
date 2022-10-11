@@ -27,6 +27,7 @@ struct Employee {
     username: String,
     email: String,
     employee_no: u32,
+    role: String,
 }
 ```
 
@@ -37,21 +38,54 @@ let emp = Employee {
     username: String::from("yanashin18618"),
     email: String::from("yanashin@email.com"),
     employee_no = 1,
+    role: String::from("Engineer"),
 };
 ```
 
 また、Java のコンストラクタのように構造体を返す関数を定義することも可能です。
 
 ```rust
-fn create_employee(username: &String, email: &String, employee_no: u32) -> Employee {
+fn create_employee(username: &String, email: &String, employee_no: u32, role: &String) -> Employee {
     Employee {
         username = username.to_string(),
         email = email.to_string(),
         employee_no = employee_no,
+        role = role.to_string(),
     }
 }
 ```
 
-関数の仮引数名とフィールド名が同じでも問題はありません。
+関数の仮引数名とフィールド名が同じでも問題はありません。しかし、同じものを 2 回も記述するのは冗長です。Rust では、このような場合は省略ができるようになっています。
+
+```rust
+fn create_employee(username: &String, email: &String, employee_no: u32) -> Employee {
+    Employee {
+        username = username.to_string(),
+        email = email.to_string(),
+        employee_no, // フィールド名だけでよい
+        role = role.to_string(),
+    }
+}
+```
+
+また、フィールドの省略に関しては他のインスタンスを参照するという省略方法もあります。
+
+```rust
+let emp1 = Employee {
+    username: String::from("yanashin18618"),
+    email: String::from("yanashin@email.com"),
+    employee_no = 1,
+    role: String::from("Engineer"),
+};
+
+let emp2 = Employee {
+    username: String::from("shinyay"),
+    email: String::from("shinyay@email.com"),
+    employee_no = 2,
+    ..emp1
+};
+```
+
+`..` に続けてインスタンス名を記述します。emp2 の中で未定義な Employee フィールドを emp1 から参照してとりこむ記述方法です。
 
 ## Day 44 のまとめ
