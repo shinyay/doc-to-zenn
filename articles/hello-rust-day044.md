@@ -22,4 +22,12 @@ published: false
 **構造体** そのものは、C/C++ 言語にもあるようにデータ型の要素を集めたものです。
 個々の要素を **フィールド**と呼びます。
 
+```rust
+struct Employee {
+    username: String,
+    email: String,
+    employee_no: u32,
+}
+```
+
 ## Day 44 のまとめ
