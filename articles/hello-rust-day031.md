@@ -57,7 +57,7 @@ https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/main
 
 `impl` ブロックの内部に、`&self`　つまり、呼び出されている構造体インスタンス自身を引数とする場合が**メソッド**、引数としない（つまりインスタンスが存在しない）場合が**関連関数**になります。
 
-ちなみに、impl ブロックの内部で定義する **関連関数**に対し絵t、 impl ブロックの外部で定義されている関数を**自由関数**と呼びます。
+ちなみに、impl ブロックの内部で定義する **関連関数**に対して、 impl ブロックの外部で定義されている関数を**自由関数**と呼びます。
 
 https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_31_functions/src/rectangle.rs
 
