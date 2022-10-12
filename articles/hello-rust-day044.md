@@ -107,4 +107,10 @@ println!("{}.{}.{}.{}", address.0, address.1, address.2, address.3)
 
 ## ユニット構造体
 
+さて、Rust では `()` のことをユニットと呼んでいました。
+
+- [Primitive Type unit](https://doc.rust-lang.org/std/primitive.unit.html)
+
+このユニット構造体は、フィールドを何も持たない構造体のことです。もはや構造体なのか？という気もしますが、トレイトを実装させるようなときに使いそうです。
+
 ## Day 44 のまとめ
