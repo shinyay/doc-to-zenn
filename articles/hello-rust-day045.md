@@ -45,4 +45,28 @@ let your_pet = ANIMAL::CAT;
 let my_pet = ANIMAL::DOG;
 ```
 
+
+## 列挙子へのデータ格納
+
+Rust では **列挙子**に対してデータを持たせて列挙型を構成することが可能です。
+
+```rust
+enum Shape {
+    Line {x1: i32, y1: i32, x2: i32, y2: i32},
+    Circle {x: i32, y: i32, r: i32},
+ }
+```
+
+上記の例を見ると分かるように、`Shape` 列挙型に対して、`Line` 構造体と `Circle` 構造体をそれぞれ列挙子として並べています。
+
+また次のように、タプル構造体として列挙子を追加することも可能です。
+
+```rust
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+```
+
+
 ## Day 45 のまとめ
