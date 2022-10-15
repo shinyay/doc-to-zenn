@@ -55,4 +55,8 @@ impl From<i32> for Number {
 }
 ```
 
+```rust
+let num = Number::from(30);
+```
+
 ## Day 47 のまとめ
