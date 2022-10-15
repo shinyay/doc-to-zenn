@@ -19,7 +19,7 @@ published: false
 - [AsMut](https://doc.rust-lang.org/std/convert/trait.AsMut.html) 安価なMutableからMutableへの変換のためのAsMutトレイトの実装
 - [From](https://doc.rust-lang.org/std/convert/trait.From.html)
 値から値への変換を消費するためのFromトレイトの実装
-現在のクレートの外側の型への値から値への変換を消費するInto traitの実装
+- [Into](https://doc.rust-lang.org/std/convert/trait.Into.html)現在のクレートの外側の型への値から値への変換を消費するInto traitの実装
 
 
 ## Day 47 のまとめ
