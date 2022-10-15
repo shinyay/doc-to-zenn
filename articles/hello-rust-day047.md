@@ -20,5 +20,25 @@ published: false
 - [From](https://doc.rust-lang.org/std/convert/trait.From.html): 値から値への変換
 - [Into](https://doc.rust-lang.org/std/convert/trait.Into.html): 現在のクレートの外側の型への値から値への変換
 
+この中から `From` と `Into` について使い方を確認しておきます。
+
+## From トレイト
+
+`From` トレイトは次の様に定義されています。
+
+```rust
+pub trait From<T> {
+    fn from(T) -> Self;
+}
+```
+
+この `From` トレイトは、ある型に対して、別の方からその型を作る方法定義できるようにするものです。
+
+例えば、`str` に対して `String` を作る場合は次のようになります。
+
+```rust
+let my_str = "my str";
+let my_string = String::from(my_str);
+```
 
 ## Day 47 のまとめ
