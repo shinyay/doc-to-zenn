@@ -78,4 +78,25 @@ pub trait Into<T> {
 }
 ```
 
+この `Into` は、`From` トレイトの逆の関係のトレイトになっています。
+自作の型に `From` トレイトが実装されている場合、`Into` は必要に応じてそれを呼び出します。
+
+```rust
+struct Number {
+    value: i32,
+}
+
+impl From<i32> for Number {
+    fn from(item: i32) -> Self {
+        Number { value: item }
+    }
+}
+```
+
+ここで `Into` を使用すると以下のように定義が行なえます。
+
+```rust
+let num: Number = 30.into();
+```
+
 ## Day 47 のまとめ
