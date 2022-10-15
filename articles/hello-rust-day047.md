@@ -99,4 +99,11 @@ impl From<i32> for Number {
 let num: Number = 30.into();
 ```
 
+つまり、同じ処理を以下の 2 種類で表わせるということになります。
+
+- **From** トレイト
+  - `let num = Number::from(30);`
+- **Into** トレイト
+  - `let num: Number = 30.into();`
+
 ## Day 47 のまとめ
