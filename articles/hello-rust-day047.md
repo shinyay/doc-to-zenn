@@ -41,4 +41,18 @@ let my_str = "my str";
 let my_string = String::from(my_str);
 ```
 
+また、`i32` から自作の `Number` 型 を作る場合は次のようになります。
+
+```rust
+struct Number {
+    value: i32,
+}
+
+impl From<i32> for Number {
+    fn from(item: i32) -> Self {
+        Number { value: item }
+    }
+}
+```
+
 ## Day 47 のまとめ
