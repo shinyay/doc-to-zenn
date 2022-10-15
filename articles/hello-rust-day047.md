@@ -17,6 +17,7 @@ published: false
 
 - [AsRef](https://doc.rust-lang.org/std/convert/trait.AsRef.html)参照から参照への変換を安価に行うための AsRef トレイト部の実装
 - [AsMut](https://doc.rust-lang.org/std/convert/trait.AsMut.html) 安価なMutableからMutableへの変換のためのAsMutトレイトの実装
+- [From](https://doc.rust-lang.org/std/convert/trait.From.html)
 値から値への変換を消費するためのFromトレイトの実装
 現在のクレートの外側の型への値から値への変換を消費するInto traitの実装
 
