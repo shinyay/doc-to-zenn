@@ -59,4 +59,23 @@ impl From<i32> for Number {
 let num = Number::from(30);
 ```
 
+つまり、このような実装ということになります。
+
+```rust
+impl From<変換元> for 変換先 {
+    fn from(from: 変換元) -> 変換先 {
+    }
+}
+```
+
+## Into トレイト
+
+`Into` トレイトは次のように定義されています。
+
+```rust
+pub trait Into<T> {
+    fn into(self) -> T;
+}
+```
+
 ## Day 47 のまとめ
