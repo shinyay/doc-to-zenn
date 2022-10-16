@@ -3,5 +3,5 @@ fn main() {
     let s_string: String = String::from("This is String");
 
     println!("str: {}", s_str);
-    println!("Strint: {}", s_string);
+    println!("String: {}", s_string);
 }
