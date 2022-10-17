@@ -86,12 +86,23 @@ Result 型がどのようなものか見ていきます。
 
 - [Enum std::result::Result](https://doc.rust-lang.org/std/result/enum.Result.html)
 
+次の定義を見てもらうと分かるように、`Result` は、成功（`Ok`）または失敗（`Err`）を表す列挙型です。
+
+- `Ok<T>`: 要素 `T` が見つかった場合
+- `Err<E>`: 要素 `E` とともにエラーが見つかった場合
+
 ```rust
 pub enum Result<T, E> {
     Ok(T),
     Err(E),
 }
 ```
+
+`Result` には多くのメソッドが定義されています。
+
+例えば、次の `unwrap()` メソッドは、`Ok` を返すか、`Err` の場合は `panic` を発生させます。
+
+- [pub fn unwrap(self) -> T](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap)
 
 ## Day 49 のまとめ
 
