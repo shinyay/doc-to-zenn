@@ -61,6 +61,10 @@ Strint: This is String
 
 ここで気をつける必要があるのは、`This is str` を格納するために確保されたメモリ上の場所のため、`This is str` を入れるための大きさしか割り当てられていません。しらがって、この `&str` で定義した文字列に対して文字列の追加など変更ができないのです。
 
+### str 型の実体
+
+Immutable (不変) な `str` 型は、メモリ上のどこかにあるUTF-8のシーケンスです。通常は、そのデータの単なるビューとして**文字列スライス**としてUTF-8データへの参照として扱われます。
+
 ## String 型
 
 次に `String` のリファレンスを見てみようと思います。
@@ -79,9 +83,40 @@ Strint: This is String
 
 ```rust
 let mut s : String = String::from("Hello");
-s += ", Rust";
+s += ", Rust";  //<-- &str 型の文字列を追加
 println!("{}", s);
 ```
 
+`String` 型の文字列に対して、`&str` 型の文字列を追加することが可能です。
+
+一方で `String` 型の文字列を直接加えようとするとエラーになります。
+
+```rust
+let mut s_mut_string1: String = String::from("Hello");
+let mut s_mut_string2: String = String::from(", Rust");
+s_mut_string1 += s_mut_string2;
+```
+
+```shell
+   |     s_mut_string1 += s_mut_string2;
+   |                      ^^^^^^^^^^^^^
+   |                      |
+   |                      expected `&str`, found struct `String`
+   |                      help: consider borrowing here: `&s_mut_string2`
+```
+
+`String` 型同士の文字列を結合させる場合であっても、参照を渡すように `&` をつけて借用しないといけません。
+
+### String 型の実体
+
+動的に `&str` 型の文字列の追加など変更が可能な `String` 型の実体は、`Vec<u8>` です。
+使い所としては、文字列データを所有したり変更したりする必要がある場合に利用します。
+
 ## Day 48 のまとめ
 
+Rust には文字列データとして 2 種類の型があることを見てみました。
+
+- `str` 型
+- `String` 型
+
+一言に文字列の型といっても、一方はプリミティブ型で、もう片方はことなります。さらに使い方やそれに伴う API なども変わってきます。ただ、使い分けの勘所としては、まずは文字列自体の加工を要するかどうかということを念頭に置いて使い分けをするとよいかなと思います。
