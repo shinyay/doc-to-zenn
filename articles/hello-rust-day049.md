@@ -100,9 +100,13 @@ pub enum Result<T, E> {
 
 `Result` には多くのメソッドが定義されています。
 
-例えば、次の `unwrap()` メソッドは、`Ok` を返すか、`Err` の場合は `panic` を発生させます。
+例えば、次の `unwrap()` メソッドは、`Ok` を返すか、`Err` の場合は `panic` を発生させます。ただし、エラーメッセージはデフォルトのものになります。
 
-- [pub fn unwrap(self) -> T](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap)
+- [fn unwrap(self) -> T](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap)
+
+また次の `expect()` メソッドは、`unwrap()` メソッドと異なり指定したエラーメッセージを `panic` 時に出力することができます。
+
+- [fn expect(self, msg: &str) -> T](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect)
 
 ## Day 49 のまとめ
 
