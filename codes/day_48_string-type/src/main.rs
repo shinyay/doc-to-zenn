@@ -9,7 +9,9 @@ fn main() {
     s_mut_str = "This is not immutable str";
     println!("str: {}", s_mut_str);
 
-    let mut s_mut_string: String = String::from("This is mutable String");
+    let mut s_mut_string1: String = String::from("Hello");
+    let mut s_mut_string2: String = String::from(", Rust");
+    s_mut_string1 += s_mut_string2;
 
-    println!("String: {}", s_mut_string);
+    println!("String: {}", s_mut_string1);
 }
