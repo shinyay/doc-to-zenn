@@ -61,6 +61,14 @@ Strint: This is String
 
 ここで気をつける必要があるのは、`This is str` を格納するために確保されたメモリ上の場所のため、`This is str` を入れるための大きさしか割り当てられていません。しらがって、この `&str` で定義した文字列に対して Concat など変更ができないのです。
 
+## String 型
+
+次に `String` のリファレンスを見てみようと思います。
+
+- [Struct alloc::string::String](https://doc.rust-lang.org/beta/alloc/string/struct.String.html)
+  - [Module alloc::string](https://doc.rust-lang.org/alloc/string/index.html)
+
+この `String` 型は `str` 型と異なりプリミティブ型ではありません。
 
 
 
