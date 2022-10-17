@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    println!("処理してます - 1");
+    panic!("Panicしました！");
+    println!("処理してます - 2");
 }
