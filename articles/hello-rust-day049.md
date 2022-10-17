@@ -77,6 +77,21 @@ fn main() {
   - など
 
 このようにエラーが発生しても、プログラムの考慮次第で処理を継続することができるようなものです。
+そのため、ある関数のある場所でエラーが発生したら、その**エラーが発生した関数を呼び出した元に知らせる仕組み**が必要になります。
+それが、**Result** 型です。
+
+### Result 型
+
+Result 型がどのようなものか見ていきます。
+
+- [Enum std::result::Result](https://doc.rust-lang.org/std/result/enum.Result.html)
+
+```rust
+pub enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
 
 ## Day 49 のまとめ
 
