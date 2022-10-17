@@ -43,6 +43,30 @@ Rust には**例外が存在しません**。Rust にはエラーしか存在し
 
 強制終了する場合に何も形跡を残さずに終了してしまうと、何が原因か、どこで異常終了したのかを追跡できなくなります。そこで、メッセージを表示してプログラムを強制終了させるシンプルな手段なが `panic!` マクロです。
 
+以下のように `panic!` マクロを使ってみます。
+
+```rust
+fn main() {
+    println!("処理してます - 1");
+    panic!("Panicしました！");
+    println!("処理してます - 2");
+}
+```
+
+いかのエラーメッセージを見てもらうと分かりますが、`panic!` マクロが呼ばれた時点で処理は強制終了されています。
+そのため、`panic!` の直後にある `println!("処理してます - 2");` は到達不能となっています。
+
+```rust
+  |
+3 |     panic!("Panicしました！");
+  |     ------------------------- any code following this expression is unreachable
+4 |     println!("処理してます - 2");
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unreachable statement
+  |
+  = note: `#[warn(unreachable_code)]` on by default
+  = note: this warning originates in the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+```
+
 ## 回復可能なエラー
 
 回復可能なエラーとは、いろいろなところでも例として挙げられていますが、既存のファイルを開こうとした時にファイルが存在しなかったような場合です。ここで、なぜ回復可能かと言うと次のような手段が考えられるからです。
