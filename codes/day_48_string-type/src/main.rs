@@ -11,6 +11,5 @@ fn main() {
 
     let mut s_mut_string: String = String::from("This is mutable String");
 
-
     println!("String: {}", s_mut_string);
 }
