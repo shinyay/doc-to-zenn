@@ -64,4 +64,29 @@ Options:
 
 ## はじめての Rust ワーカー
 
+**Wasm Worker Server** だけがあっても仕方がないので、ワーカーを作ってみたいと思います。
+ただ、今日はチュートリアルに従って作り方を見ていこうと思います。
+
+### Dependencies
+
+以下の 2 つを追加しています。
+
+- [anyhow](https://docs.rs/anyhow/latest/anyhow/)
+- [wasm-workers-rs](https://github.com/vmware-labs/wasm-workers-server)
+
+```toml
+[dependencies]
+anyhow = "1.0.65"
+wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" }
+```
+
+#### anyhow
+
+`anyhow` は [Day 49](https://zenn.dev/shinyay/articles/hello-rust-day049) で扱った**エラー処理**を使いやすくするためのクレートです。`anyhow::Error` を使うことでエラー処理を簡単に扱えるようになります。
+
+- [anyhow(https://crates.io/crates/anyhow)
+
+今日は、`anyhow` の使い方ではなく、ワーカーを作ることをまず第一にしたいので内容はスキップします。
+ただ、この `anyhow` はエラー処理を行う際のデファクトなクレートとも言われているので、改めて使い方は確認しておきたいと思います。
+
 ## Day 50 のまとめ
