@@ -108,5 +108,9 @@ pub enum Result<T, E> {
 
 - [fn expect(self, msg: &str) -> T](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect)
 
+そして次の `expect_err()` メソッドは、`expect()` の逆で `Err` を返す、つまり意図的に `panic` を発生させたりするような時に用いられます。
+
+- [fn expect_err(self, msg: &str) -> E](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect_err)
+
 ## Day 49 のまとめ
 
