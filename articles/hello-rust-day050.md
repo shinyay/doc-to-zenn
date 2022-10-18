@@ -176,4 +176,19 @@ Wasm イメージを以下の `cargo` コマンドでコンパイルします。
 cargo build --target wasm32-wasi --release
 ```
 
+コンパイルが終了すると、`target/wasm32-wasi/release/` ディレクトリの配下に Wasm イメージが出力されています。
+
+```shell
+ls -l target/wasm32-wasi/release/
+```
+
+```shell
+drwxr-xr-x   5 yanagiharas  staff      160 Oct 18 19:22 build/
+-rw-r--r--   1 yanagiharas  staff      198 Oct 18 19:23 day_50_wasm-worker.d
+-rwxr-xr-x   1 yanagiharas  staff  2205795 Oct 18 19:23 day_50_wasm-worker.wasm*
+drwxr-xr-x  31 yanagiharas  staff      992 Oct 18 19:23 deps/
+drwxr-xr-x   2 yanagiharas  staff       64 Oct 18 19:22 examples/
+drwxr-xr-x   2 yanagiharas  staff       64 Oct 18 19:22 incremental/
+```
+
 ## Day 50 のまとめ
