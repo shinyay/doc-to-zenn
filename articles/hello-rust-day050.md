@@ -191,4 +191,29 @@ drwxr-xr-x   2 yanagiharas  staff       64 Oct 18 19:22 examples/
 drwxr-xr-x   2 yanagiharas  staff       64 Oct 18 19:22 incremental/
 ```
 
+### Wasm Workers Server の起動
+
+生成された Wasm イメージのディレクトリまで移動し、**Wasm Workers Server** を起動します。
+
+```shell
+ cd target/wasm32-wasi/release
+ wws .
+```
+
+起動すると、アクセスルートが表示されます。
+
+```shell
+⚙️  Loading routes from: .
+🗺  Detected routes:
+    - http://127.0.0.1:8080/day_50_wasm-worker
+      => day_50_wasm-worker.wasm (handler: default)
+    - http://127.0.0.1:8080/deps/day_50_wasm_worker-1adae05cbf212286
+      => deps/day_50_wasm_worker-1adae05cbf212286.wasm (handler: default)
+🚀 Start serving requests at http://127.0.0.1:8080
+```
+
+`http://127.0.0.1:8080/day_50_wasm-worker` にアクセスすると以下の画面が表示されます。
+
+![](https://storage.googleapis.com/zenn-user-upload/3e1babccba3d-20221018.png)
+
 ## Day 50 のまとめ
