@@ -33,5 +33,12 @@ published: false
 - 🛠 容易なテスト: ワーカー毎に個別にテスト可能
 - 🚀 容易なデプロイ: シンプルなコマンド 1 つでデプロイ可能
 
+## Wasm Workers Server の始め方
+
+以下ののようにシェルを実行し、**Wasm Workers Server** (`wws`) をインストールします。
+
+```shell
+curl https://raw.githubusercontent.com/vmware-labs/wasm-workers-server/main/install.sh | bash
+```
 
 ## Day 50 のまとめ
