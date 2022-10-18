@@ -161,5 +161,17 @@ fn reply(req: Request<String>) -> Result<Response<String>> {
 }
 ```
 
+### Wasm のコンパイル
+
+もし、環境に **WASI** (`wasm32-wasi`) がインストールされていなければ、次の `rustup` コマンドでインストールします。
+([参考: Day 20 - Rust で Wasm](https://zenn.dev/shinyay/articles/hello-rust-day020))
+
+```shell
+rustup target add wasm32-wasi
+```
+
+```shell
+cargo build --target wasm32-wasi --release
+```
 
 ## Day 50 のまとめ
