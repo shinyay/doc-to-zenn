@@ -140,4 +140,26 @@ wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" 
 
 - [参考: Git リポジトリからの依存性の指定](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories)
 
+### reply 関数
+
+次に全てのワーカーに必要となる、**Request<String> 構造体を受け取り、Response<String> を返す**処理を定義します。
+以下のように `reply` 関数として定義を行います。
+
+```rust
+use anyhow::Result;
+use wasm_workers_rs::{
+    handler,
+    http::{self, Request, Response},
+};
+
+#[handler]
+fn reply(req: Request<String>) -> Result<Response<String>> {
+    Ok(http::Response::builder()
+        .status(200)
+        .header("x-generated-by", "wasm-workers-server")
+        .body(String::from("Hello wasm!").into())?)
+}
+```
+
+
 ## Day 50 のまとめ
