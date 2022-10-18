@@ -138,4 +138,6 @@ exclude = [
 なお、`Cargo.toml` では、以下のような書式により依存関係で **GitHub リポジトリ**を指定する事が可能になっています。
 wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" }
 
+- [参考: Git リポジトリからの依存性の指定](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories)
+
 ## Day 50 のまとめ
