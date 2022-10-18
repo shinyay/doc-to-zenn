@@ -217,3 +217,7 @@ drwxr-xr-x   2 yanagiharas  staff       64 Oct 18 19:22 incremental/
 ![](https://storage.googleapis.com/zenn-user-upload/3e1babccba3d-20221018.png)
 
 ## Day 50 のまとめ
+
+今日は、ぼくが Rust を学び始めたモチベーションの **WebAssembly** について見てみました。
+ちょうど、VMware Wasm Labs が今日 **Wasm Workers Server** を公開したので実際に触りながらまとめてみました。
+WebAssembly による Cloud Native Application の未来を少し感じることができたかなと思います。
