@@ -14,6 +14,12 @@ published: false
 
 ### Wasm Worker Server
 
+まず最初に、この **Wasm Worker Server** が何かを説明します。
+一言で言い表すならば、サーバーレスの仕組みを提供するプロジェクトです。ただし、サーバーレスとして動作させる対象のワークロードは、**ワーカー (Worker)** と呼ばれる軽量な構成で組み上げられたものになります。
+
+そして、この**Wasm Worker Server**自体は自己完結型のバイナリとして実装されています。
+これが単独で、ワーカーをホストしている WebAssembly ランタイムに対して HTTP リクエストをルーティングをします。
+
 - [GitHub Repository](https://github.com/vmware-labs/wasm-workers-server)
 
 ## Day 50 のまとめ
