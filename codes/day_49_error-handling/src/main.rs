@@ -1,7 +1,8 @@
 fn main() {
     // call_panic();
     // call_unwrap();
-    call_expect();
+    // call_expect();
+    call_expect_err();
 }
 
 fn call_panic() {
@@ -28,4 +29,9 @@ fn call_expect() {
     // ERROR
     let path = std::env::var("IMPORTANT_PATH")
 .expect("env variable `IMPORTANT_PATH` should be set by `wrapper_script.sh`");
+}
+
+fn call_expect_err() {
+    let x: Result<u32, &str> = Ok(10);
+    x.expect_err("Testing expect_err");
 }
