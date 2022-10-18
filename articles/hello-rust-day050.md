@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 50]Wasm Wo
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly,wasm]
-published: true
+published: false
 ---
 ## Day 50 のテーマ
 
