@@ -89,4 +89,53 @@ wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" 
 今日は、`anyhow` の使い方ではなく、ワーカーを作ることをまず第一にしたいので内容はスキップします。
 ただ、この `anyhow` はエラー処理を行う際のデファクトなクレートとも言われているので、改めて使い方は確認しておきたいと思います。
 
+#### wasm-workers-rs
+
+`wasm-workers-rs` は GitHub リポジトリを参照しています。参照先の `https://github.com/vmware-labs/wasm-workers-server/` の直下に配備されている `Cargo.toml` を取得しています。
+
+`wasm-workers-server` のバージョン `0.5.0` では、以下のような依存関係が定義されています。
+
+```toml
+[package]
+name = "wasm-workers-server"
+version = "0.5.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "wws"
+path = "src/main.rs"
+
+[dependencies]
+wasmtime = "1.0.1"
+wasmtime-wasi = "1.0.1"
+anyhow = "1.0.63"
+wasi-common = "1.0.1"
+actix-web = "4"
+env_logger = "0.9.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.85"
+glob = "0.3.0"
+toml = "0.5.9"
+clap = { version = "4.0.10", features = ["derive"] }
+
+[workspace]
+members = [
+  "kits/rust",
+  "kits/rust/handler",
+  "kits/javascript"
+]
+# Exclude examples
+exclude = [
+  "examples/rust-basic",
+  "examples/rust-kv"
+]
+```
+
+`wasmtime` や `wasi-common` などの WebAssembly ランタイムが含まれていることが確認できます。また、Web フレームワークの `actix-web` も含まれています。
+
+なお、`Cargo.toml` では、以下のような書式により依存関係で **GitHub リポジトリ**を指定する事が可能になっています。
+wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" }
+
 ## Day 50 のまとめ
