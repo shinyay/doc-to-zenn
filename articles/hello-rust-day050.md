@@ -170,6 +170,8 @@ fn reply(req: Request<String>) -> Result<Response<String>> {
 rustup target add wasm32-wasi
 ```
 
+Wasm イメージを以下の `cargo` コマンドでコンパイルします。
+
 ```shell
 cargo build --target wasm32-wasi --release
 ```
