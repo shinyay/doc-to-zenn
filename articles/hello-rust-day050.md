@@ -60,4 +60,8 @@ Options:
   -V, --version          Print version information
 ```
 
+ヘルプを見ると非常に簡単なことが分かると思います。`wws <対象のワーカー>` これだけで起動します。
+
+## はじめての Rust ワーカー
+
 ## Day 50 のまとめ
