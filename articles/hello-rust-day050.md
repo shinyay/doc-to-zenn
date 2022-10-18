@@ -41,4 +41,23 @@ published: false
 curl https://raw.githubusercontent.com/vmware-labs/wasm-workers-server/main/install.sh | bash
 ```
 
+正常にインストールできると、以下のようにヘルプを実行して使い方を確認してみましょう。
+
+```shell
+wws --help
+```
+
+```shell
+Usage: wws [OPTIONS] [PATH]
+
+Arguments:
+  [PATH]  Folder to read WebAssembly modules from [default: .]
+
+Options:
+      --host <HOSTNAME>  Hostname to initiate the server [default: 127.0.0.1]
+  -p, --port <PORT>      Port to initiate the server [default: 8080]
+  -h, --help             Print help information
+  -V, --version          Print version information
+```
+
 ## Day 50 のまとめ
