@@ -120,7 +120,7 @@ pub fn handler(attr: TokenStream, item: TokenStream) -> TokenStream {
 
 そしてレスポンスを構成している箇所は、`http::response::Builder` による定石通りです。
 
-- レスポンスに対する **HTTP ステータス** 
+- レスポンスに対する **HTTP ステータス**
 - **ヘッダー**
 - レスポンスメッセージの本体となる**ボディ**
 
@@ -130,3 +130,4 @@ pub fn handler(attr: TokenStream, item: TokenStream) -> TokenStream {
 
 ## Day 51 のまとめ
 
+Day 50 でもハンドラの実装と実行を行いましたが、ハンドラモジュール自体にはサーバーエンジンを含まず関数だけでした。まさに WebAssembly によるサーバーレスアプリケーション、Function as a Service 的な動作の充実を期待したくなるものでした。
