@@ -78,5 +78,55 @@ pub fn handler(attr: TokenStream, item: TokenStream) -> TokenStream {
 手続き型マクロを定義する関数になっていることが当然ですが分かります。`TokenStream` を入力として受け取って、`TokenStream` を出力として生成しています。`TokenStream` 型は Rust に内蔵されている `proc_macro` クレートで定義されていて、トークンの列を表すのものでした。
 
 - [Struct proc_macro::TokenStream](https://doc.rust-lang.org/beta/proc_macro/struct.TokenStream.html)
+- [Macros](https://doc.rust-lang.org/book/ch19-06-macros.html)
+
+そして、`expand_macro()` は次のようになっています。
+
+```rust
+    let main_fn = quote! {
+        use wasm_workers_rs::io::{Input, Output};
+        use std::io::stdin;
+
+        fn main() {
+            let input = Input::new(stdin());
+            let error = Output::new(
+                "There was an error running the handler",
+                500,
+                None,
+                None
+            ).to_json().unwrap();
+
+            if let Ok(input) = input {
+                let mut cache = input.cache_data();
+
+                if let Ok(response) = #func_call {
+                    match Output::from_response(response, cache).to_json() {
+                        Ok(res) => println!("{}", res),
+                        Err(_) => println!("{}", error)
+                    }
+                } else {
+                    println!("{}", error)
+                }
+            } else {
+                println!("{}", error)
+            }
+        }
+
+        #handler_fn
+    };
+```
+
+まさに、ハンドラの動作の仕方のところで説明したように、データの送受信が `STDIN` と `STDOUT` が仕様されていることが分かります。
+
+そしてレスポンスを構成している箇所は、`http::response::Builder` による定石通りです。
+
+- レスポンスに対する **HTTP ステータス** 
+- **ヘッダー**
+- レスポンスメッセージの本体となる**ボディ**
+
+それ以外のことも `Builder` が提供するメソッドを通じて実装することも可能です。
+
+- [Struct http::response::Builder](https://docs.rs/http/0.2.8/http/response/struct.Builder.html)
 
 ## Day 51 のまとめ
+
