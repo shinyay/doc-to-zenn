@@ -48,4 +48,35 @@ published: false
 - 5️⃣ モジュールのコンパイルと初期化
 - 6️⃣ リクエスト処理の開始のための HTTP サーバーの待機
 
+## サンプルワーカーの復習
+
+昨日作成したサンプルのワーカーは受け付けたリクエストに対してレスポンスを返すのみの非常にシンプルなものでした。
+
+```rust
+#[handler]
+fn reply(req: Request<String>) -> Result<Response<String>> {
+    Ok(http::Response::builder()
+    .status(200)
+    .header("x-generated-by", "wasm-workers-server")
+    .body(String::from("Hello Wasm!").into())?)
+}
+```
+
+とはいえ、中身を少しみてみようと思います。
+
+`fn reply()` 関数に対して `handler` マクロを設定しています。
+
+この `handler` マクロは次のように定義されているものです:
+
+```rust
+#[proc_macro_attribute]
+pub fn handler(attr: TokenStream, item: TokenStream) -> TokenStream {
+    expand::expand_macro(attr, item)
+}
+```
+
+手続き型マクロを定義する関数になっていることが当然ですが分かります。`TokenStream` を入力として受け取って、`TokenStream` を出力として生成しています。`TokenStream` 型は Rust に内蔵されている `proc_macro` クレートで定義されていて、トークンの列を表すのものでした。
+
+- [Struct proc_macro::TokenStream](https://doc.rust-lang.org/beta/proc_macro/struct.TokenStream.html)
+
 ## Day 51 のまとめ
