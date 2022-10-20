@@ -11,4 +11,15 @@ published: false
 
 チュートリアルの中でも動かし方を中心に追いかけるように環境を準備し、ワーカーを作成して動作を確認したのみだったので、もう少しどのように動くかを見てみようと思います。
 
+## Wasm Workers Server に関する復習
+
+**[Wasm Worker Server](https://github.com/vmware-labs/wasm-workers-server)** は、WebAessembly を用いてアプリケーションを動作させるための HTTP サーバーでした。
+この動作させるアプリケーションのことは、ワーカー (Worker) と呼ばれ、一般的には Edge などで動作させたりするような軽量なアプリケーション仕様です。
+
+- [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+
+## Wasm Workers Server の動作
+
+
+
 ## Day 51 のまとめ
