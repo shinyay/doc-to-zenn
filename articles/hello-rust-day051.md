@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 51]Wasm Worker Server の動作"
+title: "100日後にRustをちょっと知ってる人になる: [Day 51]Wasm Workers Server の動作"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly,wasm]
