@@ -18,6 +18,8 @@ published: false
 
 - [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 
+このアプリケーションは、**ハンドラ** と呼ばれるモジュールを作成し、単一あるいは複数のハンドラを組み合わせて構成します。これらのハンドラは、それぞれアプリケーション内部で特定の HTTP パスに対してレスポンスする役割をもっています。
+
 ## Wasm Workers Server の動作
 
 
