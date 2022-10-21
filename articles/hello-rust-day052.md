@@ -82,5 +82,22 @@ pub type Cache = HashMap<String, String>;
 ```
 
 文字通り、`HashMap` データ構造を提供しているものでした。
- 
+
+### キー/バリューストアを用いたレスポンス
+
+キー/バリューストアを用いてカウントアップを行います。
+まず、`hashmap` のキーとして、**counter** という文字列を使うことにします。
+
+```rust
+let count = cache.get("counter");
+```
+
+
+```rust
+let count_num = match count {
+    Some(count_str) => count_str.parse::<u32>().unwrap_or(0),
+    None => 0,
+};
+```
+
 ## Day 52 のまとめ
