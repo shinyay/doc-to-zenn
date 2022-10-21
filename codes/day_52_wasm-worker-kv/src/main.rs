@@ -1,6 +1,7 @@
 use anyhow::Result;
 use wasm_workers_rs::{handler, http::{self, Request, Response, response}, cache::Cache};
 
+#[handler(cache)]
 fn reply(req: Request<String>, cache: &mut Cache) -> Result<Response<String>> {
 
     let count = cache.get("counter");
