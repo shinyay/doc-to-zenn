@@ -56,13 +56,15 @@ fn reply(req: Request<String>, cache: &mut Cache) -> Result<Response<String>> {
 
 Day 50 の時と異なるのは次の 1点です。
 
-今回
+今回:
+
 ```rust
 #[handler]
 fn reply(req: Request<String>)
 ```
 
-前回
+前回:
+
 ```rust
 #[handler(cache)]
 fn reply(req: Request<String>)
