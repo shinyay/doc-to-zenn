@@ -30,6 +30,13 @@ published: false
 
 それでは、キー/バリューストアを用いたワーカーを作成してみようと思います。チュートリアルに即して作るだけなのですけれどね…
 
+### Dependencies
+
+先日の超シンプルなレスポンスをかえすだけのアプリケーションの時と同じく以下を Dependency に追加します。
+
+- `anyhow = "1.0.65"`
+- `wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" }`
+
 
 
 ## Day 52 のまとめ
