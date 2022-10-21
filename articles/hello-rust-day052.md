@@ -92,6 +92,18 @@ pub type Cache = HashMap<String, String>;
 let count = cache.get("counter");
 ```
 
+次に、列挙型な `Option` 型を利用します。`Option` 型は**値が存在しないかもしれない**ときに使用する列挙型です。
+定義は次のようになっています。
+
+```rust
+enum Option<T> {
+    None,
+    Some(T),
+}
+```
+
+`T` 型 (今回の例では `String` 型) が存在するときには、`Some` でラップします。
+一方で値が存在しない場合は、`None` になります。
 
 ```rust
 let count_num = match count {
