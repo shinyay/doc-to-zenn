@@ -178,4 +178,20 @@ drwxr-xr-x   2 yanagiharas  staff       64 Oct 21 13:02 examples/
 drwxr-xr-x   2 yanagiharas  staff       64 Oct 21 13:02 incremental/
 ```
 
+この、`target/wasm32-wasi/release/` ディレクトリの配下に `TOML` ファイルを作成します。
+
+`target/wasm32-wasi/release/day_52_wasm-worker-kv.toml`
+
+```toml
+[package]
+name = "day_52_wasm-worker-kv"
+version = "1"
+
+[data]
+[data.kv]
+namespace = "day_52_wasm-worker-kv"
+```
+
+この `TOML` ファイル名はハンドラファイル名と同じにしておく必要があるようです。
+
 ## Day 52 のまとめ
