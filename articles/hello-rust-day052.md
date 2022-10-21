@@ -122,4 +122,19 @@ let count_num = match count {
 cache.insert("counter".to_string(), (count_num + 1).to_string());
 ```
 
+### Wasm のコンパイル
+
+Wasm イメージを以下の `cargo` コマンドでコンパイルします。
+
+```shell
+cargo build --target wasm32-wasi --release
+```
+
+コンパイルが終了すると、`target/wasm32-wasi/release/` ディレクトリの配下に Wasm イメージが出力されています。
+
+```shell
+ls -l target/wasm32-wasi/release/
+```
+
+
 ## Day 52 のまとめ
