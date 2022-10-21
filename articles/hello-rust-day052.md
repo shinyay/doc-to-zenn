@@ -72,4 +72,15 @@ fn reply(req: Request<String>)
 
 ハンドラマクロのパラメータに `cache` 属性を付けるかどうかです。
 
+#### Cache
+
+Cache を見てみます。
+
+```rust
+use std::collections::HashMap;
+pub type Cache = HashMap<String, String>;
+```
+
+文字通り、`HashMap` データ構造を提供しているものでした。
+ 
 ## Day 52 のまとめ
