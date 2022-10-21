@@ -24,5 +24,5 @@ fn reply(req: Request<String>, cache: &mut Cache) -> Result<Response<String>> {
     Ok(http::Response::builder()
         .status(200)
         .header("x-generated-by", "wasm-workers-server")
-        .body(String::from("Hello Wasm!").into())?)
+        .body(response.into())?)
 }
