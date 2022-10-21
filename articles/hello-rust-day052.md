@@ -112,4 +112,14 @@ let count_num = match count {
 };
 ```
 
+`Some(count_str) => count_str.parse::<u32>().unwrap_or(0)` では、カウント数の文字列を `u32` な数値にパースし、`unwrap` して値を取り出しています。ここで、デフォルト値としては、`0` を与える `unwrap_or()` メソッドが使用されています。
+
+- [`pub fn unwrap_or(self, default: T) -> T`](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or)
+
+取り出した値は、`reply` 関数が呼ばれるたびにカウントアップしています。
+
+```rust
+cache.insert("counter".to_string(), (count_num + 1).to_string());
+```
+
 ## Day 52 のまとめ
