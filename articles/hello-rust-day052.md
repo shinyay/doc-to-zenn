@@ -37,6 +37,37 @@ published: false
 - `anyhow = "1.0.65"`
 - `wasm-workers-rs = { git = "https://github.com/vmware-labs/wasm-workers-server/" }`
 
+### Reply 関数
 
+受け取ったリクエストに対してレスポンスを返すだけの `reply` 関数を定義します。
+
+```rust
+use anyhow::Result;
+use wasm_workers_rs::{handler, http::{self, Request, Response}, cache::Cache};
+
+#[handler(cache)]
+fn reply(req: Request<String>, cache: &mut Cache) -> Result<Response<String>> {
+    Ok(http::Response::builder()
+        .status(200)
+        .header("x-generated-by", "wasm-workers-server")
+        .body(String::from("Hello Wasm!").into())?)
+}
+```
+
+Day 50 の時と異なるのは次の 1点です。
+
+今回
+```rust
+#[handler]
+fn reply(req: Request<String>)
+```
+
+前回
+```rust
+#[handler(cache)]
+fn reply(req: Request<String>)
+```
+
+ハンドラマクロのパラメータに `cache` 属性を付けるかどうかです。
 
 ## Day 52 のまとめ
