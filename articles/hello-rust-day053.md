@@ -1,9 +1,9 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 53]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 53]wasm-workers-server-kit クレート"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly,wasm]
-published: false
+published: true
 ---
 ## Day 53 のテーマ
 
