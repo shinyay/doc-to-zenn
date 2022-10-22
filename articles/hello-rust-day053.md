@@ -61,9 +61,9 @@ exclude = [
 ]
 ```
 
-## Dependencies
+### Dependencies
 
-以下のクレートが **Dependencies** に追加されています。
+以下のクレートが **Dependencies** に追加されていました。
 
 - [wasmtime](https://crates.io/crates/wasmtime/1.0.1)
   - Wasmtimeランタイムを公開する高水準API
@@ -87,5 +87,90 @@ exclude = [
   - TOML 形式のファイルやストリームのネイティブな Rust エンコーダおよびデコーダ
 - [clap_derive](https://crates.io/crates/clap_derive/4.0.18)
   - 構造体を定義してコマンドライン引数を解析しクレートの導出
+
+この **Wasm Workers Server** が **Wasmtime** ベースで作られ動作していることが分かります。
+
+- [Wasmtime](https://docs.wasmtime.dev/)
+
+### ワークスペース
+
+ワークスペースを使用したプロジェクト構成になっていることが分かります。
+
+```toml
+[workspace]
+members = [
+  "kits/rust",
+  "kits/rust/handler",
+  "kits/javascript"
+]
+# Exclude examples
+exclude = [
+  "examples/rust-basic",
+  "examples/rust-kv"
+]
+```
+
+このワークスペースとは、複数のクレートをまとめるときに使用します。
+つまり、ここでは次の３つのクレートをまとめているのです
+
+- `kits/rust`
+
+```toml
+[package]
+name = "wasm-workers-rs"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1.0.63"
+http = "0.2.8"
+handler = { path = "./handler" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.85"
+```
+
+- `kits/rust/handler`
+
+```toml
+[package]
+name = "handler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+proc-macro = true
+path = "src/lib.rs"
+
+[dependencies]
+quote = "1.0.21"
+syn = { version = "1.0.99", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.85"
+http = "0.2.8"
+anyhow = "1.0.63"
+wasi = "0.11.0"
+```
+
+- `kits/javascript`
+
+```toml
+[package]
+name = "wasm-workers-quick-js-engine"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+quickjs-wasm-rs = { version = "0.1.2", features = ["json"] }
+```
+
+このようにクレートを分割することによって、保守性や再利用性が向上するというメリットを得られます。
+また、ビルド時間を短縮するということもできるそうです。
 
 ## Day 53 のまとめ
