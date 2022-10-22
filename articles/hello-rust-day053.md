@@ -15,6 +15,4 @@ WebAssembly を用いたサーバーレスなアプリケーションを動作�
 
 Rust によるハンドラを作成する場合、**[wasm-workers-server-kit](https://github.com/vmware-labs/wasm-workers-server/tree/main/examples#rust-handlers)** クレートを使用する必要があります。今回は、この**wasm-workers-server-kit** について見てみようと思います。
 
-ところで、
-
 ## Day 53 のまとめ
