@@ -61,4 +61,31 @@ exclude = [
 ]
 ```
 
+## Dependencies
+
+以下のクレートが **Dependencies** に追加されています。
+
+- [wasmtime](https://crates.io/crates/wasmtime/1.0.1)
+  - Wasmtimeランタイムを公開する高水準API
+- [wasmtime-wasi](https://crates.io/crates/wasmtime-wasi/1.0.1)
+  - Rust による WASI の実装
+- [wasi-common](https://crates.io/crates/wasi-common/1.0.1)
+  - Rust による WASI の実装
+- [anyhow](https://crates.io/crates/anyhow/1.0.63)
+  - std::error::Error をベースにした柔軟なエラー型
+- [actix-web](https://crates.io/crates/actix-web)
+  - Rust 用のパワフルで実用的、かつ非常に高速な Web フレームワーク
+- [env_logger](https://crates.io/crates/env_logger/0.9.0)
+  - 環境変数によって設定される `log` のロギング実装
+- [serde_derive](https://crates.io/crates/serde_derive/1.0.147)
+  - Macros 1.1による `#[derive(Serialize, Deserialize)]` の実装
+- [serde_json](https://crates.io/crates/serde_json)
+  - JSON シリアライズファイルフォーマット
+- [glob](https://crates.io/crates/glob)
+  - Unix シェル形式のパターンに対するファイルパスのマッチングサポート
+- [toml](https://crates.io/crates/toml)
+  - TOML 形式のファイルやストリームのネイティブな Rust エンコーダおよびデコーダ
+- [clap_derive](https://crates.io/crates/clap_derive/4.0.18)
+  - 構造体を定義してコマンドライン引数を解析しクレートの導出
+
 ## Day 53 のまとめ
