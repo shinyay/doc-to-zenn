@@ -11,3 +11,8 @@ fn print_message(msg: String) -> String {
 fn test_message() {
     assert_eq!("Hello", print_message("Hello".to_string()));
 }
+
+#[test]
+fn test_error_message() {
+    assert_eq!("Hello!", print_message("Hello".to_string()));
+}
