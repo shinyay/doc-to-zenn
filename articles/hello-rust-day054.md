@@ -34,4 +34,12 @@ fn test_message() {
 }
 ```
 
+## テストの実行
+
+`cargo test` コマンドでテストを実行します。
+
+```shell
+cargo test
+```
+
 ## Day 54 のまとめ
