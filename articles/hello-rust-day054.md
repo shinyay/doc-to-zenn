@@ -11,4 +11,27 @@ published: false
 
 今日はすこしその単体テストの仕方を見てみたいと思います。
 
+## テストの書き方
+
+テストの書き方はとてもシンプルです。
+関数の `fn` キーワードの前に `#[test]` を付けるだけです。
+
+テスト対象の関数:
+
+```rust
+fn print_message(msg: String) -> String {
+    println!("{}", msg);
+    msg
+}
+```
+
+テスト関数:
+
+```rust
+#[test]
+fn test_message() {
+    assert_eq!("Hello", print_message("Hello".to_string()));
+}
+```
+
 ## Day 54 のまとめ
