@@ -42,4 +42,15 @@ fn test_message() {
 cargo test
 ```
 
+```shell
+   Compiling day_54_unit-test v0.1.0
+    Finished test [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests src/main.rs
+
+running 1 test
+test test_message ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+
 ## Day 54 のまとめ
