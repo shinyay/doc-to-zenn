@@ -48,9 +48,40 @@ cargo test
      Running unittests src/main.rs
 
 running 1 test
-test test_message ... ok
+test ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+
+特に問題が発生せず正常終了する場合は、上記のように `test ... ok` と表示されます。
+テストが失敗する場合は、以下のように表示されます。
+
+```shell
+running 1 test
+test test_message ... FAILED
+
+failures:
+
+---- test_message stdout ----
+Hello
+thread 'test_message' panicked at 'assertion failed: `(left == right)`
+  left: `"Hello!"`,
+ right: `"Hello"`', src/main.rs:12:5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    test_message
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+
+どこで失敗したか、なぜ失敗したかを表示してくれます。
+
+また、特定のテストコードだけを実施したい場合は、テスト関数名を指定して実行できます。
+
+```shell
+cargo test test_message
 ```
 
 ## Day 54 のまとめ
