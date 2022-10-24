@@ -43,6 +43,44 @@ fn should_subtracted_number_when_two_numbers() {
 
 ### テストモジュール #[cfg(test)]
 
+次の注釈が入っているモジュールがテスト専用モジュールになります。
+
+- **#[cfg(test)]**
+
+この `cfg` は[条件付きコンパイル](https://doc.rust-lang.org/reference/conditional-compilation.html#conditional-compilation) で使用する属性です。
+
+- [The cfg attribute](https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute)
+- [cfg](https://doc.rust-lang.org/rust-by-example/attribute/cfg.html)
+
+ここでの条件付きコンパイルは、`cargo build` を実行したときではなく、`cargo test` を実行した時だけにテストコードをコンパイルして実行するようにするものです。
+このように、モジュールを分離しておくことにより通常のビルド時はテストコードが含まれないのでコンパイルに要する時間や、コンパイル後の成果物のサイズも節約する事が可能です。
+
+```rust
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+fn sub(a: i32, b: i32) -> i32 {
+    a - b
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn should_added_number_when_two_numbers() {
+        assert_eq!(9, add(3, 6))
+    }
+
+    #[test]
+    fn should_subtracted_number_when_two_numbers() {
+        assert_eq!(3, sub(6, 3))
+    }
+}
+```
+
+
 <!-- テストファーストような考え方でコーディングを行う場合、テストコードと実アプリケーションコードは別のソースファイルとして分けられている方が効率的です。つまりテスト用のモジュールを作ることができればよいということになります。 -->
 
 ## Day 55 のまとめ
