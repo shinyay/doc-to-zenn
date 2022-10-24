@@ -108,3 +108,36 @@ fn integration_test() {
     assert_eq!(3,day_55_test::sub(day_55_test::add(3, 6), day_55_test::add(2, 4)));
 }
 ```
+
+## テスト用のマクロ
+
+テストに実施するマクロは以下のようなものが提供されています。
+
+|マクロ|説明|
+|-----|----|
+|assert!(x);      |x が ture ならば正常、異なればパニック|
+|assert_eq!(x, y);|x == y ならば正常、異なればパニック|
+|assert_ne!(x, y);|x != y ならば正常、異なればパニック|
+
+### マクロ実装例
+
+テスト対象の関数
+
+```rust
+fn add(x: u32, y: u32) -> u32 {
+    x + y
+}
+```
+
+テストコード例
+
+```rust
+#[test]
+fn test_add() {
+    assert!(add(1, 2) ==  3);       // 正常（ 1 + 2 == 3 -> true ）
+    assert_eq!(add(1, 2), 3);       // 正常（ 1 + 2 == 3 ）
+    assert_ne!(add(1, 2), 4);       // 正常（ 1 + 2 != 4 ）
+    assert_eq!(add(1, 2), 1);       // エラー（ 1 + 2 == 1 ）
+}
+```
+
