@@ -13,5 +13,29 @@ published: false
 
 そこで、今日はもう少しテストの仕方について見てみたいと思います。
 
+## 同一モジュールなテスト
+
+[Day 54](https://zenn.dev/shinyay/articles/hello-rust-day054) 同様に
+
+```rust
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+fn sub(a: i32, b: i32) -> i32 {
+    a - b
+}
+
+#[test]
+fn should_added_number_when_two_numbers() {
+    assert_eq!(9, add(3, 6))
+}
+
+#[test]
+fn should_subtracted_number_when_two_numbers() {
+    assert_eq!(3, sub(6, 3))
+}
+```
+
 
 ## Day 55 のまとめ
