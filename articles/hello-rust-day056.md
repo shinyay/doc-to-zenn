@@ -197,10 +197,49 @@ command = "cargo build --target wasm32-wasi --release"
 
 ### 3. Spin アプリケーションのビルド
 
-次のコマンドでビルドします:
+作成したアプリケーションのディレクトリに異動し、次のコマンドでビルドします:
 
 ```shell
 spin build
+```
+
+```shell
+Executing the build command for component hello-rust: cargo build --target wasm32-wasi --release
+   Compiling version_check v0.9.4
+   Compiling anyhow v1.0.66
+   Compiling memchr v2.5.0
+   Compiling pulldown-cmark v0.8.0
+   Compiling tinyvec_macros v0.1.0
+   Compiling proc-macro2 v1.0.47
+   Compiling bitflags v1.3.2
+   Compiling quote v1.0.21
+   Compiling unicode-xid v0.2.4
+   Compiling id-arena v2.2.1
+   Compiling unicode-ident v1.0.5
+   Compiling syn v1.0.103
+   Compiling unicode-segmentation v1.10.0
+   Compiling wit-bindgen-gen-rust-wasm v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling async-trait v0.1.58
+   Compiling bytes v1.2.1
+   Compiling fnv v1.0.7
+   Compiling itoa v1.0.4
+   Compiling percent-encoding v2.2.0
+   Compiling tinyvec v1.6.0
+   Compiling form_urlencoded v1.1.0
+   Compiling heck v0.3.3
+   Compiling unicase v2.6.0
+   Compiling http v0.2.8
+   Compiling unicode-normalization v0.1.22
+   Compiling wit-parser v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-gen-core v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-gen-rust v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-rust-impl v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-rust v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling spin-macro v0.1.0 (https://github.com/fermyon/spin?tag=v0.6.0#12a50379)
+   Compiling spin-sdk v0.6.0 (https://github.com/fermyon/spin?tag=v0.6.0#12a50379)
+   Compiling hello-rust v0.1.0 (/Users/yanagiharas/Works/docs/doc-to-zenn/codes/day_56_fermyon-cloud/hello-rust)
+    Finished release [optimized] target(s) in 11.43s
+Successfully ran the build command for the Spin components.
 ```
 
 ## Day 56 のまとめ
