@@ -99,7 +99,7 @@ Installed 8 template(s)
 +-----------------------------------------------------------------+
 ```
 
-### 0. Spin プロジェクトの作成
+### 1. Spin プロジェクトの作成
 
 次のコマンドで Spin プロジェクトを作成します。
 
@@ -117,6 +117,90 @@ spin new http-rust hello-rust
 Project description: Sping Getting Started
 HTTP base: /
 HTTP path: /...
+```
+
+### 2. 生成された Rust コード
+
+以下のコードが自動生成されます:
+
+- **lib.rs**
+- **Cargo.toml**
+- **spin.toml**
+
+
+ライブラリクレートのコード(`lib.rs`):
+
+```rust
+use anyhow::Result;
+use spin_sdk::{
+    http::{Request, Response},
+    http_component,
+};
+
+/// A simple Spin HTTP component.
+#[http_component]
+fn hello_rust(req: Request) -> Result<Response> {
+    println!("{:?}", req.headers());
+    Ok(http::Response::builder()
+        .status(200)
+        .header("foo", "bar")
+        .body(Some("Hello, Fermyon".into()))?)
+}
+```
+
+`Cargo.toml`
+
+```toml
+[package]
+name = "hello-rust"
+authors = ["shinyay <shinya.com@gmail.com>"]
+description = "Sping Getting Started"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = [ "cdylib" ]
+
+[dependencies]
+# Useful crate to handle errors.
+anyhow = "1"
+# Crate to simplify working with bytes.
+bytes = "1"
+# General-purpose crate with common HTTP types.
+http = "0.2"
+# The Spin SDK.
+spin-sdk = { git = "https://github.com/fermyon/spin", tag = "v0.6.0" }
+# Crate that generates Rust Wasm bindings from a WebAssembly interface.
+wit-bindgen-rust = { git = "https://github.com/bytecodealliance/wit-bindgen", rev = "cb871cfa1ee460b51eb1d144b175b9aab9c50aba" }
+
+[workspace]
+```
+
+`spin.toml`:
+
+```toml
+spin_version = "1"
+authors = ["shinyay <shinyay@abc.xyz>"]
+description = "Sping Getting Started"
+name = "hello-rust"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-rust"
+source = "target/wasm32-wasi/release/hello_rust.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
+```
+
+### 3. Spin アプリケーションのビルド
+
+次のコマンドでビルドします:
+
+```shell
+spin build
 ```
 
 ## Day 56 のまとめ
