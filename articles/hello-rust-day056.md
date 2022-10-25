@@ -14,7 +14,15 @@ published: false
 
 というわけで、今日は はじめての Fermyon Cloud 、という感じで触ってみたいと思います。
 
+## Fermyon Cloud の前に
 
-### Fermyon Platform
+WebAssembly アプリケーションの実行環境としての **Fermyon Cloud** の前に、本来だったら Fermyon が提供している次のプロジェクトを説明しておく必要があのです。
+
+- ✅ **Spin**
+- ✅ **Fermyon Platform**
+
+今日はそれを一旦スキップして、WebAssembly アプリケーションをビルド＆デプロイして動作する流れを紹介したいと思います。
+
+
 
 ## Day 56 のまとめ
