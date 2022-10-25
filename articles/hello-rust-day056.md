@@ -283,4 +283,19 @@ Available Routes:
   hello-rust: https://hello-rust-abcdefgh.fermyon.app (wildcard)
 ```
 
+### 4. Fermyon Cloud のアプリケーションにアクセス
+
+まず、**Fermyon Cloud** のダッシュボードにアクセスします。
+
+- ダッシュボード
+  - <https://cloud.fermyon.com/>
+
+![](https://storage.googleapis.com/zenn-user-upload/a7debc624e8b-20221025.png)
+
+次に、ダッシュボードから表示されているデプロイしたアプリケーション `hello-rust` をクリックするか、または `spin deploy` の実行時に表示されていた **Available Routes** にアクセスします。
+
+**Hello, Fermyon** と表示されているアプリケーションにアクセスが出来ました。
+
+![](https://storage.googleapis.com/zenn-user-upload/9ca2643f5cb8-20221025.png)
+
 ## Day 56 のまとめ
