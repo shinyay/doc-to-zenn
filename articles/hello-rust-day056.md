@@ -101,7 +101,7 @@ Installed 8 template(s)
 
 ### 1. Spin プロジェクトの作成
 
-次のコマンドで Spin プロジェクトを作成します。
+`spin` CLI を使って次のコマンドで Spin プロジェクトを作成します。
 
 `spin new <テンプレート名> <プロジェクト名>`
 
@@ -197,7 +197,7 @@ command = "cargo build --target wasm32-wasi --release"
 
 ### 3. Spin アプリケーションのビルド
 
-作成したアプリケーションのディレクトリに異動し、次のコマンドでビルドします:
+作成したアプリケーションのディレクトリに異動し、`spin` CLI を使って次のコマンドででビルドします:
 
 ```shell
 spin build
@@ -265,6 +265,22 @@ Waiting for device authorization...
 Waiting for device authorization...
 Waiting for device authorization...
 Device authorized!
+```
+
+### 4. Fermyon Cloud へのデプロイ
+
+`spin` CLI を使って次のコマンドでビルドしたアプリケーションを **Fermyon Cloud** にデプロイします。
+
+```shell
+spin deploy
+```
+
+```shell
+Uploading hello-rust version 0.1.0+r5cc7a066...
+Deploying...
+Waiting for application to become ready........ ready
+Available Routes:
+  hello-rust: https://hello-rust-abcdefgh.fermyon.app (wildcard)
 ```
 
 ## Day 56 のまとめ
