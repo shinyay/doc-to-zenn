@@ -63,4 +63,14 @@ Fermyon は 動作する際につぎのソリューションを使用してい�
 
 ## Fermyon Cloud へのアプリケーションデプロイ
 
+繰り返しますが、**Spin** についての詳細な説明は今回はしませんので、そういうものだと思ってください。
+
+### 0. テンプレートの取得
+
+初めて Spin を使う場合、プロジェクトテンプレートが存在しないので、取得を行います。
+
+```shell
+spin templates install --git https://github.com/fermyon/spin
+```
+
 ## Day 56 のまとめ
