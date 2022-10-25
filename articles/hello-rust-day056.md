@@ -299,3 +299,11 @@ Available Routes:
 ![](https://storage.googleapis.com/zenn-user-upload/9ca2643f5cb8-20221025.png)
 
 ## Day 56 のまとめ
+
+今回は、今日開催された **[Cloud Native Wasm Day](https://events.linuxfoundation.org/cloud-native-wasm-day-north-america/)** でアナウンスされた **Fermyon Cloud** について紹介しました。
+実際の細かなアプリケーションの作成に関わる、**Spin** などは今回の説明からは割愛しましたけれど流れは分かったと思います。
+
+WebAssembly のソースを作った後、ビルドをしてからのデプロイまでの流れの中で、生成された WebAssembly のイメージについて特に意識することもなかったと思います。
+
+このように、**Fermyon Cloud**、そして **Spin** を使うと WebAssembly であることを忘れてしまいそうなくらいのコード作成へのフォーカスができることが分かったと思います。
+今後この Fermyon Cloud を使っての Rust アプリケーション開発について詳細にみていきたいと思います。
