@@ -99,4 +99,24 @@ Installed 8 template(s)
 +-----------------------------------------------------------------+
 ```
 
+### 0. Spin プロジェクトの作成
+
+次のコマンドで Spin プロジェクトを作成します。
+
+`spin new <テンプレート名> <プロジェクト名>`
+
+ここでは、Rust のプロジェクトを作成します。
+
+```shell
+spin new http-rust hello-rust
+```
+
+以下、対話式のオプション入力です。
+
+```shell
+Project description: Sping Getting Started
+HTTP base: /
+HTTP path: /...
+```
+
 ## Day 56 のまとめ
