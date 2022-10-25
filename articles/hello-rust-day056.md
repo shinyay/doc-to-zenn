@@ -242,4 +242,29 @@ Executing the build command for component hello-rust: cargo build --target wasm3
 Successfully ran the build command for the Spin components.
 ```
 
+### 4. Fermyon Cloud へのログイン
+
+`spin` CLI を使って次のコマンドで **Fermyon Cloud** にログインします。
+
+```shell
+spin login
+```
+
+```shell
+Copy your one-time code:
+
+ABCDEFGH
+
+...and open the authorization page in your browser:
+
+https://cloud.fermyon.com/device-authorization
+
+Waiting for device authorization...
+Waiting for device authorization...
+Waiting for device authorization...
+Waiting for device authorization...
+Waiting for device authorization...
+Device authorized!
+```
+
 ## Day 56 のまとめ
