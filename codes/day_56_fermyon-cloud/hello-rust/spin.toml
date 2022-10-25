@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["shinyay <shinya.com@gmail.com>"]
+description = "Sping Getting Started"
+name = "hello-rust"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-rust"
+source = "target/wasm32-wasi/release/hello_rust.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
