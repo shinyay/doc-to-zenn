@@ -28,8 +28,39 @@ WebAssembly アプリケーションの実行環境としての **Fermyon Cloud*
 **Spin** は、一言で説明するならば、**WebAssembly** を使用して、アプリケーションを構築、デプロイ、実行するためのフレームワークである、といえます。
 また、**Spin** は、アプリケーションの作成、配布、実行を支援する CLI を提供しています。
 
-この Spin の導入の仕方や使い方などは、また今度。
+この **Spin** の導入の仕方や使い方などは、また今度。
 
 ### Fermyon Platform
+
+**Fermyon Platform** は、**Spin** によるアプリケーションや、その他の互換性のある **WebAssembly** ワークロードをホストするためのプラットフォームです。
+
+Fermyon は 動作する際につぎのソリューションを使用しています:
+
+- [Nomad](https://www.nomadproject.io/)
+- [Consul](https://consul.io/)
+- [Bindle](https://github.com/deislabs/bindle)
+- [Traefik](https://doc.traefik.io/traefik/)
+- [Hippo](https://github.com/deislabs/hippo)
+
+この **Fermyon Platform** についても、また今度。
+
+## Fermyon Cloud
+
+**Spin** をリリースした日に次のような質問があったそうです。
+
+> ホスティングサービスはありますか？Spinはすごいと思うけど、自分でサーバーを管理したくないんです。
+
+開発者が自分のインフラをセットアップする必要がなくなると、もっと楽しい経験をすることができるはずだ、というモチベーションから **Fermyon Cloud** は生まれたそうです。
+
+**Fermyon Cloud** は、**Spin** による Webアプリケーションを実行するためのプラットフォームです。
+また、**Fermyon Cloud** のダッシュボードにログインして、アプリケーションの確認、ログファイルの閲覧、デプロイメントの管理を行うことができます。
+
+この **Fermyon Cloud** が **Spin** アプリケーションを動作させるというところから想像できると思いますが、**Fermyon Cloud** は **Fermyon Platform** の上に構築されています。
+
+- リリース管理: **Bindle**
+- スケジューリング: **Nomad**
+など
+
+## Fermyon Cloud へのアプリケーションデプロイ
 
 ## Day 56 のまとめ
