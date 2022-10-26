@@ -16,7 +16,7 @@ published: true
 
 ## Fermyon Cloud の前に
 
-WebAssembly アプリケーションの実行環境としての **Fermyon Cloud** の前に、本来だったら Fermyon が提供している次のプロジェクトを説明しておく必要があのです。
+WebAssembly アプリケーションの実行環境としての **Fermyon Cloud** の前に、本来だったら Fermyon が提供している次のプロジェクトを説明しておく必要があるのです。
 
 - ✅ **Spin**
 - ✅ **Fermyon Platform**
