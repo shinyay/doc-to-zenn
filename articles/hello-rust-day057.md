@@ -217,5 +217,47 @@ wit-bindgen-rust = { git = "https://github.com/bytecodealliance/wit-bindgen", re
 - `spin-sdk`
 - `wit-bindgen-rust`
 
+#### lib.rs
+
+モジュールのコードを見てみます。
+
+```rust
+use anyhow::Result;
+use spin_sdk::{
+    http::{Request, Response},
+    http_component,
+};
+
+/// A simple Spin HTTP component.
+#[http_component]
+fn hello_spin_rust(req: Request) -> Result<Response> {
+    println!("{:?}", req.headers());
+    Ok(http::Response::builder()
+        .status(200)
+        .header("foo", "bar")
+        .body(Some("Hello, Fermyon".into()))?)
+}
+```
+
+一件したところ、そこまで珍しいコード構成にはなっていないことが分かると思います。一般的な `http` クレートを使用したアプリケーションコードとほぼ変わらないと感じると思います。
+
+- [Crate http](https://docs.rs/http/latest/http/)
+
+ポイントになるのは、`http_component` マクロが付いている、というところです。
+これが、Spin アプリケーションを作っていく上での大事なマクロだということを覚えておいてください。
+
+## Spin によるアプリケーションビルド
+
+`spin build` コマンドにより、`spin.toml` に定義したコマンドを実行してビルドを実施します。
+このケースでは実行されるコマンド内容は次のものになります。
+
+```shell
+cargo build --target wasm32-wasi --release
+```
+
+つまり、環境には予め `wasm32-wasi` ターゲットが必要だということが分かります。
+インストールについては、以下の記事にて紹介をしています、
+
+- [Day 20: wasm32-wasi ターゲットのインストール](https://zenn.dev/shinyay/articles/hello-rust-day020#wasm32-wasi-%E3%82%BF%E3%83%BC%E3%82%B2%E3%83%83%E3%83%88%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
 
 ## Day 57 のまとめ
