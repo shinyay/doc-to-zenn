@@ -260,4 +260,61 @@ cargo build --target wasm32-wasi --release
 
 - [Day 20: wasm32-wasi ターゲットのインストール](https://zenn.dev/shinyay/articles/hello-rust-day020#wasm32-wasi-%E3%82%BF%E3%83%BC%E3%82%B2%E3%83%83%E3%83%88%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
 
+```shell
+spin build
+```
+
+:::details 実行結果
+```shell
+Executing the build command for component hello-spin-rust: cargo build --target wasm32-wasi --release
+   Compiling version_check v0.9.4
+   Compiling anyhow v1.0.66
+   Compiling memchr v2.5.0
+   Compiling tinyvec_macros v0.1.0
+   Compiling pulldown-cmark v0.8.0
+   Compiling bitflags v1.3.2
+   Compiling proc-macro2 v1.0.47
+   Compiling id-arena v2.2.1
+   Compiling unicode-ident v1.0.5
+   Compiling unicode-xid v0.2.4
+   Compiling quote v1.0.21
+   Compiling syn v1.0.103
+   Compiling unicode-segmentation v1.10.0
+   Compiling wit-bindgen-gen-rust-wasm v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling async-trait v0.1.58
+   Compiling bytes v1.2.1
+   Compiling fnv v1.0.7
+   Compiling itoa v1.0.4
+   Compiling percent-encoding v2.2.0
+   Compiling tinyvec v1.6.0
+   Compiling heck v0.3.3
+   Compiling form_urlencoded v1.1.0
+   Compiling unicase v2.6.0
+   Compiling http v0.2.8
+   Compiling unicode-normalization v0.1.22
+   Compiling wit-parser v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-gen-core v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-gen-rust v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-rust-impl v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling wit-bindgen-rust v0.2.0 (https://github.com/bytecodealliance/wit-bindgen?rev=cb871cfa1ee460b51eb1d144b175b9aab9c50aba#cb871cfa)
+   Compiling spin-macro v0.1.0 (https://github.com/fermyon/spin?tag=v0.6.0#12a50379)
+   Compiling spin-sdk v0.6.0 (https://github.com/fermyon/spin?tag=v0.6.0#12a50379)
+   Compiling hello-spin-rust v0.1.0 (/Users/yanagiharas/Works/docs/doc-to-zenn/codes/day_57_spin-getting-started/hello-spin-rust)
+    Finished release [optimized] target(s) in 13.69s
+Successfully ran the build command for the Spin components.
+```
+:::
+
+```shell
+ls -l target/wasm32-wasi/release/
+
+total 4136
+drwxr-xr-x   3 yanagiharas  staff       96 build/
+drwxr-xr-x  34 yanagiharas  staff     1088 deps/
+drwxr-xr-x   2 yanagiharas  staff       64 examples/
+-rw-r--r--   1 yanagiharas  staff      244 hello_spin_rust.d
+-rwxr-xr-x   1 yanagiharas  staff  2110745 hello_spin_rust.wasm*
+drwxr-xr-x   2 yanagiharas  staff       64 incremental/
+```
+
 ## Day 57 のまとめ
