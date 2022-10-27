@@ -162,4 +162,25 @@ hello-spin-rust
    └── lib.rs
 ```
 
+#### spin.toml
+
+**Spin** アプリケーションのマニフェストになる、`spin.toml` が以下のような内容で生成されています。
+
+```toml
+spin_version = "1"
+authors = ["shinyay <shinya.com@gmail.com>"]
+description = "はじめてのSpin"
+name = "hello-spin-rust"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-spin-rust"
+source = "target/wasm32-wasi/release/hello_spin_rust.wasm"
+[component.trigger]
+route = "/hello"
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
+```
+
 ## Day 57 のまとめ
