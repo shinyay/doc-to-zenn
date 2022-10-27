@@ -327,4 +327,43 @@ drwxr-xr-x   2 yanagiharas  staff       64 incremental/
 spin up
 ```
 
+```shell
+Serving http://127.0.0.1:3000
+Available Routes:
+  hello-spin-rust: http://127.0.0.1:3000/hello
+```
+
+3000 番ポートでリッスンをしています。そのアクセスルートに対してアクセスをしてみます。
+
+```shell
+curl -i http://127.0.0.1:3000/hello
+```
+
+```shell
+HTTP/1.1 200 OK
+foo: bar
+content-length: 14
+date: Thu, 27 Oct 2022 05:27:11 GMT
+
+Hello, Fermyon
+```
+
+装置していたとおりのレスポンスが帰ってきました。
+
+- リターンコード: `200`
+- ヘッダ: `foo: bar`
+- ボディメッセージ: `Hello, Fermyon`
+
+実行確認をすることができました。
+
 ## Day 57 のまとめ
+
+Spin の導入、そして Spin を用いたアプリケーション開発について見てみました。
+開発フレームワークとしてだけでなく、実行フレームワークとして機能していることがよくわかったと思います。
+Wasm モジュールがどこにあるのか、どんな名称なのか、などは特に意識することなく、実際には **Spin** コマンドだけで開発、ビルド、実行を行うことが分かったと思います。
+
+今日使用した `spin` コマンド:
+
+- `spin new`
+- `spin build`
+- `spin up`
