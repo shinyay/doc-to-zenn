@@ -105,4 +105,27 @@ rustup target add wasm32-wasi
 cargo install --locked --path .
 ```
 
+## Spin によるアプリケーション開発
+
+[Day 56](https://zenn.dev/shinyay/articles/hello-rust-day056#1.-spin-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90) でもサンプルアプリケーションを作ってみましたが、あらためて作り方をおさらいします。
+
+以下のコマンドでプロジェクトテンプレートを作成します。
+
+`spin new <テンプレート名> <プロジェクト名>`
+
+現在テンプレートとしては以下のものがあります。
+
+| 名前         |説明                                               |
+|-------------|---------------------------------------------------|
+| http-c       |HTTP request handler using C and the Zig toolchain |
+| http-go      |HTTP request handler using (Tiny)Go                |
+| http-grain   |HTTP request handler using Grain                   |
+| http-rust    |HTTP request handler using Rust                    |
+| http-swift   |HTTP request handler using SwiftWasm               |
+| http-zig     |HTTP request handler using Zig                     |
+| redis-go     |Redis message handler using (Tiny)Go               |
+| redis-rust   |Redis message handler using Rust                   |
+
+### http-rust テンプレートによるアプリケーション作成
+
 ## Day 57 のまとめ
