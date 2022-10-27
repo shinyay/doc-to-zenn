@@ -128,4 +128,20 @@ cargo install --locked --path .
 
 ### http-rust テンプレートによるアプリケーション作成
 
+`spin new` コマンドによりプロジェクトを作成します。
+
+```shell
+spin new
+
+Pick a template to start your project with:
+  http-c (HTTP request handler using C and the Zig toolchain)
+  http-go (HTTP request handler using (Tiny)Go)
+  http-grain (HTTP request handler using Grain)
+> http-rust (HTTP request handler using Rust)
+  http-swift (HTTP request handler using SwiftWasm)
+  http-zig (HTTP request handler using Zig)
+  redis-go (Redis message handler using (Tiny)Go)
+  redis-rust (Redis message handler using Rust)
+```
+
 ## Day 57 のまとめ
