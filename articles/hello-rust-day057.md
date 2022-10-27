@@ -22,6 +22,23 @@ published: false
 
 ## Spin
 
+**[Spin](https://github.com/fermyon/spin)** は WebAssembly コンポーネントを用いてイベント・ドリブンなサーバーサイド アプリケーションを作り、そして動かすためのフレームワークです。つまり、HTTP リクエストに対してレスポンスを返すような機能を持つ WebAssembly モジュールを書くためのインターフェースを提供するが、**Spin** なのです。
 
+また、この **Spin** の注目すべき点は、多言語フレームワークであることです。**WebAssembly** と耳にすると、**Rust** や **Go** を思い浮かべるかもしれません。Spin ではもちろん Rust と Go をサポートしていますが、それ以外の言語もサポートをしています。
+
+- サポート言語
+  - Rust
+  - Go
+  - C/C++
+  - Python
+  - Ruby
+  - AssemblyScript
+    - <https://www.assemblyscript.org/>
+  - Grain
+    - <https://grain-lang.org/>
+  - Zig
+    - <https://ziglang.org/>
+  - C#
+  - その他 .NET 言語 (F# など)
 
 ## Day 57 のまとめ
