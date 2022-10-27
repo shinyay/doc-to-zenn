@@ -41,4 +41,29 @@ published: false
   - C#
   - その他 .NET 言語 (F# など)
 
+## Spin のインストール
+
+**Spin** をインストールしてみます。
+
+現在 Spin は、以下の環境で動作をします。
+
+- Linux (amd64)
+- macOS (Intel)
+- macOS (Apple Silicon)
+- Windows with WSL2 (amd64)
+
+それらの環境で以下を実行して Spin をカレントディレクトリに取得します。
+
+```shell
+curl -fsSL https://developer.fermyon.com/downloads/install.sh | bash
+```
+
+そして、必要に応じてパスの通っている `/usr/local/bin/` ディレクトリに移動させます。
+
+```shell
+sudo mv spin /usr/local/bin/
+```
+
+インストール作業は以上です。
+
 ## Day 57 のまとめ
