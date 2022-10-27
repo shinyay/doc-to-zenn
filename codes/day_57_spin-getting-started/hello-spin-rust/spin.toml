@@ -9,6 +9,6 @@ version = "0.1.0"
 id = "hello-spin-rust"
 source = "target/wasm32-wasi/release/hello_spin_rust.wasm"
 [component.trigger]
-route = "/..."
+route = "/hello"
 [component.build]
 command = "cargo build --target wasm32-wasi --release"
