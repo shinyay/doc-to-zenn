@@ -305,6 +305,8 @@ Successfully ran the build command for the Spin components.
 ```
 :::
 
+ビルドを行うと、`target/wasm32-wasi/release/` 配下に wasm モジュールが生成されます。
+
 ```shell
 ls -l target/wasm32-wasi/release/
 
@@ -315,6 +317,14 @@ drwxr-xr-x   2 yanagiharas  staff       64 examples/
 -rw-r--r--   1 yanagiharas  staff      244 hello_spin_rust.d
 -rwxr-xr-x   1 yanagiharas  staff  2110745 hello_spin_rust.wasm*
 drwxr-xr-x   2 yanagiharas  staff       64 incremental/
+```
+
+## Spin によるアプリケーション実行
+
+`spin up` コマンドにより WebAssembly アプリケーションを実行します。
+
+```shell
+spin up
 ```
 
 ## Day 57 のまとめ
