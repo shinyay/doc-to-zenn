@@ -183,4 +183,13 @@ route = "/hello"
 command = "cargo build --target wasm32-wasi --release"
 ```
 
+このマニフェストに記載されている内容でポイントになるのは次の 2 点です：
+
+- `source = "target/wasm32-wasi/release/hello_spin_rust.wasm"`
+- `route = "/hello"`
+
+まず `source` では、Spin が実行対象とする **WebAssembly** モジュールが指定されています。
+次に `route` が WebAssembly モジュールが HTTP リクエストを受け付けるエンドポイントのアクセスルートです。
+
+
 ## Day 57 のまとめ
