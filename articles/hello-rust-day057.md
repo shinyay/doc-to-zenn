@@ -191,5 +191,31 @@ command = "cargo build --target wasm32-wasi --release"
 まず `source` では、Spin が実行対象とする **WebAssembly** モジュールが指定されています。
 次に `route` が WebAssembly モジュールが HTTP リクエストを受け付けるエンドポイントのアクセスルートです。
 
+#### Cargo.toml
+
+この Spin アプリケーションプロジェクトのデフォルトで定義されている Dependencies をみてみます。
+
+```toml
+[dependencies]
+# Useful crate to handle errors.
+anyhow = "1"
+# Crate to simplify working with bytes.
+bytes = "1"
+# General-purpose crate with common HTTP types.
+http = "0.2"
+# The Spin SDK.
+spin-sdk = { git = "https://github.com/fermyon/spin", tag = "v0.6.0" }
+# Crate that generates Rust Wasm bindings from a WebAssembly interface.
+wit-bindgen-rust = { git = "https://github.com/bytecodealliance/wit-bindgen", rev = "cb871cfa1ee460b51eb1d144b175b9aab9c50aba" }
+```
+
+以下の 5 つの Dependency が設定されていました。
+
+- `anyhow`
+- `bytes`
+- `http`
+- `spin-sdk`
+- `wit-bindgen-rust`
+
 
 ## Day 57 のまとめ
