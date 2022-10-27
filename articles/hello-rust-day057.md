@@ -144,4 +144,22 @@ Pick a template to start your project with:
   redis-rust (Redis message handler using Rust)
 ```
 
+```shell
+Pick a template to start your project with: http-rust (HTTP request handler using Rust)
+Enter a name for your new project: hello-spin-rust
+Project description: はじめてのSpin
+HTTP base: /
+HTTP path: /...
+```
+
+次のような階層でファイルが生成されます。
+
+```shell
+hello-spin-rust
+├── Cargo.toml
+├── spin.toml
+└── src
+   └── lib.rs
+```
+
 ## Day 57 のまとめ
