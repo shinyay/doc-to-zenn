@@ -66,4 +66,43 @@ sudo mv spin /usr/local/bin/
 
 インストール作業は以上です。
 
+```shell
+spin --help
+```
+
+```shell
+spin 0.6.0 (12a5037 2022-10-21)
+The Spin CLI
+
+USAGE:
+    spin <SUBCOMMAND>
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+SUBCOMMANDS:
+    bindle       Commands for publishing applications as bindles
+    build        Build the Spin application
+    deploy       Deploy a Spin application
+    help         Print this message or the help of the given subcommand(s)
+    login        Log into the server
+    new          Scaffold a new application or component based on a template
+    plugin       Install/uninstall Spin plugins
+    templates    Commands for working with WebAssembly component templates
+    up           Start the Spin application
+```
+
+### Cargo による Spin のインストール
+
+Rust のパッケージマネージャーとして使われるツールの、`cargo` を使用してインストールすることも可能です。
+以下のコマンドを実行することでインストールが行われます。
+
+```shell
+git clone https://github.com/fermyon/spin -b v0.6.0
+cd spin
+rustup target add wasm32-wasi
+cargo install --locked --path .
+```
+
 ## Day 57 のまとめ
