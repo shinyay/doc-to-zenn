@@ -267,7 +267,7 @@ Waiting for device authorization...
 Device authorized!
 ```
 
-### 4. Fermyon Cloud へのデプロイ
+### 5. Fermyon Cloud へのデプロイ
 
 `spin` CLI を使って次のコマンドでビルドしたアプリケーションを **Fermyon Cloud** にデプロイします。
 
@@ -283,7 +283,7 @@ Available Routes:
   hello-rust: https://hello-rust-abcdefgh.fermyon.app (wildcard)
 ```
 
-### 4. Fermyon Cloud のアプリケーションにアクセス
+### 6. Fermyon Cloud のアプリケーションにアクセス
 
 まず、**Fermyon Cloud** のダッシュボードにアクセスします。
 
