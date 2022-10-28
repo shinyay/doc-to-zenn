@@ -36,6 +36,27 @@ Docker も、このイベントの中で注目を集めるアナウンスをし�
 
 というわけで、今日は [Day 56](https://zenn.dev/shinyay/articles/hello-rust-day056) に引き続き、改めて **Fermyon Cloud** を見てみたいと思います。
 
+## Fermyon Cloud ふたたび
+
+[Day 56](https://zenn.dev/shinyay/articles/hello-rust-day056#4.-fermyon-cloud-%E3%81%B8%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3) で Fermyon Cloud にログインしてデプロイをするということを行いました。
+
+デプロイ自体は `spin deploy` というコマンド 1 つで実施を行いました。とはいえ、このコマンドが発行されたあと、裏側でどのように デプロイの挙動をしているかが気になる人もきっといるのではないでしょうか。
+そこの答えの鍵になるのが、**Fermyon Cloud** が **Fermyon Platform** をベースにしているという点です。
+
+- [Fermyon Platform](https://www.fermyon.com/platform)
+
+前回も紹介したように、Fermyon Platform は WebAssembly アプリケーションのためのオープンソーステクノロジーベースのクラウドアプリケーションプラットフォームです。
+
+次のプロジェクトが利用されています。
+
+- [bytecodealliance/wasmtime](https://github.com/bytecodealliance/wasmtime)
+- [deislabs/bindle](https://github.com/deislabs/bindle)
+- [deislabs/hippo](https://github.com/deislabs/hippo)
+- [fermyon/spin](https://github.com/fermyon/spin)
+- [hashicorp/consul](https://github.com/hashicorp/consul)
+- [hashicorp/nomad](https://github.com/hashicorp/nomad)
+- [hashicorp/terraform](https://github.com/hashicorp/terraform)
+- [traefik/traefik](https://github.com/traefik/traefik)
 
 
 ## Day 58 のまとめ
