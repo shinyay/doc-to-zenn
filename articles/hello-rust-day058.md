@@ -166,4 +166,23 @@ version = "0.1.1"
 
 修正した後、改めて `spin deploy` コマンドを実行します。
 
+```shell
+spin deploy
+
+Uploading hello-fermyon-cloud version 0.1.1+XXXXXXXX...
+Deploying...
+Waiting for application to become ready... ready
+Available Routes:
+  hello-fermyon-cloud: https://hello-fermyon-cloud-XXXXXXXX.fermyon.app/hello
+```
+
+バージョンが上がりました。またアクセスする URL には変更がないということも確認ができました。
+
+![](https://storage.googleapis.com/zenn-user-upload/4807cb6a1376-20221029.png)
+
 ## Day 58 のまとめ
+
+Fermyon Cloud へのアプリケーションのデプロイの仕組みについて少し詳しく見てみました。
+また、デプロイ済のアプリケーションのアップグレードも行いました。
+
+デプロイに関して使われている技術は、**Bindle** ですが、一切その Bindle にふれることなく処理を行えたことはデプロイの流れを通して分かったと思います。
