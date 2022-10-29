@@ -24,4 +24,15 @@ Spin のアプリケーションを作って動かす際には必ず **Spin** �
 
 - [Spin VS Code Extention リポジトリ](https://github.com/fermyon/spin-vscode)
 
+このリポジトリの REDME にも書かれていますが、このエクステンションはまだ開発初期段階にあるようです。現時点で提供されている次のもののみです。
+
+- Spinアプリケーションを構築するためのタスク(`spin:build`)
+- Spinアプリケーションを実行するためのタスク(`spin:up`)
+
+### Spin VS Code Extention のインストール
+
+この Spin VS Code Extention は、Visual Studio Marketplace で入手できます。
+
+- [](https://marketplace.visualstudio.com/items?itemName=fermyon.spin-vscode&ssr=false#overview)
+
 ## Day 59 のまとめ
