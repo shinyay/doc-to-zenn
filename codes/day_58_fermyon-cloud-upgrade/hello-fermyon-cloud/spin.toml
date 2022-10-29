@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["shinyay <shinya.com@gmail.com>"]
+description = "Getting Started"
+name = "hello-fermyon-cloud"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-fermyon-cloud"
+source = "target/wasm32-wasi/release/hello_fermyon_cloud.wasm"
+[component.trigger]
+route = "/hello"
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
