@@ -124,4 +124,22 @@ Fermyon Cloud のアプリケーションは複数のリビジョンを持つこ
 
 あらためて、Fermyon Cloud へのデプロイとアップグレードを試してみたいと思います。
 
+まず、Fermyon Cloud にログインします。
+
+```shell
+spin login
+```
+
+次に、`spin.toml` が配置されているディレクトリからデプロイを行います。
+
+```shell
+spin deploy
+
+Uploading hello-fermyon-cloud version 0.1.0+XXXXXXXX...
+Deploying...
+Waiting for application to become ready...... ready
+Available Routes:
+  hello-fermyon-cloud: https://hello-fermyon-cloud-XXXXXXXX.fermyon.app/hello
+```
+
 ## Day 58 のまとめ
