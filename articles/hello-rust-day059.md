@@ -33,6 +33,12 @@ Spin のアプリケーションを作って動かす際には必ず **Spin** �
 
 この Spin VS Code Extention は、Visual Studio Marketplace で入手できます。
 
+![](https://storage.googleapis.com/zenn-user-upload/b13d3d34c455-20221029.png)
+
 - [](https://marketplace.visualstudio.com/items?itemName=fermyon.spin-vscode&ssr=false#overview)
+
+VS Code 上からも検索してインストールすることができます。
+
+![](https://storage.googleapis.com/zenn-user-upload/df2ad4f646f5-20221029.png)
 
 ## Day 59 のまとめ
