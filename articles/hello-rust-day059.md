@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 59]Fermyon
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust,webassembly,wasm,vscode]
-published: false
+published: true
 ---
 ## Day 59 のテーマ
 
@@ -24,7 +24,7 @@ Spin のアプリケーションを作って動かす際には必ず **Spin** �
 
 - [Spin VS Code Extention リポジトリ](https://github.com/fermyon/spin-vscode)
 
-このリポジトリの REDME にも書かれていますが、このエクステンションはまだ開発初期段階にあるようです。現時点で提供されている次のもののみです。
+このリポジトリの REDME にも書かれていますが、このエクステンションはまだ開発初期段階にあるようです。現時点で提供されている次のもののみのようです。
 
 - Spinアプリケーションを構築するためのタスク(`spin:build`)
 - Spinアプリケーションを実行するためのタスク(`spin:up`)
@@ -41,4 +41,19 @@ VS Code 上からも検索してインストールすることができます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/df2ad4f646f5-20221029.png)
 
+### VS Code からの Spin コマンド
+
+次のようにコマンドパレットから、Spin コマンドが見えるようになります。
+
+![](https://storage.googleapis.com/zenn-user-upload/cb407bf7d950-20221029.png)
+
+Spin コマンドを予めインストールしていなくても、ここから導入ができそうです。
+
 ## Day 59 のまとめ
+
+エクステンションの導入をしてみましたが、冒頭にまだ開発初期段階のものだとリポジトリの README にかかれていると説明しました。
+正直、現時点では入れるメリットがほとんどありません。
+
+あらかじめ Spin コマンドがターミナル上で使えるようにダウンロードしてパスを通している人がほとんどだと思います。そのような環境では、わざわざこのエクステンションを入れなくてもいいかな、と思いました。
+
+今後の進化に期待したいですね。
