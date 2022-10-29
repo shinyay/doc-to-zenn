@@ -3,7 +3,7 @@ authors = ["shinyay <shinya.com@gmail.com>"]
 description = "Getting Started"
 name = "hello-fermyon-cloud"
 trigger = { type = "http", base = "/" }
-version = "0.1.0"
+version = "0.1.1"
 
 [[component]]
 id = "hello-fermyon-cloud"
