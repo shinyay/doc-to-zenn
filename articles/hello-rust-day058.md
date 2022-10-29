@@ -58,5 +58,10 @@ Docker も、このイベントの中で注目を集めるアナウンスをし�
 - [hashicorp/terraform](https://github.com/hashicorp/terraform)
 - [traefik/traefik](https://github.com/traefik/traefik)
 
+## Fermyon Cloud デプロイの仕組み
+
+先の OSS プロジェクトリストを見ると、詳しいかたはピンときたかもしれません。
+Fermyon Cloud では、**[Bindle](https://github.com/deislabs/bindle)** を用いて Spin アプリケーションの**パッケージ化**と**デプロイ**を行っています。
+
 
 ## Day 58 のまとめ
