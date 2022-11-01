@@ -56,3 +56,9 @@ GitHub に公開されている、`1.65.0` のリリースノートはこちら�
 - [derive(PartialEq) で `PartialEq::ne` を生成しない](https://github.com/rust-lang/rust/pull/98655/)
 - [Windows RNG: デフォルトで `BCRYPT_RNG_ALG_HANDLE` を使用](https://github.com/rust-lang/rust/pull/101325/)
 - [システムアロケータコールと `System::alloc` 混在を禁止](https://github.com/rust-lang/rust/pull/101394/)
+
+### Cargo
+
+- [部分的ハッシュでも GitHub のファストパスを適用](https://github.com/rust-lang/cargo/pull/10807/)
+- [`$HIME/bin` のパスが既にある場合は PATH に追加しない](https://github.com/rust-lang/cargo/pull/11023/)
+- [ペンディングキュー内の優先順位を考慮](https://github.com/rust-lang/cargo/pull/11032/)
