@@ -38,3 +38,15 @@ GitHub に公開されている、`1.65.0` のリリースノートはこちら�
 - [未初期化の整数、浮動小数点、生ポインタは即時に**未定義動作**と見なされる (Undefined Behavior)](https://github.com/rust-lang/rust/pull/98919/)
 - [Windows x86_64、aarch64、および thumbv7a 用の raw-dylib を安定化](https://github.com/rust-lang/rust/pull/99916/)
 - [外部の ADT で `Drop` の実装を許可しない](https://github.com/rust-lang/rust/pull/99576/)
+
+### コンパイラ
+
+- [Linuxでの `-Csplit-debuginfo` フラグの安定化](https://github.com/rust-lang/rust/pull/98051/)
+- [複数のバリアントがデータを持っている場合でも、ニッチフィリング最適化を使用する](https://github.com/rust-lang/rust/pull/94075/)
+- [関連型射影が、基礎となるタイプを解決する前に整形されているかどうか確認される](https://github.com/rust-lang/rust/pull/99217/#issuecomment-1209365630)
+- [非短縮形の可視性を正しく文字列化](https://github.com/rust-lang/rust/pull/100350/)
+- [サイズ変更時に構造体フィールドの型を正規化](https://github.com/rust-lang/rust/pull/101831/)
+- [LLVM 15 へのアップデート](https://github.com/rust-lang/rust/pull/99464/)
+- [aarch64 の ABI 呼び出しを修正](https://github.com/rust-lang/rust/pull/97800/)
+- [列挙型に対する　C++　ライクなエンコーディングを一般化](https://github.com/rust-lang/rust/pull/98393/)
+- [`special_module_name` lint の追加](https://github.com/rust-lang/rust/pull/94467/)
