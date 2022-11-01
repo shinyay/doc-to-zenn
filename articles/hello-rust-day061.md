@@ -62,3 +62,10 @@ GitHub に公開されている、`1.65.0` のリリースノートはこちら�
 - [部分的ハッシュでも GitHub のファストパスを適用](https://github.com/rust-lang/cargo/pull/10807/)
 - [`$HIME/bin` のパスが既にある場合は PATH に追加しない](https://github.com/rust-lang/cargo/pull/11023/)
 - [ペンディングキュー内の優先順位を考慮](https://github.com/rust-lang/cargo/pull/11032/)
+
+## Day 61 のまとめ
+
+正直、細かなところはやっぱり僕の理解度ではまだまだ追いつけない内容がほとんどでした…
+
+さて、今回のアップデートの内容で一番注目を集めているのは、待望と言われている **[汎用関連型 (Generic Associated Types) の安定化](https://github.com/rust-lang/rust/pull/96709/)** です。
+この内容について、明日にかけてもみていきたいな、と思っています。
