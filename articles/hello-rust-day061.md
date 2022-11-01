@@ -50,3 +50,9 @@ GitHub に公開されている、`1.65.0` のリリースノートはこちら�
 - [aarch64 の ABI 呼び出しを修正](https://github.com/rust-lang/rust/pull/97800/)
 - [列挙型に対する　C++　ライクなエンコーディングを一般化](https://github.com/rust-lang/rust/pull/98393/)
 - [`special_module_name` lint の追加](https://github.com/rust-lang/rust/pull/94467/)
+
+### ライブラリ
+
+- [derive(PartialEq) で `PartialEq::ne` を生成しない](https://github.com/rust-lang/rust/pull/98655/)
+- [Windows RNG: デフォルトで `BCRYPT_RNG_ALG_HANDLE` を使用](https://github.com/rust-lang/rust/pull/101325/)
+- [システムアロケータコールと `System::alloc` 混在を禁止](https://github.com/rust-lang/rust/pull/101394/)
