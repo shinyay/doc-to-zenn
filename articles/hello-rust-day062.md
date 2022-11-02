@@ -1,9 +1,9 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 62]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 62]Generic Associated Types (まだよく分からない…)"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 62 のテーマ
 
