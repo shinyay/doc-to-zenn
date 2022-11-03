@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 63]RustCon
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 63 のテーマ
 
@@ -47,6 +47,8 @@ published: false
 https://www.youtube.com/watch?v=37yASSgrdGE&list=PL85XCvVPmGQhXeH3QiYct6eMLH1un1dcu
 
 (現在視聴中… 感想は後ほど)
+
+###
 
 ## Day 63 のまとめ
 
