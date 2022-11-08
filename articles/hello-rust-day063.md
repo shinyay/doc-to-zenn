@@ -50,6 +50,8 @@ https://www.youtube.com/watch?v=37yASSgrdGE&list=PL85XCvVPmGQhXeH3QiYct6eMLH1un1
 
 ###
 
+![](https://storage.googleapis.com/zenn-user-upload/94d153382295-20221108.png)
+
 ## Day 63 のまとめ
 
 RustConf のコンテンツ、アジェンダだけざっと見てみましたけど、なんだか良さそうでした。追いかけてみていこうと思います。
