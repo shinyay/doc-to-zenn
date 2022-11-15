@@ -50,7 +50,27 @@ https://www.youtube.com/watch?v=37yASSgrdGE&list=PL85XCvVPmGQhXeH3QiYct6eMLH1un1
 
 ###
 
+![](https://storage.googleapis.com/zenn-user-upload/5e6c596f0fa0-20221111.png)
+
+エラーハンドリングに関するトレイトや、スタンダードライブラリの中でのエラーハンドリングの進化に関する説明が行われます。
+
+- `failure`
+- `Error`
+- `anyhow`
+- `thiserror`
+
+
+![](https://storage.googleapis.com/zenn-user-upload/938ef05fe0e9-20221116.png)
+![](https://storage.googleapis.com/zenn-user-upload/2ecbe147fdc8-20221116.png)
+![](https://storage.googleapis.com/zenn-user-upload/2f79f0a61c9b-20221116.png)
+![](https://storage.googleapis.com/zenn-user-upload/6a5a0ef9d1f6-20221116.png)
+![](https://storage.googleapis.com/zenn-user-upload/bdd3b0edabee-20221116.png)
+
+![](https://storage.googleapis.com/zenn-user-upload/a8c4c537cd35-20221116.png)
+![](https://storage.googleapis.com/zenn-user-upload/bb486048ed03-20221116.png)
+
 ![](https://storage.googleapis.com/zenn-user-upload/94d153382295-20221108.png)
+
 
 ## Day 63 のまとめ
 
