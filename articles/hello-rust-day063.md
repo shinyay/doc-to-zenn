@@ -69,7 +69,13 @@ https://www.youtube.com/watch?v=37yASSgrdGE&list=PL85XCvVPmGQhXeH3QiYct6eMLH1un1
 ![](https://storage.googleapis.com/zenn-user-upload/6a5a0ef9d1f6-20221116.png)
 ![](https://storage.googleapis.com/zenn-user-upload/bdd3b0edabee-20221116.png)
 
-![](https://storage.googleapis.com/zenn-user-upload/a8c4c537cd35-20221116.png)
+エラーハンドリングの進化の中で見て分かるように標準ライブラリに昇格したり、Crate で提供したりと様々な実現方法がありました。そこで多くの人はなぜ１つの標準方式で行わないのだろうと考えると思います。答えとしては、Rust はエコシステムともに進化するということをコンセプトにしているからなのです。
+
+![](https://storage.googleapis.com/zenn-user-upload/d99fd425f3cf-20221116.png)
+
+Rust の構造としては、アプリケーションを作るために言語仕様そのものや標準ライブラリなどがファンデーションとしてありますが、それだけではなく実験的に開発された Crate とそれがいろいろと使われてフィードバックのもと修正され確立された Crate などがアーキテクチャの礎になっています。
+
+
 ![](https://storage.googleapis.com/zenn-user-upload/bb486048ed03-20221116.png)
 
 ![](https://storage.googleapis.com/zenn-user-upload/94d153382295-20221108.png)
