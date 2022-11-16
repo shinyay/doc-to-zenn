@@ -84,6 +84,8 @@ Rust の構造としては、アプリケーションを作るために言語仕
 堅牢なシステムを気づくためには、ミスをしない人だけで開発するのではなくて、ミスを見つけたりあるいは発生しないようにするためのツールやプロセスも併せて必要になってきます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/94d153382295-20221108.png)
+![](https://storage.googleapis.com/zenn-user-upload/2363d3ec2f73-20221116.png)
+
 
 
 ## Day 63 のまとめ
