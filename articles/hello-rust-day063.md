@@ -52,13 +52,16 @@ https://www.youtube.com/watch?v=37yASSgrdGE&list=PL85XCvVPmGQhXeH3QiYct6eMLH1un1
 
 ![](https://storage.googleapis.com/zenn-user-upload/5e6c596f0fa0-20221111.png)
 
-エラーハンドリングに関するトレイトや、スタンダードライブラリの中でのエラーハンドリングの進化に関する説明が行われます。
+エラーハンドリングに関する Crate や、スタンダードライブラリの中でのエラーハンドリングの進化に関する説明が行われます。
 
-- `failure`
-- `Error`
-- `anyhow`
-- `thiserror`
-
+- [Error](https://doc.rust-lang.org/beta/core/error/trait.Error.html)
+- [Crate failure](https://docs.rs/failure/latest/failure/)
+  - `failure` は非推奨です。`failure` のAPIが好きだった人は、以下の利用を検討してみてください。
+  - [Crate anyhow](https://docs.rs/anyhow/1.0.66/anyhow/)
+    - `failure::Error` の良い代替
+  - [Crate thiserror](https://docs.rs/thiserror/1.0.0/thiserror/)
+    - `#[derive(Fail)]` をほぼそのまま置き換え可能
+- [Crate eyre](https://docs.rs/eyre/latest/eyre/)
 
 ![](https://storage.googleapis.com/zenn-user-upload/938ef05fe0e9-20221116.png)
 ![](https://storage.googleapis.com/zenn-user-upload/2ecbe147fdc8-20221116.png)
