@@ -75,6 +75,9 @@ https://www.youtube.com/watch?v=37yASSgrdGE&list=PL85XCvVPmGQhXeH3QiYct6eMLH1un1
 
 Rust の構造としては、アプリケーションを作るために言語仕様そのものや標準ライブラリなどがファンデーションとしてありますが、それだけではなく実験的に開発された Crate とそれがいろいろと使われてフィードバックのもと修正され確立された Crate などがアーキテクチャの礎になっています。
 
+![](https://storage.googleapis.com/zenn-user-upload/a8c4c537cd35-20221116.png)
+
+このアーキテクチャを支える要素の進化は継続的に行われます。アプリケーションの中で実験的な Crate が試されテストされてフィードバックを得てそこから改善されて、Rust の標準ライブラリの言語仕様に含まれたり、確立された Crate されていきます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/bb486048ed03-20221116.png)
 
