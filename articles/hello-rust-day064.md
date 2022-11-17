@@ -93,5 +93,13 @@ rustc 1.65.0 (897e37553 2022-11-02)
 
 - [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html)
 
+### 汎用関連型 "Generic associated types (GATs)"
+
+まず、汎用関連型 "Generic associated types (GATs)" についてです。
+
+- [Generic associated types (GATs)](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html#generic-associated-types-gats)
+
+これが、1.65.0 の What's new の最初にきていることからも分かるように、一番期待されていたリリース内容です。また、先日の [Day 62](https://zenn.dev/shinyay/articles/hello-rust-day062) でも見ていましたけれど、正直その時点でよく分からないと言っていたものがこれです。
+
 ## Day 64 のまとめ
 
