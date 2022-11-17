@@ -87,5 +87,11 @@ $ rustc -V
 rustc 1.65.0 (897e37553 2022-11-02)
 ```
 
+## Rust 1.65.0 リリースアナウンス
+
+[Day 61](https://zenn.dev/shinyay/articles/hello-rust-day061) でもリリース前に作られていた GitHub 上のリリースノートについて確認をしてみました。ちょっと今日は時間も少し間が空いてしまったので、改めて公式ブログからのアナウンスノートを見てみようと思います。
+
+- [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html)
+
 ## Day 64 のまとめ
 
