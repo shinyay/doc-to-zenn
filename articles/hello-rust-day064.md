@@ -101,5 +101,36 @@ rustc 1.65.0 (897e37553 2022-11-02)
 
 これが、1.65.0 の What's new の最初にきていることからも分かるように、一番期待されていたリリース内容です。また、先日の [Day 62](https://zenn.dev/shinyay/articles/hello-rust-day062) でも見ていましたけれど、正直その時点でよく分からないと言っていたものがこれです。
 
+アナウンスノートにも書かれているように、この **GATs** が実現する内容とは次のことです。
+:::message
+関連型に対して、ジェネリックデータ型、ライフタイム注釈や定数ジェネリクスを記述することが可能
+:::
+
+- [ジェネリックデータ型](https://doc.rust-lang.org/book/ch10-01-syntax.html)
+- [ライフタイム注釈](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)
+
+関連型を簡単に振り返ってみると次のような動作をするものでした。
+
+```rust
+trait Contains {
+    type A;
+    type B;
+
+    fn contains(&self, &Self::A, &Self::B) -> bool;
+}
+```
+
+
+
+```rust
+fn difference<A, B, C>(container: &C) -> i32 where
+    C: Contains<A, B> { ... }
+```
+
+```rust
+fn difference<C: Contains>(container: &C) -> i32 { ... }
+```
+
+
 ## Day 64 のまとめ
 
