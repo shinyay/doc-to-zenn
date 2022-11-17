@@ -111,6 +111,8 @@ rustc 1.65.0 (897e37553 2022-11-02)
 
 関連型を簡単に振り返ってみると次のような動作をするものでした。
 
+Rust by Example に以下のようなサンプルのトレイトがあります。
+
 ```rust
 trait Contains {
     type A;
@@ -120,17 +122,38 @@ trait Contains {
 }
 ```
 
+上記のようにトレイトの中に型を定義したものがあります。もしこれをジェネリック型で定義していると次のようになります。
 
+```rust
+trait Contains<A, B> {
+    fn contains(&self, _: &A, _: &B) -> bool;
+}
+```
+
+これらのトレイトを実装し、そして使用を考慮したときに関連型か否かの違いが現れます。
+
+```rust
+impl Contains<i32, i32> for Container {...}
+```
+
+上記のように実装されたているとします。
+
+Contains トレイトを使用する関数を検討する場合、まず関連型を使用しない場合以下のようになります。
 
 ```rust
 fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> { ... }
 ```
 
+関連型を利用すると、以下のようになります。
+
 ```rust
 fn difference<C: Contains>(container: &C) -> i32 { ... }
 ```
 
+つまり、Contains トレイトの中で含まれている A と B については明治をする必要がなくなるというわけです。
+
+このような動作を関連型を使用することで可能になります。
 
 ## Day 64 のまとめ
 
