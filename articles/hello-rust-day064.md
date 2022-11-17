@@ -12,7 +12,7 @@ published: false
 
 さて、そんな離れている間に Rust の **1.65.0** が 11 月 3 日にリリースされていましたね (⑉>ᴗ<ﾉﾉﾞ✩:+✧︎⋆ﾊﾟﾁﾊﾟﾁ
 
-- [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html)
+- [Rust 1.65.0 リリースノート](https://github.com/rust-lang/rust/releases/tag/1.65.0)
 
 というわけで、また今日から Rust の勉強を再開していくきっかけとして 1.65.0 から初めていきたいと思います。
 
