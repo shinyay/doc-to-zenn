@@ -194,3 +194,9 @@ let Ok(val) = reqwest::get(url).await else { return };
 
 ## Day 64 のまとめ
 
+11 月 3 日にリリースされた バージョン **1.65.0** について少し振り返ってみました。
+
+- [Generic associated types (GATs)](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html#generic-associated-types-gats)
+- [`let-else statements`](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html#let-else-statements)
+
+まとめではないのですが、本業の都合という言い訳のため２週間ほどブランクが空いてしまっていました。今後はまた気を引き締めて Rust の学習をしていきたいと思います。
