@@ -1,3 +1,9 @@
 fn main() {
-    println!("Hello, world!");
+    let optional = Some(5);
+    match optional {
+        Some(i) => {
+            println!("Matched {:?}!", i)
+        },
+        _ => {},        
+    }
 }
