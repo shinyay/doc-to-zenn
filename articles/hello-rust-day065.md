@@ -15,4 +15,16 @@ published: false
 
 Rust 公式ドキュメント (<https://doc.rust-lang.org/>) の中では `if let` 文について、[列挙型とパターンマッチングのセクション](https://doc.rust-lang.org/book/ch06-03-if-let.html)で紹介されています。
 
+`if let` を使用しないで `match` によるパターンマッチングをしているケースをまず見てみます。
+
+```rust
+let optional = Some(5);
+match optional {
+    Some(i) => {
+        println!("Matched {:?}!", i)
+    },
+    _ => {},        
+}
+```
+
 ## Day 65 のまとめ
