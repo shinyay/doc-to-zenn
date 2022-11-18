@@ -11,4 +11,8 @@ published: false
 
 つまり、今回のバージョンアップで、`let-else` 文が追加されることによって、今まで出来ていなかったどのような事が解決できるようになったのか、眺めてみたいかなと思います。
 
+## 既存の if-let
+
+Rust 公式ドキュメント (<https://doc.rust-lang.org/>) の中では `if let` 文について、[列挙型とパターンマッチングのセクション](https://doc.rust-lang.org/book/ch06-03-if-let.html)で紹介されています。
+
 ## Day 65 のまとめ
