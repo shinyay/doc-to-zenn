@@ -27,4 +27,10 @@ match optional {
 }
 ```
 
+上記の例ではまず、`Option` の列挙子でタプル構造体な `Some(T)` に数値を入れています。それを `match` でマッチングさせて取り出しています。
+
+
+
+![](https://storage.googleapis.com/zenn-user-upload/db371d2c31d7-20221118.png)
+
 ## Day 65 のまとめ
