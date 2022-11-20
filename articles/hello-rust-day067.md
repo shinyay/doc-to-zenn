@@ -7,6 +7,14 @@ published: false
 ---
 ## Day 67 のテーマ
 
-[Day 66](https://zenn.dev/shinyay/articles/hello-rust-day066) では、クレートをいろいろなカテゴリ別におすすめのもの分類して紹介していくれている **[Blessed.io](https://blessed.rs/crates)** の紹介を行いました。その、Bleesed.io の中でも紹介はされていたのですが、今日は少し **lib.rs** について見てみたいと思います。
+[Day 66](https://zenn.dev/shinyay/articles/hello-rust-day066) では、クレートをいろいろなカテゴリ別におすすめのもの分類して紹介していくれている **[Blessed.rs](https://blessed.rs/crates)** の紹介を行いました。その、Bleesed.rs の中でも紹介はされていたのですが、今日は少し **lib.rs** について見てみたいと思います。
+
+## lib.rs
+
+Blessed.rs では次の様に lib.rs のことが紹介されています。
+
+> lib.rsはより自動化されたアプローチ（ダウンロード数でクレートを並べる）をとり、また優れた検索機能を備えています。
+
+Blessed.rs では、サイトオーナーの Nico Burns が中心となってクレートの評価と分類が行われていました。一方で、lib.rs はクレートのダウンロード数から**自動的**に人気なものだと判別し公開しているようです。Blessed.rs で紹介されていないクレートなども lib.rs でいち早く見つけることができるかもしれないですね。
 
 ## Day 67 のまとめ
