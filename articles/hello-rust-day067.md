@@ -11,10 +11,16 @@ published: false
 
 ## lib.rs
 
+![](https://storage.googleapis.com/zenn-user-upload/a02e2455c34e-20221121.png)
+
+- [lib.rs](https://lib.rs/)
+
 Blessed.rs では次の様に lib.rs のことが紹介されています。
 
 > lib.rsはより自動化されたアプローチ（ダウンロード数でクレートを並べる）をとり、また優れた検索機能を備えています。
 
 Blessed.rs では、サイトオーナーの Nico Burns が中心となってクレートの評価と分類が行われていました。一方で、lib.rs はクレートのダウンロード数から**自動的**に人気なものだと判別し公開しているようです。Blessed.rs で紹介されていないクレートなども lib.rs でいち早く見つけることができるかもしれないですね。
+
+lib
 
 ## Day 67 のまとめ
