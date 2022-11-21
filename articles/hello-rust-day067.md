@@ -59,5 +59,17 @@ lib.rs では次の様なセクションでクレートを表示することが�
 - [プロファイリング](https://lib.rs/development-tools/profiling)
   - コードのパフォーマンスを把握
 - [手続き型マクロ](https://lib.rs/development-tools/procedural-macro-helpers)
-  - Rustで手続き的なマクロを書くためのクレート
+  - 手続き的なマクロを書くためのクレート
+- [Cargo プラグイン](https://lib.rs/development-tools/cargo-plugins)
+  - Cargoの機能を拡張するサブコマンド
+
+
+
+
+
+
+
+
+
+
 ## Day 67 のまとめ
