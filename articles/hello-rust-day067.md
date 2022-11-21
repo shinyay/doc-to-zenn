@@ -58,5 +58,6 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - 他の言語とのインターフェイスを改善するために役立ちます。これには、バインディングジェネレータや便利な言語構成が含まれます
 - [プロファイリング](https://lib.rs/development-tools/profiling)
   - コードのパフォーマンスを把握
-
+- [手続き型マクロ](https://lib.rs/development-tools/procedural-macro-helpers)
+  - Rustで手続き的なマクロを書くためのクレート
 ## Day 67 のまとめ
