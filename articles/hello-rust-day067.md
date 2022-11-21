@@ -102,7 +102,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - HTTPでデータを提供するためのクレート
 - [WebSocket](https://lib.rs/web-programming/websocket)
   - WebSocketプロトコルで通信するためのクレート
-
+- [ハードウェアサポート](https://lib.rs/hardware-support)
+  - 特定のCPUやその他のハードウェアの機能に対応するためのクレート
 
 
 
