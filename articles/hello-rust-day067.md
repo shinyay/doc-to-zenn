@@ -98,7 +98,7 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - Web用アプリケーションを作成するためのクレート
 - [HTTP クライアント](https://lib.rs/web-programming/http-client)
   - HTTP ネットワークリクエストを行うためのクレート
-- [HTTPサーバー]
+- [HTTP サーバー](https://lib.rs/web-programming/http-server)
   - HTTPでデータを提供するためのクレート
 
 
