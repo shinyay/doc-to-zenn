@@ -100,7 +100,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - HTTP ネットワークリクエストを行うためのクレート
 - [HTTP サーバー](https://lib.rs/web-programming/http-server)
   - HTTPでデータを提供するためのクレート
-
+- [WebSocket](https://lib.rs/web-programming/websocket)
+  - WebSocketプロトコルで通信するためのクレート
 
 
 
