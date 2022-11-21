@@ -42,5 +42,7 @@ lib.rs では次の様なセクションでクレートを表示することが�
 
 - [Rustパターン](https://lib.rs/rust-patterns)
   - Rust でのプログラミングに特有の状況に対する解決策
+- [ネットワークプログラミング](https://lib.rs/network-programming)
+  - FTP、HTTP、SSHなどの上位ネットワークプロトコルや、TCP、UDPなどの下位ネットワークプロトコルを扱うクレート
 
 ## Day 67 のまとめ
