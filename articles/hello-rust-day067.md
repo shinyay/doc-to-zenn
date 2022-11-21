@@ -84,7 +84,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - Microsoft Windows 固有のAPIへのバインディング
 - [macOSとiOSのAPI](https://lib.rs/os/macos-apis)
   - macOS または iOS/iPadOS の API、およびその他の Apple 固有の技術とのインターフェイス
-
+- [サイエンス](https://lib.rs/science)
+  - 数学、物理学、化学、生物学、機械学習、地球科学、その他の科学分野の問題解決に関するクレート
 
 
 
