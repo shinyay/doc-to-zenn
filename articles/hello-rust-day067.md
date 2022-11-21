@@ -106,7 +106,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - 特定の CPU やその他のハードウェアの機能に対応するためのクレート
 - [WebAssembly](https://lib.rs/wasm)
   - WebAssembly をターゲットとするときに使用するクレート、または WebAssembly を操作するためのクレート
-
+- [組込み開発](https://lib.rs/embedded)
+  - 主に組込み機器やOSを持たない機器に有効なクレート
 
 
 
