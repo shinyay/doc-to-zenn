@@ -80,7 +80,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - オペレーティングシステム固有のAPIへのバインディング
 - [Unix API](https://lib.rs/os/unix-apis)
   - Linux や *BSD システムを含む、Unix 固有の API へのバインディング
-
+- [Windows API](https://lib.rs/os/windows-apis)
+  - Microsoft Windows 固有のAPIへのバインディング
 
 
 
