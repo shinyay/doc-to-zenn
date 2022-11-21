@@ -138,6 +138,7 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - 画像を処理したり、グラフィックを生成するクレート
 - [オーディオ](https://lib.rs/multimedia/audio)
   - オーディオを記録、出力、処理
-
+- [ビデオ](https://lib.rs/multimedia/video)
+  - 映像を記録、出力、処理
 
 ## Day 67 のまとめ
