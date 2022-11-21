@@ -74,8 +74,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - futures、promise、waiting、eventingなどの技術を使用して、メインプログラムの流れとは別にイベントを処理
 - [並行処理](https://lib.rs/concurrency)
   - 同時並行計算を実装
-
-
+- [パーサーの実装](https://lib.rs/parser-implementations)
+  - 特定のフォーマットや言語向けに実装されたパーサー
 
 
 ## Day 67 のまとめ
