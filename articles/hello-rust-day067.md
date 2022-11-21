@@ -152,7 +152,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - Rust の標準ライブラリ無しで動作するクレート
 - [可視化](https://lib.rs/visualization)
   - プロットやグラフなどのデータの見方
-
+- [認証](https://lib.rs/authentication)
+  - 認証を支援するクレート
 
 
 
