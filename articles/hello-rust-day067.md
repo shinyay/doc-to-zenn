@@ -62,7 +62,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - 手続き的なマクロを書くためのクレート
 - [Cargo プラグイン](https://lib.rs/development-tools/cargo-plugins)
   - Cargoの機能を拡張するサブコマンド
-
+- [アルゴリズム](https://lib.rs/algorithms)
+  - ハッシュ、ソート、検索などのコアアルゴリズム
 
 
 
