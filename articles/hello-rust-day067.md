@@ -94,8 +94,9 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - ロボティクスに関連するクレートです。ロボット、ドローン、自律型マシンのファームウェアを構築
 - [パーサツーリング](https://lib.rs/parsing)
   - あらゆるファイル形式のパーサーを作成・生成するためのユーティリティ・ライブラリ
-- [Webプログラミング](https://lib.rs/web-programming)
+- [Web プログラミング](https://lib.rs/web-programming)
   - Web用アプリケーションを作成するためのクレート
-
+- [HTTP クライアント](https://lib.rs/web-programming/http-client)
+  - HTTP ネットワークリクエストを行うためのクレート
 
 ## Day 67 のまとめ
