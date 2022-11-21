@@ -1,9 +1,9 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 67]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 67]lib.rs"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 67 のテーマ
 
