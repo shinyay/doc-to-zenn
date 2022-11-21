@@ -72,7 +72,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - テキスト形式で表現された人間の言葉の複雑さを扱うためのクレート
 - [非同期処理](https://lib.rs/asynchronous)
   - futures、promise、waiting、eventingなどの技術を使用して、メインプログラムの流れとは別にイベントを処理
-
+- [並行処理](https://lib.rs/concurrency)
+  - 同時並行計算を実装
 
 
 
