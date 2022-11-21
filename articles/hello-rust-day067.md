@@ -44,5 +44,7 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - Rust でのプログラミングに特有の状況に対する解決策
 - [ネットワークプログラミング](https://lib.rs/network-programming)
   - FTP、HTTP、SSHなどの上位ネットワークプロトコルや、TCP、UDPなどの下位ネットワークプロトコルを扱うクレート
+- [データ構造](https://lib.rs/data-structures)
+  - 特定の目的のためにデータを整理する特定の方法
 
 ## Day 67 のまとめ
