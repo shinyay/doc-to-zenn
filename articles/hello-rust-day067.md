@@ -30,6 +30,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
 - 人気 (Popular)
   - ダウンロード数順でクレートを表示
 
-それらとは別に
+それらとは別に統計情報が確認できます。
+
+![](https://storage.googleapis.com/zenn-user-upload/43819c13b63e-20221121.png)
 
 ## Day 67 のまとめ
