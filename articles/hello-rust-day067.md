@@ -82,7 +82,8 @@ lib.rs では次の様なセクションでクレートを表示することが�
   - Linux や *BSD システムを含む、Unix 固有の API へのバインディング
 - [Windows API](https://lib.rs/os/windows-apis)
   - Microsoft Windows 固有のAPIへのバインディング
-
+- [macOSとiOSのAPI](https://lib.rs/os/macos-apis)
+  - macOS または iOS/iPadOS の API、およびその他の Apple 固有の技術とのインターフェイス
 
 
 
