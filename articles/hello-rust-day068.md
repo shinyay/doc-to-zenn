@@ -28,10 +28,33 @@ published: false
 ### インストール
 
 `rustup` により **clippy** とその依存関係をインストールすることができます。
-すでにRustupがインストールされている場合は、最新のRustupとコンパイラにアップデートしてください。
+すでにRustupがインストールされている場合は、最新の rustup とコンパイラにアップデートしてください。
 
 ```shell
 rustup update
+```
+
+rustupと最新の安定版がインストールされたら、以下のコマンドを実行します。
+
+```shell
+rustup component add clippy
+```
+
+`cargo` のサブコマンドに追加されます。
+
+```shell
+$ cargo --list
+
+Installed Commands:
+  :
+clippy               Checks a package to catch common mistakes and improve your Rust code.
+  :
+```
+
+これで、以下のコマンドを対象のフォルダで実行することで clippy を使用できます。
+
+```shell
+cargo clippy
 ```
 
 ## Day 68 のまとめ
