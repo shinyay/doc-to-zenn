@@ -134,4 +134,29 @@ $ cargo run
 半径:8 の円の面積は 201.06194
 ```
 
+### clippy のルール
+
+ところで、先程の clippy を実行したときに追加情報としてのリンクが表示されていました。
+
+- <https://rust-lang.github.io/rust-clippy/master/index.html#approx_constant>
+
+ここの `index.html` を見ておこうと思います。
+
+![](https://storage.googleapis.com/zenn-user-upload/37036c7d9892-20221123.png)
+
+- [Clippy Lints](https://rust-lang.github.io/rust-clippy/master/index.html)
+
+ここに様々な定義済みのルールが記載されています。現在 550 を越えるくらいのルールがあるようです。
+
+定義されているルールを全部を予め見ておくことは、なかなか難しいと思うので今後コードを書いていく中で毎回 `clippy` でチェックしながら覚えていこうと思います。
+
 ## Day 68 のまとめ
+
+Rust の Lint ツールな `clippy` をインストールして使ってみました。
+正しいコードの書き方を覚えていくことは大事だと思うので、Rust を学び始めている今からも積極的にコードチェックをしながら覚えていきたいと思います。
+
+また、今はまだ CI を使うほどのコードを書いてはいないのですが、**Travis CI** の中で `clippy` を使用する方法も紹介されていました。
+
+- <https://github.com/rust-lang/rust-clippy#travis-ci>
+
+今後使ってみたいかなと思います。
