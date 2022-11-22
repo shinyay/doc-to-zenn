@@ -57,4 +57,16 @@ clippy               Checks a package to catch common mistakes and improve your 
 cargo clippy
 ```
 
+### clippy 実行例
+
+次のような円の面積を求めるコードを書いているとします。
+
+```rust
+fn main() {
+    let x = 3.1415;
+    let r = 8.0;
+    println!("半径:{} の円の面積は {}",r , x * r * r);
+}
+```
+
 ## Day 68 のまとめ
