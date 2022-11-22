@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 68]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 68]Lintツール: Clippy"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
