@@ -97,4 +97,24 @@ error: could not compile `day_68_clippy` due to previous error
 
 円周率の値として、マニュアルで定めていた `3.1415` という値を判別して、正確な円周率の定数の存在を示してくれました。
 
+情報として示されたリンク先も確認してみます。
+
+- <https://rust-lang.github.io/rust-clippy/master/index.html#approx_constant>
+
+以下のようなコードの場合、
+
+```rust
+let x = 3.14;
+let y = 1_f64 / x;
+```
+
+正確な定数として以下のような定義をしなさいとルール付けされていました。
+
+```rust
+let x = std::f32::consts::PI;
+let y = std::f64::consts::FRAC_1_PI;
+```
+
+予め定められている定数の存在を知らないような場合、このように教えてくれるのはありがたいですね。
+
 ## Day 68 のまとめ
