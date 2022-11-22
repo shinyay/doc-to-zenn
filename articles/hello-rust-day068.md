@@ -12,4 +12,8 @@ published: false
 
 というわけで、Blessed.rs を開いて上から見ていこうとおもったのですけど、一番上は `rustup` で普通に使っている CLI だったのでその次の **clippy** について見ていきたいと思います。Lint ツールなので、Rust 初学者でない人達にとっては普通に使っているツールなのだろうと思いつつも、ぼくはまだ使ったことがないので改めて今回見てみたいなと思います。
 
+## clippy
+
+- [clippy](https://github.com/rust-lang/rust-clippy)
+
 ## Day 68 のまとめ
