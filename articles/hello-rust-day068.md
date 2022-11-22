@@ -69,4 +69,32 @@ fn main() {
 }
 ```
 
+```shell
+$ cargo run
+
+半径:8 の円の面積は 201.056
+```
+
+実行すると特に問題なく正常に動作します。このコードを `clippy` でチェックをすると次のようなエラーを出してくれます。
+
+```shell
+cargo clippy
+```
+
+```shell
+error: approximate value of `f{32, 64}::consts::PI` found
+ --> src/main.rs:2:13
+  |
+2 |     let x = 3.1415;
+  |             ^^^^^^
+  |
+  = note: `#[deny(clippy::approx_constant)]` on by default
+  = help: consider using the constant directly
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#approx_constant
+
+error: could not compile `day_68_clippy` due to previous error
+```
+
+円周率の値として、マニュアルで定めていた `3.1415` という値を判別して、正確な円周率の定数の存在を示してくれました。
+
 ## Day 68 のまとめ
