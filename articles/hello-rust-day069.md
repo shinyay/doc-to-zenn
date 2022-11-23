@@ -111,4 +111,6 @@ fn main() {
 rustfmt --help=config
 ```
 
+スタイルガイドをカスタマイズしたい場合は、`rustfmt.toml` というファイルを作成して定義を行うことが可能です。
+
 ## Day 69 のまとめ
