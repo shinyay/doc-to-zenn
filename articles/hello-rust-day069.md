@@ -35,6 +35,12 @@ rustup component add rustfmt
 これで、次のコマンドでコードフォーマットを実行できます。
 
 ```shell
+rustfmt
+```
+
+あるいは
+
+```shell
 cargo fmt
 ```
 
@@ -66,5 +72,7 @@ $ cargo run
 8: Hello, Rust!
 9: Hello, Rust!
 ```
+
+あと、`clippy` も実施してみましたが特にエラーは発生しませんでした。
 
 ## Day 69 のまとめ
