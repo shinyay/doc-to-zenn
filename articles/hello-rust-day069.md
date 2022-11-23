@@ -27,3 +27,9 @@ published: false
 - [Rust Style Guide](https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md)
 
 インデントやライン幅、空白行、またモジュールレベルの項目やステートメント、式、型などの項目でそれぞれフォーマットを定義しています。
+
+## インストール
+
+```shell
+rustup component add rustfmt
+```
