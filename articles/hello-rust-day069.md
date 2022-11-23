@@ -77,4 +77,28 @@ $ cargo run
 
 ここで、`cargo fmt` を実行してみます。特にメッセージが表示されるわけではないのですが、実行後にソースコードを見てください。
 
+```shell
+$git diff
+
+-fn main(){
+-for n in 0..10{
+-println!("{n}: Hello, Rust!");
++fn main() {
++    for n in 0..10 {
++        println!("{n}: Hello, Rust!");
++    }
+ }
+-}
+```
+
+つまり、以下のようにコードが整形されていました。
+
+```rust
+fn main() {
+    for n in 0..10 {
+        println!("{n}: Hello, Rust!");
+    }
+}
+```
+
 ## Day 69 のまとめ
