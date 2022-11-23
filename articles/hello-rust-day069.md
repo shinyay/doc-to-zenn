@@ -173,3 +173,6 @@ rustfmt --print-config default rustfmt.toml
 | write_mode | [Replace&#124;<br>Overwrite&#124;<br>Display&#124;<br>Diff&#124;<br>Coverage&#124;<br>Plain&#124;<br>Checkstyle] <br>Default: Replace | What Write Mode to use when none is supplied: Replace, Overwrite, Display, Diff, Coverage|
 
 ## Day 69 のまとめ
+
+`rustfmt` はコードを自動に整形してくれてとても便利なツールだとわかりました。都度都度コードを整形しながらキレイな状態で保っていくとよさそうかなと思います。
+また、PR するときなども礼儀として整形されたコードでコミットしたいかなと思いました。
