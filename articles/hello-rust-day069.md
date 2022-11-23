@@ -113,4 +113,10 @@ rustfmt --help=config
 
 スタイルガイドをカスタマイズしたい場合は、`rustfmt.toml` というファイルを作成して定義を行うことが可能です。
 
+次のコマンドを実行することで、デフォルト設定を書き出してくれるので、それをベースにカスタマイズするといいと思います。
+
+```shell
+rustfmt --print-config default rustfmt.toml 
+```
+
 ## Day 69 のまとめ
