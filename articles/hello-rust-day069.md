@@ -38,5 +38,33 @@ rustup component add rustfmt
 cargo fmt
 ```
 
+## コードフォーマット実行
+
+次のような、コードスタイルがおかしなサンプルコードを作成してみます。
+
+```rust
+fn main(){
+for n in 0..10{
+println!("{n}: Hello, Rust!");
+}
+}
+```
+
+インデントが崩れていて、ひと目でおかしなコードだとわかりますよね。ただ、コード的には間違いはないので実行はできます。
+
+```shell
+$ cargo run
+
+0: Hello, Rust!
+1: Hello, Rust!
+2: Hello, Rust!
+3: Hello, Rust!
+4: Hello, Rust!
+5: Hello, Rust!
+6: Hello, Rust!
+7: Hello, Rust!
+8: Hello, Rust!
+9: Hello, Rust!
+```
 
 ## Day 69 のまとめ
