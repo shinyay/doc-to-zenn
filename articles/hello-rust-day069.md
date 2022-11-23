@@ -15,4 +15,10 @@ published: false
 
 というわけで、開発ツールで紹介されている **コードフォーマット**ツールの **rustfmt** について今日は見てみたいかなと思います。
 
-##
+## rustfmt
+
+以下が **rustfmt** のリポジトリです。見てもらえば分かるように、先日の Lint ツールの [clippy](https://github.com/rust-lang/rust-clippy) 同様に、この rustfmt も **[rust-lang](https://github.com/rust-lang)** の配下におかれる Rust の公式なコードフォーマットツールです。
+
+- [rust-lang/rustfmt](https://github.com/rust-lang/rustfmt)
+
+この rustfmt は、コードのスタイルガイドラインに従って、作成するコードを整形するために用いられるものです。
