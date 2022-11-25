@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 70]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 70]依存関係管理: cargo-edit"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
