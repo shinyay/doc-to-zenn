@@ -16,7 +16,7 @@ published: false
 ## cargo-edit
 
 今日チェックしたいのが、**依存関係管理ツール**として紹介されている、**cargo-edit** です。名前から分かるように、`cargo` を拡張してサブコマンドとして機能を追加します。
-コマンドラインから、`cargo.toml` を変更し、**依存関係の追加**や**削除**、また**アップグレード**を可能とします。
+コマンドラインから、**Cargo.toml** を変更し、**依存関係の追加**や**削除**、また**アップグレード**を可能とします。
 
 というわけで、`cargo-edit` をインストールするまえに、現在の `cargo` のサブコマンドリストを見ておきます。
 
@@ -144,12 +144,29 @@ Installed Commands:
 - `cargo upgrade`
 - `cargo set-version`
 
-これらコマンドを使って、**cargo.toml** の編集を行ってみたいと思います。
+これらコマンドを使って、**Cargo.toml** の編集を行ってみたいと思います。
 
 ### cargo add
 
 `cargo add` は、文字通りパッケージ追加のためのコマンドです。
 
+まず、ブランクのプロジェクトを作成しました。
 
+```shell
+cargo new day_70_cargo-edit
+```
+
+当然ながら、以下のように **Cargo.toml** の内容もブランクです。
+
+```toml
+[package]
+name = "day_70_cargo-edit"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+```
 
 ## Day 70 のまとめ
