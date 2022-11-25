@@ -202,6 +202,8 @@ cargo add regex
              - use_std
 ```
 
+以下のように、依存関係 **regex** が Cargo.toml に追加されました。
+
 ```toml
 [package]
 name = "day_70_cargo-edit"
@@ -212,6 +214,21 @@ edition = "2021"
 
 [dependencies]
 regex = "1.7.0"
+```
+
+ところで、バージョンを明示的に指定して依存関係を追加したい場合はどのようにしたらよいでしょうか？
+実はこれも簡単で、名前の後に `@バージョン` を付けるのみで対応が出来ます。
+
+```shell
+$ cargo add regex@1.6.0
+
+    Updating crates.io index
+      Adding regex v1.6.0 to dependencies.
+```
+
+```toml
+[dependencies]
+regex = "1.6.0"
 ```
 
 ## Day 70 のまとめ
