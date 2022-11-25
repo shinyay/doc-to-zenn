@@ -175,6 +175,8 @@ edition = "2021"
 cargo add regex
 ```
 
+特にバージョンを指定しなくても、最新バージョンを取得してくれるようです。
+
 ```shell
     Updating crates.io index
       Adding regex v1.7.0 to dependencies.
@@ -210,7 +212,6 @@ edition = "2021"
 
 [dependencies]
 regex = "1.7.0"
-
 ```
 
 ## Day 70 のまとめ
