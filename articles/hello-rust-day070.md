@@ -73,6 +73,12 @@ Installed Commands:
     yank                 Remove a pushed crate from the index
 ```
 
+## インストール
 
+それでは、`cargo-edit` をインストールしてみます。
+
+```shell
+cargo install cargo-edit
+```
 
 ## Day 70 のまとめ
