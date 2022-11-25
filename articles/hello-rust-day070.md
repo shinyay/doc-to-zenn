@@ -231,4 +231,16 @@ $ cargo add regex@1.6.0
 regex = "1.6.0"
 ```
 
+また、`cargo add` コマンドで依存関係を追加したときに、フィーチャー一覧が表示されます。このフィーチャーを指定して依存関係の追加を行うことも可能です。
+次のように、`--features` オプションをつけてコマンドを実行します。
+
+```shell
+cargo add regex --features="unicode"
+```
+
+```toml
+[dependencies]
+regex = { version = "1.6.0", features = ["unicode"] }
+```
+
 ## Day 70 のまとめ
