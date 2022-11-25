@@ -169,4 +169,48 @@ edition = "2021"
 [dependencies]
 ```
 
+ここに、正規表現のクレートな [regex](https://crates.io/crates/regex) を追加してみます。
+
+```shell
+cargo add regex
+```
+
+```shell
+    Updating crates.io index
+      Adding regex v1.7.0 to dependencies.
+             Features:
+             + aho-corasick
+             + memchr
+             + perf
+             + perf-cache
+             + perf-dfa
+             + perf-inline
+             + perf-literal
+             + std
+             + unicode
+             + unicode-age
+             + unicode-bool
+             + unicode-case
+             + unicode-gencat
+             + unicode-perl
+             + unicode-script
+             + unicode-segment
+             - pattern
+             - unstable
+             - use_std
+```
+
+```toml
+[package]
+name = "day_70_cargo-edit"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1.7.0"
+
+```
+
 ## Day 70 のまとめ
