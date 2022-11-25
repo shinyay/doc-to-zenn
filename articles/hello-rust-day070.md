@@ -243,4 +243,26 @@ cargo add regex --features="unicode"
 regex = { version = "1.6.0", features = ["unicode"] }
 ```
 
+### cargo upgrade
+
+先の手順サンプルの中で、**regex** のバージョンを古いものに変更してしまいました。そこで、最新バージョンにアップグレードをしたいと思います。その時に使用すコマンドが `cargo upgrade` です。
+
+```shell
+cargo upgrade
+```
+
+```shell
+    Updating 'https://github.com/rust-lang/crates.io-index' index
+    Checking day_70_cargo-edit's dependencies
+name  old req compatible latest new req
+====  ======= ========== ====== =======
+regex 1.6.0   1.7.0      1.7.0  1.7.0
+   Upgrading recursive dependencies
+```
+
+```toml
+[dependencies]
+regex = { version = "1.7.0", features = ["unicode"] }
+```
+
 ## Day 70 のまとめ
