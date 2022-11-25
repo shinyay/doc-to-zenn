@@ -265,4 +265,24 @@ regex 1.6.0   1.7.0      1.7.0  1.7.0
 regex = { version = "1.7.0", features = ["unicode"] }
 ```
 
+### cargo rm
+
+では、最後に **Cargo.toml** に追加した依存関係を削除したいと思います。
+削除したい依存関係の名前を指定します。
+
+```shell
+$ cargo rm regex
+
+    Removing regex from dependencies
+```
+
+はい、見事に消えました。
+
+```toml
+[package]
+name = "day_70_cargo-edit"
+version = "0.1.0"
+edition = "2021"
+```
+
 ## Day 70 のまとめ
