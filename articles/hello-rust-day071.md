@@ -17,4 +17,10 @@ published: false
 ところで、`cargo upgrade` を使って依存関係のバージョンを最新化することができましたが、現在使っている依存関係が古くなっているかどうか調べるにはどうしたらいいでしょうか。
 そのような時に役立ちそうなのが、**cargo-outdated** です。
 
+## cargo-outdated
+
+cargo-outdatedは、依存関係に新しいバージョンがある場合に表示するためのものです。
+
+- [cargo-outdated](https://github.com/kbknapp/cargo-outdated)
+
 ## Day 71 のまとめ
