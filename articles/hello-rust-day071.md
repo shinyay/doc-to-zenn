@@ -55,4 +55,24 @@ Installed Commands:
     :
 ```
 
+## 動作確認
+
+以下のように古いバージョンをしていた依存関係を追加してみます。
+
+```toml
+[package]
+name = "day_71_cargo-outdated"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "1.0.0"
+```
+
+ちなみに、この `clap` は、今日時点で最新バージョンは `4.0.27` です。
+
+- [clap](https://crates.io/crates/clap)
+
 ## Day 71 のまとめ
