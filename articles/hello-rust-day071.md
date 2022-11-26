@@ -41,5 +41,18 @@ toml = "0.1.0"
 cargo install --locked cargo-outdated
 ```
 
+しばらくすると、`outdated` サブコマンドが追加されています。
+
+```shell
+$ cargo --list
+
+Installed Commands:
+    add                  Add dependencies to a Cargo.toml manifest file
+    b                    alias: build
+    bench                Execute all benchmarks of a local package
+    :
+    outdated
+    :
+```
 
 ## Day 71 のまとめ
