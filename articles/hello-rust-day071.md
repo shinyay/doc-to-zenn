@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 71]依存�
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 71 のテーマ
 
