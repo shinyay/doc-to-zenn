@@ -5,3 +5,6 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
 published: false
 ---
+## Day 72 のテーマ
+
+## Day 72 のまとめ
