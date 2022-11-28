@@ -20,4 +20,12 @@ Rust は比較的セキュアだと言語の特徴としても語られている
 
 この脆弱性情報リポジトリは、[Rust Secure Code ワーキンググループ](https://www.rust-lang.org/governance/wgs/wg-secure-code)によってメンテナンスされています。
 
+ここで提供されている脆弱性情報をもとに脆弱性チェックを行ってくれるコマンドが `cargo audit` です。
+
+## cargo-audit
+
+**cargo-audit** は **rustsec** 配下のリポジトリで公開されています。
+
+- [rustsec/rustsec](https://github.com/RustSec/rustsec/tree/main/cargo-audit#rustsec-cargo-audit)
+
 ## Day 72 のまとめ
