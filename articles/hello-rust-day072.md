@@ -254,7 +254,17 @@ $ cargo audit fix --dry-run
   :
   :
       Fixing vulnerable dependencies in `Cargo.toml`
+    Upgrading conduit-hyper v0.2.0 -> v>=0.4.2
     Updating crates.io index
 ```
 
+RustSec の[脆弱性情報](https://rustsec.org/advisories/RUSTSEC-2022-0066.html) に記載されていたパッチ情報に修正されたことが確認できました。
+
+> Patched >=0.4.2
+
 ## Day 72 のまとめ
+
+Rust が十分にセキュアな言語であることは、いろいろなところでも紹介されていますし、勉強をすすめていく中でも実感できることでした。しかし、100 % の安全はなく、Rust にも脆弱性を含んだクレートが公開されていたりします。そのため、今回実行してような脆弱性チェックと対応を必要なことだと思います。
+
+今日追加した `cargo audit` と `cargo audit fix` コマンドは手元で簡単に脆弱性チェックとその対応が行えるので、常に確認を行ったり、または CI のプロセスの中に取り入れるなどを行うといいかもしれないですね。
+
