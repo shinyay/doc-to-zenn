@@ -16,4 +16,8 @@ Rust は比較的セキュアだと言語の特徴としても語られている
 
 - [RustSec - Rust Security Advisory Database](https://rustsec.org/advisories/)
 
+![](https://storage.googleapis.com/zenn-user-upload/80c77163f988-20221128.png)
+
+この脆弱性情報リポジトリは、[Rust Secure Code ワーキンググループ](https://www.rust-lang.org/governance/wgs/wg-secure-code)によってメンテナンスされています。
+
 ## Day 72 のまとめ
