@@ -36,6 +36,8 @@ Rust は比較的セキュアだと言語の特徴としても語られている
 cargo install cargo-audit
 ```
 
+確認するとインストールされています。
+
 ```shell
 $ cargo --list
 
@@ -46,6 +48,8 @@ Installed Commands:
     bench                Execute all benchmarks of a local package
     :
 ```
+
+以下が `cargo audit`　のヘルプです。
 
 ```shell
 $ cargo audit --help
@@ -81,4 +85,11 @@ SUBCOMMANDS:
     bin     scan compiled binaries
     help    Print this message or the help of the given subcommand(s)
 ```
+
+### 実行サンプル
+
+RustSec で最近公開されていた次の脆弱性のクレートを意図的に追加してみます。
+
+- [RUSTSEC-2022-0066: Denial of Service from unchecked request length](https://rustsec.org/advisories/RUSTSEC-2022-0066.html)
+
 ## Day 72 のまとめ
