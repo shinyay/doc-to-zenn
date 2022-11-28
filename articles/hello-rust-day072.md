@@ -47,5 +47,38 @@ Installed Commands:
     :
 ```
 
+```shell
+$ cargo audit --help
 
+cargo-audit-audit
+Audit Cargo.lock files for vulnerable crates
+
+USAGE:
+    cargo-audit audit [OPTIONS] [SUBCOMMAND]
+
+OPTIONS:
+    -c, --color <COLOR>                color configuration: always, never (default: auto)
+    -d, --db <DB>                      advisory database git repo path (default:
+                                       ~/.cargo/advisory-db)
+    -D, --deny <DENY>                  exit with an error on: warnings (any), unmaintained, unsound,
+                                       yanked
+    -f, --file <FILE>                  Cargo lockfile to inspect (or `-` for STDIN, default:
+                                       Cargo.lock)
+    -h, --help                         output help information and exit
+        --ignore <ADVISORY_ID>         Advisory id to ignore (can be specified multiple times)
+        --ignore-source                Ignore sources of packages in Cargo.toml, matching advisories
+                                       regardless of source
+        --json                         Output report in JSON format
+    -n, --no-fetch                     do not perform a git fetch on the advisory DB
+    -q, --quiet                        Avoid printing unnecessary information
+        --stale                        allow stale database
+        --target-arch <TARGET_ARCH>    filter vulnerabilities by CPU (default: no filter)
+        --target-os <TARGET_OS>        filter vulnerabilities by OS (default: no filter)
+    -u, --url <URL>                    URL for advisory database git repo
+        --version                      output version and exit
+
+SUBCOMMANDS:
+    bin     scan compiled binaries
+    help    Print this message or the help of the given subcommand(s)
+```
 ## Day 72 のまとめ
