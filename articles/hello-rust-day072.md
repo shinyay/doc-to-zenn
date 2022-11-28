@@ -226,4 +226,31 @@ warning: 1 allowed warning found
 cargo install cargo-audit --features=fix
 ```
 
+以下、`cargo audit fix` のヘルプです。
+
+```shell
+cargo audit fix --help
+```
+
+```text
+cargo-audit-audit-fix 0.17.4
+Tony Arcieri <bascule@gmail.com>
+automatically upgrade vulnerable dependencies
+
+USAGE:
+    cargo-audit audit fix [OPTIONS]
+
+OPTIONS:
+        --dry-run        perform a dry run for the fix
+    -f, --file <FILE>    Cargo lockfile to inspect
+    -h, --help           Print help information
+    -V, --version        Print version information
+```
+
+`cargo audit fix` をまずは、ドライランで実行してみます。
+
+```shell
+cargo audit fix --dry-run
+```
+
 ## Day 72 のまとめ
