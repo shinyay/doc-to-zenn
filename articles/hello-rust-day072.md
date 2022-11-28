@@ -101,4 +101,120 @@ RustSec で最近公開されていた次の脆弱性のクレートを意図的
 conduit-hyper = "0.1.3"
 ```
 
+ここで、`cargo audit` を実行してみます。
+
+```text
+$ cargo audit
+
+    Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
+      Loaded 470 security advisories (from /Users/yanagiharas/.cargo/advisory-db)
+    Updating crates.io index
+    Scanning Cargo.lock for vulnerabilities (95 crate dependencies)
+Crate:     hyper
+Version:   0.12.36
+Title:     Integer overflow in `hyper`'s parsing of the `Transfer-Encoding` header leads to data loss
+Date:      2021-07-07
+ID:        RUSTSEC-2021-0079
+URL:       https://rustsec.org/advisories/RUSTSEC-2021-0079
+Solution:  Upgrade to >=0.14.10
+Dependency tree:
+hyper 0.12.36
+└── conduit-hyper 0.1.3
+    └── day_72_cargo-audit 0.1.0
+
+Crate:     hyper
+Version:   0.12.36
+Title:     Lenient `hyper` header parsing of `Content-Length` could allow request smuggling
+Date:      2021-07-07
+ID:        RUSTSEC-2021-0078
+URL:       https://rustsec.org/advisories/RUSTSEC-2021-0078
+Solution:  Upgrade to >=0.14.10
+
+Crate:     regex
+Version:   0.1.80
+Title:     Regexes with large repetitions on empty sub-expressions take a very long time to parse
+Date:      2022-03-08
+ID:        RUSTSEC-2022-0013
+URL:       https://rustsec.org/advisories/RUSTSEC-2022-0013
+Solution:  Upgrade to >=1.5.5
+Dependency tree:
+regex 0.1.80
+└── semver-parser 0.6.2
+    └── semver 0.5.1
+        ├── conduit-hyper 0.1.3
+        │   └── day_72_cargo-audit 0.1.0
+        └── conduit 0.8.1
+            └── conduit-hyper 0.1.3
+
+Crate:     thread_local
+Version:   0.2.7
+Title:     Data race in `Iter` and `IterMut`
+Date:      2022-01-23
+ID:        RUSTSEC-2022-0006
+URL:       https://rustsec.org/advisories/RUSTSEC-2022-0006
+Solution:  Upgrade to >=1.1.4
+Dependency tree:
+thread_local 0.2.7
+└── regex 0.1.80
+    └── semver-parser 0.6.2
+        └── semver 0.5.1
+            ├── conduit-hyper 0.1.3
+            │   └── day_72_cargo-audit 0.1.0
+            └── conduit 0.8.1
+                └── conduit-hyper 0.1.3
+
+Crate:     time
+Version:   0.1.45
+Title:     Potential segfault in the time crate
+Date:      2020-11-18
+ID:        RUSTSEC-2020-0071
+URL:       https://rustsec.org/advisories/RUSTSEC-2020-0071
+Solution:  Upgrade to >=0.2.23
+Dependency tree:
+time 0.1.45
+└── hyper 0.12.36
+    └── conduit-hyper 0.1.3
+        └── day_72_cargo-audit 0.1.0
+
+Crate:     tokio
+Version:   0.1.22
+Title:     Data race when sending and receiving after closing a `oneshot` channel
+Date:      2021-11-16
+ID:        RUSTSEC-2021-0124
+URL:       https://rustsec.org/advisories/RUSTSEC-2021-0124
+Solution:  Upgrade to >=1.8.4, <1.9.0 OR >=1.13.1
+Dependency tree:
+tokio 0.1.22
+└── hyper 0.12.36
+    └── conduit-hyper 0.1.3
+        └── day_72_cargo-audit 0.1.0
+
+Crate:     net2
+Version:   0.2.38
+Warning:   unmaintained
+Title:     `net2` crate has been deprecated; use `socket2` instead
+Date:      2020-05-01
+ID:        RUSTSEC-2020-0016
+URL:       https://rustsec.org/advisories/RUSTSEC-2020-0016
+Dependency tree:
+net2 0.2.38
+├── miow 0.2.2
+│   └── mio 0.6.23
+│       ├── tokio-tcp 0.1.4
+│       │   └── hyper 0.12.36
+│       │       └── conduit-hyper 0.1.3
+│       │           └── day_72_cargo-audit 0.1.0
+│       ├── tokio-reactor 0.1.12
+│       │   ├── tokio-tcp 0.1.4
+│       │   ├── tokio 0.1.22
+│       │   │   └── hyper 0.12.36
+│       │   └── hyper 0.12.36
+│       └── tokio 0.1.22
+├── mio 0.6.23
+└── hyper 0.12.36
+
+error: 6 vulnerabilities found!
+warning: 1 allowed warning found
+```
+
 ## Day 72 のまとめ
