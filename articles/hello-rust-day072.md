@@ -217,4 +217,13 @@ error: 6 vulnerabilities found!
 warning: 1 allowed warning found
 ```
 
+## 脆弱性の修正: fix フィーチャー
+
+このように発見された脆弱性の修正を実施する機能を、現時点では正式公開していませんが実験的機能として `fix` フィーチャーを提供しています。
+以下のコマンドでインストールを行ってみます。
+
+```shell
+cargo install cargo-audit --features=fix
+```
+
 ## Day 72 のまとめ
