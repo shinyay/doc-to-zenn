@@ -28,4 +28,24 @@ Rust は比較的セキュアだと言語の特徴としても語られている
 
 - [rustsec/rustsec](https://github.com/RustSec/rustsec/tree/main/cargo-audit#rustsec-cargo-audit)
 
+### インストール
+
+それでは、この `cargo audit` コマンドをインストールしてみます。
+
+```shell
+cargo install cargo-audit
+```
+
+```shell
+$ cargo --list
+
+Installed Commands:
+    add                  Add dependencies to a Cargo.toml manifest file
+    audit
+    b                    alias: build
+    bench                Execute all benchmarks of a local package
+    :
+```
+
+
 ## Day 72 のまとめ
