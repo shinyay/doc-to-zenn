@@ -98,7 +98,7 @@ RustSec で最近公開されていた次の脆弱性のクレートを意図的
 
 ```toml
 [dependencies]
-conduit-hyper = "0.1.3"
+conduit-hyper = "0.2.0"
 ```
 
 ここで、`cargo audit` を実行してみます。すると対象のクレートの依存関係に関連した依存関係ツリーも同時に表示されます。
@@ -119,7 +119,7 @@ URL:       https://rustsec.org/advisories/RUSTSEC-2021-0079
 Solution:  Upgrade to >=0.14.10
 Dependency tree:
 hyper 0.12.36
-└── conduit-hyper 0.1.3
+└── conduit-hyper 0.2.0
     └── day_72_cargo-audit 0.1.0
 
 Crate:     hyper
@@ -141,10 +141,10 @@ Dependency tree:
 regex 0.1.80
 └── semver-parser 0.6.2
     └── semver 0.5.1
-        ├── conduit-hyper 0.1.3
+        ├── conduit-hyper 0.2.0
         │   └── day_72_cargo-audit 0.1.0
         └── conduit 0.8.1
-            └── conduit-hyper 0.1.3
+            └── conduit-hyper 0.2.0
 
 Crate:     thread_local
 Version:   0.2.7
@@ -158,10 +158,10 @@ thread_local 0.2.7
 └── regex 0.1.80
     └── semver-parser 0.6.2
         └── semver 0.5.1
-            ├── conduit-hyper 0.1.3
+            ├── conduit-hyper 0.2.0
             │   └── day_72_cargo-audit 0.1.0
             └── conduit 0.8.1
-                └── conduit-hyper 0.1.3
+                └── conduit-hyper 0.2.0
 
 Crate:     time
 Version:   0.1.45
@@ -173,7 +173,7 @@ Solution:  Upgrade to >=0.2.23
 Dependency tree:
 time 0.1.45
 └── hyper 0.12.36
-    └── conduit-hyper 0.1.3
+    └── conduit-hyper 0.2.0
         └── day_72_cargo-audit 0.1.0
 
 Crate:     tokio
@@ -186,7 +186,7 @@ Solution:  Upgrade to >=1.8.4, <1.9.0 OR >=1.13.1
 Dependency tree:
 tokio 0.1.22
 └── hyper 0.12.36
-    └── conduit-hyper 0.1.3
+    └── conduit-hyper 0.2.0
         └── day_72_cargo-audit 0.1.0
 
 Crate:     net2
@@ -202,7 +202,7 @@ net2 0.2.38
 │   └── mio 0.6.23
 │       ├── tokio-tcp 0.1.4
 │       │   └── hyper 0.12.36
-│       │       └── conduit-hyper 0.1.3
+│       │       └── conduit-hyper 0.2.0
 │       │           └── day_72_cargo-audit 0.1.0
 │       ├── tokio-reactor 0.1.12
 │       │   ├── tokio-tcp 0.1.4
@@ -247,10 +247,14 @@ OPTIONS:
     -V, --version        Print version information
 ```
 
-`cargo audit fix` をまずは、ドライランで実行してみます。
+`cargo audit fix` を実行してみます。
 
 ```shell
-cargo audit fix --dry-run
+$ cargo audit fix --dry-run
+  :
+  :
+      Fixing vulnerable dependencies in `Cargo.toml`
+    Updating crates.io index
 ```
 
 ## Day 72 のまとめ
