@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 72]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 72]脆弱性チェック: cargo audit"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
