@@ -92,4 +92,13 @@ RustSec で最近公開されていた次の脆弱性のクレートを意図的
 
 - [RUSTSEC-2022-0066: Denial of Service from unchecked request length](https://rustsec.org/advisories/RUSTSEC-2022-0066.html)
 
+脆弱性の内容にはここでは振れませんが、**[conduit-hyper](https://crates.io/crates/conduit-hyper)** に関する脆弱性で、バージョン `0.4.2` 以前のものが対象にリスクが発生します。
+
+そこで、次のように依存関係を **Cargo.toml** に追加してみました。
+
+```toml
+[dependencies]
+conduit-hyper = "0.1.3"
+```
+
 ## Day 72 のまとめ
