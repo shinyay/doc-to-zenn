@@ -17,5 +17,11 @@ published: false
 
 ## 乱数生成
 
+Rust 以外の言語、例えば **Java** であれば乱数を生成するときには、標準 API で `java.util.Random` や `Math.random()`、また **Kotlin** であれば `kotlin.random.Random` のようの提供をしています。しかし、Rust では標準ライブラリから乱数を生成する機能を提供していないのです。
+
+そこで、Rust で乱数を生成するときに使用するためには、Rust 開発チームから提供されているクレートの **rand** を使用します。
+
+- [rand](https://docs.rs/rand/latest/rand/)
+  - [GitHub リポジトリ](https://docs.rs/rand/latest/rand/)
 
 ## Day 73 のまとめ
