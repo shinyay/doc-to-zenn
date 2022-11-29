@@ -34,7 +34,7 @@ Rust 以外の言語、例えば **Java** であれば乱数を生成すると�
 
 それでは、`rand` による疑似乱数生成器については、以下に記述がありました。
 
-- []()
+- [Our RNGs](https://rust-random.github.io/book/guide-seeding.html)
 
 ## Day 73 のまとめ
  
