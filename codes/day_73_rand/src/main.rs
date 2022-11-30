@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::{Rng, seq::SliceRandom};
 
 fn main() {
 
@@ -9,4 +9,10 @@ fn main() {
         println!("{}: {}", n, x);
     }
     println!("{:?}", rng.gen::<(f64, bool)>());
+
+
+    let choices = [1, 2, 4, 8, 16, 32, 64, 256];
+    for n in 1..10 {
+            println!("{}, {:?}",n, choices.choose(&mut rng));
+    }
 }
