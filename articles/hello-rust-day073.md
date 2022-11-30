@@ -83,10 +83,11 @@ let x: i32 = rng.gen();
 
 **rand** には次のようなモジュールがあります。
 
-- **distributions**
-- **prelude**
-- **rngs**
-- **seq**
+- **distributions**: 確率分布に基づいて乱数を生成する昨日を提供
+- **rngs**: 乱数生成器を提供
+- **seq**: シーケンスに関連した乱数生成機能を提供
+
+#### rngs
 
 ## Day 73 のまとめ
  
