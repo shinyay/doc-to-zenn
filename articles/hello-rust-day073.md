@@ -87,6 +87,17 @@ let x: i32 = rng.gen();
 - **rngs**: 乱数生成器を提供
 - **seq**: シーケンスに関連した乱数生成機能を提供
 
+#### distributions
+
+- [Standard](https://docs.rs/rand/0.8.5/rand/distributions/struct.Standard.html)
+- [Alphanumeric](https://docs.rs/rand/0.8.5/rand/distributions/struct.Alphanumeric.html)
+- [Uniform](https://docs.rs/rand/0.8.5/rand/distributions/struct.Uniform.html)
+
+```rust
+let chars: String = (0..7).map(|_| rng.sample(Alphanumeric) as char).collect();
+println!("ランダムキャラクター{}: {}", n, chars);
+```
+
 #### rngs
 
 次のような乱数生成器を提供しています。
