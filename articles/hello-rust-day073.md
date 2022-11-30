@@ -90,8 +90,8 @@ let x: i32 = rng.gen();
 #### distributions
 
 - [Standard](https://docs.rs/rand/0.8.5/rand/distributions/struct.Standard.html)
-- [Alphanumeric](https://docs.rs/rand/0.8.5/rand/distributions/struct.Alphanumeric.html)
-- [Uniform](https://docs.rs/rand/0.8.5/rand/distributions/struct.Uniform.html)
+- [Alphanumeric](https://docs.rs/rand/0.8.5/rand/distributions/struct.Alphanumeric.html): ASCII文字と数字（a-z, A-Z, 0-9）に一様に分布するu8をサンプリング
+- [Uniform](https://docs.rs/rand/0.8.5/rand/distributions/struct.Uniform.html): 2つの境界の間で一様に値をサンプリング
 
 ```rust
 let chars: String = (0..7).map(|_| rng.sample(Alphanumeric) as char).collect();
