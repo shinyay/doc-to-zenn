@@ -1,4 +1,4 @@
-use rand::{Rng, seq::SliceRandom};
+use rand::{Rng, seq::SliceRandom, distributions::Alphanumeric};
 
 fn main() {
 
@@ -20,4 +20,9 @@ fn main() {
     println!("シャッフル前: {:?}", y);
     y.shuffle(&mut rng);
     println!("シャッフル後: {:?}", y);
+
+    for n in 1..10 {
+        let chars: String = (0..7).map(|_| rng.sample(Alphanumeric) as char).collect();
+        println!("ランダムキャラクター{}: {}", n, chars);
+    }
 }
