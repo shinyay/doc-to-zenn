@@ -158,5 +158,6 @@ println!("シャッフル後: {:?}", y);
 Rust の標準ライブラリ自体には乱数を扱う機能がないということなので、この [rand](https://crates.io/crates/rand/0.8.5) はいろいろなところで活用することがありそうなクレートだと思いました。
 
 - [rand (carate.io)](https://crates.io/crates/rand)
+- [rand (GitHub)](https://github.com/rust-random/rand)
 - [rand (docs)](https://docs.rs/rand/0.8.5/rand/#)
 - [rand (lib.rs)](https://lib.rs/crates/rand)
