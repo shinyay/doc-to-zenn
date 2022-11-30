@@ -6,7 +6,7 @@ fn main() {
    
     for n in 1..10 {
         let x: i32 = rng.gen();
-        println!("n:{}", x);
+        println!("{}: {}", n, x);
     }
     println!("{:?}", rng.gen::<(f64, bool)>());
 }
