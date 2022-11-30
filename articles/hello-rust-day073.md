@@ -51,6 +51,19 @@ Rust 以外の言語、例えば **Java** であれば乱数を生成すると�
 rand = "0.8.5"
 ```
 
+まずは一番シンプルな乱数の生成の仕方を見てみます。
+
+```rust
+let mut rng = rand::thread_rng();
+```
+
+`thread_rng()` によって、スレッドローカルな疑似乱数生成器を初期化します。そして、次に `Rng` トレイトに定義されている `gen()` メソッドによって標準分布に対応した乱数値を取得します。
+
+- [Rng トレイト](https://docs.rs/rand/0.8.5/rand/trait.Rng.html)
+
+```rust
+let x: i32 = rng.gen();
+```
 
 ## Day 73 のまとめ
  
