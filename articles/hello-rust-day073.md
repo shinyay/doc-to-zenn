@@ -93,10 +93,20 @@ let x: i32 = rng.gen();
 - [Alphanumeric](https://docs.rs/rand/0.8.5/rand/distributions/struct.Alphanumeric.html): ASCII文字と数字（a-z, A-Z, 0-9）に一様に分布するu8をサンプリング
 - [Uniform](https://docs.rs/rand/0.8.5/rand/distributions/struct.Uniform.html): 2つの境界の間で一様に値をサンプリング
 
+`Alphanumeric` を用いたランダムな文字列生成
+
 ```rust
 let chars: String = (0..7).map(|_| rng.sample(Alphanumeric) as char).collect();
 println!("ランダムキャラクター{}: {}", n, chars);
 ```
+
+`Uniform` を用いた数値間からのランダムな数値選択
+
+```rust
+let between = Uniform::from(10..10000);
+println!("{}", between.sample(&mut rng));
+```
+
 
 #### rngs
 
