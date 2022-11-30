@@ -111,5 +111,14 @@ let x: i32 = rng.gen();
 - **index::sample**
   - 0 〜 length の範囲からランダムに異なる量のインデックスを抽出し、ランダムな順序で完全にシャッフルして返す
 
+##### SliceRandom
+
+`choose` メソッド: ランダムな要素への参照
+
+```rust
+let choices = [1, 2, 4, 8, 16, 32, 64, 256];
+println!("{}, {:?}",n, choices.choose(&mut rng));
+```
+
 ## Day 73 のまとめ
  
