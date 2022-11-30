@@ -1,4 +1,4 @@
-use rand::{Rng, seq::SliceRandom, distributions::Alphanumeric};
+use rand::{Rng, seq::SliceRandom, distributions::{Alphanumeric, Uniform}, prelude::Distribution};
 
 fn main() {
 
@@ -25,4 +25,11 @@ fn main() {
         let chars: String = (0..7).map(|_| rng.sample(Alphanumeric) as char).collect();
         println!("ランダムキャラクター{}: {}", n, chars);
     }
+
+    let between = Uniform::from(10..10000);
+    for _ in 0..10 {
+        println!("{}", between.sample(&mut rng));
+    }
+
+
 }
