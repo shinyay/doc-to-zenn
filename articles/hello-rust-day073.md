@@ -120,5 +120,14 @@ let choices = [1, 2, 4, 8, 16, 32, 64, 256];
 println!("{}, {:?}",n, choices.choose(&mut rng));
 ```
 
+`shuffle` メソッド: スライスを所定の位置でシャッフル
+
+```rust
+let mut y = [1, 2, 3, 4, 5];
+println!("シャッフル前: {:?}", y);
+y.shuffle(&mut rng);
+println!("シャッフル後: {:?}", y);
+```
+
 ## Day 73 のまとめ
  
