@@ -85,5 +85,9 @@ cargo add time --features macros
 ```
 :::
 
+```toml
+[dependencies]
+time = { version = "0.3.17", features = ["macros"] }
+```
 
 ## Day 74 のまとめ
