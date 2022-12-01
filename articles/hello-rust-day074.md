@@ -90,4 +90,14 @@ cargo add time --features macros
 time = { version = "0.3.17", features = ["macros"] }
 ```
 
+次に UTC 時間を取得する `now_utc` メソッドで現在時間を取得してみます。
+
+```rust
+use time::OffsetDateTime;
+fn main() {
+    let now = OffsetDateTime::now_utc();
+    println!("Hello, world at {:?}", now);
+}
+```
+
 ## Day 74 のまとめ
