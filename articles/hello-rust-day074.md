@@ -54,7 +54,15 @@ published: false
 
 ## 使い方
 
-まずは使ってみます。
+それではとにかく使ってみます。
+
+まず依存関係を `Cargo.toml` に追加します。
+ちなみに、今日時点の最新バージョンは [v0.3.17](https://crates.io/crates/time/0.3.17) でした。
+また、ここでは、`macros` フィーチャーを有効にしています。
+
+```shell
+cargo add time --features macros
+```
 
 
 
