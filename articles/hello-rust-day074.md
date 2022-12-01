@@ -52,4 +52,10 @@ published: false
 
 - Windows、Linux、macOS、WebAssemblyターゲットなどをサポート
 
+## 使い方
+
+まずは使ってみます。
+
+
+
 ## Day 74 のまとめ
