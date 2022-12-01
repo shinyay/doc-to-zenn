@@ -21,12 +21,9 @@ published: false
 
 日時を扱うクレートで代表的なものには、**time** と **chrono** という 2 つがあるようです。今日は **time** について使い方を学びたいなと思います。
 
-以下が、**time** クレートに関するプロジェクトやドキュメントへのリンクです。
 
-- [time (crate.io)](https://crates.io/crates/time)
-- [lib.rs](https://lib.rs/crates/time)
-- [GitHub](https://github.com/time-rs/time)
-- [Book - time](https://time-rs.github.io/book/)
-- [docs.rs](https://docs.rs/time/latest/time/#)
+**Book** 中心にして **time** について見てみたいと思います。
+
+
 
 ## Day 74 のまとめ
