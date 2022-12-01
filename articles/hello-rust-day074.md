@@ -64,6 +64,26 @@ published: false
 cargo add time --features macros
 ```
 
+:::details コマンド実行結果
+```shell
+    Updating crates.io index
+      Adding time v0.3.17 to dependencies.
+             Features:
+             + alloc
+             + macros
+             + std
+             - formatting
+             - large-dates
+             - local-offset
+             - parsing
+             - quickcheck
+             - rand
+             - serde
+             - serde-human-readable
+             - serde-well-known
+             - wasm-bindgen
+```
+:::
 
 
 ## Day 74 のまとめ
