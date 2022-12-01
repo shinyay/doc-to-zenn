@@ -116,4 +116,10 @@ Hello, world at 2022-12-01 23:49:32.605876 +00:00:00
 time = { version = "0.3.17", features = ["macros", "local-offset"] }
 ```
 
+そして、`now_utc` メソッドを `now_local` メソッドに変更するのみです。
+
+```rust
+    let now = OffsetDateTime::now_local();
+    println!("Hello, world at {:?}", now);
+```
 ## Day 74 のまとめ
