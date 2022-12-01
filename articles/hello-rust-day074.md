@@ -38,7 +38,10 @@ published: false
 
 たしかに、[time::OffsetDateTime](https://time-rs.github.io/api/time/struct.OffsetDateTime.html) で提供しているメソッドを見てみると、例えば **UTC時間での取得**や**日曜日から始まる週番号の取得**など直感的にやりたいことを実施できるようなメソッドなどが用意されていそうです。
 
-- 
+- **最適化・効率化**
+  - `time` は、ナノ秒の精度で **±9999** 年の範囲の日付をサポートしています。
+  - さらに大きな範囲で、**±999,999** までの範囲は、`large-dates` 機能でサポートされています。
+    - [time - Feature flags](https://docs.rs/time/latest/time/index.html#feature-flags)
 
 
 
