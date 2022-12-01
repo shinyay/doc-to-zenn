@@ -31,6 +31,15 @@ published: false
 
 **Book** 中心にして **time** について見てみたいと思います。
 
+まず最初に謳い文句として特徴についてです。
+
+- **簡単・安全**
+  - わかりやすい API 提供しているそうです。
+
+たしかに、[time::OffsetDateTime](https://time-rs.github.io/api/time/struct.OffsetDateTime.html) で提供しているメソッドを見てみると、例えば **UTC時間での取得**や**日曜日から始まる週番号の取得**など直感的にやりたいことを実施できるようなメソッドなどが用意されていそうです。
+
+- 
+
 
 
 ## Day 74 のまとめ
