@@ -35,14 +35,21 @@ published: false
 
 - **簡単・安全**
   - わかりやすい API 提供しているそうです。
-
-たしかに、[time::OffsetDateTime](https://time-rs.github.io/api/time/struct.OffsetDateTime.html) で提供しているメソッドを見てみると、例えば **UTC時間での取得**や**日曜日から始まる週番号の取得**など直感的にやりたいことを実施できるようなメソッドなどが用意されていそうです。
+    - たしかに、[time::OffsetDateTime](https://time-rs.github.io/api/time/struct.OffsetDateTime.html) で提供しているメソッドを見てみると、例えば **UTC時間での取得**や**日曜日から始まる週番号の取得**など直感的にやりたいことを実施できるようなメソッドなどが用意されていそうです。
 
 - **最適化・効率化**
   - `time` は、ナノ秒の精度で **±9999** 年の範囲の日付をサポートしています。
   - さらに大きな範囲で、**±999,999** までの範囲は、`large-dates` 機能でサポートされています。
     - [time - Feature flags](https://docs.rs/time/latest/time/index.html#feature-flags)
 
+- **シリアライズ・デシリアライズ**
+  - シリアライゼーションするデファクトなフレームワークの `serde` に対応ということを銘打っています
+  - [serde](https://crates.io/crates/serde)
+    - (まだ使ったことないです)
 
+- **マクロ**で簡単に日付を作成
+  - [time::macros](https://time-rs.github.io/api/time/macros/index.html)
+
+- Windows、Linux、macOS、WebAssemblyターゲットなどをサポート
 
 ## Day 74 のまとめ
