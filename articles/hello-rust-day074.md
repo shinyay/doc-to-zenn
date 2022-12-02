@@ -142,6 +142,12 @@ time = { version = "0.3.17", features = ["macros", "local-offset"] }
 let date = Date::from_iso_week_date(2022, 48, time::Weekday::Friday).unwrap();
 ```
 
+また、マクロから次のように簡単に `Date` を作成できます。
+
+```rust
+let _ = date!(2022-12-01);
+```
+
 ### time::Time
 
 `Time` では、とある日付内の時刻表現を担当しています。その精度はナノ秒で行われます。
@@ -170,3 +176,5 @@ let duration = end - start;
 ここで使用している `datetime!` は `PrimitiveDateTime` 型の日時を作成するマクロです。
 
 ## Day 74 のまとめ
+
+**time** クレートを使うことにより、日付表現を簡単に行うことが分かりました。かなり直感的に日付捜査ができるので日々使いながらもっといろいろな機能に見つけ慣れていきたいと思うクレートでした。
