@@ -159,4 +159,14 @@ let date = Date::from_iso_week_date(2022, 48, time::Weekday::Friday).unwrap();
 let datetime: PrimitiveDateTime = date.with_hms(11, 22, 33).unwrap();
 ```
 
+日時間隔の計算も直感的に行うことができます。
+
+```rust
+let start = datetime!(2022-01-01 0:00:00);
+let end = datetime!(2022-12-31 23:59:59);
+let duration = end - start;
+```
+
+ここで使用している `datetime!` は `PrimitiveDateTime` 型の日時を作成するマクロです。
+
 ## Day 74 のまとめ
