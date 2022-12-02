@@ -136,6 +136,10 @@ time = { version = "0.3.17", features = ["macros", "local-offset"] }
 
 ### time::Date
 
+### time::Time
 
+### time::OffsetDateTime
+
+### time::PrimitiveDateTime
 
 ## Day 74 のまとめ
