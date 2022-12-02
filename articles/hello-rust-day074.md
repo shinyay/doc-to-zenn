@@ -147,10 +147,16 @@ let date = Date::from_iso_week_date(2022, 48, time::Weekday::Friday).unwrap();
 `Time` では、とある日付内の時刻表現を担当しています。その精度はナノ秒で行われます。
 
 ```rust
+let datetime = date.with_hms(11, 22, 33).unwrap();
 ```
 
-### time::OffsetDateTime
-
 ### time::PrimitiveDateTime
+
+日付と時刻を組み合わせたものです。
+
+```rust
+let date = Date::from_iso_week_date(2022, 48, time::Weekday::Friday).unwrap();
+let datetime: PrimitiveDateTime = date.with_hms(11, 22, 33).unwrap();
+```
 
 ## Day 74 のまとめ
