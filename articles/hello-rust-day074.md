@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 74]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 74]日時操作: time"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
