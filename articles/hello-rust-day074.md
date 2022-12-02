@@ -136,7 +136,18 @@ time = { version = "0.3.17", features = ["macros", "local-offset"] }
 
 ### time::Date
 
+この型は、グレゴリアン暦における日付で使用します。
+
+```rust
+let date = Date::from_iso_week_date(2022, 48, time::Weekday::Friday).unwrap();
+```
+
 ### time::Time
+
+`Time` では、とある日付内の時刻表現を担当しています。その精度はナノ秒で行われます。
+
+```rust
+```
 
 ### time::OffsetDateTime
 
