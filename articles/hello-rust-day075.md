@@ -52,4 +52,14 @@ serde は、サポートされるデータ構造を、サポートされるデ�
 - [DynamoDB Items](https://docs.rs/serde_dynamo)
 - [Hjson](https://github.com/Canop/deser-hjson)
 
+### データ構造
+
+**serde** は Rust 一般的なデータ型に対応していて、上記のデータ形式でシリアライズ・デシリアライズをすることが可能です。例えば、次のような型は全てサポートされています。
+
+- `String`
+- `&str`
+- `usize`
+- `Vec<T>`
+- `HashMap<K,V>`
+
 ## Day 75 のまとめ
