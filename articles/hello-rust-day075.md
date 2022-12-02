@@ -27,4 +27,29 @@ published: false
 
 serde は、サポートされるデータ構造を、サポートされるデータ形式を使ってシリアライズおよびデシリアライズすることを可能にします。データ構造とデータ形式の間の相互作用は Rust コンパイラによって完全に最適化され、serde によるシリアライズはデータ構造とデータ形式の特定の選択に対して手書きのシリアライザと同じ速度で実行されるようにすることができます。
 
+### データ形式
+
+**serde** は数多くのデータ形式に対応しています。以下のリストは serde に実装されているデータ形式の一部です。
+
+- [JSON](https://github.com/serde-rs/json)
+- [Postcard](https://github.com/jamesmunns/postcard)
+- [CBOR](https://github.com/enarx/ciborium)
+- [YAML](https://github.com/dtolnay/serde-yaml)
+- [MessagePack](https://github.com/3Hren/msgpack-rust)
+- [TOML](https://docs.rs/toml)
+- [Pickle](https://github.com/birkenfeld/serde-pickle)
+- [RON](https://github.com/ron-rs/ron)
+- [BSON](https://github.com/mongodb/bson-rust)
+- [Avro](https://docs.rs/apache-avro)
+- [JSON5](https://github.com/callum-oakley/json5-rs)
+- [URL](https://docs.rs/serde_qs)
+- [Envy](https://github.com/softprops/envy)
+- [Envy Store](https://github.com/softprops/envy-store)
+- [S-expressions](https://github.com/rotty/lexpr-rs)
+- [D-Bus](https://docs.rs/zvariant)
+- [FlexBuffers](https://github.com/google/flatbuffers/tree/master/rust/flexbuffers)
+- [Bencode](https://github.com/P3KI/bendy)
+- [DynamoDB Items](https://docs.rs/serde_dynamo)
+- [Hjson](https://github.com/Canop/deser-hjson)
+
 ## Day 75 のまとめ
