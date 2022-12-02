@@ -122,4 +122,20 @@ time = { version = "0.3.17", features = ["macros", "local-offset"] }
     let now = OffsetDateTime::now_local();
     println!("Hello, world at {:?}", now);
 ```
+
+特徴としても言われているように日時取得がかなり簡単にできることが分かります。
+
+## いろいろな日時
+
+日時に関する構造体がいろいろとあるのを見つけました。
+
+- [time::Date](https://docs.rs/time/latest/time/struct.Date.html)
+- [time::Time](https://docs.rs/time/latest/time/struct.Time.html)
+- [time::OffsetDateTime](https://docs.rs/time/latest/time/struct.OffsetDateTime.html)
+- [time::PrimitiveDateTime](https://docs.rs/time/latest/time/struct.PrimitiveDateTime.html)
+
+### time::Date
+
+
+
 ## Day 74 のまとめ
