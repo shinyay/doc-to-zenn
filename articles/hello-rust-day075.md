@@ -19,4 +19,12 @@ published: false
 - **[GitHub](https://github.com/serde-rs/serde/tree/master)**
 - **[book - serde](https://serde.rs/)**
 
+それでは、serde について book の内容を中心にして見ていきたいと思います。
+
+### 概要
+
+あらためて、**serde** が何か？ということから説明します。**serde** とは、**ser**ialization と **de**serialization を行うたいめのフレームワークです。
+
+serde は、サポートされるデータ構造を、サポートされるデータ形式を使ってシリアライズおよびデシリアライズすることを可能にします。データ構造とデータ形式の間の相互作用は Rust コンパイラによって完全に最適化され、serde によるシリアライズはデータ構造とデータ形式の特定の選択に対して手書きのシリアライザと同じ速度で実行されるようにすることができます。
+
 ## Day 75 のまとめ
