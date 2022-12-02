@@ -11,4 +11,12 @@ published: false
 
 ## serde
 
+まず最初に以下が **serde** に関する文書やリポジトリのリンクです。
+
+- **[crate.io](https://crates.io/crates/serde)**
+- **[lib.rs](https://lib.rs/crates/serde)**
+- **[docs.rs](https://docs.rs/serde/latest/serde/)**
+- **[GitHub](https://github.com/serde-rs/serde/tree/master)**
+- **[book - serde](https://serde.rs/)**
+
 ## Day 75 のまとめ
