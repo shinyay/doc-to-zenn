@@ -94,4 +94,27 @@ serde = { version = "1.0.148", features = ["derive"] }
 serde_json = "1.0.89"
 ```
 
+シリアライズ / デシリアライズの対象とする構造体に `#[derive(Serialize, Deserialize)]` を記述しておきます。
+
+```rust
+#[derive(Serialize, Deserialize, Debug)]
+struct Point {
+    x: i32,
+    y: i32
+}
+```
+
+### シリアライズ
+
+`serde_json::to_string` 関数によって、与えられたデータ構造を JSON の String としてシリアライズします。
+
+- [serde_json::to_string](https://docs.rs/serde_json/latest/serde_json/fn.to_string.html)
+
+```rust
+let point = Point { x: 1, y: 2};
+
+let serialized = serde_json::to_string(&point).unwrap();
+println!("シリアライズ: {serialized}");
+```
+
 ## Day 75 のまとめ
