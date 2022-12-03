@@ -129,5 +129,8 @@ println!("シリアライズ: {serialized}");
 
 - [serde_json::from_str](https://docs.rs/serde_json/latest/serde_json/fn.from_str.html)
 
+```rust
+let deserialized: Point = serde_json::from_str(&serialized).unwrap();
+println!("デシリアライズ = {:?}", deserialized);
+```
 
-## Day 75 のまとめ
