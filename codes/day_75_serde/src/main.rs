@@ -10,5 +10,6 @@ fn main() {
 
     let point = Point { x: 1, y: 2};
 
-    println!("Hello, world!");
+    let serialized = serde_json::to_string(&point).unwrap();
+    println!("シリアライズ: {serialized}");
 }
