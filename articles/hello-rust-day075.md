@@ -117,4 +117,10 @@ let serialized = serde_json::to_string(&point).unwrap();
 println!("シリアライズ: {serialized}");
 ```
 
+:::details 実行結果
+```
+シリアライズ: {"x":1,"y":2}
+```
+:::
+
 ## Day 75 のまとめ
