@@ -123,4 +123,11 @@ println!("シリアライズ: {serialized}");
 ```
 :::
 
+### デシリアライズ
+
+`serde_json::from_str` 関数によって、JSON 文字列から T 型のインスタンスでデシリアライズします。
+
+- [serde_json::from_str](https://docs.rs/serde_json/latest/serde_json/fn.from_str.html)
+
+
 ## Day 75 のまとめ
