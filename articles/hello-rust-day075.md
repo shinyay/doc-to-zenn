@@ -79,4 +79,19 @@ serde = { version = "1.0.148", features = ["derive"] }
 
 ## JSON 形式のシリアライズ / デシリアライズを試してみる
 
+先にも書いていたように **serde** は様々なデータ形式をサポートしています。しかし、最初に試すのであれば一番馴染みのある **JSON** 形式を試してみようと思います。
+
+JSON に対応したクレートとして、`serde_json` があります。
+
+- [serde_json (crate.io)](https://crates.io/crates/serde_json)
+  - [API](https://docs.rs/serde_json/latest/serde_json/)
+
+以下のように `Cargo.toml` に `serde_json` を追加します。
+
+```toml
+[dependencies]
+serde = { version = "1.0.148", features = ["derive"] }
+serde_json = "1.0.89"
+```
+
 ## Day 75 のまとめ
