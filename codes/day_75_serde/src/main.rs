@@ -1,6 +1,6 @@
 use serde::{Serialize, Deserialize};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 struct Point {
     x: i32,
     y: i32
@@ -12,4 +12,7 @@ fn main() {
 
     let serialized = serde_json::to_string(&point).unwrap();
     println!("シリアライズ: {serialized}");
+
+    let deserialized: Point = serde_json::from_str(&serialized).unwrap();
+    println!("デシリアライズ = {:?}", deserialized);
 }
