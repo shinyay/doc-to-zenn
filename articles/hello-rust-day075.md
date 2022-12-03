@@ -68,4 +68,8 @@ serde は、サポートされるデータ構造を、サポートされるデ�
 
 この `derive` マクロを使用するためには、`Cargo.toml` のserde の依存関係でフィーチャーとして `derive` を追加する必要があります。
 
+```shell
+cargo add serde --features derive
+```
+
 ## Day 75 のまとめ
