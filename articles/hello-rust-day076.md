@@ -8,4 +8,3 @@ published: false
 ## Day 76 のテーマ
 
 ## Day 76 のまとめ
-
