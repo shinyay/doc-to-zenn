@@ -41,6 +41,11 @@ published: false
 
 ここでは、`cargo` によるインストールをしてみたいと思います。
 
+次のコマンドを実行します:
+
+```shell
+cargo install evcxr_repl
+```
 
 
 ## Day 77 のまとめ
