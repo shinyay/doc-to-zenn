@@ -7,6 +7,8 @@ published: false
 ---
 ## Day 78 のテーマ
 
+![](https://storage.googleapis.com/zenn-user-upload/942b1e806720-20221205.png)
+
 [Day 76](https://zenn.dev/shinyay/articles/hello-rust-day076) から Rust の書籍の **[Rustプログラミング完全ガイド](https://book.impress.co.jp/books/1121101129)** を読み始めています。初回は 1 章から 3 章までを読みました。
 
 - [第1章 Rustを始めよう](https://zenn.dev/shinyay/articles/hello-rust-day076#%E7%AC%AC1%E7%AB%A0-rust%E3%82%92%E5%A7%8B%E3%82%81%E3%82%88%E3%81%86)
@@ -36,6 +38,30 @@ published: false
 
 今日もその続きを読みながら、また感想をまとめたいと思います。なお、書籍のサマリーを書いてしまうと出版社に申し訳ないと思うので、あくまで感想と気に入った箇所を転記ではなく自分の言葉で書いてみる、というようなことができればいいかなと思っています。
 
+### 第4章 実行の流れを制御する
 
+この章での内容:
+
+- 真偽の条件で選んだ一群の文を実行する `if` 文
+- 真偽の条件で選んだ値を生成する `if` 式
+- 真偽の条件が成立する間、一群の文を繰り返し実行する `while` 文
+- 決まった回数だけ、一群の文を繰り返し実行する `for` 文
+- 変数の有効性を決めるスコープ
+
+`if` 文の書式について、`if` キーワードのあとに **丸括弧 ()** で囲む必要がない、囲まないのが普通、という説明がありました。Rust を書き始めてからは特に何も考えずに丸括弧をつけていませんでしたが、たしかに Java や Kotlin だと 丸括弧で囲んでいました。改めて納得をしてしまった説明でした。
+
+```kotlin
+var num = 1
+if (num == 1) {
+    println("Number: $num")
+}
+```
+
+```rust
+let num = 1;
+if num == 1 {
+    println!("Number: {}", num)
+}
+```
 
 ## Day 78 のまとめ
