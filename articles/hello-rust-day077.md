@@ -47,6 +47,32 @@ published: false
 cargo install evcxr_repl
 ```
 
+終了すると、`$HOME/.cargo/bin/` にインストール出来ていることが確認できます。
+
+## evcxr の使用
+
+```shell
+evcxr -h
+```
+
+現時点で最新版の `0.14.1` の `evcxr` がインストールできています。
+
+```shell
+evcxr 0.14.1
+
+USAGE:
+    evcxr [FLAGS] [OPTIONS]
+
+FLAGS:
+        --disable-readline
+    -h, --help                Prints help information
+        --ide-mode
+    -V, --version             Prints version information
+
+OPTIONS:
+        --edit-mode <edit-mode>     [default: emacs]  [possible values: vi, emacs]
+        --opt <opt>                Optimization level (0, 1 or 2) [default: ]
+```
 
 ## Day 77 のまとめ
 
