@@ -16,4 +16,6 @@ published: false
 
 - [](https://crates.io/search?q=repl)
 
+![](https://storage.googleapis.com/zenn-user-upload/ddd371ce94f3-20221205.png)
+
 ## Day 77 のまとめ
