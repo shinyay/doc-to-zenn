@@ -74,6 +74,33 @@ OPTIONS:
         --opt <opt>                Optimization level (0, 1 or 2) [default: ]
 ```
 
+では、動かしてみます。
+
+```shell
+$ evcxr
+Welcome to evcxr. For help, type :help
+>>
+```
+
+プロンプトが出てくるので、ここに Rust のコードを打ち込んでいきます。
+
+```rust
+>> let message = "Hello EVCXR".to_string();
+>> message
+"Hello EVCXR"
+>> println!("Message:{}", message);
+Message:Hello EVCXR
+>>
+```
+
+実行できていますね、インタラクティブに Rust のコードの動作確認ができます。
+
+終了する時は、`:quit` です。
+
+```shell
+>> :quit
+```
+
 ## Day 77 のまとめ
 
 今日は REPL ツールの **evcxr** について見てきました。しかし、使っている間ずっと思っていたのが、この **evcxr** というコマンドが何を表しているか分からないので覚えられないなと思っていたのです。しかし、ようやく気づきました。
