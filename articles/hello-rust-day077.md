@@ -18,4 +18,14 @@ published: false
 
 ![](https://storage.googleapis.com/zenn-user-upload/ddd371ce94f3-20221205.png)
 
+いろいろとREPL なものが見つかったことに驚いたのですが、その中で最もダウンロード数の多かった **evcxr_repl** を使ってみることにします。
+
+![](https://storage.googleapis.com/zenn-user-upload/745412eda96a-20221205.png)
+
+- [Evcxr Rust REPL](https://crates.io/crates/evcxr_repl)
+
+この **evcxr** は最近 Rust のフォーカスし始めている Google が作成している REPL ツールでした。
+
+- [google/evcxr](https://github.com/google/evcxr)
+
 ## Day 77 のまとめ
