@@ -131,4 +131,7 @@ x.insert(2, "for");
 for i in 0..x.len() { print!("{} ", x[i]); } println!();
 ```
 
+- `vector.push(item)` = `vector.insert(vector.len(), item)`
+- `vector.pop()` = `vector.remove(vector.len() - 1)`
+
 ## Day 78 のまとめ
