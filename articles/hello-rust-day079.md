@@ -161,6 +161,23 @@ for n in -5..5 {
 
 `_ if n < 0` このように `if` 条件が**ガード**です。
 
-## Day 79 のまとめ
+## if-let 構造についてのメモ
 
+次のように `enum` のバリアントにマッチするかどうかを判断してバリアントを利用するような場合に `if let` 構造が利用できます。
+
+```rust
+enum Foo {
+    A(u32),
+    B(char),
+    C(bool),
+}
+
+let foo = Foo::A(5);
+
+if let Foo::A(n) = foo {
+    println!("数値: {}", n);
+}
+```
+
+## Day 79 のまとめ
 
