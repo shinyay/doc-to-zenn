@@ -115,6 +115,12 @@ enum City {Tokyo, SanFrancisco, London, Barcelona};
 `match` 構造では条件ごとに実施する各ケースを並べます。そのそれぞれぞれを**アーム**と呼びます。
 
 ```rust
+match city {
+    City::Tokyo => print!("TK"),  // <- この各ケースが "アーム"
+    City::SanFrancisco => print!("SF"),
+    City::London => print!("LD"),
+    City::Barcelona => print!("BA"),
+}
 ```
 
 ## Day 79 のまとめ
