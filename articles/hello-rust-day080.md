@@ -56,4 +56,10 @@ let array = ["first", "second", "third"];
 println!("{}, {}, {}", array[0], array[1], array[2]);
 ```
 
+```rust
+let tuple = ("first", 2, 3.00);
+
+println!("{}, {}, {}", tuple.0, tuple.1, tuple.2);
+```
+
 ## Day 80 のまとめ
