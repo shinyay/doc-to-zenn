@@ -77,6 +77,23 @@ println!("{}, {}, {}", tuple.0, tuple.1, tuple.2);
   - 事前に宣言しておく
   - フィールドに名前がある
 
+```rust
+struct SomeData {
+    integer: i32,
+    fractional: f32,
+    character: char,
+}
+
+let data = SomeData {
+    integer: 12,
+    fractional: 34.56,
+    character: 'a',
+};
+
+println!("{}, {}, {}", data.integer, data.fractional, data.character);
+```
+
+
 ### タプル構造体についてメモ
 
 タプルと構造体の中間のような構造
