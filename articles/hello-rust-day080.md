@@ -86,5 +86,19 @@ println!("{}, {}, {}", tuple.0, tuple.1, tuple.2);
   - 事前に宣言しておく
   - フィールドに名前がない
 
-  
+```rust
+struct SomeData (
+    i32,
+    f32,
+    char,
+);
+
+let data = SomeData(
+    12,
+    34.56,
+    'a',
+);
+
+println!("{}, {}, {}", data.0, data.1, data.2);
+```
 ## Day 80 のまとめ
