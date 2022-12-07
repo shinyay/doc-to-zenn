@@ -135,6 +135,9 @@ println!("{}, {}, {}", data.0, data.1, data.2);
 
 ### 値渡しと参照渡しについてメモ
 
+Rust の関数を呼び出してパラメータ設定を行う時に特に何も気に留めなければ、**値渡し**になります。
+値渡しの場合は、オブジェクトの**コピー**を渡しているので、元のデータへの変更は発生しません。
+
 ```rust
 fn double(mut arr: [i32; 5]) {
     for i in 0..5 {
@@ -146,6 +149,20 @@ fn double(mut arr: [i32; 5]) {
 let mut arr = [1, 2, 3, 4, 5];
 
 double(arr);
+println!("{:?}", arr);
+```
+
+```rust
+fn double(arr: &mut [i32; 5]) {
+    for i in 0..5 {
+        (*arr)[i] *= 2;
+        println!("{}: {}", i, arr[i]);
+    }
+}
+
+let mut arr = [1, 2, 3, 4, 5];
+
+double(&mut arr);
 println!("{:?}", arr);
 ```
 
