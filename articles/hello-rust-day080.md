@@ -135,6 +135,18 @@ println!("{}, {}, {}", data.0, data.1, data.2);
 
 ### 値渡しと参照渡しについてメモ
 
+```rust
+fn double(mut arr: [i32; 5]) {
+    for i in 0..5 {
+        arr[i] *= 2;
+        println!("{}: {}", i, arr[i]);
+    }
+}
 
+let mut arr = [1, 2, 3, 4, 5];
+
+double(arr);
+println!("{:?}", arr);
+```
 
 ## Day 80 のまとめ
