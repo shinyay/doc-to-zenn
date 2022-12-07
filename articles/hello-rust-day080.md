@@ -46,4 +46,14 @@ published: false
 - 構造体
 - タプル構造体
 
+### タプルについてのメモ
+
+タプルの定義の仕方は配列と似ています。
+
+```rust
+let array = ["first", "second", "third"];
+
+println!("{}, {}, {}", array[0], array[1], array[2]);
+```
+
 ## Day 80 のまとめ
