@@ -93,6 +93,7 @@ let data = SomeData {
 println!("{}, {}, {}", data.integer, data.fractional, data.character);
 ```
 
+> ポイントは波括弧とセミコロンがないところ。
 
 ### タプル構造体についてメモ
 
@@ -118,4 +119,7 @@ let data = SomeData(
 
 println!("{}, {}, {}", data.0, data.1, data.2);
 ```
+
+> ポイントは丸括弧とセミコロンがあるところ。
+
 ## Day 80 のまとめ
