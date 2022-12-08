@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 81]書籍:
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 81 のテーマ
 
@@ -160,4 +160,3 @@ C 言語で `malloc()` を使用してヒープ領域を確保するような操
   - メモリ割り当ての種類。それぞれの性能と性質と制限事項
   - あるオブジェクトに、どのアロケーションを使うかを Rust で指定する方法
   - リファレンスと Box はどこが違うのか
-  
