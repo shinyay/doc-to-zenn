@@ -97,6 +97,15 @@ enum Option<T> {
 
 ### Result<T> 列挙体についてメモ
 
+Result<T> は次のように定義されています。
+
+```rust
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
 ## 第11章 メモリを割り当てる
 
 この章での内容:
