@@ -48,6 +48,18 @@ published: false
 - Option と Result という 2 種類の重要な標準ジェネリック列挙体の使い方。`Option` は選択可能なオプションを表現する。`Result` は失敗の有無と関数の実行結果を表す
 - 標準関数を使って `Option` と `Result` の処理を容易にする方法
 
+```rust
+fn f<T>(param: T) ->T {
+    param
+}
+let a = f(1);
+let b = f(1.2);
+let c = f("string");
+println!("{:?}", a);
+println!("{:?}", b);
+println!("{:?}", c);
+```
+
 ## 第11章 メモリを割り当てる
 
 この章での内容:
