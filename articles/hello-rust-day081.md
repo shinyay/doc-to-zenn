@@ -82,7 +82,16 @@ let a = S {
 };
 ```
 
+### Option<T> についてメモ
 
+Option<T> は以下のように定義されています。
+
+```rust
+enum Option<T> {
+    Some(T),
+    None,
+}
+```
 
 ## 第11章 メモリを割り当てる
 
