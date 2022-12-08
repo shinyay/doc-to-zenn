@@ -106,6 +106,12 @@ enum Result<T, E> {
 }
 ```
 
+Option や Result の値に関する処理を簡単にしてくれるユーティリティがあります。例えば以下のようなものです:
+
+- [is_ok メソッド](https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok)
+- [is_err メソッド](https://doc.rust-lang.org/std/result/enum.Result.html#method.is_err)
+- [unwrap メソッド](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap)
+
 ## 第11章 メモリを割り当てる
 
 この章での内容:
@@ -113,5 +119,29 @@ enum Result<T, E> {
 - メモリ割り当ての種類。それぞれの性能と性質と制限事項
 - あるオブジェクトに、どのアロケーションを使うかを Rust で指定する方法
 - リファレンスと Box はどこが違うのか
+
+### ヒープ領域 - BOX の使い方についてメモ
+
+例えば次のような構造体があります。
+
+```rust
+struct Point {
+    x: i32,
+    y: i32,
+}
+```
+
+これをヒープ領域に確保したい場合は、`Box` を使って次のようにします。
+
+```rust
+let p: Box<Point> = Box::new(Point {
+    x: 1,
+    y: 2,
+});
+```
+
+```rust
+println!("{} {}", p.x, p.y);
+```
 
 ## Day 81 のまとめ
