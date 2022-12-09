@@ -135,9 +135,17 @@ let case2 = |x| x + 1 ;
 次のように `&str` 型で定義している文字列は変更できない文字列で、**静的文字列**と呼ばれます。
 
 ```rust
+let a: &str = "This is String.";
+```
+
+ちなみに、次のように書くとエラーが発生します。
+
+```rust
 let a: str = "This is String.";
 ```
 
-ちなみに、
+**[E0277] Error: the size for values of type `str` cannot be known at compilation time**
+
+コンパイル時には文字列のサイズを知ることが出来ないというエラーが発生します。
 
 ## Day 82 のまとめ
