@@ -153,6 +153,14 @@ let a: str = "This is String.";
 ### 動的文字列についてメモ
 
 文字列を実行時に作成したり変更したりする場合には、静的文字列の `&str` を使用することができません。
-そこで、動的文字列の `String` を使用します。
+そこで、動的文字列の `String` 型を使用します。
 
+以下のような `String` 型の定義方法があります。
+
+```rust
+let a = String::from("Hello String");
+let b = "Hello String".to_string();
+let c = "Hello String".to_owned();
+let d = format!("Hello String");
+```
 ## Day 82 のまとめ
