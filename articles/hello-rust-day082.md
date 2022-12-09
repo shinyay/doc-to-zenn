@@ -49,4 +49,29 @@ published: false
 - パディングによって、ある種のオブジェクトが占めるサイズが増える理由
 - ベクターはどの様に実装されるのか
 
+### オブジェクトサイズ確認についてメモ
+
+`size_of` 関数でオブジェクトサイズを確認します。`&i8` や `&i128` のようなリファレンスのサイズは、メモリアドレスのサイズです。
+
+```rust
+use std::mem::size_of;
+println!("i8:{} i16:{} i32:{} i64:{} i128:{} bool:{} char:{} isize:{} usize:{} &i8:{} &i128:{}",
+    size_of::<i8>(),
+    size_of::<i16>(),
+    size_of::<i32>(),
+    size_of::<i64>(),
+    size_of::<i128>(),
+    size_of::<bool>(),
+    size_of::<char>(),
+    size_of::<isize>(),
+    size_of::<usize>(),
+    size_of::<&i8>(),
+    size_of::<&i128>(),
+);
+```
+
+```test
+i8:1 i16:2 i32:4 i64:8 i128:16 bool:1 char:4 isize:8 usize:8 &i8:8 &i128:8
+```
+
 ## Day 82 のまとめ
