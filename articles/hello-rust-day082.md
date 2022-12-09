@@ -118,7 +118,6 @@ let case2 = |x| { x + 1 };
 
 ```rust
 let case2 = |x| x + 1 ;
-
 ```
 
 ## Day 82 のまとめ
