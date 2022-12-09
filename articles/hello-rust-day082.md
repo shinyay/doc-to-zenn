@@ -5,7 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
 published: false
 ---
-## Day 81 のテーマ
+## Day 82 のテーマ
 
 ![](https://storage.googleapis.com/zenn-user-upload/942b1e806720-20221205.png)
 
@@ -37,3 +37,6 @@ published: false
 - 第24章 さらにライフタイムについて
 
 今週中にこの書籍を読み終えるためには少しペースを上げねばと思う今日この頃。さて、今日はどこまで読み進められるでしょうか。というわけで、読んでいきたいと思います。
+
+
+## Day 82 のまとめ
