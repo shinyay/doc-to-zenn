@@ -163,4 +163,30 @@ let b = "Hello String".to_string();
 let c = "Hello String".to_owned();
 let d = format!("Hello String");
 ```
+
+### 動的文字列の結合についてメモ
+
+`String` 型の扱いは**ベクタ**に似ています。ベクタが持つ次のようなメソッドも実装されています。
+
+- `push`
+- `pop`
+- `remove`
+- `insert`
+- `len`
+
+```rust
+let a = "Hello".to_string();
+let b = " ".to_string();
+let c = "String".to_string();
+let mut result = String::new();
+
+result.push_str(&a);
+result += &b;
+result.push_str(&c);
+
+println!("{}",result);
+```
+
+String 型文字列を結合する時に `push` で連結していますが、`+=` も使用できます。この `+=` は `push` のシンタックスシュガーです。
+
 ## Day 82 のまとめ
