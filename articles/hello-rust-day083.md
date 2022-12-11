@@ -45,6 +45,40 @@ published: true
 - 終点を含まない範囲も、終点を含む範囲も指定できること
 - 範囲を使って、配列やベクターやその他のスライスを定義して使う方法
 
+### 範囲についてメモ
+
+**範囲**とは、`Range<T>` というジェネリック型を具現化したものです。
+
+```rust
+let range: std::ops::Range<usize> = 1..10;
+
+println!("
+    Range: {:?},
+    Start: {},
+    End: {},
+    Length: {}",
+    range, range.start, range.end, range.len());
+```
+
+## スライスについてメモ
+
+配列やベクターは、異なる特徴は持っていますが、複数の要素を持つという点で同じようなデータ構造です。これらが持つ要素を参照するために**スライス**という方法があります。
+
+```rust
+{
+    let arr = [0, 1, 2, 3, 4, 5];
+    let vec = vec![0, 1, 2, 3, 4, 5];
+    let sarr = &arr[1..3];
+    let svec = &vec[3..5];
+    println!("{:?}, {:?}", sarr, svec);
+}
+```
+
+スライスには**ファットポインタ**という構造があり、次の 2 つの値を持っています。
+
+- スライスの最初の要素を指すポインタ
+- スライスに含まれる要素数
+
 ## 第16章 イテレータを使う
 
 この章での内容:
@@ -58,6 +92,75 @@ published: true
 - イテレータアダプタ (`filter`, `map`, `enumerate`) の使い方
 - イテレータコンシューマ (`any`, `all`, `count`, `sum`, `min`, `max`, `collect`) の使い方
 - イテレータの連鎖と遅延評価について
+
+**イテレータ**とは、シーケンスの現在位置から項目を抽出した後、それを次の位置まで進めるという動作を実行するオブジェクトのことです。
+
+```rust
+fn print_codes(s: &str) {
+    for c in s.chars() {
+        println!("{}: {}", c, c as u32);
+    }
+}
+print_codes("abcde");
+```
+
+`into_iter()` を使用して配列やベクターのイテレータを使用します。
+
+```rust
+for item in vec![1, 2, 3, 4, 5].into_iter() {
+    println!("{} ", item * 2);
+}
+```
+
+`into_iter()` を省略して次のように記述できます。
+
+```rust
+for item in &vec![1, 2, 3, 4, 5] {
+    println!("{} ", *item * 2);
+}
+```
+
+`iter()` を使用して書くことも可能です。
+
+```rust
+for item in vec![1, 2, 3, 4, 5].iter() {
+    println!("{} ", *item * 2);
+}
+```
+
+### イテレータジェネレータ
+
+- 値の取捨選択
+  - [filter](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.filter)
+
+- 値の変換
+  - [map](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map)
+
+- カウンタ
+  - [enumerate](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.enumerate)
+
+### イテレータコンシューマ
+
+- どれかを判定
+  - [any](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any)
+
+- すべてを判定
+  - [all](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.all)
+
+- 個数を数える
+  - [count](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.count)
+
+- 値を合計する
+  - [sum](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.sum)
+
+- 最小値を求める
+  - [min](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.min)
+
+- 最大値を求める
+  - [max](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.max)
+
+- コレクションを作る
+  - [collect](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect)
 
 ## 第17章 入出力とエラー処理
 
@@ -74,4 +177,25 @@ published: true
 
 ## Day 83 のまとめ
 
-(諸々記述中…)
+- **第15章 範囲とスライス**
+  - 終点を含まない範囲も、終点を含む範囲も指定できること
+  - 範囲を使って、配列やベクターやその他のスライスを定義して使う方法
+- **第16章 イテレータを使う**
+  - Rust でキャラクタ (文字) が文字列に、どう格納されるのか。なぜ直接アクセスできないのか
+  - イテレータを使って、文字列のキャラクタまたはバイトを読む方法
+  - イテレータを使って、ベクターや配列から項目を抽出する方法
+  - 非可変イテレータを使って、ベクターや配列やスライスの項目への参照を取得する方法
+  - 可変イテレータを使って、ベクターや配列やスライスの項目を変更する方法
+  - `for` ループでイテレータを使う簡略記法
+  - イテレータアダプタ (`filter`, `map`, `enumerate`) の使い方
+  - イテレータコンシューマ (`any`, `all`, `count`, `sum`, `min`, `max`, `collect`) の使い方
+  - イテレータの連鎖と遅延評価について
+- **第17章 入出力とエラー処理**
+  - プログラムを起動したコマンドラインから引数を受け取る方法
+  - プログラム終了時のステータスコードを OS に返す方法
+  - プロセスの環境変数を取得/設定する方法
+  - ランタイムエラーを処理する技法とベストプラクティス
+  - コンソールのキーボード入力を読み出し、スクリーンに出力する方法
+  - プリミティブ型を文字列に変換する方法
+  - バイナリファイルを読み書きする方法
+  - テキストファイルを行ごとに読む方法
