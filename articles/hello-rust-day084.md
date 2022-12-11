@@ -48,7 +48,7 @@ published: false
 - モジュールの階層構造を作り、その階層構造に属する任意の関数をアクセスする方法
 - 型の別名 (エイリアス) を定義する方法
 
-## 関数呼び出しの記法についてメモ
+### 関数呼び出しの記法についてメモ
 
 - **関数型記法**
   - `f(x, y)`
@@ -64,6 +64,29 @@ println!("関数型記法:{} ドット記法:{}",
 );
 ```
 
+### メソッドの定義について
+
+ある特定の型に関連づいている関数のことを**メソッド**と呼びます。
+
+```rust
+struct Person {
+    first_name: String,
+    last_name: String,
+}
+
+impl Person {
+    fn naming(&self) -> String {
+        format!("氏名: {} {}", self.first_name, self.last_name)
+    }
+}
+
+let me = Person {
+    first_name: "Shinya".to_string(),
+    last_name: "Yanagihara".to_string(),
+};
+
+println!("{}", me.naming());
+```
 
 ## 第19章 トレイトを使う
 この章での内容:
