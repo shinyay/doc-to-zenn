@@ -55,12 +55,15 @@ published: false
 - **ドット記法**
   - `x.f(y)`
 
+**ドット記法**で呼び出せる関数は、すべて**関数型記法**で呼び出すことが可能です。
+
 ```rust
 println!("関数型記法:{} ドット記法:{}",
     "Hello Rust".to_string(),
     std::string::ToString::to_string("Hello Rust")
 );
 ```
+
 
 ## 第19章 トレイトを使う
 この章での内容:
