@@ -102,6 +102,8 @@ println!("{}", me.naming());
 
 `Self` と `self` は別のキーワードです。`Self` は `self` の型を示しています。
 
+`new` 関数を定義して `Self` 型オブジェクトの生成を行うようにしました。この関数には引数がないところがポイントです。そのため、これはメソッドとは呼ばずに、**関連関数**と呼びます。
+
 ```rust
 struct Person {
     first_name: String,
@@ -128,6 +130,10 @@ me.first_name = "Shinya".to_string();
 me.last_name = "Yanagihara".to_string();
 println!("{}", me.naming());
 ```
+
+### mod キーワードと pub キーワードについてメモ
+
+
 
 ## 第19章 トレイトを使う
 この章での内容:
