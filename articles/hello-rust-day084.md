@@ -133,7 +133,27 @@ println!("{}", me.naming());
 
 ### mod キーワードと pub キーワードについてメモ
 
+Java では `private` や `public` というキーワードを使って可視性をコントロールしていました。Rust では**モジュール**という考え方を使って制御します。
 
+以下のコードは、ブロックの内側のコードに外側からはスコープが異なるためアクセスできません。
+
+```rust
+{
+    fn f() -> String { g() }
+    fn g() -> String { "Hello Rust".to_string() }
+}
+println!("{}", f());
+```
+
+そこでモジュール `mod` を利用します。
+
+```rust
+mod sub_module {
+    pub fn f() -> String { g() }
+    fn g() -> String { "Hello Rust".to_string() }
+}
+println!("{}", sub_module::f());
+```
 
 ## 第19章 トレイトを使う
 この章での内容:
