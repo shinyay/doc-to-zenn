@@ -92,7 +92,42 @@ println!("{}", me.naming());
 
 ### self と Self についてメモ
 
-`self` キーワードは、Java の `this` キーワードと同様で、**このメソッドが適用されている現在のオブジェクト**を表現するものです。
+`self` キーワードは、Java の `this` キーワードと同様で、**このメソッドが適用されている現在のオブジェクト**を表現するものです。ただし、異なる以下のような異なる点があります:
+
+- `self` が必要な場合、シグネチャで指定する必要がある
+- `self` は暗黙的に指定されない。現在のオブジェクトにアクセスする場合、フィールド名あるいはメソッド名の前に `self` を指定する必要がある
+- `self` は現在のオブジェクトを示す。リファレンスではない。
+- `&self` は非可変なリファレンス
+- `&mut self` は可変なリファレンス
+
+`Self` と `self` は別のキーワードです。`Self` は `self` の型を示しています。
+
+```rust
+struct Person {
+    first_name: String,
+    last_name: String,
+}
+
+impl Person {
+    fn new() -> Self {
+        Self {
+            first_name: String::new(),
+            last_name: String::new(),
+        }
+    }
+
+    fn naming(&self) -> String {
+        format!("氏名: {} {}", self.first_name, self.last_name)
+    }
+}
+
+let mut me = Person::new();
+println!("{}", me.naming());
+
+me.first_name = "Shinya".to_string();
+me.last_name = "Yanagihara".to_string();
+println!("{}", me.naming());
+```
 
 ## 第19章 トレイトを使う
 この章での内容:
