@@ -90,4 +90,22 @@ trait Area {
 }
 ```
 
+```rust
+struct Triangle {
+    base: f64,
+    heigt: f64,
+}
+
+struct Rectangle {
+    base: f64,
+    heigt: f64,
+}
+
+struct Trapezoid {
+    top_base: f64,
+    bottom_base: f64,
+    heigt: f64,
+}
+```
+
 ## Day 85 のまとめ
