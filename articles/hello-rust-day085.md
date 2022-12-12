@@ -118,6 +118,12 @@ impl Area for Triangle {
         (self.base * self.height) / 2.0
     }
 }
+
+impl Area for Rectangle {
+    fn calc(&self) -> f64 {
+        self.base * self.height
+    }
+}
 ```
 
 ## Day 85 のまとめ
