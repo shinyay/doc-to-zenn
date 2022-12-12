@@ -110,4 +110,14 @@ struct Trapezoid {
 }
 ```
 
+この形に対して面積を求めるトレイトを実装します。
+
+```rust
+impl Area for Triangle {
+    fn calc(&self) -> f64 {
+        (self.base * self.height) / 2.0
+    }
+}
+```
+
 ## Day 85 のまとめ
