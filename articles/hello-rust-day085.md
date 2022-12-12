@@ -124,6 +124,12 @@ impl Area for Rectangle {
         self.base * self.height
     }
 }
+
+impl Area for Trapezoid {
+    fn calc(&self) -> f64 {
+        (self.top_base + self.bottom_base) * self.height / 2.0
+    }
+}
 ```
 
 ## Day 85 のまとめ
