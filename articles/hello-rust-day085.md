@@ -95,18 +95,18 @@ trait Area {
 ```rust
 struct Triangle {
     base: f64,
-    heigt: f64,
+    height: f64,
 }
 
 struct Rectangle {
     base: f64,
-    heigt: f64,
+    height: f64,
 }
 
 struct Trapezoid {
     top_base: f64,
     bottom_base: f64,
-    heigt: f64,
+    height: f64,
 }
 ```
 
@@ -130,6 +130,16 @@ impl Area for Trapezoid {
         (self.top_base + self.bottom_base) * self.height / 2.0
     }
 }
+```
+
+```rust
+let triangle = Triangle {base: 10.0, height: 20.0};
+let rectangle = Rectangle {base: 10.0, height: 20.0};
+let trapezoid = Trapezoid {top_base: 10.0, bottom_base: 20.0, height: 10.0};
+
+println!("三角形: {}", triangle.calc);
+println!("四角形: {}", rectangle.calc);
+println!("台形: {}", trapezoid.calc);
 ```
 
 ## Day 85 のまとめ
