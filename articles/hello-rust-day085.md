@@ -90,6 +90,8 @@ trait Area {
 }
 ```
 
+そして面積を求める対象の形に関する構造体を定義します。
+
 ```rust
 struct Triangle {
     base: f64,
