@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 85]書籍:
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 85 のテーマ
 
