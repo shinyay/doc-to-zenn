@@ -5,7 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
 published: false
 ---
-## Day 84 のテーマ
+## Day 85 のテーマ
 
 ![](https://storage.googleapis.com/zenn-user-upload/942b1e806720-20221205.png)
 
@@ -35,3 +35,5 @@ published: false
 - 第22章 所有権、移動、コピー
 - 第23章 借用とライフタイム
 - 第24章 さらにライフタイムについて
+
+## Day 85 のまとめ
