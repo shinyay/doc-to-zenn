@@ -57,6 +57,8 @@ published: false
 
 ### Rust Servers, Services, and Apps
 
+![](https://storage.googleapis.com/zenn-user-upload/751da3d120da-20221213.png)
+
 - [Rust Servers, Services, and Apps](https://www.manning.com/books/rust-servers-services-and-apps)
   - by Prabhu Eshwarla
 
@@ -73,5 +75,26 @@ published: false
   - 10 Understanding Async Rust
   - 11 Building a P2P node with Async Rust
   - 12 Deploying web services with Docker
+
+### Code Like a Pro in Rust
+
+![](https://storage.googleapis.com/zenn-user-upload/e3d6efcf7281-20221213.png)
+
+- [Code Like a Pro in Rust](https://www.manning.com/books/code-like-a-pro-in-rust)
+  - by Brenden Matthews
+
+- コンテンツ内容
+  - 1 Feelin' Rusty
+  - 2 Project management with Cargo
+  - 3 Rust tooling
+  - 4 Data structures
+  - 5 Working with memory
+  - 6 Unit testing
+  - 7 Integration testing
+  - 8 Design pattern building blocks
+  - 9 Design patterns: beyond the basics
+  - 10 Advanced design patterns
+  - 11 Async Rust
+  - 12 Optimizations
 
 ## Day 86 のまとめ
