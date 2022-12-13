@@ -126,6 +126,9 @@ Rust を使用して HTTP サーバと RESTful API を構築し、安全性を�
   - 10 Deploy your application
   - 11 Testing your Rust application
 
+**Rust Web Development** は、12 月に発売されたばかりの本です。
+この本では、Rust を使ってサーバーサイドの Web アプリケーションを構築する方法を、非同期ランタイムの `tokio`、Web サーバーと API の `warp`、外部HTTPリクエストを実行する `reqwest` などの重要な Rust ライブラリとともに学ぶことができます。本書には、例題、コードサンプル、プロジェクトのセットアップやコードの整理に関するプロ向けのヒントが掲載されています。実際の開発プロジェクトのように、章ごとにコードを繰り返しながら、完全な Q&A Webサービスを構築することができるようになっています。
+
 ### Multiplayer Game Development in Rust
 
 ![](https://storage.googleapis.com/zenn-user-upload/f835977f1768-20221213.png)
