@@ -55,6 +55,8 @@ published: false
 
 この書籍は、MEAP (Manning Early Access Program) 、つまり、まだ出版前の書籍です。執筆中の書籍を未完成の段階で購入し、章が完成するごとに読みすすめられるという形式になっています。
 
+### Rust Servers, Services, and Apps
+
 - [](https://www.manning.com/books/rust-servers-services-and-apps)
 
 ## Day 86 のまとめ
