@@ -117,4 +117,8 @@ published: false
   - 10 Deploy your application
   - 11 Testing your Rust application
 
+### Multiplayer Game Development in Rust
+
+- [Multiplayer Game Development in Rust]()
+
 ## Day 86 のまとめ
