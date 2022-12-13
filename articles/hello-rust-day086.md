@@ -16,7 +16,7 @@ published: false
 
 ![](https://storage.googleapis.com/zenn-user-upload/9faeb5123d98-20221213.png)
 
-- Rust in Action
+- [Rust in Action](https://www.manning.com/books/rust-in-action)
   - by Tim McNamara
 
 - コンテンツ内容
@@ -36,5 +36,25 @@ published: false
 こちらの本は日本語約されていて、翔泳社から**詳解Rustプログラミング**として出版されています。
 
 - [詳解Rustプログラミング](https://www.shoeisha.co.jp/book/detail/9784798173856)
+
+### Refactoring to Rust
+
+![](https://storage.googleapis.com/zenn-user-upload/6dff1b8c2457-20221213.png)
+
+- [Refactoring to Rust]()
+  - by Lily Mara, Joel Holmes
+
+- コンテンツ内容
+  - 1 Why Refactor to Rust
+  - 2 An overview of Rust
+  - 3 Introduction to C FFI and Unsafe Rust
+  - 4 Advanced FFI
+  - 5 Structuring Rust libraries
+  - 6 Integrating with dynamic languages
+  - 7 Testing your Rust integrations
+
+この書籍は、MEAP (Manning Early Access Program) 、つまり、まだ出版前の書籍です。執筆中の書籍を未完成の段階で購入し、章が完成するごとに読みすすめられるという形式になっています。
+
+- [](https://www.manning.com/books/rust-servers-services-and-apps)
 
 ## Day 86 のまとめ
