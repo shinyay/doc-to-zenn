@@ -97,4 +97,10 @@ published: false
   - 11 Async Rust
   - 12 Optimizations
 
+### Rust Web Development
+
+![](https://storage.googleapis.com/zenn-user-upload/f554daee7170-20221213.png)
+
+- [Rust Web Development](https://www.manning.com/books/rust-web-development)
+
 ## Day 86 のまとめ
