@@ -103,6 +103,9 @@ Rust を使用して HTTP サーバと RESTful API を構築し、安全性を�
   - 11 Async Rust
   - 12 Optimizations
 
+**Code Like a Pro in Rust** も MEAPです。
+この本では、言語の癖やコンパイラの問題、予想外の複雑さに時間をとられることなく、Rust プログラムを素早く作成する方法を紹介しています。Rust の開発者であるBrenden Matthews がデザインパターンとショートカットを直接提供し、既存の Rust の知識に基づいて構成されています。**Rust-analyzer**、**Clippy**、**Cargo**などの重要な Rust ツールの使い方や、ユニットテストやコードの最適化に関するベストプラクティスも学べます。また、ユニットテストやコード最適化のベストプラクティスも紹介されています。
+
 ### Rust Web Development
 
 ![](https://storage.googleapis.com/zenn-user-upload/f554daee7170-20221213.png)
