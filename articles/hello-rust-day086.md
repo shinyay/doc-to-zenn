@@ -102,5 +102,19 @@ published: false
 ![](https://storage.googleapis.com/zenn-user-upload/f554daee7170-20221213.png)
 
 - [Rust Web Development](https://www.manning.com/books/rust-web-development)
+  - by Bastian Gruber
+
+- コンテンツ内容
+  - 1 Why Rust?
+  - 2 Laying the foundation
+  - 3 Create your first route handler
+  - 4 Implement a RESTful API
+  - 5 Cleanup your codebase
+  - 6 Logging, tracing and debugging
+  - 7 Add a database to your application
+  - 8 Integrate 3rd party APIs
+  - 9 Add authentication and authorization
+  - 10 Deploy your application
+  - 11 Testing your Rust application
 
 ## Day 86 のまとめ
