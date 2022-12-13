@@ -57,6 +57,21 @@ published: false
 
 ### Rust Servers, Services, and Apps
 
-- [](https://www.manning.com/books/rust-servers-services-and-apps)
+- [Rust Servers, Services, and Apps](https://www.manning.com/books/rust-servers-services-and-apps)
+  - by Prabhu Eshwarla
+
+- コンテンツ内容
+  - 1 Why Rust for web applications?
+  - 2 Writing a basic web server from scratch
+  - 3 Building a RESTful web service
+  - 4 Performing database operations
+  - 5 Handling errors
+  - 6 Evolving the APIs and fearless refactoring
+  - 7 Introduction to server-side web apps in Rust
+  - 8 Working with templates for tutor registration
+  - 9 Working with forms for course maintenance
+  - 10 Understanding Async Rust
+  - 11 Building a P2P node with Async Rust
+  - 12 Deploying web services with Docker
 
 ## Day 86 のまとめ
