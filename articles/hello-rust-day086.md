@@ -78,6 +78,10 @@ published: false
   - 11 Building a P2P node with Async Rust
   - 12 Deploying web services with Docker
 
+**Rust Servers, Services, and Apps** も MEAPです。
+この本は、Rust でモダンな分散型 Web アプリケーションを開発するためのハンズオンガイドになっています。。効率的なサービスの構築、カスタム Web サーバの作成、そしてエンドツーエンドのフルスタックアプリケーションの構築を Rust で行う方法について学ぶことができます。
+Rust を使用して HTTP サーバと RESTful API を構築し、安全性を確保し、デバッグし、リファクタリングで進化させるという基礎的な部分から始めることができます。また、自分のプロジェクトに適用できるコードサンプルと、Rust がどのように動作するかを理解するのに役立つ詳細なアノテーションを提供しています。
+
 ### Code Like a Pro in Rust
 
 ![](https://storage.googleapis.com/zenn-user-upload/e3d6efcf7281-20221213.png)
