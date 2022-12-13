@@ -33,7 +33,7 @@ published: false
   - 11 Kernel
   - 12 Signals, interrupts, and exceptions
 
-こちらの本は日本語約されていて、翔泳社から**詳解Rustプログラミング**として出版されています。
+こちらの本は日本語に翻訳されていて、翔泳社から**詳解Rustプログラミング**として出版されています。
 
 - [詳解Rustプログラミング](https://www.shoeisha.co.jp/book/detail/9784798173856)
 
@@ -130,9 +130,5 @@ published: false
   - 3 Building a game server
   - 4 Making a multiplayer client
   - 5 Error handling
-
-### A Rust Sampler
-
-- [A Rust Sampler]()
 
 ## Day 86 のまとめ
