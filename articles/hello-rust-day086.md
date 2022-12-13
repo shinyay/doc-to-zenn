@@ -41,7 +41,7 @@ published: false
 
 ![](https://storage.googleapis.com/zenn-user-upload/6dff1b8c2457-20221213.png)
 
-- [Refactoring to Rust]()
+- [Refactoring to Rust](https://www.manning.com/books/refactoring-to-rust)
   - by Lily Mara, Joel Holmes
 
 - コンテンツ内容
