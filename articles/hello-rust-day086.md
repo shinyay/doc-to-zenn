@@ -119,6 +119,16 @@ published: false
 
 ### Multiplayer Game Development in Rust
 
-- [Multiplayer Game Development in Rust]()
+![](https://storage.googleapis.com/zenn-user-upload/f835977f1768-20221213.png)
+
+- [Multiplayer Game Development in Rust](https://www.manning.com/books/multiplayer-game-development-in-rust)
+  - by Stephan Dilly and Lyon Beckers
+
+- コンテンツ内容
+  - 1 Introducing Rust in games
+  - 2 Building a game client
+  - 3 Building a game server
+  - 4 Making a multiplayer client
+  - 5 Error handling
 
 ## Day 86 のまとめ
