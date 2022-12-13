@@ -55,6 +55,8 @@ published: false
 
 この書籍は、MEAP (Manning Early Access Program) 、つまり、まだ出版前の書籍です。執筆中の書籍を未完成の段階で購入し、章が完成するごとに読みすすめられるという形式になっています。
 
+読みやすいスタイルでRustを紹介し、構文やコンセプトを明確に説明しています。Rust のパターンマッチで `FizzBuzz` を解いたり、Python コードの実行速度を大幅に向上させるなど、親しみやすい例を使って、Rust でプログラムを拡張する方法を実践的に学ぶことができます。また、既存のあらゆるソフトウェアに適用できる Rust プラグインを構築するテクニックを習得できるようになっています。
+
 ### Rust Servers, Services, and Apps
 
 ![](https://storage.googleapis.com/zenn-user-upload/751da3d120da-20221213.png)
