@@ -93,7 +93,7 @@ WebAssembly のランタイムで、Bytecode Alliance より提供されてい�
 
 - [Wasmtime 公式](https://wasmtime.dev/)
 
-### 全体のシーケンス
+## mod_wasm 処理シーケンス
 
 Apache HTTP Server から Wasmtime までの処理の流れは次のようになります。
 
