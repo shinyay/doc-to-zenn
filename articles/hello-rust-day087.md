@@ -38,7 +38,6 @@ mod_wasm を実装した Apache Http Server は、WebAssembly にコンパイル
 Wasmtime については以前 `1.0.0` がリリースされた時に記事を書いています。
 
 - [[Day 29]Wasmtime 1.0.0](https://zenn.dev/shinyay/articles/hello-rust-day029)
-- [Wasmtime 公式](https://wasmtime.dev/)
 
 ## mod_wasm アーキテクチャ
 
@@ -50,6 +49,32 @@ Wasmtime については以前 `1.0.0` がリリースされた時に記事を�
 - **libwasm_runtime.so**
 
 ### mod_wasm.so
+
+- C により開発
+
+**mod_wasm.so** は、Apache HTTP Server の拡張モジュールとして動作します。
+これは、Apache HTTP Server が持つ API と Wasmtime ランタイムを管理する Rust ライブラリの間のインターフェースの役割をします。
+
+- WebAssembly に関する構成をする新しいディレクティブの処理
+- `post_config()` と `content_handler()`
+
 ### libwasm_runtime.so
+
+- Rust により開発
+
+**libwasm_runtime.so** は、Wasmtime ランタイムを介して WebAssembly モジュールを管理するための高レベルの API を提供しています。
+Apache HTTP Server が受けた HTTP リクエストを受け取り、WebAssembly モジュールを設定して実行を行います。そして、レスポンス内容を解析して `mod_wasm.so` に制御を返します。
+
+### Wasmtime
+
+WebAssembly のランタイムで、Bytecode Alliance より提供されています。
+
+- [Wasmtime 公式](https://wasmtime.dev/)
+
+### 全体のシーケンス
+
+Apache HTTP Server から Wasmtime までの処理の流れは次のようになります。
+
+![](https://storage.googleapis.com/zenn-user-upload/484746d69142-20221214.png)
 
 ## Day 87 のまとめ
