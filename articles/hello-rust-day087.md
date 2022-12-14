@@ -2,7 +2,7 @@
 title: "100日後にRustをちょっと知ってる人になる: [Day 87]"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [rust]
+topics: [rust, webassembly, wasm]
 published: false
 ---
 ## Day 87 のテーマ
@@ -12,5 +12,7 @@ published: false
 ![](https://storage.googleapis.com/zenn-user-upload/e1126622ef9e-20221214.png)
 
 今日は WebAssembly のイメージの作り方ではなくて、Rust を使って作られた WebAssembly のライブラリが使用されているモジュールについて見ていきたいと思います。
+
+## mod_wasm
 
 ## Day 87 のまとめ
