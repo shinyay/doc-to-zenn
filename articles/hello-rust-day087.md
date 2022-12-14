@@ -33,8 +33,14 @@ https://www.youtube.com/watch?v=jXe8kulUscQ&list=PLj6h78yzYM2PzLhPvZIihwPShNuXP0
 ## mod_wasm 概要
 
 Apache HTTP Server は通常は `mod_proxy` や `ModSecurity` などを利用してプロキシサーバだったり WAF として使用したりしていることが多いのではないでしょうか。**mod_wasm** は **WebAssembly** モジュールを Apache Http Server で実行することを可能にするもジューリなのです。
-mod_wasm を実装した Apache Http Server は、WebAssembly にコンパイルされたアプリケーションにより外部からの HTTP リクエストに対して応答する事が可能になります。
+mod_wasm を実装した Apache Http Server は、WebAssembly にコンパイルされたアプリケーションにより外部からの HTTP リクエストに対して応答する事が可能になります。内部的には、**Wasmtime** ランタイムを使用していて、WebAssembly モジュールの設定や初期化、そして実行を行います。
+
+Wasmtime については以前 `1.0.0` がリリースされた時に記事を書いています。
+
+- [[Day 29]Wasmtime 1.0.0](https://zenn.dev/shinyay/articles/hello-rust-day029)
+- [Wasmtime 公式](https://wasmtime.dev/)
 
 ![](https://storage.googleapis.com/zenn-user-upload/dcb8451237e7-20221214.png)
+
 
 ## Day 87 のまとめ
