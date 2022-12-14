@@ -58,6 +58,13 @@ Wasmtime については以前 `1.0.0` がリリースされた時に記事を�
 - WebAssembly に関する構成をする新しいディレクティブの処理
 - `post_config()` と `content_handler()`
 
+httpd.conf に次のように `wasm-handler` と WebAssembly バイナリファイルへのパス `<Location>` を定義することで、**mod_wasm** を有効にすることができます。
+
+```conf
+Apache の設定
+Apache で mod_wasm を有効にするには、 httpd.conf で wasm-handler と Wasm バイナリへのファイルパスで <Location> を定義するだけです。
+```
+
 ### libwasm_runtime.so
 
 - Rust により開発
@@ -99,5 +106,10 @@ WASI では、以下のような一般的なシステムインターフェース
 
 - HTTP ヘッダを環境変数として設定
 - リクエストボディを標準入力で受け渡す
+
+最後に WebAssembly モジュールは標準出力を通して全てのデータを返します。
+HTTP レスポンスヘッダを先頭にし、そして次にコンテンツを探し、レスポンスを処理します。
+
+このような一連の処理の流れによって **mod_wasm** は動作しています。
 
 ## Day 87 のまとめ
