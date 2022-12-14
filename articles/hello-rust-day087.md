@@ -30,6 +30,11 @@ https://www.youtube.com/watch?v=jXe8kulUscQ&list=PLj6h78yzYM2PzLhPvZIihwPShNuXP0
 
 動画の中で、この mod_wasm については説明されているのですが、自分の理解を深めるために自分の言葉で説明していこうと思います。
 
+## mod_wasm 概要
 
+Apache HTTP Server は通常は `mod_proxy` や `ModSecurity` などを利用してプロキシサーバだったり WAF として使用したりしていることが多いのではないでしょうか。**mod_wasm** は **WebAssembly** モジュールを Apache Http Server で実行することを可能にするもジューリなのです。
+mod_wasm を実装した Apache Http Server は、WebAssembly にコンパイルされたアプリケーションにより外部からの HTTP リクエストに対して応答する事が可能になります。
+
+![](https://storage.googleapis.com/zenn-user-upload/dcb8451237e7-20221214.png)
 
 ## Day 87 のまとめ
