@@ -77,4 +77,6 @@ Apache HTTP Server から Wasmtime までの処理の流れは次のようにな
 
 ![](https://storage.googleapis.com/zenn-user-upload/484746d69142-20221214.png)
 
+**mod_wasm** を有効にした Apache HTTP Server を起動すると、WebAssembly モジュールがメモリ上にロードされます。
+
 ## Day 87 のまとめ
