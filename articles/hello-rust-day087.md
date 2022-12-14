@@ -77,6 +77,24 @@ Apache HTTP Server から Wasmtime までの処理の流れは次のようにな
 
 ![](https://storage.googleapis.com/zenn-user-upload/484746d69142-20221214.png)
 
-**mod_wasm** を有効にした Apache HTTP Server を起動すると、WebAssembly モジュールがメモリ上にロードされます。
+**mod_wasm** を有効にした Apache HTTP Server を起動すると、WebAssembly モジュールがメモリ上にプリロードされます。その動作の流れは次のようになります。
+
+1. Apache HTTP Server の起動・初期化フェーズでは、**mod_wasm.so** が `httpd.conf` に定義した設定を読み込む
+2. **libwasm_runtime.so** に定義情報を渡す
+3. WebAssembly モジュールがファイルシステムから読み込まれて、Wasmtime でメモリ上にプリロードする
+
+この処理は、リクエストを受け取るたびに最初から WebAssembly モジュールをロードするというものではないので、リクエスト処理の高速化に繋がります。
+
+Apache HTTP Server が起動したので、リクエスト処理の準備ができたことになります。次に、**mod_wasm.so** は定義されたパスに属する全てを処理するために、全てのリクエストの評価を行います。そして、リクエストが処理されて **libwasm_runtime.so** に渡されます。このライブラリでは、HTTP ヘッダとリクエストボディを含む新しい wasmtime コンテキストを設定します。そして、モジュールを実行します。
+
+情報の受け渡しには、WebAssembly のモジュラーシステムインターフェースである **WebAssembly System Interface (WASI)** を使用します。
+WASI では、以下のような一般的なシステムインターフェースを設定することができます。
+
+- 環境変数
+- ファイルシステム
+- 標準入出力
+など
+
+
 
 ## Day 87 のまとめ
