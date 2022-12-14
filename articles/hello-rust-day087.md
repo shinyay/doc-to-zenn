@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 87]mod_wasm"
+title: "100日後にRustをちょっと知ってる人になる: [Day 87]mod_wasm 概要"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust, webassembly, wasm]
@@ -101,7 +101,7 @@ Apache HTTP Server から Wasmtime までの処理の流れは次のようにな
 
 **mod_wasm** を有効にした Apache HTTP Server を起動すると、WebAssembly モジュールがメモリ上にプリロードされます。その動作の流れは次のようになります。
 
-1. Apache HTTP Server の起動・初期化フェーズでは、**mod_wasm.so** が `httpd.conf` に定義した設定を読み込む
+1. Apache HTTP Server の起動・初期化フェーズでは、まず **mod_wasm.so** が `httpd.conf` に定義したさまざまな `WasmXXX` ディレクティブを読み込む
 2. **libwasm_runtime.so** に定義情報を渡す
 3. WebAssembly モジュールがファイルシステムから読み込まれて、Wasmtime でメモリ上にプリロードする
 
@@ -128,3 +128,12 @@ HTTP レスポンスヘッダを先頭にし、そして次にコンテンツを
 このような一連の処理の流れによって **mod_wasm** は動作しています。
 
 ## Day 87 のまとめ
+
+今日は、**VMware Wasm Labs** が提供しているオープンソースの Apache HTTP Server 拡張モジュールな **mod_wasm** について見てみました。
+
+- **mod_wasm** 概要
+- **mod_wasm** アーキテクチャ
+- **mod_wasm** 処理シーケンス
+
+細かなところはおいといて、Apache HTTP Server があれば、WebAssembly バイナリを動かすことができそうだな、と思ってもらえればそれでいいかなと思います。
+今日は全体概要について見てみただけで、実際にサンプルを用意して動かしたわけではありません。ですので、改めてサンプルを用意してテスト動作をしてみたいかなと思います。
