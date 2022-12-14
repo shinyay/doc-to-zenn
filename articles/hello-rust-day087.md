@@ -69,6 +69,17 @@ LoadModule wasm_module modules/mod_wasm.so
 </Location>
 ```
 
+**mod_wasm** が提供する httpd.conf の新しいディレクティブには以下のようなものがあります。
+
+|ディレクティブ|説明|
+|-----------|----|
+|`WasmModule <path>`|WebAssembly モジュールのファイルパスを指定します|
+|`WasmDir <dir>`|WebAssembly コンテキスト用のホストディレクトリを事前に開いておきます|
+|`WasmMapDir <map> <dir>`|WebAssembly コンテキスト用のホストディレクトリを事前に開きマッピングディレクトリにマウントします|
+|`WasmArg <arg>`|WebAssembly モジュールコンテキストに渡す引数を設定します|
+|`WasmEnv <env> <value>`|WebAssembly モジュールコンテキストに渡される環境変数を設定します|
+|`WasmEnableCGI {On\|Off}`|CGIエミュレーションモードの有効／無効を設定する。デフォルトはOff|
+
 ### libwasm_runtime.so
 
 - Rust により開発
