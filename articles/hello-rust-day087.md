@@ -61,8 +61,12 @@ Wasmtime については以前 `1.0.0` がリリースされた時に記事を�
 httpd.conf に次のように `wasm-handler` と WebAssembly バイナリファイルへのパス `<Location>` を定義することで、**mod_wasm** を有効にすることができます。
 
 ```conf
-Apache の設定
-Apache で mod_wasm を有効にするには、 httpd.conf で wasm-handler と Wasm バイナリへのファイルパスで <Location> を定義するだけです。
+LoadModule wasm_module modules/mod_wasm.so
+
+<Location /hello-wasm>
+  SetHandler wasm-handler
+  WasmModule /var/www/modules/hello_wasm.wasm
+</Location>
 ```
 
 ### libwasm_runtime.so
