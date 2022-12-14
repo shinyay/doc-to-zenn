@@ -40,7 +40,16 @@ Wasmtime については以前 `1.0.0` がリリースされた時に記事を�
 - [[Day 29]Wasmtime 1.0.0](https://zenn.dev/shinyay/articles/hello-rust-day029)
 - [Wasmtime 公式](https://wasmtime.dev/)
 
+## mod_wasm アーキテクチャ
+
+**mod_wasm** は 2 つのライブラリから構成されています。
+
 ![](https://storage.googleapis.com/zenn-user-upload/dcb8451237e7-20221214.png)
 
+- **mod_wasm.so**
+- **libwasm_runtime.so**
+
+### mod_wasm.so
+### libwasm_runtime.so
 
 ## Day 87 のまとめ
