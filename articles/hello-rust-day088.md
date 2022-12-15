@@ -37,4 +37,38 @@ wasm-workers-server 0.5.0
 
 - [v0.5.0](https://github.com/vmware-labs/wasm-workers-server/releases/tag/v0.5.0)
 
+## 最新版へのアップグレード
+
+`wws` CLI からのアップグレードには対応しておらず、新規にインストールを行う同じ手順を実施し、上書きをする操作になります。次のコマンドで、アップグレードを行います。
+
+```shell
+curl https://raw.githubusercontent.com/vmware-labs/wasm-workers-server/main/install.sh | bash
+```
+
+```text
+👋 Hello
+I'm going to install Wasm Workers Server in your system
+⚙️  Downloading
+⚙️  Decompressing
+x ./
+x ./LICENSE
+x ./README.md
+x ./wws
+⚙️  Installing
+Wasm Workers Server will be installed in /usr/local/bin.
+This requires sudo permissions. If you prefer to install it
+in your current directory, run the installer with --local.
+If you want it to be global, just type your password:
+Password:
+🧹 Cleaning up
+🚀 Wasm Workers Server (wws) was installed correctly!
+You can now try it: wws --help
+```
+
+```shell
+$ wws --version
+
+wasm-workers-server 0.6.0
+```
+
 ## Day 88 のまとめ
