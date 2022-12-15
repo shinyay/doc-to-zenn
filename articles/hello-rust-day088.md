@@ -77,10 +77,16 @@ wasm-workers-server 0.6.0
 
 それでは、**## Wasm Workers Server 0.6.0** のアップデート内容を見てみたいと思います。
 
+- [Wasmtime のバージョンを 3.0.0 に更新](https://github.com/vmware-labs/wasm-workers-server/pull/40)
 - [静的アセット用のフォルダのサポート](https://github.com/vmware-labs/wasm-workers-server/issues/7)
 - [Rust workers への環境変数を設定・注入に対応](https://github.com/vmware-labs/wasm-workers-server/issues/34)
 - [Rust workers からバイト配列を返却に対応](https://github.com/vmware-labs/wasm-workers-server/pull/45)
 - [URL の前にパスを追加する prefix オプションを追加](https://github.com/vmware-labs/wasm-workers-server/pull/37)
 - [GitHub Actions でコンテナのビルドを自動化](https://github.com/vmware-labs/wasm-workers-server/pull/52)
+- [attr マクロハンドラを worker にリネーム](https://github.com/vmware-labs/wasm-workers-server/pull/48)
+
+修正事項などを含むアップデート内容の全ては以下のリポジトリの README に記述されています:
+
+- [v0.6.0](https://github.com/vmware-labs/wasm-workers-server/releases/tag/v0.6.0)
 
 ## Day 88 のまとめ
