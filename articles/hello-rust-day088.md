@@ -5,3 +5,5 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust, webassembly, wasm]
 published: false
 ---
+## Day 88 のテーマ
+## Day 88 のまとめ
