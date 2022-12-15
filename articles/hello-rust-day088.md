@@ -173,3 +173,7 @@ fn handler(req: Request<String>) -> Result<Response<Content>> {
 ```
 
 ## Day 88 のまとめ
+
+**Wasm Workers Server** は `v0.6.0` になり、Web アプリケーションの実行環境としての使い勝手が随分とあがりました。
+**静的アセット**や**環境変数**の利用などはすぐに使ってみたい機能だと思いました。
+`v1.0.0` に向けての今後の発展が楽しみです。
