@@ -90,4 +90,13 @@ wasm-workers-server 0.6.0
 
 - [v0.6.0](https://github.com/vmware-labs/wasm-workers-server/releases/tag/v0.6.0)
 
+### Wasmtime のバージョンを 3.0.0 に更新 のバージョンを 3.0.0 に更新
+
+**Wasmtime** とは、**Bytecode Aliance** がスタンドアロンで WebAssembly　を動作させるために提供している **WASI (WebAssembly System Interface)** の実装のことでした。
+
+- [[Day 29]Wasmtime 1.0.0](https://zenn.dev/shinyay/articles/hello-rust-day087)
+
+その Wasmtime のバージョンが **11 月 22 日** に `v3.0.0` がリリースされています。（最新版 は 12 月 2 日にリリースされている `v3.0.1` です。）
+この `v3.0.0` に対応させています。
+
 ## Day 88 のまとめ
