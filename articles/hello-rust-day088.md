@@ -71,4 +71,16 @@ $ wws --version
 wasm-workers-server 0.6.0
 ```
 
+というわけで、`0.6.0` に最新化できました。
+
+## Wasm Workers Server 0.6.0
+
+それでは、**## Wasm Workers Server 0.6.0** のアップデート内容を見てみたいと思います。
+
+- [静的アセット用のフォルダのサポート](https://github.com/vmware-labs/wasm-workers-server/issues/7)
+- [Rust workers への環境変数を設定・注入に対応](https://github.com/vmware-labs/wasm-workers-server/issues/34)
+- [Rust workers からバイト配列を返却に対応](https://github.com/vmware-labs/wasm-workers-server/pull/45)
+- [URL の前にパスを追加する prefix オプションを追加](https://github.com/vmware-labs/wasm-workers-server/pull/37)
+- [GitHub Actions でコンテナのビルドを自動化](https://github.com/vmware-labs/wasm-workers-server/pull/52)
+
 ## Day 88 のまとめ
