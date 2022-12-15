@@ -9,7 +9,7 @@ published: false
 
 [Day 87](https://zenn.dev/shinyay/articles/hello-rust-day087) では、Rust を用いて開発された WebAssebmly を Apache HTTP Server で動作させるための **mod_wasm** について見てみました。そこでも紹介したように、mod_wasm は **VMware Wasm Labs** が公開しているオープンソースです。また、記事の中でも触れましたが [Day 50](https://zenn.dev/shinyay/articles/hello-rust-day050) で紹介をした **Wasm Workers Server** も同じく **VMware Wasm Labs** が公開しているオープンソースの WebAssembly をサーバーレスとして動作させる実行環境でした。
 
-ふと、この **Wasm Workers Server** のリポジトリを見ていると、ぼくが使用しているバージョンから上がっていたので今日はそのアップデートについて見てみたいかなと思います。
+ふと、この **Wasm Workers Server** のリポジトリを見ていると、**12 月 2 日** に、ぼくが使用しているバージョンから上がっていました。そこで、今日はそのアップデートについて見てみたいかなと思います。
 
 ## Wasm Workers Server
 
@@ -75,7 +75,8 @@ wasm-workers-server 0.6.0
 
 ## Wasm Workers Server 0.6.0
 
-それでは、**## Wasm Workers Server 0.6.0** のアップデート内容を見てみたいと思います。
+さて、今最新化した **## Wasm Workers Server 0.6.0** ですが、これは 12 月 2 日にリリースされたものになります。
+それでは、アップデート内容について見ていきます。
 
 - [Wasmtime のバージョンを 3.0.0 に更新](https://github.com/vmware-labs/wasm-workers-server/pull/40)
 - [静的アセット用のフォルダのサポート](https://github.com/vmware-labs/wasm-workers-server/issues/7)
