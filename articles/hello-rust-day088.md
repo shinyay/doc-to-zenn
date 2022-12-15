@@ -131,6 +131,15 @@ TOKEN = "$TOKEN"
 従来は、すべての `Worker` 関数はボディタイプとして `String` を返すようになっていました。バイナリレスポンスは `String` としてエンコードができないために Worker のユースケースを制限していました。
 `v0.6.0` では、Worker はレスポンスボディに `Content` というカスタムタイプを返すようになります。これにより、Worker は **文字列** (`String`) あるいは **バイナリデータ** (`Vec<u8>`) をクライアントに返すことができるようになります。
 
+```rust
+#[worker]
+fn handler(req: Request<String>) -> Result<Response<Content>> {
+    let mut buf = BufWriter::new(Vec::new());
+    :
+    :
+}
+```
+
 ### Rust マクロ属性の名前を worker に変更
 
 ネーミングを統一するために、マクロ属性を `handler` から `worker` に変更になっています。
