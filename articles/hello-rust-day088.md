@@ -33,4 +33,8 @@ $ wws --version
 wasm-workers-server 0.5.0
 ```
 
+この `0.5.0` は最初に公開されたバージョンで、10 月 17 日のものです。
+
+- [v0.5.0](https://github.com/vmware-labs/wasm-workers-server/releases/tag/v0.5.0)
+
 ## Day 88 のまとめ
