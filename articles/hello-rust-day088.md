@@ -11,6 +11,24 @@ published: false
 
 ふと、この **Wasm Workers Server** のリポジトリを見ていると、ぼくが使用しているバージョンから上がっていたので今日はそのアップデートについて見てみたいかなと思います。
 
+## Wasm Workers Server
 
+![](https://storage.googleapis.com/zenn-user-upload/89169fa9e991-20221215.png)
+
+以前すでにこの **Wasm Workers Server** について説明を行ったので、今日は細かなことは記載しません。どういうものかは、以下の内容を見てください。
+
+- [[Day 50]Wasm Workers Server](https://zenn.dev/shinyay/articles/hello-rust-day050)
+- [[Day 51]Wasm Workers Server の動作](https://zenn.dev/shinyay/articles/hello-rust-day051)
+- [[Day 52]Wasm Workers Server と KVS](https://zenn.dev/shinyay/articles/hello-rust-day052)
+- [[Day 53]wasm-workers-server-kit クレート](https://zenn.dev/shinyay/articles/hello-rust-day053)
+
+簡単に表現すると、**Wasm Workers Server** は、WebAssembly 上でアプリケーションを実行するためのHTTPサーバです。
+そのアプリケーションは **workers** というパターンに従っており、すべての URL はリクエストを処理しレスポンスを提供する個別のモジュールに関連付けられるようになっているものです。
+
+```shell
+$ wws --version
+
+wasm-workers-server 0.5.0
+```
 
 ## Day 88 のまとめ
