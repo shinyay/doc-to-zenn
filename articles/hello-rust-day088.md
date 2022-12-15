@@ -25,6 +25,8 @@ published: false
 簡単に表現すると、**Wasm Workers Server** は、WebAssembly 上でアプリケーションを実行するためのHTTPサーバです。
 そのアプリケーションは **workers** というパターンに従っており、すべての URL はリクエストを処理しレスポンスを提供する個別のモジュールに関連付けられるようになっているものです。
 
+さて、一応改めてですが、現在の **Wasm Workers Server** のバージョン確認をしておきます。**Wasm Workers Server** の操作は `wws` CLI ツールで行います。
+
 ```shell
 $ wws --version
 
