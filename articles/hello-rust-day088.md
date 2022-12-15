@@ -84,7 +84,7 @@ wasm-workers-server 0.6.0
 - [Rust workers からバイト配列を返却に対応](https://github.com/vmware-labs/wasm-workers-server/pull/45)
 - [URL の前にパスを追加する prefix オプションを追加](https://github.com/vmware-labs/wasm-workers-server/pull/37)
 - [GitHub Actions でコンテナのビルドを自動化](https://github.com/vmware-labs/wasm-workers-server/pull/52)
-- [attr マクロハンドラを worker にリネーム](https://github.com/vmware-labs/wasm-workers-server/pull/48)
+- [Rust マクロ属性の名前を worker に変更](https://github.com/vmware-labs/wasm-workers-server/pull/48)
 
 修正事項などを含むアップデート内容の全ては以下のリポジトリの README に記述されています:
 
@@ -124,6 +124,43 @@ JSON_MESSAGE = "Hello! このメッセージは、環境変数からのもので
 ```toml
 [vars]
 TOKEN = "$TOKEN"
+```
+
+### Rust workers からバイト配列を返却に対応
+
+従来は、すべての `Worker` 関数はボディタイプとして `String` を返すようになっていました。バイナリレスポンスは `String` としてエンコードができないために Worker のユースケースを制限していました。
+`v0.6.0` では、Worker はレスポンスボディに `Content` というカスタムタイプを返すようになります。これにより、Worker は **文字列** (`String`) あるいは **バイナリデータ** (`Vec<u8>`) をクライアントに返すことができるようになります。
+
+### Rust マクロ属性の名前を worker に変更
+
+ネーミングを統一するために、マクロ属性を `handler` から `worker` に変更になっています。
+
+変更前:
+
+```rust
+use wasm_workers_rs::{
+   http::{self, Request, Response},
+   handler, Content,
+};
+
+#[handler]
+fn handler(req: Request<String>) -> Result<Response<Content>> {
+   // ...
+}
+```
+
+変更後:
+
+```rust
+use wasm_workers_rs::{
+   http::{self, Request, Response},
+   worker, Content,
+};
+
+#[worker]
+fn handler(req: Request<String>) -> Result<Response<Content>> {
+   // ...
+}
 ```
 
 ## Day 88 のまとめ
