@@ -80,4 +80,29 @@ https://github.com/vmware-labs/mod_wasm/blob/main/examples/wasm_modules/php-scri
 
 ![](https://storage.googleapis.com/zenn-user-upload/f5f822904350-20221216.png)
 
+### WordPress
+
+これは、文字通り PHP インタプリタの WebAssembly ビルド上で動作する **WordPress** です。
+
+- <http://localhost:8080/wordpress/>
+
+https://github.com/vmware-labs/mod_wasm/tree/main/examples/wasm_modules/php-scripts/wordpress-patch
+
+https://github.com/vmware-labs/mod_wasm/blob/main/examples/wasm_modules/php-scripts/wordpress-patch/wp-includes/blocks.php
+
+https://github.com/vmware-labs/mod_wasm/blob/main/examples/wasm_modules/php-scripts/wordpress-patch/wp-includes/functions.php
+
+https://github.com/vmware-labs/mod_wasm/blob/main/examples/wasm_modules/php-scripts/wordpress-patch/wp-content/db.php
+
+次の `Dockerfile` の箇所を見てもらうと分かるように、特殊なことをしているわけではなく WebAssembly のPHP ランタイム上で WordPress を動かしているのです。
+
+```dockerfile
+RUN mkdir -p /usr/local/apache2/htdocs/wordpress
+COPY --from=builder-demos /tmp/wordpress /usr/local/apache2/htdocs/wordpress
+COPY ./examples/wasm_modules/php-scripts/wordpress-patch/ /usr/local/apache2/htdocs/wordpress
+RUN chmod -R 777 /usr/local/apache2/htdocs/wordpress/wp-content/database
+```
+![](https://storage.googleapis.com/zenn-user-upload/f04ab6b75656-20221216.png)
+
 ## Day 89 のまとめ
+
