@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 89]mod_was
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust, webassembly, wasm]
-published: false
+published: true
 ---
 ## Day 89 のテーマ
 
