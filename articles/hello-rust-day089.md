@@ -104,5 +104,47 @@ RUN chmod -R 777 /usr/local/apache2/htdocs/wordpress/wp-content/database
 ```
 ![](https://storage.googleapis.com/zenn-user-upload/f04ab6b75656-20221216.png)
 
+## Dockerfile で準備する mod_wasm 環境
+
+![](https://storage.googleapis.com/zenn-user-upload/dcb8451237e7-20221214.png)
+
+Dockerfile の中では、**mod_wasm.so** と **libwasm_runtime.so** をそれぞれビルドして準備をしているのが分かります。
+
+```dockerfile
+################################################################################
+# [`wasm_runtime.so` Builder]
+################################################################################
+FROM $IMAGE_REPOSITORY/library/rust:1.65.0-slim as builder-wasm_runtime.so
+ARG WASM_RUNTIME_PATH=/usr/src/wasm_runtime
+RUN apt-get update && apt-get install make
+WORKDIR $WASM_RUNTIME_PATH
+COPY ./wasm_runtime ./
+ENV CARGO_UNSTABLE_SPARSE_REGISTRY=true
+RUN rustup update nightly
+RUN cargo +nightly -Z sparse-registry install cbindgen
+RUN make clean_all
+RUN make all
+```
+
+```dockerfile
+################################################################################
+# [`mod_wasm.so` Builder]
+################################################################################
+FROM $IMAGE_REPOSITORY/library/httpd:2.4 as builder-mod_wasm.so
+ARG WASM_RUNTIME_PATH=/usr/src/wasm_runtime
+ARG MOD_WASM_PATH=/usr/src/mod_wasm
+ARG DIST_DIR=$MOD_WASM_PATH/dist
+RUN apt-get update && apt-get install apache2-dev build-essential pkg-config libtool libapr1-dev libaprutil1-dev make gcc libtool-bin libxml2-dev libpcre2-dev subversion pkg-config -y
+WORKDIR $MOD_WASM_PATH
+COPY ./mod_wasm $MOD_WASM_PATH
+COPY ./dist $DIST_DIR
+COPY --from=builder-wasm_runtime.so $WASM_RUNTIME_PATH/target/release/libwasm_runtime.so $WASM_RUNTIME_PATH/target/release/libwasm_runtime.so
+COPY --from=builder-wasm_runtime.so $WASM_RUNTIME_PATH/include/ $WASM_RUNTIME_PATH/include/
+RUN mkdir -p $MOD_WASM_PATH/dist/conf $DIST_DIR/modules
+RUN HTTPD_DIR=/usr/local/apache2 ./build.sh
+```
+
 ## Day 89 のまとめ
 
+今回は、[Day 87](https://zenn.dev/shinyay/articles/hello-rust-day087) で紹介していた **mod_wasm** のサンプルアプリケーションの実行について見てみました。Dockerfile の構成を見てもらうと分かるように、**mod_wasm** を構成する 2 つのモジュール `wasm_runtime.so` と `mod_wasm.so` があれば、簡単に WebAssembly モジュールを動かすことができるようになる事が分かると思います。
+自分で作った WebAssembly モジュールの動作をサーバサイドで試してみようと、このサンプル動作をみて僕も思っています。
