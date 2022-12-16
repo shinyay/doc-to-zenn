@@ -47,14 +47,18 @@ docker run -p 8080:8080 ghcr.io/vmware-labs/httpd-mod-wasm:latest
 
 このアプリケーションコードは、以下をみると分かるように標準出力をしているだけのものになります。
 
-https://github.com/vmware-labs/mod_wasm/tree/main/examples/rust-src/hello_wasm
+https://github.com/vmware-labs/mod_wasm/blob/main/examples/rust-src/hello_wasm/src/main.rs
 
-```rust
-fn main() {
-    print!("Content-Type: text/plain\r\n\r\n");
-    println!("Hello, Wasm! @stdout");
-    eprintln!("Hello, Wasm! @stderr");
-}
-```
+### PHP Hello
+
+
+
+この **PHP Hello** には、次のエンドポイントからアクセスします。
+
+- <http://localhost:8080/php-hello/>
+
+これは、`phpinfo()` を呼び出し表示するだけのシンプルなアプリケーションです。
+
+https://github.com/vmware-labs/mod_wasm/blob/main/examples/wasm_modules/php-scripts/php-hello/index.php
 
 ## Day 89 のまとめ
