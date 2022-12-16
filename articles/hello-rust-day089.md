@@ -51,8 +51,6 @@ https://github.com/vmware-labs/mod_wasm/blob/main/examples/rust-src/hello_wasm/s
 
 ### PHP Hello
 
-
-
 この **PHP Hello** には、次のエンドポイントからアクセスします。
 
 - <http://localhost:8080/php-hello/>
@@ -60,5 +58,26 @@ https://github.com/vmware-labs/mod_wasm/blob/main/examples/rust-src/hello_wasm/s
 これは、`phpinfo()` を呼び出し表示するだけのシンプルなアプリケーションです。
 
 https://github.com/vmware-labs/mod_wasm/blob/main/examples/wasm_modules/php-scripts/php-hello/index.php
+
+![](https://storage.googleapis.com/zenn-user-upload/d809a74501ed-20221216.png)
+
+### PrettyFy App
+
+**PrettyFy App** は、`uploads` ディレクトリに置かれている静的ファイルを URL パラメータで指定し画面表示するものです。
+
+まず、以下のエンドポイントにアクセスすると `uploads` ディレクトリにあるファイル一覧が表示されます。
+- <http://localhost:8080/prettyfy>
+
+![](https://storage.googleapis.com/zenn-user-upload/bad110da3b1b-20221216.png)
+
+それらのファイルを `?file=` パラメータで指定して表示を行います。
+
+- <http://localhost:8080/prettyfy?file=uploaded_text.txt>
+
+![](https://storage.googleapis.com/zenn-user-upload/68ff98ab8ffb-20221216.png)
+
+- <http://localhost:8080/prettyfy?file=cgi_hello_python.py>
+
+![](https://storage.googleapis.com/zenn-user-upload/f5f822904350-20221216.png)
 
 ## Day 89 のまとめ
