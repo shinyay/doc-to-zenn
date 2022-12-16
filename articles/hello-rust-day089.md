@@ -14,4 +14,47 @@ published: false
 
 ## mod_wasm のサンプル実行
 
+**mod_wasm** の構成は先日紹介したように、**Apache HTTP Server** と **mod_wasm** モジュールが必要です。それぞれをダウンロードしてきて起動をしてもいいのですが、**VMware Wasm Labs** が コンテナイメージを提供しています。
+
+- [httpd-mod-wasm コンテナイメージ](https://github.com/vmware-labs/mod_wasm/pkgs/container/httpd-mod-wasm)
+
+これを実行することで、mod_wasm の動作大変をすることができます。
+それでは、コンテナイメージを実行してみます。
+
+```shell
+docker run -p 8080:8080 ghcr.io/vmware-labs/httpd-mod-wasm:latest
+```
+
+起動すると、このコンテナイメージには既にいくつかの WebAssembly モジュールが入っているので、それらにアクセスして見てみます。
+
+- Hello Wasm
+- PHP Hello
+- PrettyFy App
+- WordPress
+- HTTP Request Viewer
+
+### Hello Wasm
+
+まずは、Rust で作られている Hello World サンプルを見てみます。
+
+次のエンドポイントにアクセスします。
+
+- <http://localhost:8080/hello-wasm>
+
+このように表示されていれば、動作しています。
+
+![](https://storage.googleapis.com/zenn-user-upload/04b610b405e3-20221216.png)
+
+このアプリケーションコードは、以下をみると分かるように標準出力をしているだけのものになります。
+
+https://github.com/vmware-labs/mod_wasm/tree/main/examples/rust-src/hello_wasm
+
+```rust
+fn main() {
+    print!("Content-Type: text/plain\r\n\r\n");
+    println!("Hello, Wasm! @stdout");
+    eprintln!("Hello, Wasm! @stderr");
+}
+```
+
 ## Day 89 のまとめ
