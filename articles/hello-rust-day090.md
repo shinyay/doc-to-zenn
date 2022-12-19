@@ -40,6 +40,7 @@ v0.7.0 では次のようなフィーチャーが追加されていました:
 - [Linux ARM64上でのSpinの実行をサポート](https://github.com/fermyon/spin/pull/926)
 - [JavaScriptおよびTypescriptアプリケーションの実験的サポート](https://github.com/fermyon/spin-js-sdk)
 
+また、次のような連絡事項もありました。
 
 - [Ubuntu 18.04 のサポートを終了]()
 - [テンプレートはローカルでも更新が必要な場合あり](https://github.com/fermyon/spin/issues/990)
