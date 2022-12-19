@@ -200,8 +200,24 @@ let password:Result<String, spin_sdk::config::Error> = spin_sdk::config::get("pa
 spin new http-empty
 ```
 
+中身は toml が置かれているだけの空のプロジェクトです。
+
 ```shell
 $ ls
 
 spin.toml
+```
+
+`spin add` を使用して、コンポーネントを追加してみます。
+
+```shell
+$ spin add http-rust
+$ spin add http-go
+```
+
+以下のようにコンポーネントが追加されています。これで、1 アプリケーションに複数のコンポーネント、それも複数の言語で作ることが可能になります。モジュラーモノリスのような構成が作れそうですね。
+
+```shell
+$ ls
+go-component/   rust-component/ spin.toml
 ```
