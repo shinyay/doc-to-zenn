@@ -12,6 +12,8 @@ published: false
 
 ## Fermyon Spin
 
+![](https://storage.googleapis.com/zenn-user-upload/dbab6a58664b-20221219.png)
+
 Spin については [Day 57](https://zenn.dev/shinyay/articles/hello-rust-day087) の中で使い方について紹介をしているので、そちらを見て欲しいと思います。
 簡単に少しだけ説明すると、**WebAssemby** をコンパイルターゲットとするフレームワークです。フレームワークというと、ある特定の言語で作業効率をよくするために用いられる事が多いと思います。この Spin は様々な多言語に対応しているフレームワークです。
 Web アプリケーションやマイクロサービスのような HTTP リクエストへの応答を実行できる WebAssembly モジュールを作成するためのインターフェースを提供できるフレームワークになっています。
@@ -42,6 +44,17 @@ v0.7.0 では次のようなフィーチャーが追加されていました:
 
 また、次のような連絡事項もありました。
 
-- [Ubuntu 18.04 のサポートを終了]()
+- [Ubuntu 18.04 のサポートを終了](https://github.com/fermyon/spin/issues/990)
 - [テンプレートはローカルでも更新が必要な場合あり](https://github.com/fermyon/spin/issues/990)
   - `spin templates install --git https://github.com/fermyon/spin --update`
+
+ここで挙げられているアップデート内容をいくつか掘り下げて見てみたいと思います。
+
+### Hashicorp Vault との統合
+
+![](https://storage.googleapis.com/zenn-user-upload/8661dcb6de56-20221219.png)
+
+**Hashicorp Vault** はとても有名な機密情報の管理ツールなのでご存知の方も多いのではないでしょうか。**トークン**や、**パスワード**、また**証明書**、**暗号鍵**といった機密情報へのアクセスを安全に保管し、厳密に制御するオープンソースツールです。**UI**、**CLI**、**HTTP API**を使用して機密データへのアクセスを安全に行うことができます。
+
+- [Hashicorp Vault](https://www.vaultproject.io/)
+
