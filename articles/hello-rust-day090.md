@@ -52,7 +52,15 @@ Run './spin' to get started
 $ sudo mv spin /usr/local/bin/
 ```
 
-これでアップグレード完了です。
+これでアップグレード完了です。確認をしてみましょう。
+
+```shell
+$ spin -V
+
+spin 0.7.0 (73d315f 2022-12-15)
+```
+
+`0.7.0` になっていました✨
 
 ## Spin v0.7.0
 
