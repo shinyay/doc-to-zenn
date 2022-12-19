@@ -184,3 +184,8 @@ token = "root"
 mount = "secret"
 ```
 
+あとは、コンフィグの取得を行います。
+
+```rust
+let password:Result<String, spin_sdk::config::Error> = spin_sdk::config::get("password");
+```
