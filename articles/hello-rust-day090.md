@@ -3,7 +3,7 @@ title: "100日後にRustをちょっと知ってる人になる: [Day 90]Fermyon
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
-published: false
+published: true
 ---
 ## Day 90 のテーマ
 
@@ -307,7 +307,7 @@ WebAssembly による Web アプリケーションのためのフレームワー
 永続化まわりは、WASI としての仕様がまだまだ進化中ということもあって、これからを期待させるような内容にまだまだ留まっているところもあります。ですが、今回のアップデートによって一段とアプリケーションフレームワークの完成度が高まったと思いました。
 v1.0.0 の正式リリースに向けて、更に期待して注目していきたいと思います。
 
-- Spin 0.7.0 アップデート内容の振り返り
+- Spin 0.7.0 アップデート内容のgit a振り返り
   - [Hashicorp Vault との統合](https://github.com/fermyon/spin/pull/798)
   - [MySQL データベースへの接続の実験的サポート](https://github.com/fermyon/spin/pull/864)
   - [既存のアプリケーションにコンポーネントを追加する「spin add」コマンド](https://github.com/fermyon/spin/pull/889)
