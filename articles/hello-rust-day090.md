@@ -33,11 +33,14 @@ Web アプリケーションやマイクロサービスのような HTTP リク�
 v0.7.0 では次のようなフィーチャーが追加されていました:
 
 - [Hashicorp Vault との統合]()
-- [MySQLデータベースへの接続の実験的サポート]()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
+- [MySQL データベースへの接続の実験的サポート]()
+- [既存のアプリケーションにコンポーネントを追加する「spin add」コマンド]()
+- [Redis のセット操作に対応]()
+- [Web URL からの Wasm モジュールのフェッチに対応]()
+- [Linux ARM64上でのSpinの実行をサポート]()
+- [JavaScriptおよびTypescriptアプリケーションの実験的サポート](https://github.com/fermyon/spin-js-sdk)
+
+
+- [Ubuntu 18.04 のサポートを終了]()
+- [テンプレートはローカルでも更新が必要な場合あり](https://github.com/fermyon/spin/issues/990)
+  - `spin templates install --git https://github.com/fermyon/spin --update`
