@@ -26,6 +26,34 @@ Web アプリケーションやマイクロサービスのような HTTP リク�
 
 極端な話でいうと、この 3　コマンドがあればビルドして実行することが可能となります。
 
+## Spin v0.7.0 インストール
+
+Spin v0.7.0 の内容を見ていく前にとりあえず、インストールを行います。アップグレードも上書きインストールです。
+
+```shell
+$ curl -fsSL https://developer.fermyon.com/downloads/install.sh | bash
+
+Step 1: Downloading: https://github.com/fermyon/spin/releases/download/v0.7.0/spin-v0.7.0-macos-amd64.tar.gz
+Done...
+
+Step 2: Decompressing: spin-v0.7.0-macos-amd64.tar.gz
+x README.md
+x LICENSE
+x spin
+spin 0.7.0 (73d315f 2022-12-15)
+Done...
+
+Step 3: Removing the downloaded tarball
+Done...
+
+You're good to go. Check here for the next steps: https://developer.fermyon.com/spin/quickstart
+Run './spin' to get started
+
+$ sudo mv spin /usr/local/bin/
+```
+
+これでアップグレード完了です。
+
 ## Spin v0.7.0
 
 それでは、Spin v0.7.0 について見ていこうと思います。リリースノートはこちらです。
