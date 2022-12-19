@@ -58,3 +58,14 @@ v0.7.0 では次のようなフィーチャーが追加されていました:
 
 - [Hashicorp Vault](https://www.vaultproject.io/)
 
+それでは、Vault にデータを入れてみます。
+
+```shell
+vault server -dev -dev-root-token-id root
+vault kv put secret/password value="really-sensitive-value123!"
+```
+
+ここでは、`vault server` と `vault kv` というコマンドを使い登録を行いました。それぞれのコマンドの詳細な内容については次の公式ドキュメントで紹介されています。
+
+- [vault server](https://developer.hashicorp.com/vault/docs/commands/server)
+- [vault kv](https://developer.hashicorp.com/vault/docs/commands/kv)
