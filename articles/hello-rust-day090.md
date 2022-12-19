@@ -274,3 +274,27 @@ export async function handleRequest(request) {
   };
 }
 ```
+
+### Wasmtime 3.0.0 ベース
+
+この Spin v0.7.0 は **Wasmtime** 3.0.0 の上で開発されています。古いバージョンを使用している場合は、アップグレードをしてください。
+
+例えば、次のように古いバージョンを使用している場合です。
+
+```shell
+$ wasmtime -V
+
+wasmtime-cli 0.40.1
+```
+
+上書きインストールをして、アップグレードを行ってください。
+
+```shell
+curl https://wasmtime.dev/install.sh -sSf | bash
+```
+
+```shell
+$ wasmtime -V
+
+wasmtime-cli 3.0.1
+```
