@@ -62,10 +62,25 @@ v0.7.0 では次のようなフィーチャーが追加されていました:
 
 ```shell
 vault server -dev -dev-root-token-id root
-vault kv put secret/password value="really-sensitive-value123!"
+vault kv put secret/password value="my-name-is-yanashin18618!"
 ```
 
 ここでは、`vault server` と `vault kv` というコマンドを使い登録を行いました。それぞれのコマンドの詳細な内容については次の公式ドキュメントで紹介されています。
 
 - [vault server](https://developer.hashicorp.com/vault/docs/commands/server)
 - [vault kv](https://developer.hashicorp.com/vault/docs/commands/kv)
+
+このようにして Vault に登録したデータを `runtime-config.toml` を使用して **spin** に読み込み設定を行います。このファイルは spin の起動時に読み込まれる構成ファイルです。
+
+- [Configuration for Spin applications](https://developer.fermyon.com/spin/configuration#runtime-configuration)
+
+以下のような `toml` を定義します。
+
+```toml
+[[config_provider]]
+type = "vault"
+url = "<adress-to-vault>"
+token = "root"
+mount = "secret"
+```
+
