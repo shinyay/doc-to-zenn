@@ -254,3 +254,23 @@ $ spin add http-go
 $ ls
 go-component/   rust-component/ spin.toml
 ```
+
+## JavaScriptおよびTypescriptアプリケーションの実験的サポート
+
+12 月 3 日に spin v0.7.0 より一足先に公開されていたのが、この **JavaScript** と **TypeScript** の **SDK** です。
+
+- [Introducing the Spin JavaScript and TypeScript SDK](https://www.fermyon.com/blog/spin-js-sdk)
+
+この SDK に Spin が対応したことで、JavaScriptとTypeScriptのアプリケーションの開発が行えるようになりました。
+
+JavaScript による Hello World なサンプルはこちらです。
+
+```js
+export async function handleRequest(request) {
+  return {
+    status: 200,
+    headers: { "content-type": "text/plain" },
+    body: encoder.encode("Hello JavaScript").buffer,
+  };
+}
+```
