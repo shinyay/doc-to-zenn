@@ -303,3 +303,19 @@ wasmtime-cli 3.0.1
 
 ## Day 90 のまとめ
 
+WebAssembly による Web アプリケーションのためのフレームワークな **Fermyon Spin** の最新バージョン、**v0.7.0** のアップデートについて見てきました。
+永続化まわりは、WASI としての仕様がまだまだ進化中ということもあって、これからを期待させるような内容にまだまだ留まっているところもあります。ですが、今回のアップデートによって一段とアプリケーションフレームワークの完成度が高まったと思いました。
+v1.0.0 の正式リリースに向けて、更に期待して注目していきたいと思います。
+
+- Spin 0.7.0 アップデート内容の振り返り
+  - [Hashicorp Vault との統合](https://github.com/fermyon/spin/pull/798)
+  - [MySQL データベースへの接続の実験的サポート](https://github.com/fermyon/spin/pull/864)
+  - [既存のアプリケーションにコンポーネントを追加する「spin add」コマンド](https://github.com/fermyon/spin/pull/889)
+  - [Redis のセット操作に対応](https://github.com/fermyon/spin/pull/915)
+  - [Web URL からの Wasm モジュールのフェッチに対応](https://github.com/fermyon/spin/pull/890)
+  - [Linux ARM64上でのSpinの実行をサポート](https://github.com/fermyon/spin/pull/926)
+  - [JavaScriptおよびTypescriptアプリケーションの実験的サポート](https://github.com/fermyon/spin-js-sdk)
+  - [Wasmtime 3.0.0 ベース](https://github.com/fermyon/spin/pull/917)
+  - [Ubuntu 18.04 のサポートを終了](https://github.com/fermyon/spin/issues/990)
+  - [テンプレートはローカルでも更新が必要な場合あり](https://github.com/fermyon/spin/issues/990)
+    - `spin templates install --git https://github.com/fermyon/spin --update`
