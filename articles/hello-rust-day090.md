@@ -5,6 +5,8 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
 published: false
 ---
+## Day 90 のテーマ
+
 [Day 87](https://zenn.dev/shinyay/articles/hello-rust-day087)、そして[Day 88](https://zenn.dev/shinyay/articles/hello-rust-day088) といろいろなモジュールの新しくリリースされたバージョンを見てみました。
 そして今日も新しいものの発表があったので、それを見てみようと思います。
 
@@ -298,3 +300,6 @@ $ wasmtime -V
 
 wasmtime-cli 3.0.1
 ```
+
+## Day 90 のまとめ
+
