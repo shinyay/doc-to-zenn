@@ -77,6 +77,7 @@ v0.7.0 では次のようなフィーチャーが追加されていました:
 - [Web URL からの Wasm モジュールのフェッチに対応](https://github.com/fermyon/spin/pull/890)
 - [Linux ARM64上でのSpinの実行をサポート](https://github.com/fermyon/spin/pull/926)
 - [JavaScriptおよびTypescriptアプリケーションの実験的サポート](https://github.com/fermyon/spin-js-sdk)
+- [Wasmtime 3.0.0 ベース](https://github.com/fermyon/spin/pull/917)
 
 また、次のような連絡事項もありました。
 
@@ -188,6 +189,38 @@ mount = "secret"
 
 ```rust
 let password:Result<String, spin_sdk::config::Error> = spin_sdk::config::get("password");
+```
+
+### MySQL データベースへの接続の実験的サポート
+
+v0.7.0 では、Spin アプリケーションから **MySQL** データベースへの接続をサポートされるようになりました。
+
+このデータベースサポートは、WASI の提案の中で次の `wasi-sql` というものがあるのですが、それに従っているようです。
+
+- [](https://github.com/WebAssembly/wasi-sql)
+
+次のようにして、参照を行うようです。
+
+```rust
+fn get(id: i32) -> Result<Response> {
+
+     let address = spin_sdk::config::get("database")?;
+
+     let sql = "SELECT id, first_name, last_name FROM employee WHERE id = ?";
+     let params = vec![ParameterValue::Int32(id)];
+     let rowset = mysql::query(&address, sql, &params)?;
+
+     match rowset.rows.first() {
+         None => Ok(http::Response::builder().status(404).body(None)?),
+         Some(row) => {
+             let emp = as_emp(row)?;
+             let response = format!("{:?}", emp);
+             Ok(http::Response::builder()
+                 .status(200)
+                 .body(Some(response.into()))?)
+         }
+     }
+ }
 ```
 
 ## 既存のアプリケーションにコンポーネントを追加する「spin add」コマンド
