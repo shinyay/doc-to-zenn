@@ -184,8 +184,24 @@ token = "root"
 mount = "secret"
 ```
 
-あとは、コンフィグの取得を行います。
+あとは、取得を行うのみです。
 
 ```rust
 let password:Result<String, spin_sdk::config::Error> = spin_sdk::config::get("password");
+```
+
+## 既存のアプリケーションにコンポーネントを追加する「spin add」コマンド
+
+今までの Spin プロジェクトは、1 アプリケーションにつき、1 コンポーネントでした。`spin new` で作ったプロジェクトに含まれるコンポーネントで開発を行っていました。今回、`spin add` コマンドにより 1 プロジェクトに対して複数のコンポーネントを追加することができるようになりました。
+
+空のプロジェクトを要して、追加をしてみます。
+
+```shell
+spin new http-empty
+```
+
+```shell
+$ ls
+
+spin.toml
 ```
