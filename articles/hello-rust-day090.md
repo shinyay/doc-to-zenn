@@ -86,6 +86,70 @@ v0.7.0 では次のようなフィーチャーが追加されていました:
 
 ここで挙げられているアップデート内容をいくつか掘り下げて見てみたいと思います。
 
+### テンプレートはローカルでも更新が必要な場合あり
+
+とりあえず、テンプレートの変更を行っておきます。
+
+```shell
+spin templates install --git https://github.com/fermyon/spin --update
+```
+
+以下のようなテンプレートが更新・インストールされました。
+
+```shell
+Copying remote template source
+Installing template redis-rust...
+Installing template static-fileserver...
+Installing template http-grain...
+Installing template http-swift...
+Installing template http-c...
+Installing template redirect...
+Installing template http-rust...
+Installing template http-go...
+Installing template http-zig...
+Installing template http-empty...
+Installing template redis-go...
+Installed 11 template(s)
+
++------------------------------------------------------------------------+
+| Name                Description                                        |
++========================================================================+
+| http-c              HTTP request handler using C and the Zig toolchain |
+| http-empty          HTTP application with no components                |
+| http-go             HTTP request handler using (Tiny)Go                |
+| http-grain          HTTP request handler using Grain                   |
+| http-rust           HTTP request handler using Rust                    |
+| http-swift          HTTP request handler using SwiftWasm               |
+| http-zig            HTTP request handler using Zig                     |
+| redirect            Redirects a HTTP route                             |
+| redis-go            Redis message handler using (Tiny)Go               |
+| redis-rust          Redis message handler using Rust                   |
+| static-fileserver   Serves static files from an asset directory        |
++------------------------------------------------------------------------+
+```
+
+以前は、8 種類だったので次のものが増えていますね。
+
+- **http-empty**
+- **redirect**
+- **static-fileserver**
+
+```shell
++-----------------------------------------------------------------+
+| Name         Description                                        |
++=================================================================+
+| http-c       HTTP request handler using C and the Zig toolchain |
+| http-go      HTTP request handler using (Tiny)Go                |
+| http-grain   HTTP request handler using Grain                   |
+| http-rust    HTTP request handler using Rust                    |
+| http-swift   HTTP request handler using SwiftWasm               |
+| http-zig     HTTP request handler using Zig                     |
+| redis-go     Redis message handler using (Tiny)Go               |
+| redis-rust   Redis message handler using Rust                   |
++-----------------------------------------------------------------+
+```
+
+
 ### Hashicorp Vault との統合
 
 ![](https://storage.googleapis.com/zenn-user-upload/8661dcb6de56-20221219.png)
