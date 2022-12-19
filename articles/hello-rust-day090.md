@@ -32,12 +32,12 @@ Web アプリケーションやマイクロサービスのような HTTP リク�
 
 v0.7.0 では次のようなフィーチャーが追加されていました:
 
-- [Hashicorp Vault との統合]()
-- [MySQL データベースへの接続の実験的サポート]()
-- [既存のアプリケーションにコンポーネントを追加する「spin add」コマンド]()
-- [Redis のセット操作に対応]()
-- [Web URL からの Wasm モジュールのフェッチに対応]()
-- [Linux ARM64上でのSpinの実行をサポート]()
+- [Hashicorp Vault との統合](https://github.com/fermyon/spin/pull/798)
+- [MySQL データベースへの接続の実験的サポート](https://github.com/fermyon/spin/pull/864)
+- [既存のアプリケーションにコンポーネントを追加する「spin add」コマンド](https://github.com/fermyon/spin/pull/889)
+- [Redis のセット操作に対応](https://github.com/fermyon/spin/pull/915)
+- [Web URL からの Wasm モジュールのフェッチに対応](https://github.com/fermyon/spin/pull/890)
+- [Linux ARM64上でのSpinの実行をサポート](https://github.com/fermyon/spin/pull/926)
 - [JavaScriptおよびTypescriptアプリケーションの実験的サポート](https://github.com/fermyon/spin-js-sdk)
 
 
