@@ -26,3 +26,6 @@ Web アプリケーションやマイクロサービスのような HTTP リク�
 
 ## Spin v0.7.0
 
+それでは、Spin v0.7.0 について見ていこうと思います。リリースノートはこちらです。
+
+- [v0.7.0](https://github.com/fermyon/spin/releases/tag/v0.7.0)
