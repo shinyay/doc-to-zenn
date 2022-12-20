@@ -178,6 +178,13 @@ Router::new().route("/",
 
 #### SockerAddr
 
+```rust
+let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+```
 
+`from` メソッドにより、`SocketAddr` への変換を行います。
+
+- **第一引数**: IpAddr変換可能な型
+- **第二引数**: ポート番号
 
 ## Day 91 のまとめ
