@@ -187,4 +187,19 @@ let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
 - **第一引数**: IpAddr変換可能な型
 - **第二引数**: ポート番号
 
+つまり、この例では IPv4 の `127.0.0.1:3000` を表しています。
+
+#### Server
+
+```rust
+axum::Server::bind(&addr)
+    .serve(app.into_make_service())
+    .await
+    .unwrap();
+```
+
+- `bind(&addr)`: アドレスをサーバにバインド
+- `serve(app.into_make_service())`: サーバの起動処理
+- `await`: 非同期に待受け
+
 ## Day 91 のまとめ
