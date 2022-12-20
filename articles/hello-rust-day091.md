@@ -154,4 +154,30 @@ async fn root() -> &'static str {
 }
 ```
 
+#### Route
+
+```rust
+let app = Router::new().route("/", get(root));
+```
+
+`Route` の `route` メソッドを使ってルーティング設定を行います。
+
+- **第一引数**: URL パスのマッチング
+- **第二引数**: マッチ時に呼び出す関数
+
+`axum::routing::get` は、GET メソッドによるアクセスを行った場合の呼び出しです。
+同様に、`axum::routing::post` ならば、POST メソッドによるアクセスを行った場合となります。
+この第二引数は、次のようにメソッドチェーンを用いて、HTTP メソッド各種を定義することが可能です。
+
+```rust
+Router::new().route("/",
+    get(get_handler)
+    .post(post_handler)
+    );
+```
+
+#### SockerAddr
+
+
+
 ## Day 91 のまとめ
