@@ -202,4 +202,17 @@ axum::Server::bind(&addr)
 - `serve(app.into_make_service())`: サーバの起動処理
 - `await`: 非同期に待受け
 
+### axum Web アプリケーションサンプルの実行
+
+`cargo run` コマンドで実行を行います。
+
+起動後に `http://localhost:3000` へのアクセスを行い動作確認を行います。
+次のように、`Hello, axum!` が表示されれば正常動作をしています。
+
+```shell
+$ curl -X GET localhost:3000
+
+Hello, axum!
+```
+
 ## Day 91 のまとめ
