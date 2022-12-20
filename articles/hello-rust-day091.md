@@ -1,5 +1,5 @@
 ---
-title: "100日後にRustをちょっと知ってる人になる: [Day 91]"
+title: "100日後にRustをちょっと知ってる人になる: [Day 91]書籍: Webアプリ開発で学ぶRust言語入門 その1"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
