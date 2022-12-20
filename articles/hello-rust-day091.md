@@ -84,9 +84,31 @@ Web アプリケーションフレームワークについは、以前 [Day 36](
 
 `cargo add` で以下のパッケージを追加します。
 
+- **hyper**
+  - HTTP リクエストの処理
+- **tower**
+  - サーバ構築関連
+- **serde, serde_json**
+  - JSON パース処理関連
+- **mime**
+  - HTTP ヘッダの MIME 定義関連
+- **tracing, tracing-subscriber**
+  - ロギング・デバッグ処理
+- **anyhow, thiserror**
+  - Result を扱いやすくする ユーティリティ
+
 ```shell
 cargo add axum
 cargo add hyper --features full
+cargo add tokio --features full
+cargo add tower
+cargo add mime
+cargo add serde --features derive
+cargo add serde_json
+cargo add tracing
+cargo add tracing-subscriber --features env-filter
+cargo add anyhow
+cargo add thiserror
 ```
 
 ## Day 91 のまとめ
