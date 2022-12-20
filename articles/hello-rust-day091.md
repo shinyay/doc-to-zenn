@@ -80,4 +80,13 @@ Web アプリケーションフレームワークについは、以前 [Day 36](
   - ✅ 最小限の定型文によるレスポンス生成
   - ✅ ミドルウェア、サービス、ユーティリティの **tower** および **tower-http** エコシステムをフルに活用
 
+### axum のプロジェクト作成
+
+`cargo add` で以下のパッケージを追加します。
+
+```shell
+cargo add axum
+cargo add hyper --features full
+```
+
 ## Day 91 のまとめ
