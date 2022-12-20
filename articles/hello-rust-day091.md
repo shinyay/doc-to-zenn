@@ -111,4 +111,21 @@ cargo add anyhow
 cargo add thiserror
 ```
 
+次のような `Cargo.toml` ができあがりました。
+
+```toml
+[dependencies]
+anyhow = "1.0.68"
+axum = "0.6.1"
+hyper = { version = "0.14.23", features = ["full"] }
+mime = "0.3.16"
+serde = { version = "1.0.151", features = ["derive"] }
+serde_json = "1.0.91"
+thiserror = "1.0.38"
+tokio = { version = "1.23.0", features = ["full"] }
+tower = "0.4.13"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
+```
+
 ## Day 91 のまとめ
