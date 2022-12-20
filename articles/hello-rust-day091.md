@@ -128,4 +128,30 @@ tracing = "0.1.37"
 tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
 ```
 
+### axum Web アプリケーションサンプル
+
+axum を用いたアプリケーションで、最もシンプルなものは次のようなコードになります。起動して、GET アクセスすると、ハードコードしたメッセージを返す、というものです。
+
+```rust
+use std::net::SocketAddr;
+use axum::Router;
+use axum::routing::get;
+
+#[tokio::main]
+async fn main() {
+
+    let app = Router::new().route("/", get(root));
+    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+
+    axum::Server::bind(&addr)
+        .serve(app.into_make_service())
+        .await
+        .unwrap();
+}
+
+async fn root() -> &'static str {
+    "Hello, axum!"
+}
+```
+
 ## Day 91 のまとめ
