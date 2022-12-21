@@ -54,3 +54,8 @@ struct User {
     id: u64,
     username: String,
 }
+
+#[cfg(test)]
+mod test {
+    
+}
