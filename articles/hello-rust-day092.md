@@ -50,6 +50,8 @@ published: false
 
 ## 第 3 章 axumを使ってhttpリクエストを処理する - 3.2 環境構築
 
+### ロギング
+
 前回作成したコードにはまだログ出力に関する実装はしていませんでした。そこで、ログ出力を追加したいと思います。ログ出力には次のクレートをを使用します。
 
 - [tracing](https://crates.io/crates/tracing)
@@ -71,6 +73,30 @@ $ RUST_LOG=debug cargo run
 2022-12-21T03:46:07.831466Z DEBUG hyper::proto::h1::conn: incoming body is empty
 2022-12-21T03:46:07.831704Z DEBUG hyper::proto::h1::io: flushed 129 bytes
 2022-12-21T03:46:07.831932Z DEBUG hyper::proto::h1::conn: read eof
+```
+
+### 入出力用 JSON データ
+
+次に GET メソッドだけでなく、POST メソッドを扱うインターフェースにします。
+まず、インプットとアウトプットに期待するデータの型として、構造体を用意します。
+
+入力用
+
+```rust
+#[derive(Deserialize)]
+struct CreateUser {
+    username: String,
+}
+```
+
+出力用
+
+```rust
+#[derive(Serialize)]
+struct User {
+    id: u64,
+    username: String,
+}
 ```
 
 ## Day 92 のまとめ
