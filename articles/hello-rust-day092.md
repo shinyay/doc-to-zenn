@@ -113,6 +113,14 @@ axum::Json によりリクエストボディを serde::Serialize を実装した
 
 - [axum::Json](https://docs.rs/axum/0.2.3/axum/struct.Json.html)
 
+## 第 3 章 axumを使ってhttpリクエストを処理する - 3.3 テスト
+
+Web アプリケーションは実行する場合はサーバ起動が伴いますが、このテスト実行の中では実際にはサーバを起動しません。`tomwe::ServerExt` トレイトにある、`oneshot` メソッドを利用します。
+
+- [tower::ServiceExt](https://docs.rs/tower/latest/tower/trait.ServiceExt.html)
+
+`oneshot` メソッドは、リクエストを渡すと `Router` インスタンスから１度だけハンドリングを実施して、レスポンスを生成してくれるユーティリティメソッドです。
+
 ## Day 92 のまとめ
 
 ログ出力に関してと、GETに加えてPOSTメソッドの扱いについて確認をしてみました。
