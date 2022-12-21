@@ -140,6 +140,24 @@ mod test {
 
 ### 最初のテストコード: Hello World テスト
 
+#### リクエストの作成
+
+`Request::builder` を利用してリクエストを作成します。
+
+- [(axum::http::)Request::builder](https://docs.rs/http/latest/http/request/struct.Request.html#method.builder)
+
+```rust
+let req = Request::builder().uri("/").body(Body::empty()).unwrap();
+```
+
+URI は、`Hello world` の出力を想定しているエンドポイントの `/` ルートを設定しています。GET アクセスのため、特に Body には何も設定する必要がないため `Body::empty()` メソッドで空にしています。この戻り値は、`Result` になるため (設定次第では失敗する可能性の呼び出しのため) `unwrap` して内容を取り出しています。
+
+このリクエスト内容を、`tower::ServiceExt` の `oneshot` 関数によって実行します。これは、非同期の関数のため `await` し、`unwrap` して結果を取り出します。
+
+```rust
+let res = create_app().oneshot(req).await.unwrap();
+```
+
 ## Day 92 のまとめ
 
 ログ出力に関してと、GETに加えてPOSTメソッドの扱いについて確認をしてみました。
