@@ -4,7 +4,6 @@ use axum::response::IntoResponse;
 use axum::{Router, Json};
 use axum::routing::{get, post};
 use axum::http::StatusCode;
-use hyper::Request;
 use serde::Deserialize;
 use serde::Serialize;
 
@@ -67,4 +66,14 @@ mod test {
         },
     };
     use tower::ServiceExt; 
+
+    #[tokio::test]
+    async fn should_return_hello() {
+        let req = Request::builder().uri("/").body(Body::empty()).unwrap();
+        let res = create_app().oneshot(req).await.unwrap();
+        let bytes = hyper::body::to_bytes(res.into_body()).await.unwrap();
+        let body = String::from_utf8(bytes.to_vec()).unwrap();
+        
+        assert_eq!(body, "Hello, world!");
+    }
 }
