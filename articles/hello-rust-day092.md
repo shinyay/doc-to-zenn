@@ -54,4 +54,23 @@ published: false
 
 - [tracing](https://crates.io/crates/tracing)
 
+`tracing_subscriber::fmt::init();` によって `tracing` の初期化を行います。
+
+そして `debug` レベルの場合に出力するログは次の様に `debug` メソッドを使って出力を行います。
+
+```rust
+let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+tracing::debug!("listening on {}", addr);
+```
+
+```shell
+$ RUST_LOG=debug cargo run
+
+2022-12-21T03:46:00.781809Z DEBUG day_91_hello_axum: listening on 127.0.0.1:3000
+2022-12-21T03:46:07.831426Z DEBUG hyper::proto::h1::io: parsed 3 headers
+2022-12-21T03:46:07.831466Z DEBUG hyper::proto::h1::conn: incoming body is empty
+2022-12-21T03:46:07.831704Z DEBUG hyper::proto::h1::io: flushed 129 bytes
+2022-12-21T03:46:07.831932Z DEBUG hyper::proto::h1::conn: read eof
+```
+
 ## Day 92 のまとめ
