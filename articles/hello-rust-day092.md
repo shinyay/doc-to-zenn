@@ -150,6 +150,8 @@ mod test {
 let req = Request::builder().uri("/").body(Body::empty()).unwrap();
 ```
 
+#### レスポンスの作成
+
 URI は、`Hello world` の出力を想定しているエンドポイントの `/` ルートを設定しています。GET アクセスのため、特に Body には何も設定する必要がないため `Body::empty()` メソッドで空にしています。この戻り値は、`Result` になるため (設定次第では失敗する可能性の呼び出しのため) `unwrap` して内容を取り出しています。
 
 このリクエスト内容を、`tower::ServiceExt` の `oneshot` 関数によって実行します。これは、非同期の関数のため `await` し、`unwrap` して結果を取り出します。
@@ -158,15 +160,32 @@ URI は、`Hello world` の出力を想定しているエンドポイントの `
 let res = create_app().oneshot(req).await.unwrap();
 ```
 
+#### レスポンス内容の文字列変換
+
 レスポンスを取得することがこれで出来ました。しかし取得したレスポンス内容はそのままでは扱えないため、扱える形式に変換を行います。
 
 ```rust
 let bytes = hyper::body::to_bytes(res.into_body()).await.unwrap();
+let body = String::from_utf8(bytes.to_vec()).unwrap();
 ```
 
 `hyper::body::to_bytes()` によって、`Bytes` 型を経て `String` 型に変換をしています。
 
 - [hyper::body::to_bytes](https://docs.rs/hyper/latest/hyper/body/fn.to_bytes.html)
+
+#### assert_eq マクロによる検証
+
+レスポンスから得た内容と想定している結果が等しいかを、`assert_eq` マクロを使って検証を行います。
+
+```rust
+assert_eq!(body, "Hello, axum!");
+```
+
+第一引数にレスポンスから得た結果を設定し、第二引数には想定している結果内容を設定します。
+
+- [std::assert_eq](https://doc.rust-lang.org/std/macro.assert_eq.html)
+
+#### テスト実行
 
 ## Day 92 のまとめ
 
