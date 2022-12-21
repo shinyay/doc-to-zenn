@@ -158,6 +158,16 @@ URI は、`Hello world` の出力を想定しているエンドポイントの `
 let res = create_app().oneshot(req).await.unwrap();
 ```
 
+レスポンスを取得することがこれで出来ました。しかし取得したレスポンス内容はそのままでは扱えないため、扱える形式に変換を行います。
+
+```rust
+let bytes = hyper::body::to_bytes(res.into_body()).await.unwrap();
+```
+
+`hyper::body::to_bytes()` によって、`Bytes` 型を経て `String` 型に変換をしています。
+
+- [hyper::body::to_bytes](https://docs.rs/hyper/latest/hyper/body/fn.to_bytes.html)
+
 ## Day 92 のまとめ
 
 ログ出力に関してと、GETに加えてPOSTメソッドの扱いについて確認をしてみました。
