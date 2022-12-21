@@ -99,4 +99,20 @@ struct User {
 }
 ```
 
+それぞれ、入力時には `Deserialize`, 出力時には `Serialize` を行って JSON を扱っています。
+
+```rust
+async fn create_user (Json(payload): Json<CreateUser>) -> impl IntoResponse {
+    :
+    :
+    (StatusCode::CREATED, Json(user))
+}
+```
+
+axum::Json によりリクエストボディを serde::Serialize を実装した何らかの型にデシリアライズすることができます。
+
+- [axum::Json](https://docs.rs/axum/0.2.3/axum/struct.Json.html)
+
 ## Day 92 のまとめ
+
+ログ出力に関してと、GETに加えてPOSTメソッドの扱いについて確認をしてみました。
