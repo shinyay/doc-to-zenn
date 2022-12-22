@@ -6,6 +6,10 @@ enum RepositoryError {
     NotFound(i32),
 }
 
+pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static {
+    fn create(&self, payload: CreateTodo) -> ToDo;    
+}
+
 fn main() {
     println!("Hello, world!");
 }
