@@ -101,4 +101,25 @@ pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'stati
 }
 ```
 
+### データベースの代用としての HashMap
+
+HashMap は複数スレッドからアクセスされる可能性を考えてスレッドセーフにする必要があります。そこで、`store: Arc<RwLock<TodoData>>` としてスレッドセーフに書き換えています。`Arc<RwLock<TodoData>>` は不変参照のときには複数スレッドで共有しますが、可変参照のときは `RwLock` がスレッドを 1 つに制限するために安全な書き込みをすることが可能です。
+
+```rust
+type TodoData = HashMap<i32, Todo>;
+
+#[derive(Debug, Clone)]
+pub struct TodoRepositoryForMemory {
+    store: Arc<RwLock<TodoData>>,
+}
+
+impl TodoRepositoryForMemory {
+    pub fn new() -> Self {
+        TodoRepositoryForMemory {
+            store: Arc::default(),
+        }
+    }   
+}
+```
+
 ## Day 93 のまとめ
