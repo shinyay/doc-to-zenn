@@ -59,4 +59,18 @@ published: false
 |PUT|Update (更新)|
 |DELETE|Delete (削除)|
 
+## TodoRepository の作成
+
+### エラー用の enum
+
+Debug と Error マクロを持つ Error 用の enum を作ります。ここでは、まずは `NotFound` のみを定義しています。
+
+```rust
+#[derive(Debug, Error)]
+enum RepositoryError {
+    #[error("NotFound, id is {0}")]
+    NotFound(i32),
+}
+```
+
 ## Day 93 のまとめ
