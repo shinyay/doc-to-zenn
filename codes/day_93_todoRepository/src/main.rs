@@ -18,6 +18,18 @@ pub struct Todo {
     completed: bool,
 }
 
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
+pub struct CreateTodo {
+    text: String,
+
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
+pub struct UpdateTodo {
+    text: Option<String>,
+    completed: Option<bool>,
+}
+
 fn main() {
     println!("Hello, world!");
 }
