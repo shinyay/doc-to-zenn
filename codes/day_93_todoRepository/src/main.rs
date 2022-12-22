@@ -1,3 +1,5 @@
+use std::{collections::HashMap, sync::{Arc, RwLock}};
+
 use serde::{Serialize, Deserialize};
 use thiserror::Error;
 
@@ -44,6 +46,43 @@ impl Todo {
     }
 }
 
+type TodoData = HashMap<i32, Todo>;
+
+#[derive(Debug, Clone)]
+pub struct TodoRepositoryForMemory {
+    store: Arc<RwLock<TodoData>>,
+}
+
+impl TodoRepositoryForMemory {
+    pub fn new() -> Self {
+        TodoRepositoryForMemory {
+            store: Arc::default(),
+        }
+    }
+    
+}
+
+impl TodoRepository for TodoRepositoryForMemory {
+    fn find(&self, id: i32) -> Option<Todo> {
+        todo!();
+    }
+
+    fn create(&self, payload: CreateTodo) -> Todo {
+        todo!();
+    }
+    
+    fn all(&self,) -> Vec<Todo> {
+        todo!();
+    }
+
+    fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo> {
+        todo!();
+    }
+
+    fn delete(&self, id: i32) -> anyhow::Result<()> {
+        todo!();
+    }
+}
 fn main() {
     println!("Hello, world!");
 }
