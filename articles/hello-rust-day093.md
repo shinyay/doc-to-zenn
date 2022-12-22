@@ -89,4 +89,16 @@ pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'stati
 - [std::marker::Send](https://doc.rust-lang.org/std/marker/trait.Send.html)
 - [std::marker::Sync](https://doc.rust-lang.org/std/marker/trait.Sync.html)
 
+そして、実際の振る舞いとしては次のように CRUD 操作を作っています。
+
+```rust
+pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static {
+    fn create(&self, payload: CreateTodo) -> Todo;
+    fn find(&self, id: i32) -> Option<Todo>;
+    fn all(&self,) -> Vec<Todo>;
+    fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo>;
+    fn delete(&self, id: i32) -> anyhow::Result<()>;
+}
+```
+
 ## Day 93 のまとめ
