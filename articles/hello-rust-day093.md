@@ -122,4 +122,35 @@ impl TodoRepositoryForMemory {
 }
 ```
 
+### 未実装のためのマクロ
+
+今日はここまでとしようと思うときに、ビルドは通しておきたいけど実装ができてないメソッドがあったりしますよね。そのようなときには、`todo!`マクロ で未実装にしておくことができます。
+
+- [std::todo](https://doc.rust-lang.org/std/macro.todo.html)
+
+というわけで、CRUD 操作に関するところは今日はもう実装しないで `todo` マクロを使っておきます。
+
+```rust
+impl TodoRepository for TodoRepositoryForMemory {
+    fn create(&self, payload: CreateTodo) -> Todo {
+        todo!();
+    }
+
+    fn find(&self, id: i32) -> Option<Todo> {
+        todo!();
+    }
+
+    fn all(&self) -> Vec<Todo> {
+        todo!();
+    }
+    :
+    :
+}
+```
+
+続きはまた明日。
+
 ## Day 93 のまとめ
+
+axum を使った Web アプリケーションの作り方を見ていっていますが、少しずつ axum の特徴というか癖というか書き方のポイントみたいなもの見つけ始めた気がします。
+まだ実際のリポジトリの処理の実装は全然できていないので、明日以降見ていきたいと思います。
