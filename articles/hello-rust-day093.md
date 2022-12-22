@@ -73,4 +73,20 @@ enum RepositoryError {
 }
 ```
 
+### TodoRepository の振る舞いのためのトレイト
+
+ここで、`TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static` として `A + B` のように記述しているのは、複数のトレイトを継承しているということです。
+
+```rust
+pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static {
+    :
+}
+```
+
+ここで継承したのは、次のトレイトです。この時点では、なぜこのトレイトを継承しているか分かりにくいですが、axum のお作法として `Clone + Send + Sync + 'static` を継承するようです。
+
+- [std::clone::Clone](https://doc.rust-lang.org/std/clone/trait.Clone.html)
+- [std::marker::Send](https://doc.rust-lang.org/std/marker/trait.Send.html)
+- [std::marker::Sync](https://doc.rust-lang.org/std/marker/trait.Sync.html)
+
 ## Day 93 のまとめ
