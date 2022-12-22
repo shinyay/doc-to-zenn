@@ -59,7 +59,6 @@ impl TodoRepositoryForMemory {
             store: Arc::default(),
         }
     }
-    
 }
 
 impl TodoRepository for TodoRepositoryForMemory {
