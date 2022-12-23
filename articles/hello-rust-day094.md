@@ -106,4 +106,85 @@ impl TodoRepositoryForMemory {
 
 - [std::sync::RwLockWriteGuard](https://doc.rust-lang.org/std/sync/struct.RwLockWriteGuard.html)
 
+取得した HashMap を利用して、CRUD の実装を行います。
+
+例えば全件取得の `all` メソッドの場合は `values()` でイテレータを取得した後に借用した値をクローンして、ベクターにします。借用値が含まれるため、値のコピーを行うクローンをする必要があります。
+
+```rust
+fn all(&self) -> Vec<Todo> {
+    let store = self.read_store_ref();
+    Vec::from_iter(store.values().map(|todo| todo.clone()))
+}
+```
+
+## 第 3 章 axumを使ってhttpリクエストを処理する - 3.5 http リクエスト
+
+CRUD 操作に対するハンドラの定義を行います。
+
+- Create: 作成
+
+```rust
+pub async fn create_todo<T: TodoRepository>(
+    Json(payload): Json<CreateTodo>,
+    Extension(repository): Extension<Arc<T>>,
+) -> impl IntoResponse {
+    let todo = repository.create(payload);
+
+    (StatusCode::CREATED, Json(todo))
+
+}
+```
+
+- Find: 参照
+
+```rust
+pub async fn find_todo<T: TodoRepository>(
+    Path(id): Path<i32>,
+    Extension(repository): Extension<Arc<T>>,
+) -> Result<impl IntoResponse, StatusCode> {
+    let todo = repository.find(id).ok_or(StatusCode::NOT_FOUND)?;
+    Ok((StatusCode::OK, Json(todo)))
+}
+```
+
+- All: 全件参照
+
+```rust
+pub async fn all_todo<T: TodoRepository>(
+    Extension(repository): Extension<Arc<T>>,
+) -> impl IntoResponse {
+    let todo = repository.all();
+    (StatusCode::OK, Json(todo))
+}
+```
+
+- Update: 更新
+
+```rust
+pub async fn update_todo<T: TodoRepository>(
+    Path(id): Path<i32>,
+    Json(payload): Json<UpdateTodo>,
+    Extension(repository): Extension<Arc<T>>,
+) -> Result<impl IntoResponse, StatusCode> {
+    let todo = repository
+        .update(id, payload)
+        .or(Err(StatusCode::NOT_FOUND))?;
+    Ok((StatusCode::CREATED, Json(todo)))
+}
+```
+
+- Delete: 削除
+
+```rust
+pub async fn delete_todo<T: TodoRepository>(
+    Path(id): Path<i32>,
+    Extension(repository): Extension<Arc<T>>,
+) -> StatusCode {
+    repository
+        .delete(id)
+        .map(|_| StatusCode::NO_CONTENT)
+        .unwrap_or(StatusCode::NOT_FOUND)
+}
+```
+
 ## Day 94 のまとめ
