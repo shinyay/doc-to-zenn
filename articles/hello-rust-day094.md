@@ -250,9 +250,15 @@ value.validate().map_err(|rejection| {
 
 ## ここまでのコード
 
+- エントリポイント
+
 https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_94_todoApp/src/main.rs
 
+- ハンドラ
+
 https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_94_todoApp/src/handlers.rs
+
+- リポジトリ
 
 https://github.com/shinyay/doc-to-zenn/blob/main/codes/day_94_todoApp/src/repositories.rs
 
