@@ -69,6 +69,41 @@ fn create_app<T: TodoRepository>(repository: T) -> Router {
 - [axum::routing::Router#layer](https://docs.rs/axum/latest/axum/routing/struct.Router.html#method.layer)
 - [axum::Extension](https://docs.rs/axum/latest/axum/struct.Extension.html)
 
+同様に、GET や POST を行うハンドラ側でも `Extension` を受け取るようにします。
 
+```rust
+pub async fn create_todo<T: TodoRepository>(
+    Json(payload): Json<CreateTodo>,
+    Extension(repository): Extension<Arc<T>>,
+) -> impl IntoResponse {
+    let todo = repository.create(payload);
+
+    (StatusCode::CREATED, Json(todo))
+}
+```
+
+### スレッドセーフに HashMap からの取得
+
+ロックの排他的書き込みアクセスを解放するために使用する構造体の `std::sync::RwLockWriteGuard` を使用して Read / Write 権限のある `HashMap` をスレッドセーフに取得します。
+
+```rust
+impl TodoRepositoryForMemory {
+    pub fn new() -> Self {
+        TodoRepositoryForMemory {
+            store: Arc::default(),
+        }
+    }
+
+    fn write_store_ref(&self) -> RwLockWriteGuard<TodoDatas> {
+        self.store.write().unwrap()
+    }
+
+    fn read_store_ref(&self) -> RwLockReadGuard<TodoDatas> {
+        self.store.read().unwrap()
+    }
+}
+```
+
+- [std::sync::RwLockWriteGuard](https://doc.rust-lang.org/std/sync/struct.RwLockWriteGuard.html)
 
 ## Day 94 のまとめ
