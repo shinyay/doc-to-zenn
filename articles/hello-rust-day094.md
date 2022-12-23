@@ -48,4 +48,26 @@ published: false
   - 6.3 ラベル機能を画面に追加する
   - 6.4 さらなる機能拡張
 
+## 第 3 章 axumを使ってhttpリクエストを処理する - 3.4 Todo情報を保存する
+
+先日に引き続き、Todo アプリケーションの実装についてみていきます。
+
+### リポジトリの共有
+
+引数に `TodoRepository` トレイトを追加しています。これを `axum::routing::Router#layer` によりアプリケーション内で共有するようにします。
+
+```rust
+fn create_app<T: TodoRepository>(repository: T) -> Router {
+    Router::new()
+        :
+        .route("/", get(root))
+        :
+        .layer(Extension(Arc::new(repository)))
+}
+```
+
+- [axum::routing::Router#layer](https://docs.rs/axum/latest/axum/routing/struct.Router.html#method.layer)
+
+
+
 ## Day 94 のまとめ
