@@ -50,11 +50,11 @@ published: false
 
 ## 第 3 章 axumを使ってhttpリクエストを処理する - 3.4 Todo情報を保存する
 
-先日に引き続き、Todo アプリケーションの実装についてみていきます。
+先日に引き続き、Todo アプリケーションの実装について見ていきます。
 
 ### リポジトリの共有
 
-引数に `TodoRepository` トレイトを追加しています。これを `axum::routing::Router#layer` によりアプリケーション内で共有するようにします。
+引数に `TodoRepository` トレイトを追加しています。これを `axum::routing::Router#layer` によりアプリケーション内で共有するようにします。状態を保持するために使用できるExtension機能を使って再利用しています。
 
 ```rust
 fn create_app<T: TodoRepository>(repository: T) -> Router {
@@ -67,6 +67,7 @@ fn create_app<T: TodoRepository>(repository: T) -> Router {
 ```
 
 - [axum::routing::Router#layer](https://docs.rs/axum/latest/axum/routing/struct.Router.html#method.layer)
+- [axum::Extension](https://docs.rs/axum/latest/axum/struct.Extension.html)
 
 
 
