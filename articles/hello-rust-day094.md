@@ -199,4 +199,53 @@ pub async fn delete_todo<T: TodoRepository>(
 cargo add validator --features derive
 ```
 
+`validate` を追加したら、以下のようにバリデーション条件を設定します。
+
+```rust
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Validate)]
+pub struct CreateTodo {
+    #[validate(length(min = 1, message = "Can not be empty"))]
+    #[validate(length(max = 100, message = "Over text length"))]
+    text: String,
+}
+```
+
+`CreateTodo` 構造体の要素の `text` に対して、最小文字数の設定 (空文字の禁止) と文字数上限設定を設けています。
+
+これを、axum のリクエスト処理の中で対応させるようにトレイトを実装する必要があります。
+
+```rust
+#[async_trait]
+impl<T, B> FromRequest<B> for ValidatedJson<T>
+where
+    T: DeserializeOwned + Validate,
+    B: http_body::Body + Send,
+    B::Data: Send,
+    B::Error: Into<BoxError>,
+{
+    type Rejection = (StatusCode, String);
+
+    async fn from_request(req: &mut RequestParts<B>) -> Result<Self, Self::Rejection> {
+        let Json(value) = Json::<T>::from_request(req).await.map_err(|rejection| {
+            let message = format!("Json parse error: [{}]", rejection);
+            (StatusCode::BAD_REQUEST, message)
+        })?;
+        value.validate().map_err(|rejection| {
+            let message = format!("Validation error: [{}]", rejection).replace('\n', ", ");
+            (StatusCode::BAD_REQUEST, message)
+        })?;
+        Ok(ValidatedJson(value))
+    }
+}
+```
+
+以下でバリデートを行い、失敗したらエラーを返しています。
+
+```rust
+value.validate().map_err(|rejection| {
+    let message = format!("Validation error: [{}]", rejection).replace('\n', ", ");
+    (StatusCode::BAD_REQUEST, message)
+})?;
+```
+
 ## Day 94 のまとめ
