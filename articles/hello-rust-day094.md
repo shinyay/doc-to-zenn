@@ -193,4 +193,10 @@ pub async fn delete_todo<T: TodoRepository>(
 
 - [validator](https://crates.io/crates/validator)
 
+`cargo add` コマンドで依存関係を追加します。
+
+```shell
+cargo add validator --features derive
+```
+
 ## Day 94 のまとめ
