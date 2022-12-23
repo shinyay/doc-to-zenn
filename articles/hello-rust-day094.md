@@ -187,4 +187,10 @@ pub async fn delete_todo<T: TodoRepository>(
 }
 ```
 
+## 第 3 章 axumを使ってhttpリクエストを処理する - 3.6 バリデーションの追加
+
+`validator` を追加することで、バリデーション機能を追加することが可能です。
+
+- [validator](https://crates.io/crates/validator)
+
 ## Day 94 のまとめ
