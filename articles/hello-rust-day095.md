@@ -89,4 +89,9 @@ Rust の データベース用のクレートとしてどのようなものが�
 
 ![](https://storage.googleapis.com/zenn-user-upload/2fdf2d7fe7c1-20221225.png)
 
+僕個人的には、どのクレートが人気なのか優れているのか勘所がまだまだないので分からないのですけれど、この本に書かれているものとしては次の 2 つが有力な選択肢らしいです。
+
+- [diesel](https://crates.io/crates/diesel)
+- [sqlx](https://crates.io/crates/sqlx)
+
 ## Day 95 のまとめ
