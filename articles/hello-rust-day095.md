@@ -191,4 +191,28 @@ SUBCOMMANDS:
     prepare     Generate query metadata to support offline compile-time verification
 ```
 
+SQL のマイグレーションファイルをこの CLI で作成することができます。
+
+`sqlx migrate add <ファイル名>` でマイグレーションファイルを `migrations` ディレクトリの下に作成されます。
+
+```shell
+$ sqlx migrate add init
+
+Creating migrations/20221225125911_init.sql
+
+Congratulations on creating your first migration!
+
+Did you know you can embed your migrations in your application binary?
+On startup, after creating your database connection or pool, add:
+
+sqlx::migrate!().run(<&your_pool OR &mut your_connection>).await?;
+
+Note that the compiler won't pick up new migrations if no Rust source files have changed.
+You can create a Cargo build script to work around this with `sqlx migrate build-script`.
+
+See: https://docs.rs/sqlx/0.5/sqlx/macro.migrate.html
+```
+
+
+
 ## Day 95 のまとめ
