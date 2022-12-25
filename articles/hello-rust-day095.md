@@ -145,5 +145,10 @@ let results = posts
 
 ### sqlx
 
+🧰 The Rust SQL Toolkit
+
+- [GitHub](https://github.com/launchbadge/sqlx)
+
+**sqlx** は diesel とは異なり、シンプルな SQL ライブラリです。sqlx は OR マッパーの機能も SQL クエリービルダーの機能も持ってはいません。SQL のコンパイル時チェックとマイグレーションを行う非常にシンプルなライブラリです。
 
 ## Day 95 のまとめ
