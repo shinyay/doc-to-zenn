@@ -83,4 +83,8 @@ volumes:
   pgdate:
 ```
 
+## 第 4 章 sqlxを使ってCRUDを実装する - 4.2 sqlxとは
+
+
+
 ## Day 95 のまとめ
