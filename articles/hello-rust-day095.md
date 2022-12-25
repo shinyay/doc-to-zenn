@@ -94,4 +94,56 @@ Rust の データベース用のクレートとしてどのようなものが�
 - [diesel](https://crates.io/crates/diesel)
 - [sqlx](https://crates.io/crates/sqlx)
 
+### diesel
+
+![](https://storage.googleapis.com/zenn-user-upload/b3778cdf17b1-20221225.png)
+
+**diesel** は、Rust の **OR マッパー**かつ**クエリービルダー**です。
+
+- [diesel](https://diesel.rs/)
+  - [GitHub](https://github.com/diesel-rs/diesel)
+
+#### 使い方
+
+公式ドキュメントで使い方を見てみます。次のコードが公式でサンプルとして紹介されていたものです。
+
+```rust
+use self::models::*;
+use diesel::prelude::*;
+use diesel_demo::*;
+
+fn main() {
+    use self::schema::posts::dsl::*;
+
+    let connection = &mut establish_connection();
+    let results = posts
+        .filter(published.eq(true))
+        .limit(5)
+        .load::<Post>(connection)
+        .expect("Error loading posts");
+
+    println!("Displaying {} posts", results.len());
+    for post in results {
+        println!("{}", post.title);
+        println!("-----------\n");
+        println!("{}", post.body);
+    }
+}
+```
+
+ポイントになるのは、次の箇所です。
+
+```rust
+let results = posts
+    .filter(published.eq(true))
+    .limit(5)
+    .load::<Post>(connection)
+    .expect("Error loading posts");
+```
+
+`filter` や `limit` などを使って SQL を組み立てる SQL ビルダーとして機能しています。
+
+### sqlx
+
+
 ## Day 95 のまとめ
