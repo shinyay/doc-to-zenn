@@ -151,4 +151,12 @@ let results = posts
 
 **sqlx** は diesel とは異なり、シンプルな SQL ライブラリです。sqlx は OR マッパーの機能も SQL クエリービルダーの機能も持ってはいません。SQL のコンパイル時チェックとマイグレーションを行う非常にシンプルなライブラリです。
 
+#### sqlx のインストール
+
+`cargo` コマンドを使って **sqlx** の CLI をインストールします。
+
+```shell
+cargo install sqlx-cli
+```
+
 ## Day 95 のまとめ
