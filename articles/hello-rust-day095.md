@@ -213,6 +213,32 @@ You can create a Cargo build script to work around this with `sqlx migrate build
 See: https://docs.rs/sqlx/0.5/sqlx/macro.migrate.html
 ```
 
+#### 使い方
 
+公式のサンプルを見てみると、以下のようなコードが紹介されていました。これを見ると非同期処理にも対応しているようですね。
+実際の使い方については、次の章で紹介されているので次回じっくり見ていきたいと思います。
+
+```rust
+use sqlx::postgres::PgPoolOptions;
+
+#[async_std::main]
+async fn main() -> Result<(), sqlx::Error> {
+    let pool = PgPoolOptions::new()
+        .max_connections(5)
+        .connect("postgres://postgres:password@localhost/test").await?;
+
+    let row: (i64,) = sqlx::query_as("SELECT $1")
+        .bind(150_i64)
+        .fetch_one(&pool).await?;
+
+    assert_eq!(row.0, 150);
+
+    Ok(())
+}
+```
 
 ## Day 95 のまとめ
+
+Rust で扱うデータベース操作を学びはじめました。
+特に Web アプリケーションを考える上ではデータベース構成は必須になってくるので、ここで基本的にな使い方を学びたいと思います。
+次回は、先日まで作っていた Todo アプリケーションの HashMap の部分をデータベースに置き換えていくことになります。
