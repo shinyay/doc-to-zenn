@@ -50,6 +50,15 @@ published: false
 
 ## 第 4 章 sqlxを使ってCRUDを実装する - 4.1 データベース基礎
 
+この書籍で扱うデータベースは、PostgreSQL が採用されています。また、ネイティブにインストールするのではなく Docker による利用が説明されていました。細かな説明は書籍を参照してもらうといいと思いますが Dcoker Compose を使用して Volume のマウントなどを併せて環境設定が行われています。
 
+```dockerfile
+FROM postgres:13-alpine AS database
+ENV LANG ja_JP.utf8
+```
+
+```yaml
+
+```
 
 ## Day 95 のまとめ
