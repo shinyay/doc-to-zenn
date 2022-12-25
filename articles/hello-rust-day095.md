@@ -52,13 +52,35 @@ published: false
 
 この書籍で扱うデータベースは、PostgreSQL が採用されています。また、ネイティブにインストールするのではなく Docker による利用が説明されていました。細かな説明は書籍を参照してもらうといいと思いますが Dcoker Compose を使用して Volume のマウントなどを併せて環境設定が行われています。
 
+Dokerfile
+
 ```dockerfile
 FROM postgres:13-alpine AS database
 ENV LANG ja_JP.utf8
 ```
 
-```yaml
+docker-compose.yml
 
+```yaml
+version: "3.8"
+services:
+  database:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: 'database'
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdate:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: todos
+      TZ: Asia/Tokyo
+    restart: always
+volumes:
+  pgdate:
 ```
 
 ## Day 95 のまとめ
