@@ -168,4 +168,27 @@ Installed Commands:
   :
 ```
 
+sqlx CLI のヘルプを見てみます。
+
+```shell
+$ sqlx -h
+
+sqlx-cli 0.6.2
+Jesper Axelsson <jesperaxe@gmail.com>, Austin Bonander <austin.bonander@gmail.com>
+Command-line utility for SQLx, the Rust SQL toolkit.
+
+USAGE:
+    sqlx <SUBCOMMAND>
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+SUBCOMMANDS:
+    database    Group of commands for creating and dropping your database
+    help        Print this message or the help of the given subcommand(s)
+    migrate     Group of commands for creating and running migrations
+    prepare     Generate query metadata to support offline compile-time verification
+```
+
 ## Day 95 のまとめ
