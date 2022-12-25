@@ -7,7 +7,7 @@ published: true
 ---
 ## Day 94 のテーマ
 
-[Day 91](https://zenn.dev/shinyay/articles/hello-rust-day091) から読み始めた [Webアプリ開発で学ぶ Rust言語入門](shuwasystem.co.jp/book/9784798067315.html) のですが、今日も少しずつ読み進めようと思います。
+[Day 91](https://zenn.dev/shinyay/articles/hello-rust-day091) から読み始めた [Webアプリ開発で学ぶ Rust言語入門](https://www.shuwasystem.co.jp/book/9784798067315.html) のですが、今日も少しずつ読み進めようと思います。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0abe692735b6-20221220.png)
 
