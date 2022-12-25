@@ -159,4 +159,13 @@ let results = posts
 cargo install sqlx-cli
 ```
 
+```shell
+$ cargo --list
+
+Installed Commands:
+  :
+    sqlx
+  :
+```
+
 ## Day 95 のまとめ
