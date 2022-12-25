@@ -85,6 +85,8 @@ volumes:
 
 ## 第 4 章 sqlxを使ってCRUDを実装する - 4.2 sqlxとは
 
+Rust の データベース用のクレートとしてどのようなものがあるかは、[crates.io](https://crates.io/categories/database) を見るとリストが出てきます。
 
+![](https://storage.googleapis.com/zenn-user-upload/2fdf2d7fe7c1-20221225.png)
 
 ## Day 95 のまとめ
