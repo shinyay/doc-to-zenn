@@ -5,3 +5,6 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [rust]
 published: false
 ---
+## Day 95 のテーマ
+
+## Day 95 のまとめ
