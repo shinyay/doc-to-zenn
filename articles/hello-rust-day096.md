@@ -7,7 +7,7 @@ published: false
 ---
 ## Day 96 のテーマ
 
-[Day 91](https://zenn.dev/shinyay/articles/hello-rust-day091) から読み始めた [Webアプリ開発で学ぶ Rust言語入門](https://www.shuwasystem.co.jp/book/9784798067315.html) のですが、[Day 94](https://zenn.dev/shinyay/articles/hello-rust-day094) でデータベースの代わりにメモリ上で HashMap を使ってのデータ保管が行える Web アプリケーションを作るところまでは見てみました。今日からは、実際のデータベースを使ってアプリケーションをどうやって作るかを見ていきたいと思います。
+[Day 91](https://zenn.dev/shinyay/articles/hello-rust-day091) から読み始めた [Webアプリ開発で学ぶ Rust言語入門](https://www.shuwasystem.co.jp/book/9784798067315.html) のです。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0abe692735b6-20221220.png)
 
