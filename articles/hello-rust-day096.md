@@ -7,7 +7,7 @@ published: false
 ---
 ## Day 96 のテーマ
 
-[Day 91](https://zenn.dev/shinyay/articles/hello-rust-day091) から読み始めた [Webアプリ開発で学ぶ Rust言語入門](https://www.shuwasystem.co.jp/book/9784798067315.html) ですが、年末年始休暇に入り、やや滞ってしました。
+[Day 91](https://zenn.dev/shinyay/articles/hello-rust-day091) から読み始めた [Webアプリ開発で学ぶ Rust言語入門](https://www.shuwasystem.co.jp/book/9784798067315.html) ですが、年末年始休暇に入ってから少し滞っていました。本自体は読み終えたので、実際にコードも書きつつ復習してみたいと思います。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0abe692735b6-20221220.png)
 
