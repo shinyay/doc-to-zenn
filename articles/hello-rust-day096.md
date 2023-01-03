@@ -31,8 +31,8 @@ published: false
   - [3.5 httpリクエスト](https://zenn.dev/shinyay/articles/hello-rust-day094#%E7%AC%AC-3-%E7%AB%A0-axum%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6http%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%92%E5%87%A6%E7%90%86%E3%81%99%E3%82%8B---3.5-http-%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88)
   - [3.6 バリデーションの追加](https://zenn.dev/shinyay/articles/hello-rust-day094#%E7%AC%AC-3-%E7%AB%A0-axum%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6http%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%92%E5%87%A6%E7%90%86%E3%81%99%E3%82%8B---3.6-%E3%83%90%E3%83%AA%E3%83%87%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E8%BF%BD%E5%8A%A0)
 - **第 4 章 sqlxを使ってCRUDを実装する**
-  - 4.1 データベース基礎
-  - 4.2 sqlxとは
+  - [4.1 データベース基礎](https://zenn.dev/shinyay/articles/hello-rust-day095#%E7%AC%AC-4-%E7%AB%A0-sqlx%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6crud%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B---4.1-%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E5%9F%BA%E7%A4%8E)
+  - [4.2 sqlxとは](https://zenn.dev/shinyay/articles/hello-rust-day095#%E7%AC%AC-4-%E7%AB%A0-sqlx%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6crud%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B---4.2-sqlx%E3%81%A8%E3%81%AF)
   - 4.3 axumとsqlx
   - 4.4 todoのCRUD
   - 4.5 sqlxのテスト
@@ -47,5 +47,7 @@ published: false
   - 6.2 TodoRepositoryのラベル対応
   - 6.3 ラベル機能を画面に追加する
   - 6.4 さらなる機能拡張
+
+## 第 3 章 axumを使ってhttpリクエストを処理する
 
 ## Day 96 のまとめ
