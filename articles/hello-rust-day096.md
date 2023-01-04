@@ -112,7 +112,14 @@ pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'stati
 
 #### コンパイルエラー対応
 
-メソッドを非同期対応すると、次のようなコンパイルエラーがはっせいするようになるため、それぞれ修正を行っていきます。
+メソッドを非同期対応すると、次のようなコンパイルエラーが発生するようになるため、それぞれ修正を行っていきます。
+
+- [E0277](https://doc.rust-lang.org/beta/error_codes/E0277.html#error-code-e0277)
+  - あるトレイトを実装していない型を、そのトレイトを期待する場所で使おうとした
+- [E0599](https://doc.rust-lang.org/error_codes/E0.html)
+  - メソッドを実装していない型に対してメソッドを使用した
+- [E0195](https://doc.rust-lang.org/error_codes/E0195.html)
+  - メソッドのライフタイムパラメータが trait 宣言と一致しない
 
 ```rust
 error[E0277]: the trait bound `(StatusCode, Json<Pin<Box<dyn Future<Output = Result<Todo, anyhow::Error>> + Send>>>): IntoResponse` is not satisfied
@@ -136,7 +143,7 @@ error[E0599]: no method named `or` found for struct `Pin<Box<dyn Future<Output =
 ```
 
 ```rust
-ror[E0195]: lifetime parameters or bounds on method `create` do not match the trait declaration
+error[E0195]: lifetime parameters or bounds on method `create` do not match the trait declaration
   --> src/repositories.rs:91:14
    |
 21 |     async fn create(&self, payload: CreateTodo) -> anyhow::Result<Todo>;
