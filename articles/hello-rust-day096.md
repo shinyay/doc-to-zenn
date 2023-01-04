@@ -78,6 +78,10 @@ cargo add dotenv
 
 - [async_trait](https://docs.rs/async-trait/latest/async_trait/)
 
+このマクロにより、`async fn ...` という記法ができるようになるので、以下のコードを修正します。
+
+- 修正前
+
 ```rust
 pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static {
     fn create(&self, payload: CreateTodo) -> Todo;
@@ -87,6 +91,8 @@ pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'stati
     fn delete(&self, id: i32) -> anyhow::Result<()>;
 }
 ```
+
+- 修正後
 
 ```rust
 #[async_trait]
