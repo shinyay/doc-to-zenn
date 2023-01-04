@@ -159,6 +159,8 @@ error[E0195]: lifetime parameters or bounds on method `create` do not match the 
 
 ### ハンドラの修正
 
+リポジトリの修正と同様な考え方で `handlers.rs` の修正を行います。
+
 ```rust
 pub async fn create_todo<T: TodoRepository>(
     ValidatedJson(payload): ValidatedJson<CreateTodo>,
@@ -220,5 +222,7 @@ impl TodoRepository for TodoRepositoryForDb {
 }
 ```
 
-同様な考え方で `handlers.rs` の修正を行います。
 ## Day 96 のまとめ
+
+実際に Rust のコードを触ったのは、1 週間ぶりくらいではあったのですが、なんとか思い出しながらサンプルコードを修正していく事ができました。
+今回は、メモリ上のハッシュコードに対するデータ処理から、実際のデータベースを用いたデータ処理への切り替えのためのリポジトリを準備していきました。最終的なデータベースに対する処理を発行する部分はまだ `todo()` マクロで表しているだけですが、この部分の実装を完成させて次回 データベース接続を完成させてみたいと思っています。
