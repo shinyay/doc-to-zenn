@@ -184,7 +184,41 @@ pub async fn create_todo<T: TodoRepository>(
 }
 ```
 
+### データベース永続化処理の実装
 
+いままではメモリ上のハッシュテーブルに対してデータ処理をおこなう、`TodoRepositoryForMemory` 作成し使用していました。ここでは、実際にDBに格納する `TodoRepositoryForDb` を実装していきます。
+
+以下のようなインターフェースでデータベース処理を行うメソッドを用意していきます。(以下でメソッド内容は `todo!()` マクロで表しています)
+
+```rust
+#[derive(Debug, Clone)]
+pub struct TodoRepositoryForDb {
+    pool: PgPool,
+}
+
+#[async_trait]
+impl TodoRepository for TodoRepositoryForDb {
+    async fn create(&self, payload: CreateTodo) -> anyhow::Result<Todo> {
+      todo!()
+    }
+
+    async fn find(&self, id: i32) -> anyhow::Result<Todo> {
+        todo!()
+    }
+
+    async fn all(&self) -> anyhow::Result<Vec<Todo>> {
+        todo!()
+    }
+
+    async fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo> {
+        todo!()
+    }
+
+    async fn delete(&self, id: i32) -> anyhow::Result<()> {
+        todo!()
+    }
+}
+```
 
 同様な考え方で `handlers.rs` の修正を行います。
 ## Day 96 のまとめ
