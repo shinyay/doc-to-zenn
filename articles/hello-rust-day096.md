@@ -48,6 +48,20 @@ published: false
   - 6.3 ラベル機能を画面に追加する
   - 6.4 さらなる機能拡張
 
-## 第 3 章 axumを使ってhttpリクエストを処理する
+## 第 4 章 sqlxを使ってCRUDを実装する - 4.3 axumとsqlx
+
+[Day 95](https://zenn.dev/shinyay/articles/hello-rust-day095) で確認をしてみた sqlx を使用してデータベースに情報を永続化できるようにアプリケーションを修正していきます。
+
+### sqlx の準備
+
+`Cargo.toml` に依存関係を追加していきます。
+
+- sqlx ("runtime-tokio-rustls" フィーチャー)
+- dotenv
+
+```shell
+cargo add sqlx --features "runtime-tokio-rustls"
+cargo add dotenv
+```
 
 ## Day 96 のまとめ
