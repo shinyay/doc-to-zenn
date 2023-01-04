@@ -110,5 +110,41 @@ pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'stati
 - `Todo` から `Result<Todo>`
 - `Vec<Todo>` から `Result<Vec<Todo>>`
 
+#### コンパイルエラー対応
+
+メソッドを非同期対応すると、次のようなコンパイルエラーがはっせいするようになるため、それぞれ修正を行っていきます。
+
+```rust
+error[E0277]: the trait bound `(StatusCode, Json<Pin<Box<dyn Future<Output = Result<Todo, anyhow::Error>> + Send>>>): IntoResponse` is not satisfied
+  --> src/handlers.rs:17:24
+   |
+17 |   ) -> impl IntoResponse {
+   |  ________________________^
+18 | |     let todo = repository.create(payload);
+19 | |
+20 | |     (StatusCode::CREATED, Json(todo))
+21 | | }
+   | |_^ the trait `IntoResponse` is not implemented for `(StatusCode, Json<Pin<Box<dyn Future<Output = Result<Todo, anyhow::Error>> + Send>>>)`
+```
+
+```rust
+error[E0599]: no method named `or` found for struct `Pin<Box<dyn Future<Output = Result<Todo, anyhow::Error>> + Send>>` in the current scope
+  --> src/handlers.rs:45:10
+   |
+45 |         .or(Err(StatusCode::NOT_FOUND))?;
+   |          ^^ method not found in `Pin<Box<dyn Future<Output = Result<Todo, anyhow::Error>> + Send>>`
+```
+
+```rust
+ror[E0195]: lifetime parameters or bounds on method `create` do not match the trait declaration
+  --> src/repositories.rs:91:14
+   |
+21 |     async fn create(&self, payload: CreateTodo) -> anyhow::Result<Todo>;
+   |              ---------------------------------- lifetimes in impl do not match this method in trait
+...
+91 |     fn create(&self, payload: CreateTodo) -> Todo {
+   |              ^ lifetimes do not match method in trait
+```
+
 
 ## Day 96 のまとめ
