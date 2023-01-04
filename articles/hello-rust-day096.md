@@ -64,4 +64,39 @@ cargo add sqlx --features "runtime-tokio-rustls"
 cargo add dotenv
 ```
 
+### リポジトリの非同期対応
+
+**sqlx** は非同期処理に対応をしています。
+
+- [SQLx](https://github.com/launchbadge/sqlx)
+
+> SQLx は非同期な SQL クレートで、DSL を使わずにコンパイル時にクエリをチェックするのが特徴です。
+>
+> - 最大の同時実行性を実現するために、async/await を使って構築されています。
+
+作成していた以下のコードは非同期には非同期になっていません。これらのメソッドを非同期として定義したいため、`#[async_trait]` マクロを付け足します。
+
+- [async_trait](https://docs.rs/async-trait/latest/async_trait/)
+
+```rust
+pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static {
+    fn create(&self, payload: CreateTodo) -> Todo;
+    fn find(&self, id: i32) -> Option<Todo>;
+    fn all(&self) -> Vec<Todo>;
+    fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo>;
+    fn delete(&self, id: i32) -> anyhow::Result<()>;
+}
+```
+
+```rust
+#[async_trait]
+pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'static {
+    async fn create(&self, payload: CreateTodo) -> anyhow::Result<Todo>;
+    async fn find(&self, id: i32) -> anyhow::Result<Todo>;
+    async fn all(&self) -> anyhow::Result<Vec<Todo>>;
+    async fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo>;
+    async fn delete(&self, id: i32) -> anyhow::Result<()>;
+}
+```
+
 ## Day 96 のまとめ
