@@ -153,5 +153,25 @@ error[E0195]: lifetime parameters or bounds on method `create` do not match the 
    |              ^ lifetimes do not match method in trait
 ```
 
+### ハンドラの修正
 
+```rust
+
+```
+
+```rust
+pub async fn create_todo<T: TodoRepository>(
+    ValidatedJson(payload): ValidatedJson<CreateTodo>,
+    Extension(repository): Extension<Arc<T>>,
+) -> Result<impl IntoResponse, StatusCode> {
+    let todo = repository
+        .create(payload)
+        .await
+        .or(Err(StatusCode::NOT_FOUND))?;
+
+    Ok((StatusCode::CREATED, Json(todo)))
+}
+```
+
+同様な考え方で `handlers.rs` の修正を行います。
 ## Day 96 のまとめ
