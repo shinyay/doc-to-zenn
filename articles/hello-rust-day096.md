@@ -56,11 +56,15 @@ published: false
 
 `Cargo.toml` に依存関係を追加していきます。
 
-- sqlx ("runtime-tokio-rustls" フィーチャー)
+- sqlx
+  - 以下のフィーチャー
+    - postgres
+    - any
+    - runtime-tokio-rustls
 - dotenv
 
 ```shell
-cargo add sqlx --features "runtime-tokio-rustls"
+cargo add sqlx --featurescargo add sqlx --features "postgres,any,runtime-tokio-rustls"
 cargo add dotenv
 ```
 
@@ -156,7 +160,14 @@ error[E0195]: lifetime parameters or bounds on method `create` do not match the 
 ### ハンドラの修正
 
 ```rust
+pub async fn create_todo<T: TodoRepository>(
+    ValidatedJson(payload): ValidatedJson<CreateTodo>,
+    Extension(repository): Extension<Arc<T>>,
+) -> impl IntoResponse {
+    let todo = repository.create(payload);
 
+    (StatusCode::CREATED, Json(todo))
+}
 ```
 
 ```rust
@@ -172,6 +183,8 @@ pub async fn create_todo<T: TodoRepository>(
     Ok((StatusCode::CREATED, Json(todo)))
 }
 ```
+
+
 
 同様な考え方で `handlers.rs` の修正を行います。
 ## Day 96 のまとめ
