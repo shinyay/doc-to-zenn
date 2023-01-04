@@ -105,4 +105,10 @@ pub trait TodoRepository: Clone + std::marker::Send + std::marker::Sync + 'stati
 }
 ```
 
+非同期対応にあわせて、SQL 実行に際して実際には SQL 実行時エラーも発生しうるので戻り値を `anyhoe::Result` 型にしています。
+
+- `Todo` から `Result<Todo>`
+- `Vec<Todo>` から `Result<Vec<Todo>>`
+
+
 ## Day 96 のまとめ
