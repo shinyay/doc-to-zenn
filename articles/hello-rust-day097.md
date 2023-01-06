@@ -50,5 +50,11 @@ published: false
 
 ## 第 4 章 sqlxを使ってCRUDを実装する - 4.4 todoのCRUD
 
+データベースの操作に関する実装は、sqlx を用いて行います。書籍の方で参考にしている公式のサンプルを少し眺めてみたいと思います。
+
+- [sqlx - Quickstart](https://github.com/launchbadge/sqlx#quickstart)
+
+
+
 ## Day 97 のまとめ
 
