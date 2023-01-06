@@ -195,5 +195,36 @@ returning *
 }
 ```
 
+### Delete - データ削除
+
+データの削除を行うには次の SQL 文を使用します。
+
+```sql
+delete from todos where id=$1
+```
+
+特定の ID を指定してデータを削除します。ここでは特に戻り値を期待しないので、`execute` を使用しています。
+
+```rust
+async fn delete(&self, id: i32) -> anyhow::Result<()> {
+    sqlx::query(
+        r#"
+delete from todos where id=$1
+    "#,
+    )
+    .bind(id)
+    .execute(&self.pool)
+    .await
+    .map_err(|e| match e {
+        sqlx::Error::RowNotFound => RepositoryError::NotFound(id),
+        _ => RepositoryError::Unexpected(e.to_string()),
+    })?;
+
+    Ok(())
+}
+```
+
 ## Day 97 のまとめ
 
+今回の実装で sqlx を使ったデータベース操作に関する実装を完成することができました。sqlx を用いると データベースに対する接続や SQL 文の実行など、かなりパターン化された実装をすることができることが分かりました。また、予め非同期対応されている点も Web アプリケーションとして使用するのにとても相性がいいかなと思います。
+かなり実装周りはパターン化されてると思いますが、まだ今回のアプリケーションの実装でしか使ったことがないのでもう少し繰り返し使って慣れていきたいなと思いました。
