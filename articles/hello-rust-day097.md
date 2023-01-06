@@ -173,6 +173,8 @@ select * from todos where id=$1
 update todos set text=$1, completed=$2 where id=$3 returning *
 ```
 
+更新前の状態を取得してから更新を行っています。
+
 ```rust
 async fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo> {
     let old_todo = self.find(id).await?;
