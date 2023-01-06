@@ -109,7 +109,7 @@ while let Some(row) = rows.try_next().await? {
 
 先日までに作成してきていた Todo アプリケーションのデータベース操作部分の実装を行います。
 
-#### Create
+#### Create - データ挿入
 
 まず、データの挿入操作についての実装を行います。SQL 文は次のようなものになります。戻り値を扱いたいため、`returning *` を設定しています。
 
@@ -136,7 +136,7 @@ returning *
 }
 ```
 
-### find
+### Find - データ取得
 
 データの取得用のメソッドを実装します。SQL 文は次のようなものになります。
 
@@ -160,6 +160,34 @@ select * from todos where id=$1
         sqlx::Error::RowNotFound => RepositoryError::NotFound(id),
         _ => RepositoryError::Unexpected(e.to_string()),
     })?;
+
+    Ok(todo)
+}
+```
+
+### Update - データ更新
+
+データ更新には次の SQL 文を使用します。
+
+```sql
+
+```
+
+```rust
+async fn update(&self, id: i32, payload: UpdateTodo) -> anyhow::Result<Todo> {
+    let old_todo = self.find(id).await?;
+    let todo = sqlx::query_as::<_, Todo>(
+        r#"
+update todos set text=$1, completed=$2
+where id=$3
+returning *
+    "#,
+    )
+    .bind(payload.text.unwrap_or(old_todo.text))
+    .bind(payload.completed.unwrap_or(old_todo.completed))
+    .bind(id)
+    .fetch_one(&self.pool)
+    .await?;
 
     Ok(todo)
 }
