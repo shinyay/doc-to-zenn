@@ -170,7 +170,7 @@ select * from todos where id=$1
 データ更新には次の SQL 文を使用します。
 
 ```sql
-
+update todos set text=$1, completed=$2 where id=$3 returning *
 ```
 
 ```rust
