@@ -48,5 +48,7 @@ published: false
   - 6.3 ラベル機能を画面に追加する
   - 6.4 さらなる機能拡張
 
+## 第 4 章 sqlxを使ってCRUDを実装する - 4.4 todoのCRUD
+
 ## Day 97 のまとめ
 
