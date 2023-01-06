@@ -105,5 +105,34 @@ while let Some(row) = rows.try_next().await? {
 
 上記のように `fetch` により取得した `Row` を `while` ループにより `row.get()` でレコードを取得します。
 
+### Todo アプリケーションの実装
+
+先日までに作成してきていた Todo アプリケーションのデータベース操作部分の実装を行います。
+
+#### Create
+
+まず、データの挿入操作についての実装を行います。SQL 文は次のようなものになります。戻り値を扱いたいため、`returning *` を設定しています。
+
+```sql
+insert into todos (text, completed) values ($1, false) returning *
+```
+
+```rust
+async fn create(&self, payload: CreateTodo) -> anyhow::Result<Todo> {
+    let todo = sqlx::query_as::<_, Todo>(
+        r#"
+insert into todos (text, completed)
+values ($1, false)
+returning *
+    "#,
+    )
+    .bind(payload.text.clone())
+    .fetch_one(&self.pool)
+    .await?;
+
+    Ok(todo)
+}
+```
+
 ## Day 97 のまとめ
 
