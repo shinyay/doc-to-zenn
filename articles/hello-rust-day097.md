@@ -85,8 +85,10 @@ sqlx のクエリの実行は直感的に分かりやすい構造になってい
   - [sqlx::query_as](https://docs.rs/sqlx/latest/sqlx/fn.query_as.html)
 - `bind`
   - SQL 文字列中に定義しているパラメータに対する値のバインド
+  - [pub fn bind<T>](https://docs.rs/sqlx/latest/sqlx/query/struct.Query.html#method.bind)
 - `fetch_one`
   - データの取得
+  - [pub async fn fetch_one<'e, 'c, E>](https://docs.rs/sqlx/latest/sqlx/query/struct.Query.html#method.fetch_one)
 
 -
 
