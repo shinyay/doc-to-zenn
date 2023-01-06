@@ -91,7 +91,19 @@ sqlx のクエリの実行は直感的に分かりやすい構造になってい
   - [pub async fn fetch_one<'e, 'c, E>](https://docs.rs/sqlx/latest/sqlx/query/struct.Query.html#method.fetch_one)
     - 変更をじっこうする場合は `execute`, 該当レコードを `Stream` で取得するばあいは `fetch`
 
- 
+```rust
+use futures::TryStreamExt;
+
+let mut rows = sqlx::query("SELECT * FROM users WHERE email = ?")
+    .bind(email)
+    .fetch(&mut conn);
+
+while let Some(row) = rows.try_next().await? {
+    let email: &str = row.try_get("email")?;
+}
+```
+
+上記のように `fetch` により取得した `Row` を `while` ループにより `row.get()` でレコードを取得します。
 
 ## Day 97 のまとめ
 
