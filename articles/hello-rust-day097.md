@@ -117,6 +117,8 @@ while let Some(row) = rows.try_next().await? {
 insert into todos (text, completed) values ($1, false) returning *
 ```
 
+`query_as::<_, Todo>` としているので、`fetch_one` の結果の戻り値を `Todo` にバインドしています。
+
 ```rust
 async fn create(&self, payload: CreateTodo) -> anyhow::Result<Todo> {
     let todo = sqlx::query_as::<_, Todo>(
