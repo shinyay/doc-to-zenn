@@ -136,5 +136,34 @@ returning *
 }
 ```
 
+### find
+
+データの取得用のメソッドを実装します。SQL 文は次のようなものになります。
+
+```sql
+select * from todos where id=$1
+```
+
+ID を指定して特定のレコードの取得を行います。そのため、SQL 文の実行は `fetch_one` を使用します。
+
+```rust
+async fn find(&self, id: i32) -> anyhow::Result<Todo> {
+    let todo = sqlx::query_as::<_, Todo>(
+        r#"
+select * from todos where id=$1
+    "#,
+    )
+    .bind(id)
+    .fetch_one(&self.pool)
+    .await
+    .map_err(|e| match e {
+        sqlx::Error::RowNotFound => RepositoryError::NotFound(id),
+        _ => RepositoryError::Unexpected(e.to_string()),
+    })?;
+
+    Ok(todo)
+}
+```
+
 ## Day 97 のまとめ
 
