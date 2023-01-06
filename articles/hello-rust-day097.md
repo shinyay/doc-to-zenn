@@ -50,11 +50,44 @@ published: false
 
 ## 第 4 章 sqlxを使ってCRUDを実装する - 4.4 todoのCRUD
 
-データベースの操作に関する実装は、sqlx を用いて行います。書籍の方で参考にしている公式のサンプルを少し眺めてみたいと思います。
+データベースの操作に関する実装は、sqlx を用いて行います。
+
+### sqlx 公式サンプル
+
+書籍の方で参考にしている公式のサンプルを少し眺めてみたいと思います。
 
 - [sqlx - Quickstart](https://github.com/launchbadge/sqlx#quickstart)
 
+```rust
+use sqlx::postgres::PgPoolOptions;
 
+#[async_std::main]
+async fn main() -> Result<(), sqlx::Error> {
+
+    let pool = PgPoolOptions::new()
+        .max_connections(5)
+        .connect("postgres://postgres:password@localhost/test").await?;
+
+    let row: (i64,) = sqlx::query_as("SELECT $1")
+        .bind(150_i64)
+        .fetch_one(&pool).await?;
+
+    assert_eq!(row.0, 150);
+
+    Ok(())
+}
+```
+
+sqlx のクエリの実行は直感的に分かりやすい構造になっています。
+
+- `query_as`
+  - SQL 文字列の初期化
+- `bind`
+  - SQL 文字列中に定義しているパラメータに対する値のバインド
+- `fetch_one`
+  - データの取得
+
+-
 
 ## Day 97 のまとめ
 
