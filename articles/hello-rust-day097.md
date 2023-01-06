@@ -82,6 +82,7 @@ sqlx のクエリの実行は直感的に分かりやすい構造になってい
 
 - `query_as`
   - SQL 文字列の初期化
+  - [sqlx::query_as](https://docs.rs/sqlx/latest/sqlx/fn.query_as.html)
 - `bind`
   - SQL 文字列中に定義しているパラメータに対する値のバインド
 - `fetch_one`
