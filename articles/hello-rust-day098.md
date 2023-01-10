@@ -15,6 +15,16 @@ published: false
 
 ### 高レベルでのいいところ
 
+- ✅ メモリの安全性
+- ✅ トレイト（オブジェクト指向のインターフェース的な機能）
+- ✅ 関数パターン
+  - [コンビネータ](https://doc.rust-lang.org/rust-by-example/error/option_unwrap/map.html)
+  - [イテレータ](https://doc.rust-lang.org/book/ch13-02-iterators.html)
+  - [パターンマッチング](https://doc.rust-lang.org/book/ch18-00-patterns.html)
+- ✅ 
+- ✅ 
+- ✅ 
+
 ### 低レベルでのいいところ
 
 ## Day 98 のまとめ
