@@ -19,6 +19,8 @@ published: false
 
 - [Rust Web Development](https://www.manning.com/books/rust-web-development)
 
+![](https://storage.googleapis.com/zenn-user-upload/0f79db71a2cc-20230112.png)
+
 12 月にセールをやっていて 50% オフになっていたので買ったのがこの本なのでした。
 
 ## Day 99 のまとめ
