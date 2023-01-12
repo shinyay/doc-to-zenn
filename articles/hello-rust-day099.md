@@ -53,4 +53,5 @@ published: false
 Webアプリ開発で学ぶ Rust言語入門 より読みやすかったのポイントが、早めの段階で Rust の言語仕様のうち[借用](https://doc.rust-jp.rs/book-ja/ch04-02-references-and-borrowing.html)についての解説があったので後続のサンプルコードなども読み易さを感じました。
 
 
+
 ## Day 99 のまとめ
