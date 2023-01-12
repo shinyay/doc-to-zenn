@@ -56,6 +56,23 @@ Webアプリ開発で学ぶ Rust言語入門 より読みやすかったのポ�
 
 2 章では、Web アプリケーションを Rust を用いての開発を行います。Rust 自体には　Web サーバとしての機能提供がないため、別途 クレートを使用する必要があるのですが、こちらの書籍の中では **[warp](https://docs.rs/warp/latest/warp/)** をフレームワークとして使用しています。
 
+- [GitHub: seanmonstar/warp](https://github.com/seanmonstar/warp)
+
+warp もシンプルな Web アプリケーションフレームワークになっていて、基本形は次のように記述することができるようになっています。
+
+```rust
+use warp::Filter;
+
+#[tokio::main]
+async fn main() {
+    let hello = warp::path!("hello" / String)
+        .map(|name| format!("Hello, {}!", name));
+
+    warp::serve(hello)
+        .run(([127, 0, 0, 1], 3030))
+        .await;
+}
+```
 
 
 ## Day 99 のまとめ
