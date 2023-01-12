@@ -13,4 +13,12 @@ published: false
 
 先日まで読みながらコードを書いていた、[Webアプリ開発で学ぶ Rust言語入門](https://www.shuwasystem.co.jp/book/9784798067315.html)もありますが、これだけではなくもっとコードを打ち込む量を増やしていく必要があると思い、別の本にも手を出してみることにしました。
 
+## Rust Web Development
+
+読み始めたのは Manning から出版されている次の本です。
+
+- [Rust Web Development](https://www.manning.com/books/rust-web-development)
+
+12 月にセールをやっていて 50% オフになっていたので買ったのがこの本なのでした。
+
 ## Day 99 のまとめ
