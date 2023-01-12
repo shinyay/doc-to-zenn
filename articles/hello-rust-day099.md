@@ -52,6 +52,10 @@ published: false
 
 Webアプリ開発で学ぶ Rust言語入門 より読みやすかったのポイントが、早めの段階で Rust の言語仕様のうち[借用](https://doc.rust-jp.rs/book-ja/ch04-02-references-and-borrowing.html)についての解説があったので後続のサンプルコードなども読み易さを感じました。
 
+### 2 章: Rust 入門
+
+2 章では、Web アプリケーションを Rust を用いての開発を行います。Rust 自体には　Web サーバとしての機能提供がないため、別途 クレートを使用する必要があるのですが、こちらの書籍の中では **[warp](https://docs.rs/warp/latest/warp/)** をフレームワークとして使用しています。
+
 
 
 ## Day 99 のまとめ
