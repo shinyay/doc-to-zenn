@@ -37,6 +37,10 @@ published: false
 
 ### Rust Web Development の構成
 
-この **Rust Web Development**
+この **Rust Web Development** は全部で次のような 3 章構成になっています。
+
+- 1 章: Rust の紹介
+- 2 章: Rust 入門
+- 3 章: 本番導入
 
 ## Day 99 のまとめ
