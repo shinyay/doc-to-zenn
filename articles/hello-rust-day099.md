@@ -17,7 +17,7 @@ published: false
 
 読み始めたのは Manning から出版されている次の本です。
 
-- [Rust Web Development](https://www.manning.com/books/rust-web-development)
+- **[Rust Web Development](https://www.manning.com/books/rust-web-development)**
 
 ![](https://storage.googleapis.com/zenn-user-upload/0f79db71a2cc-20230112.png)
 
@@ -36,5 +36,7 @@ published: false
 :::
 
 ### Rust Web Development の構成
+
+この **Rust Web Development**
 
 ## Day 99 のまとめ
