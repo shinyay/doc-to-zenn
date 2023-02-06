@@ -119,3 +119,11 @@ target
         ├── hello-wasm.wasm
         └── incremental
 ```
+
+### Docker イメージの作成
+
+なお、これは現在プレビュー機能であり、**Docker Desktop** でのみ利用可能です。Docker Desktop で WebAssembly コンテナをビルドまたは実行できるようにするには、まず設定から **containerd pulling and storing feature** を有効にする必要があります。
+
+![](https://storage.googleapis.com/zenn-user-upload/89c63ddbc914-20230206.png)
+
+まず、以下の内容でDockerfileを作成します。
