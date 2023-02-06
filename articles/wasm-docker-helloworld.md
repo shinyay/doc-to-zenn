@@ -3,7 +3,7 @@ title: "5 分で WebAssembly + Docker = Hello World"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [webassembly, wasm, rust, docker]
-published: false
+published: true
 ---
 ## テーマ: Rust と Docker Desktop で WebAssembly な Hello World アプリ を作る
 
