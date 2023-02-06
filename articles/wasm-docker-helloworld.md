@@ -1,11 +1,11 @@
 ---
-title: "WebAssembly + Docker = Hello World"
+title: "5 分で WebAssembly + Docker = Hello World"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [webassembly, wasm, rust, docker]
 published: false
 ---
-## テーマ: Rust と Docker Desktop で WASM な Hello World アプリ を作る
+## テーマ: Rust と Docker Desktop で WebAssembly な Hello World アプリ を作る
 
 Zenn をご覧な方であれば、**WebAssembly** (WASM)  というキーワードを耳にしたり目にしたりしたことがある方は多いのではないでしょうか。昨年くらいから急に注目を集めはじめ、次世代のクラウドネイティブ技術とも言われ始めているテクノロジーです。
 
@@ -23,6 +23,9 @@ WebAssembly のもう一つの重要な点は、言語にとらわれないと�
 :::
 
 ## Rust と WebAssembly パッケージのインストール
+
+5 分で WebAssembly アプリを作ると第していますが、ほぼほとんど全ての時間は準備をする時間です。
+使用するものは、Rust と Docker Desktop です。それらの導入や構成の手順を紹介しながら、WASM バイナリを作成していきます。
 
 ### Rust のインストール
 
