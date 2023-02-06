@@ -53,3 +53,26 @@ rustc --version
 ```shell
 rustc 1.67.0 (fc594f156 2023-01-24)
 ```
+
+### Rust のプロジェクト作成
+
+パッケージマネージャ `cargo` を使用して、Rust のプロジェクトを作成します。以下のコマンドを実行します。
+
+```shell
+cargo new wasm-docker-helloworld
+```
+
+これにより、Rust ライブラリの基本構造を持つ "wasm-docker-helloworld" という新しいディレクトリが作成されます。
+このプロジェクトの `src/lib.rs` にはすでに次の Hello World のコードが入っています。
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+これをビルドしてみます。以下のコマンドを実行します。
+
+```shell
+cargo build
+```
