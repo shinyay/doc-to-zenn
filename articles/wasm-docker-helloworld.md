@@ -134,3 +134,9 @@ FROM scratch
 COPY ./target/wasm32-wasi/debug/hello-wasm.wasm /hello.wasm
 ENTRYPOINT [ "hello.wasm" ]
 ```
+
+次に、以下のコマンドでビルドします。
+
+```shell
+docker buildx build --platform wasi/wasm32 -t hello-wasm .
+```
