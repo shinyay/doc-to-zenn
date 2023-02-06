@@ -1,0 +1,1 @@
+/Users/yanagiharas/Works/docs/doc-to-zenn/codes/wasm-docker-helloworld/target/wasm32-wasi/debug/wasm-docker-helloworld.wasm: /Users/yanagiharas/Works/docs/doc-to-zenn/codes/wasm-docker-helloworld/src/main.rs
