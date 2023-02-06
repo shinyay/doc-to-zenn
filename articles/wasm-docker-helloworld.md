@@ -41,3 +41,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```shell
 source "$HOME/.cargo/env"
 ```
+
+Rust がインストールされたことを確認しておきましょう。
+
+```shell
+rustc --version
+```
+
+今日インストールしたなら、バージョンは `1.67.0` ですね。
+
+```shell
+rustc 1.67.0 (fc594f156 2023-01-24)
+```
