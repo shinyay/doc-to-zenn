@@ -127,3 +127,10 @@ target
 ![](https://storage.googleapis.com/zenn-user-upload/89c63ddbc914-20230206.png)
 
 まず、以下の内容でDockerfileを作成します。
+
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM scratch
+COPY ./target/wasm32-wasi/debug/hello-wasm.wasm /hello.wasm
+ENTRYPOINT [ "hello.wasm" ]
+```
