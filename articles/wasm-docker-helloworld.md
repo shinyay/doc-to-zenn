@@ -106,8 +106,8 @@ target
 │   ├── build
 │   ├── deps
 │   ├── examples
-│   ├── hello-wasm
-│   ├── hello-wasm.d
+│   ├── wasm-docker-helloworld
+│   ├── wasm-docker-helloworld.d
 │   └── incremental
 └── wasm32-wasi
     ├── CACHEDIR.TAG
@@ -115,8 +115,8 @@ target
         ├── build
         ├── deps
         ├── examples
-        ├── hello-wasm.d
-        ├── hello-wasm.wasm
+        ├── wasm-docker-helloworld.d
+        ├── wasm-docker-helloworld.wasm
         └── incremental
 ```
 
