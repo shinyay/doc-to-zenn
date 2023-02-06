@@ -96,3 +96,26 @@ rustup target add wasm32-wasi
 ```shell
 cargo build --target wasm32-wasi
 ```
+
+このコマンドにより、WebAssembly バイナリを作成し、`target/wasm32-wasi` の下に配置します。
+
+```shell
+target
+├── CACHEDIR.TAG
+├── debug
+│   ├── build
+│   ├── deps
+│   ├── examples
+│   ├── hello-wasm
+│   ├── hello-wasm.d
+│   └── incremental
+└── wasm32-wasi
+    ├── CACHEDIR.TAG
+    └── debug
+        ├── build
+        ├── deps
+        ├── examples
+        ├── hello-wasm.d
+        ├── hello-wasm.wasm
+        └── incremental
+```
