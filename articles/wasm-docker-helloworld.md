@@ -7,6 +7,8 @@ published: false
 ---
 ## テーマ: Rust と Docker Desktop で WebAssembly な Hello World アプリ を作る
 
+![](https://storage.googleapis.com/zenn-user-upload/54b0d59557b7-20230206.png)
+
 Zenn をご覧な方であれば、**WebAssembly** (WASM)  というキーワードを耳にしたり目にしたりしたことがある方は多いのではないでしょうか。昨年くらいから急に注目を集めはじめ、次世代のクラウドネイティブ技術とも言われ始めているテクノロジーです。
 
 簡単に WebAssembly を説明すると次のように言えるでしょう。
