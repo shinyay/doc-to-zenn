@@ -140,3 +140,31 @@ ENTRYPOINT [ "hello.wasm" ]
 ```shell
 docker buildx build --platform wasi/wasm32 -t hello-wasm .
 ```
+
+Dockerイメージを確認してみましょう。
+
+```shell
+docker image ls
+```
+
+```shell
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+hello-wasm   latest    779ebd5f5914   56 seconds ago   519kB
+```
+
+イメージが作成され、サイズは半分のメガバイトになります。次のコマンドで実行してみましょう。
+
+```shell
+docker run --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 hello-wasm
+```
+
+次のように表示されます。
+
+```shell
+Hello, world!
+```
+
+## まとめ
+
+**WebAssembly** はネイティブに近いパフォーマンスを提供し、プラットフォーム非依存です。
+**Docker Desktop** には **WasmEdge** ランタイムが付属しており、WebAssembly アプリを Docker コンテナにラップし Docker Compose で非 WASM コンテナと一緒に実行することも可能になります。
