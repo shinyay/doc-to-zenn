@@ -76,3 +76,23 @@ fn main() {
 ```shell
 cargo build
 ```
+
+これでバイナリファイルが作成され、`target/debug` の下に置かれます。これを直接実行することができます。
+
+```shell
+./target/debug/wasm-docker-helloworld
+```
+
+### WebAssembly バイナリの作成
+
+さて、WebAssembly ランタイム用にプロジェクトをビルドするために、新しいターゲットを追加する必要があります。
+
+```shell
+rustup target add wasm32-wasi
+```
+
+そして、このターゲットをビルドコマンドで使用することができます。
+
+```shell
+cargo build --target wasm32-wasi
+```
