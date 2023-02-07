@@ -8,7 +8,7 @@ published: true
 ## TL;DR
 
 **Bytecode Alliance** が毎月配信しているコミュニティミーティングを見て内容のサマリーや関係することについてまとめています。
-参照したコミュニティミーティングは、2 月 1 日に配信されたものです。
+参照したコミュニティミーティングは、1 月 31 日に実施されたものです。
 
 https://www.youtube.com/watch?v=9pLa7PUhPYA
 
