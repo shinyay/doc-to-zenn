@@ -22,7 +22,7 @@ https://www.youtube.com/watch?v=9pLa7PUhPYA
 ![](https://storage.googleapis.com/zenn-user-upload/8fff11292fbd-20230207.png)
 
 **Bytecode Alliance Foundation** は、WebAssembly の仕様の標準化を推進する団体です。
-WebAssembly (Wasm) やWebAssembly System Interface (WASI)など、W3C 標準に基づくソフトウェア基盤の実装に取り​​組んでいる非営利団体です。
+**WebAssembly (Wasm)** や **WebAssembly System Interface (WASI)**など、W3C 標準に基づくソフトウェア基盤の実装に取り​​組んでいる非営利団体です。
 
 - [Bytecode Alliance](https://bytecodealliance.org/)
 
@@ -42,3 +42,25 @@ Bailey によると、まさにこの問いかけこそが Bytecode Alliance が
 
 ![](https://storage.googleapis.com/zenn-user-upload/1adeab504a15-20230207.png)
 
+もともと、**WASI** は「ポータブル オペレーティング システム インターフェイス」を指す「POSIX -like」と呼ばれていました。
+これは、ウィキペディアで「オペレーティング システム間の互換性を維持するために IEEE Computer Society によって指定された標準のファミリー」として定義されています。
+
+しかし、Bailey は次のようにコメントしています。
+
+> これは POSIX を意図したものではありません。
+私たちが本当に意図していたのは、あなたが期待する共通の API セットがあり、開発者は、あなたがターゲットにしているランタイムのように扱うことができ、それによってあなたはブラウザの外で本当にうまく実行できるようになる、ということです。
+ほぼすべてのアプリケーションが依存する、あるいは期待するものがあります。それがなければ、WebAssembly モジュールに許されることは非常に限られてしまいます。
+
+WASI とは、APIのセットです。つまり、ファイルシステムへのアクセスや標準I/Oなど、開発者が `libc` から得られる機能を開発者に提供するものです。この API のセットをターゲットにすれば、ブラウザの外でも、どんな JavaScript ランタイムの外でも実行できるようにするものです。
+
+### WASI Preview 1
+
+現在さまざまな実装で使用されている WASI は、**WASI Preview 1** です。
+
+- [WASI](https://wasi.dev/)
+
+次のような WASI 実装のランタイムがあります。
+
+- [Wasmtime](https://wasmtime.dev/)
+- [Wasmer](https://wasmer.io/)
+- [WebAssembly Micro Runtime (WAMR) ](https://bytecodealliance.github.io/wamr.dev/)
