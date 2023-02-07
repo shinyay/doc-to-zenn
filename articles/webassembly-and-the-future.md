@@ -2,6 +2,6 @@
 title: "WebAssembly のこれから"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: []
+topics: [webassembly, wasm, wasi]
 published: false
 ---
