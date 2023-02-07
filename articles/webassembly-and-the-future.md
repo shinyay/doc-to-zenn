@@ -1,5 +1,5 @@
 ---
-title: "WebAssembly のこれから"
+title: "2023年のWebAssembly と Bytecode Alliance"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [webassembly, wasm, wasi]
