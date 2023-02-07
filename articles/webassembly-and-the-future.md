@@ -64,3 +64,13 @@ WASI とは、APIのセットです。つまり、ファイルシステムへの
 - [Wasmtime](https://wasmtime.dev/)
 - [Wasmer](https://wasmer.io/)
 - [WebAssembly Micro Runtime (WAMR) ](https://bytecodealliance.github.io/wamr.dev/)
+
+### WASI Preview 2
+
+現在 ByteCode Alliance が取り組んでいるのが、**WASI Preview 2** で、2023 年中にリリース予定になっています。
+
+この WASI Preview 2 では WebAssembly アプリケーションを構築するための新しいモデルが検討されています。それが、コンポーネントモデルです。
+
+- [Component Model design and specification](https://github.com/webassembly/component-model)
+
+コンポーネントモデルを使用すると、開発者は C++ でライブラリを作成し、Rust でライブラリを作成し、 Python でライブラリを作成し、または JavaScript を含むその他の言語でライブラリを作成し、それらをレゴブロックのように組み合わせて完全なアプリケーションを作成できます。
