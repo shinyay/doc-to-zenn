@@ -32,3 +32,13 @@ WebAssembly (Wasm) やWebAssembly System Interface (WASI)など、W3C 標準に�
 
 この Technical Steering Committee に新しく任命された Bailey Hayes がコミュニティミーティングをリードしていました。
 
+## 開発言語を統合していくことは可能か？
+
+> 必要なプログラミング言語のライブラリを使用して、それらを一緒にコンパイルする方法があればどうでしょうか? そして、開発者がそれを遠い将来ではなく、年末までに行うことができたらどうでしょうか?
+
+Bailey によると、まさにこの問いかけこそが Bytecode Alliance が今年解決していこうとしている問題なのです。
+
+## WebAssembly System Interface (WASI)
+
+![](https://storage.googleapis.com/zenn-user-upload/1adeab504a15-20230207.png)
+
