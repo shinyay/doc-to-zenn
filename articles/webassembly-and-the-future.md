@@ -103,3 +103,13 @@ JavaScriptを知っていてC++を少し学びたい人や、C++を知ってい�
 ![](https://storage.googleapis.com/zenn-user-upload/d12a561c5235-20230207.png)
 
 - [Emscripten](https://emscripten.org/index.html)
+
+Rust であれば、WebAssembly 開発との相性の良さがわかると思います。
+`cargo` を使ってビルドを行うと、wasm32バイナリをターゲットとし、WasmtimeなどのWasmランタイムで実行することができます。
+
+そして、Wasmtimeによって、デスクトップやエッジ、サーバーレス機能など、さまざまな場所にWasmモジュールを置くことが可能になります。
+
+## Key Takeaways
+
+2023 年は、Bytecode Alliance により昨年以上に WebAssembly の標準化に向けた動きが加速すると思われます。
+特に、WASI を用いたブラウザ以外での WebAssembly の活用については期待をもって注目していてもよいのかなと思っています。
