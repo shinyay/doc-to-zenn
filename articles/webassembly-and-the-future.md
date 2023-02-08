@@ -85,6 +85,8 @@ WASI とは、APIのセットです。つまり、ファイルシステムへの
 
 ![](https://storage.googleapis.com/zenn-user-upload/33eedc8b29b9-20230208.png)
 
+![](https://storage.googleapis.com/zenn-user-upload/b5e7688ec43c-20230208.png)
+
 - [Component Model design and specification](https://github.com/webassembly/component-model)
 
   - コンポーネントモデルを使用すると、開発者は C++ でライブラリを作成し、Rust でライブラリを作成し、 Python でライブラリを作成し、または JavaScript を含むその他の言語でライブラリを作成し、それらをレゴブロックのように組み合わせてアプリケーションを作成できるようになります。
