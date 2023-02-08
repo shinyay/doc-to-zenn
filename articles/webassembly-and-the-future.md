@@ -69,6 +69,8 @@ WASI とは、APIのセットです。つまり、ファイルシステムへの
 
 ![](https://storage.googleapis.com/zenn-user-upload/f37b574a0b6c-20230208.png)
 
+![](https://storage.googleapis.com/zenn-user-upload/09beb2890ca8-20230208.png)
+
 ### WASI Preview 2
 
 現在 ByteCode Alliance が取り組んでいるのが、**WASI Preview 2** で、2023 年中にリリース予定になっています。
