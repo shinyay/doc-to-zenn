@@ -77,6 +77,8 @@ WASI とは、APIのセットです。つまり、ファイルシステムへの
 
 ### WASI Preview 2
 
+![](https://storage.googleapis.com/zenn-user-upload/9dd40c1c7982-20230208.png)
+
 現在 ByteCode Alliance が取り組んでいるのが、**WASI Preview 2** で、2023 年中にリリース予定になっています。
 
 この WASI Preview 2 では WebAssembly アプリケーションを構築するための新しいモデルが検討されています。それが、コンポーネントモデルです。
