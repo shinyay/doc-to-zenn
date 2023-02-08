@@ -65,6 +65,10 @@ WASI とは、APIのセットです。つまり、ファイルシステムへの
 - [Wasmer](https://wasmer.io/)
 - [WebAssembly Micro Runtime (WAMR) ](https://bytecodealliance.github.io/wamr.dev/)
 
+#### WebAssembly Micro Runtime (WAMR) 
+
+![](https://storage.googleapis.com/zenn-user-upload/f37b574a0b6c-20230208.png)
+
 ### WASI Preview 2
 
 現在 ByteCode Alliance が取り組んでいるのが、**WASI Preview 2** で、2023 年中にリリース予定になっています。
