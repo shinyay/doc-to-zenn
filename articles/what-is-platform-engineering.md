@@ -3,7 +3,7 @@ title: "プラットフォームエンジニアリング (Platform Engineering) 
 emoji: "⚡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [platformengineering]
-published: false
+published: true
 ---
 ![](https://storage.googleapis.com/zenn-user-upload/10dc59576b4e-20230209.png)
 
