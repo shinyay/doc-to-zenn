@@ -2,7 +2,7 @@
 title: "プラットフォームエンジニアリング (Platform Engineering) とは？"
 emoji: "⚡"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [platformengineering]
+topics: [platformengineer]
 published: true
 ---
 ![](https://storage.googleapis.com/zenn-user-upload/10dc59576b4e-20230209.png)
