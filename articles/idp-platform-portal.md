@@ -19,5 +19,8 @@ published: false
 ですが、Gartner の記事を読んでいても **Internal Developer Platform** と **Internal Developer Portal** は異なる要件・用途として別々に定義がなされていたりします。
 そこで整理の意味を兼ねて **Internal Developer Platform** と **Internal Developer Portal** についてきょうはまとめたいと思います。
 
+### 注釈
 
+前回も記載していたように、Platform Engineering は明確な定義がまだ存在しているものではありません。**Gartner** が言っていたり、**Humanitec** などの Platform Engineering 製品を提供しているベンダーのエンジニアが言っているものはあるのですが公式の団体が定義しているものはまだありません。
+ですので、ここで紹介する僕の理解も現状の理解であり、今後変わっていくこともあることを了承ください。
 
