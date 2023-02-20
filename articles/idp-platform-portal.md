@@ -34,3 +34,7 @@ published: false
 
 そのイメージで 8 割正しいと思っています。
 
+![](https://storage.googleapis.com/zenn-user-upload/861c02c171a9-20230220.png)
+
+開発者が直接操作するフロントエンド側に **Internal Developer Portal** があり、そこからバックエンドで動作している **Internal Developer Platform** に対してアクセスするというものです。
+それでは、**Internal Developer Platform** と **Internal Developer Portal** のそれぞれについて紹介します。
