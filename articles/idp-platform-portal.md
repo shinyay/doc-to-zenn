@@ -3,7 +3,7 @@ title: "IDP: 内部開発者プラットフォームと内部開発者ポータ�
 emoji: "⚡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [platform, platformengineer]
-published: false
+published: true
 ---
 ![](https://storage.googleapis.com/zenn-user-upload/10dc59576b4e-20230209.png)
 
