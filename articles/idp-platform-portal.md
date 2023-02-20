@@ -36,5 +36,6 @@ published: false
 
 ![](https://storage.googleapis.com/zenn-user-upload/861c02c171a9-20230220.png)
 
-開発者が直接操作するフロントエンド側に **Internal Developer Portal** があり、そこからバックエンドで動作している **Internal Developer Platform** に対してアクセスするというものです。
+開発者が直接操作するフロントエンド側に **Internal Developer Portal** があり、そこからバックエンドで動作している **Internal Developer Platform** に対してアクセスするというものです。ここの関係の中で、忘れてはいけないのが **Internal Developer Platform** のさらに背後に**基盤**が存在していることです。つまり、"ポータルがプラットフォームを操作"し、"プラットフォームが基盤を操作する"というような構図になっているということです。
+
 それでは、**Internal Developer Platform** と **Internal Developer Portal** のそれぞれについて紹介します。
