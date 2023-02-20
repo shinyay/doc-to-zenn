@@ -26,7 +26,7 @@ published: false
 
 ## Internal Developer Platform と Internal Developer Potal の関係
 
-まず最初に結論的な理解を伝えたいと思います。
+まず最初に、結論的な理解を伝えたいと思います。
 **Internal Developer Platform** と **Internal Developer Portal** という 2 つの **IDP** が存在しているわけなのですが、どのような関係にあるかということです。
 名前からピンとくる方も多いと思います。一方は**プラットフォーム**、もう片方は**ポータル**です。
 プラットフォームの方は、ファウンデーション (土台) なイメージを名前から感じますよね。
@@ -39,3 +39,9 @@ published: false
 開発者が直接操作するフロントエンド側に **Internal Developer Portal** があり、そこからバックエンドで動作している **Internal Developer Platform** に対してアクセスするというものです。ここの関係の中で、忘れてはいけないのが **Internal Developer Platform** のさらに背後に**基盤**が存在していることです。つまり、"ポータルがプラットフォームを操作"し、"プラットフォームが基盤を操作する"というような構図になっているということです。
 
 それでは、**Internal Developer Platform** と **Internal Developer Portal** のそれぞれについて紹介します。
+
+## IDP のない状態
+
+IDP がなぜ求められているかを考えるために、IDP がない状態についてまず考えてみます。
+
+![](https://storage.googleapis.com/zenn-user-upload/2cfdc83c9fdc-20230220.png)
