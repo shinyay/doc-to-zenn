@@ -104,3 +104,13 @@ IDP がない状態、つまりインフラストラクチャを素の状態で�
 このように、利用者に応じた最適化を行うことができるのが、**Internal Developer Portal (内部開発者ポータル)** なのです。
 
 ## Key Takeaways
+
+2 つの IDP, **Internal Developer Platform (内部開発者プラットフォーム)** と **Internal Developer Portal (内部開発者ポータル)** について紹介を行いました。
+この 2 つの IDP の違いについて何か気づきをもってもらえたでしょうか。
+
+Platform Engineering を始めるにあたって、何から導入したらいいかという質問がいろいろなところで見かけました。その際に多くの意見としては、Platform よりも先にまず Portal から着手しているという回答を目にしました。DevEx の向上に対して一番最初に効果が見えやすいからかもしれないですね。
+代表的な **Internal Developer Portal (内部開発者ポータル)** は、Spotify が提供する OSS の **Backstage** が有名ですね。
+
+- [Backstage](https://backstage.io/)
+
+**Platform Engineering** は、技術やツールだけで成り立つものでは決してありません。ですが、新しく盛り上げってきている領域なので様々な OSS ツールや製品が登場してきています。それらについて、今後も注目していきたいなと思います。
