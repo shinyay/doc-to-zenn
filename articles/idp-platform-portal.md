@@ -72,4 +72,9 @@ IDP がない状態、つまりインフラストラクチャを素の状態で�
 
 ## Internal Developer Portal (内部開発者ポータル)
 
+さて、Internal Developer Platform (内部開発者プラットフォーム) についてどのようなものかを紹介しました。これだけあれば、開発者の DevEx が向上して解決するじゃないかと思われのではないでしょうか。
+実際そうです。Internal Developer Platform としての機能だけを提供しているようなツールや製品もあるでしょう。では、なぜ **Internal Developer Portal (内部開発者ポータル)** が必要なのでしょうか？
+
+その答えは、開発チームや組織にとっての**最適化**なのです。
+
 ![](https://storage.googleapis.com/zenn-user-upload/0dc33f5cd2c5-20230220.png)
