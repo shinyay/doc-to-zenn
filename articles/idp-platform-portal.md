@@ -72,3 +72,4 @@ IDP がない状態、つまりインフラストラクチャを素の状態で�
 
 ## Internal Developer Portal (内部開発者ポータル)
 
+![](https://storage.googleapis.com/zenn-user-upload/0dc33f5cd2c5-20230220.png)
