@@ -88,6 +88,17 @@ doc-to-zenn/
 | [5分で WebAssembly + Docker = Hello World](https://zenn.dev/shinyay/articles/wasm-docker-helloworld) | Wasm + Docker の最速ハンズオン |
 | [2023年の WebAssembly と Bytecode Alliance](https://zenn.dev/shinyay/articles/webassembly-and-the-future) | Wasm/WASI の将来展望 |
 
+### 📋 GitHub Changelog (自動生成)
+
+GitHub Changelog の日本語デイリーサマリー。[gh-changelog-zenn](https://github.com/shinyay/gh-changelog-zenn) パイプラインから毎日自動で記事が生成・同期されます。
+
+| 記事タイプ | 更新頻度 | 内容 |
+|-----------|---------|------|
+| Monthly Rolling | 毎日更新 | 日別サマリー画像 + 解説 + スライドリンク |
+| Monthly Summary | 月初 | 前月のまとめ（統計・ハイライト） |
+
+📊 **スライド一覧**: [GitHub Pages →](https://shinyay.github.io/gh-changelog-zenn/)
+
 ---
 
 ## 🏗️ Repository Structure
