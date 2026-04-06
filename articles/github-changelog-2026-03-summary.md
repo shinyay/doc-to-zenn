@@ -2,7 +2,7 @@
 title: "GitHub Changelog 2026年3月まとめ"
 emoji: "📊"
 type: "tech"
-topics: ["github", "copilot", "githubactions"]
+topics: ["github", "githubcopilot", "githubactions", "vscode", "devtools"]
 published: true
 ---
 

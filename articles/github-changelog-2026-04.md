@@ -2,7 +2,7 @@
 title: "GitHub Changelog 2026年4月"
 emoji: "📋"
 type: "tech"
-topics: ["github", "copilot", "githubactions"]
+topics: ["github", "githubcopilot", "githubactions", "vscode", "devtools"]
 published: false
 ---
 
