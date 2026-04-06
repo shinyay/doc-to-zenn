@@ -3,7 +3,7 @@ title: "GitHub Changelog 2026年4月"
 emoji: "📋"
 type: "tech"
 topics: ["github", "githubcopilot", "githubactions", "vscode", "devtools"]
-published: false
+published: true
 ---
 
 2026年4月のGitHub Changelogデイリーサマリーです。毎日の更新内容をスライドと解説でお届けします。
