@@ -15,6 +15,102 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月8日（6件のアップデート）
+
+![2026年4月8日のサマリー](/images/github-changelog-2026-04/2026-04-08-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/08/)
+
+---
+
+
+### 🔒 コードスキャン：プルリクエストでセキュリティアラートの修正提案を一括適用
+
+**Files changed**タブでコードスキャンアラートの修正をバッチに追加して適用できるようになり、複数のアラートをより迅速に処理できます。変更を単一のコミットにまとめることで、アラートごとに個別のスキャンを実行する代わりに1回のスキャンで済み、修正とレビューの時間を短縮してプルリクエストのスムーズな進行を支援します。
+
+
+> **💡 ポイント**: Developers reviewing pull requests with multiple code scanning alerts will experience significantly reduced friction when applying suggested fixes, as they can now batch fixes and commit once rather than repeating the apply-commit-scan cycle for each alert individually.
+
+
+> **⚠️ 注意**: GitHub Enterprise Server (GHES) availability is not stated. Organizations on GHES should not assume this feature is available and should monitor GHES release notes for inclusion in a future version.
+
+
+---
+
+
+### 🤖 Copilot CLIがBYOKおよびローカルモデルに対応
+
+CLI起動前にいくつかの環境変数を設定することで、Copilot CLIをAzure OpenAI、Anthropic、または任意のOpenAI互換エンドポイントで使用できるよう構成できます。OpenAIやAzure OpenAIなどのリモートサービスに加え、Ollama、vLLM、Foundry Localなどのローカル実行モデルでも動作します。セットアップ手順については [Using your own LLM models in GitHub Copilot CLI](https://docs.github.com/copilot/how-tos/copilot-cli/custom...
+
+
+> **💡 ポイント**: Developers in air-gapped or classified environments can now use Copilot CLI for the first time by combining offline mode with local model inference, opening the tool to defense, government, and regulated-industry users who were previously excluded.
+
+
+> **⚠️ 注意**: The article does not clarify whether a paid Copilot subscription is required to use the CLI in BYOK mode, leaving the licensing model for this use case ambiguous.
+
+
+---
+
+
+### 🤖 DependabotアラートをAIエージェントに割り当てて修正が可能に
+
+Dependabotアラートの詳細ページから**Assign to Agent**を選択し、Copilot、Claude、Codexなど希望のコーディングエージェントを選択します。割り当てられたエージェントは以下を実行します：
+
+
+> **💡 ポイント**: Security teams gain a force multiplier for addressing their Dependabot alert backlog, particularly for complex vulnerabilities that require code changes beyond simple version bumps, potentially reducing mean-time-to-remediation by hours or days per alert.
+
+
+> **⚠️ 注意**: The feature requires both GitHub Code Security and a Copilot plan that includes coding agent access. Organizations lacking either prerequisite cannot use agent assignment, and the specific Copilot plan tiers that qualify are not enumerated in the article.
+
+
+---
+
+
+### 🤖 DependabotバージョンアップデートがNixエコシステムに対応
+
+Dependabotは古くなったflake入力ごとに個別のプルリクエストを作成します。GitHub、GitLab、Sourcehut、およびプレーンなgit入力がすべてサポートされています。
+
+
+> **💡 ポイント**: **Nix developers** gain a native, zero-configuration dependency update workflow on GitHub, eliminating the need for custom CI scripts or third-party bots to keep flake inputs current.
+
+
+> **⚠️ 注意**: Security updates are explicitly not supported—Dependabot will not open reactive PRs based on vulnerability advisories for Nix flake inputs. Teams must handle CVE response through other means.
+
+
+---
+
+
+### 🤖 npmトラステッドパブリッシングがCircleCIに対応
+
+この拡張により、トラステッドパブリッシングはCIプロバイダー別でnpmパブリッシャーの大部分をカバーするようになりました。設定はnpmウェブサイトおよび`npm trust` CLIコマンドから利用可能です。セットアップ手順については、[トラステッドパブリッシングのドキュメント](https://docs.npmjs.com/trusted-publishers)をご参照ください。
+
+
+> **💡 ポイント**: Package maintainers using CircleCI can now adopt trusted publishing to eliminate stored npm tokens, reducing their exposure to credential theft, secret sprawl, and token rotation burden. They should consult the trusted publishing documentation and update their CircleCI pipeline configurations.
+
+
+> **⚠️ 注意**: The article does not specify which CircleCI plan tiers support OIDC token generation. Maintainers on free or open-source CircleCI plans may not have access to this feature.
+
+
+---
+
+
+### 🤖 Dynatraceのランタイムコンテキストでセキュリティアラートを優先順位付け
+
+DynatraceをGitHubに接続すると、Dynatraceがリポジトリにマッピングしたコンテナイメージのデプロイメントコンテキストとランタイムリスクシグナルが表示されます。このコンテキストを活用して、デプロイ済みアーティファクトに影響するアラート、特にDynatraceがより高リスクのランタイム状態を検出した場合のアラートに修正作業を集中できます。
+
+
+> **💡 ポイント**: Security engineers gain the ability to dramatically reduce alert fatigue by filtering out vulnerabilities in undeployed code, focusing remediation effort on the subset of alerts that represent actual production risk in Kubernetes environments.
+
+
+> **⚠️ 注意**: The feature is explicitly limited to GitHub Enterprise Cloud customers — there is no mention of availability for GitHub Enterprise Server (GHES), GitHub Team plans, or free/pro individual plans.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-08 -->
+
+
 ## 📅 2026年4月3日（4件のアップデート）
 
 ![2026年4月3日のサマリー](/images/github-changelog-2026-04/2026-04-03-summary.png)
