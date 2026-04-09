@@ -15,6 +15,88 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月9日（5件のアップデート）
+
+![2026年4月9日のサマリー](/images/github-changelog-2026-04/2026-04-09-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/09/)
+
+---
+
+
+### 🔒 セキュリティ評価でCopilotに質問する機能が利用可能に
+
+詳細については、[Code Securityリスク評価](https://docs.github.com/code-security/concepts/code-scanning/code-security-risk-assessment)または[シークレットリスク評価](https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/configure-specific-tools/assess-your-secret-risk)の実行に関するドキュメントを...
+
+
+> **💡 ポイント**: Organization admins gain an AI-powered advisor within their security assessment workflow, potentially reducing the time required to interpret complex aggregate security data and prioritize remediation efforts across large repository portfolios.
+
+
+> **⚠️ 注意**: The article does not specify which Copilot subscription tier (Business, Enterprise, or potentially a standalone security tier) is required to access this feature. Organizations should verify their licensing before expecting to use it.
+
+
+---
+
+
+### 🏛️ コメント非表示メニューに新しい「Low Quality」オプションが追加
+
+以前は、利用可能な分類オプション（例：**Spam**や**Abuse**）は従来の問題のあるコンテンツを想定して設計されており、役に立たない、またはその他の低品質なコメントの増加を正確に反映していませんでした。新しい**Low Quality**分類により、モデレーターはモデレーション時にこれらのコメントをより正確にカテゴリ分けできる精密なツールを利用できます。
+
+
+> **💡 ポイント**: Repository maintainers and moderators gain a more precise tool for categorizing hidden comments, reducing the need to misclassify low-quality content as spam or abuse when neither label accurately describes the problem.
+
+
+> **⚠️ 注意**: GitHub Enterprise Server (GHES) availability is not mentioned; it is unknown whether this feature will ship in future GHES releases or remains GitHub.com-only.
+
+
+---
+
+
+### 🛠️ 通知ページに新しい「Sort by」コントロールが追加
+
+通知がリポジトリごとにグループ化されている場合、ソートはグループ自体の順序と各グループ内のアイテムの順序の両方に影響します。これにより、最後のページに移動して逆順にたどる必要なく、バックログを体系的に処理できます。
+
+
+> **💡 ポイント**: Individual developers with notification backlogs gain a significantly streamlined triage workflow — switching to oldest-first sorting eliminates the need to paginate to the end of the notification list to address long-standing items.
+
+
+> **⚠️ 注意**: The feature offers only two sort options (newest-first and oldest-first). There is no support for sorting by other dimensions such as repository name, notification type, or priority.
+
+
+---
+
+
+### 🛠️ Issueサイドバーのリリース情報とプロジェクトフィールドのデフォルト値
+
+![Screenshot of an issue sidebar showing a linked pull request with a "Latest" release tag beneath it](https://github.com/user-attachments/assets/ec969161-8e22-487f-9336-40873cf3dedd)
+
+
+> **💡 ポイント**: Project maintainers can reduce repetitive manual field entry by configuring default values, which is particularly impactful for large projects with many contributors adding items frequently.
+
+
+> **⚠️ 注意**: The article does not state whether these features are available on GitHub Enterprise Server (GHES) or are limited to GitHub.com cloud.
+
+
+---
+
+
+### 🛠️ リポジトリメンバーのロールラベルがプルリクエスト一覧ビューに表示されるように
+
+![The pull request list view showing different repository role member labels](https://github.com/user-attachments/assets/3fb440b9-649b-4107-9eea-8884fb0ccaa5)
+
+
+> **💡 ポイント**: Open source maintainers gain a significant triage efficiency improvement, as they can now assess contributor context for all open PRs without leaving the list view, potentially saving minutes per triage session on active projects.
+
+
+> **⚠️ 注意**: The feature is explicitly limited to public repositories. Private and internal repositories are not mentioned, and organizations relying on these for open source workflows will not benefit.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-09 -->
+
+
 ## 📅 2026年4月7日（6件のアップデート）
 
 ![2026年4月7日のサマリー](/images/github-changelog-2026-04/2026-04-07-summary.png)
