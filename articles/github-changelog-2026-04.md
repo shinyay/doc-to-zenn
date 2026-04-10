@@ -15,6 +15,76 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月10日（4件のアップデート）
+
+![2026年4月10日のサマリー](/images/github-changelog-2026-04/2026-04-10-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/10/)
+
+---
+
+
+### 🏛️ Actionsワークフローの再実行が50回に制限
+
+この制限は、特定のワークフローに対して数百回のリトライを試みる自動化がシステムに追加の負荷をかけていることへの対応として追加されました。GitHub Actions内の制限について詳しくは、[Actionsの制限に関するドキュメントページ](https://docs.github.com/actions/reference/limits)をご覧ください。
+
+
+> **💡 ポイント**: CI/CD engineers and DevOps teams must audit existing retry automation to ensure no workflow rerun loop exceeds 50 iterations, refactoring aggressive retry logic to use exponential backoff or in-workflow step-level retries instead.
+
+
+> **⚠️ 注意**: The article does not state whether this limit applies to GitHub Enterprise Server (GHES) or only to GitHub.com, leaving enterprise on-premises customers without clarity.
+
+
+---
+
+
+### 🤖 Copilot CLIアクティビティが使用メトリクスの合計値と機能別内訳に統合
+
+今回のアップデートにより、CLIアクティビティは既存のメトリクスに統合されました。
+
+
+> **💡 ポイント**: Enterprise admins and engineering managers will see higher top-level usage counts in dashboards, which could trigger threshold-based alerts or alter trend lines, requiring recalibration of monitoring and reporting systems.
+
+
+> **⚠️ 注意**: Top-level totals have changed meaning silently under the same API version (2026-03-10), with no version bump, which means consumers who pinned to this version for stability may experience unexpected behavioral changes.
+
+
+---
+
+
+### 🤖 Copilotクラウドエージェントのバリデーションツールが20%高速化
+
+これらのバリデーションツールは順次実行ではなく並列実行されるようになり、バリデーション時間が20%短縮されました。これにより、同じ品質を維持しながらCopilotの動作が高速化されます。
+
+
+> **💡 ポイント**: Developers using Copilot cloud agent will experience approximately 20% faster turnaround on agent-completed tasks, reducing the wait time between task assignment and pull request creation with no degradation in code quality or security scanning coverage.
+
+
+> **⚠️ 注意**: The 20% figure is a relative improvement with no absolute timing baseline provided—the actual time saved in seconds or minutes is unknown, making it difficult to assess real-world significance for specific workflows.
+
+
+---
+
+
+### 🤖 GitHub Copilot Proの新規無料トライアルを一時停止
+
+* 現時点では、新規ユーザーはCopilot Proの無料トライアルを開始できません。
+* 既存のトライアルには影響ありません。
+* Copilot Freeおよび有料のCopilot Proサブスクリプションは引き続きご利用いただけます。
+
+
+> **💡 ポイント**: Individual developers evaluating Copilot Pro must now either commit to a paid subscription without a trial period or use the limited Copilot Free tier to assess the product, reducing their ability to make informed purchasing decisions.
+
+
+> **⚠️ 注意**: No specific timeline is provided for when trials will resume — 'as soon as' is the only temporal guidance, leaving the duration of the pause entirely open-ended.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-10 -->
+
+
 ## 📅 2026年4月9日（5件のアップデート）
 
 ![2026年4月9日のサマリー](/images/github-changelog-2026-04/2026-04-09-summary.png)
