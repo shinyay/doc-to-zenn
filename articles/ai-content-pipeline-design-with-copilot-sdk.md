@@ -19,8 +19,9 @@ GitHub Changelog を日々追いかけている方は、どれくらいいるで
 実際にこのパイプラインで自動生成された記事の一例がこちらです。
 
 📎 [GitHub Changelog 2026年3月まとめ](https://zenn.dev/shinyay/articles/github-changelog-2026-03-summary)
+📎 [GitHub Changelog 2026年4月](https://zenn.dev/shinyay/articles/github-changelog-2026-04)
 
-77 件の GitHub Changelog アップデートを自動で収集・分析・翻訳し、カテゴリ別に整理した月次サマリーです。Mermaid 図による視覚化、各エントリの影響分析、注意点の抽出まで、すべてパイプラインが自動で行っています。
+前者は月次サマリーで、77 件のアップデートを自動で収集・分析・翻訳し、Mermaid 図による視覚化やカテゴリ別整理を行ったものです。後者は日次更新の記事で、毎日のアップデートをその都度自動で追記しています。どちらも、収集から公開までパイプラインが自動で行っています。
 
 この記事では、実装の詳細には触れません。お伝えしたいのは、**設計思想とアプローチ**です。「どう作ったか」ではなく、「なぜこう設計したか」「どういう考え方で自動化に取り組んだか」を共有します。
 
@@ -262,9 +263,10 @@ flowchart TD
 - **スピード** ―― ソースの公開から短時間で日本語コンテンツが配信される
 - **アーカイブ** ―― すべての分析が Git で永続的に保存・追跡可能
 
-実際の出力例として、以下の記事をご覧ください。このパイプラインが自動生成した月次サマリーです。
+実際の出力例として、以下の記事をご覧ください。このパイプラインが自動生成したものです。
 
-📎 [GitHub Changelog 2026年3月まとめ](https://zenn.dev/shinyay/articles/github-changelog-2026-03-summary)
+📎 [GitHub Changelog 2026年3月まとめ](https://zenn.dev/shinyay/articles/github-changelog-2026-03-summary) — 月次サマリー
+📎 [GitHub Changelog 2026年4月](https://zenn.dev/shinyay/articles/github-changelog-2026-04) — 日次更新
 
 > **💡 ポイント**: 「AI に記事を書かせる」のではなく、「AI に構造化された分析を生成させ、それを記事に変換する」。この区別が品質の鍵です。
 
