@@ -15,6 +15,46 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月13日（2件のアップデート）
+
+![2026年4月13日のサマリー](/images/github-changelog-2026-04/2026-04-13-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/13/)
+
+---
+
+
+### 🤖 Copilotクラウドエージェントで3クリックでマージコンフリクトを修正
+
+ボタンをクリックすると、コンフリクトの解決をCopilotに依頼するコメントがコメントボックスに自動入力されます。
+
+
+> **💡 ポイント**: Individual developers gain a significant productivity improvement for one of the most common workflow friction points—merge conflicts can now be delegated to an AI agent rather than requiring manual branch checkout, conflict resolution, and verification.
+
+
+> **⚠️ 注意**: Pricing and resource consumption for Copilot cloud agent compute (builds, tests, cloud environment) are not stated—it is unknown whether usage is metered, quota-limited, or included in existing Copilot subscription costs.
+
+
+---
+
+
+### 🤖 WebおよびモバイルでのCLIセッションのリモートコントロールがパブリックプレビューで提供開始
+
+リモートセッションが有効な場合、CopilotはCLIセッションのアクティビティをリアルタイムでGitHubにストリーミングします。CLIにはリンクとQRコードが表示され、別のデバイスからそれを開いてセッションの表示、モニタリング、フォローアップコマンドの送信が可能です。アクティビティはCLIとGitHub間で同期されるため、一方で行った操作はもう一方にも反映されます。各リモートセッションはプライベートであり、開始したユーザーのみに表示されます。
+
+
+> **💡 ポイント**: Individual Copilot subscribers can immediately adopt remote sessions after updating the CLI, enabling them to start long-running coding tasks and monitor them from a phone or second computer — fundamentally changing how they interact with the AI agent.
+
+
+> **⚠️ 注意**: Public preview status means the feature is not yet GA — expect potential instability, breaking changes, and incomplete functionality. No timeline for general availability is provided.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-13 -->
+
+
 ## 📅 2026年4月10日（4件のアップデート）
 
 ![2026年4月10日のサマリー](/images/github-changelog-2026-04/2026-04-10-summary.png)
