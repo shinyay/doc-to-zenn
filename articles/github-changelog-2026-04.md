@@ -15,6 +15,116 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月14日（7件のアップデート）
+
+![2026年4月14日のサマリー](/images/github-changelog-2026-04/2026-04-14-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/14/)
+
+---
+
+
+### 🔒 リポジトリプロパティとアラートにおけるデプロイメントコンテキスト
+
+2つの新しい組み込みリポジトリプロパティ（`deployable` と `deployed`）が利用可能になりました。これらのプロパティは既存のアーティファクトおよびデプロイメントメタデータを反映するため、どのリポジトリがアクティブにデプロイされているかのリストを手動で管理する必要はありません。
+
+
+> **💡 ポイント**: Security teams gain the ability to prioritize vulnerability remediation based on actual runtime exposure, potentially reducing mean-time-to-remediate for production-critical findings while safely deferring lower-risk items.
+
+
+> **⚠️ 注意**: The article does not state whether these features are available on GitHub Enterprise Server (GHES) or are limited to GitHub.com cloud deployments.
+
+
+---
+
+
+### 🔒 GitHub Code Quality：標準検出結果の改善がパブリックプレビューで提供開始
+
+GitHub Code Qualityの標準検出結果は、リポジトリのデフォルトブランチにおける潜在的な信頼性および保守性の問題を検出するのに役立ちます。各検出結果にはGitHub Copilot Autofixによって生成された修正提案が付属しており、問題を迅速かつ効果的に解決できます。今回のアップデートにより、以下のことが可能になりました：
+
+
+> **💡 ポイント**: Developers triaging code quality findings will see significantly reduced friction: search eliminates manual scrolling, bulk actions eliminate repetitive one-by-one dismissals, and inline context eliminates the need to open files separately.
+
+
+> **⚠️ 注意**: The feature is in public preview, not GA. There are no guarantees about stability, feature completeness, or long-term availability. Organizations should not build critical workflows around preview features without a fallback plan.
+
+
+---
+
+
+### 🔒 コードスキャンアラートをGitHub Issuesにリンク
+
+このアップデートにより、以下のことが可能です：
+
+
+> **💡 ポイント**: Security teams gain the ability to integrate code scanning findings directly into issue-based triage and remediation workflows, eliminating the need to manually reference alert URLs in issue descriptions or maintain external tracking spreadsheets.
+
+
+> **⚠️ 注意**: The feature is in public preview and may undergo breaking changes to UX, filter syntax, or underlying data model before reaching general availability.
+
+
+---
+
+
+### 🤖 github.com上のClaudeおよびCodexエージェントでモデル選択が可能に
+
+[Copilotクラウドエージェント](https://docs.github.com/enterprise-cloud@latest/copilot/concepts/agents/cloud-agent/about-cloud-agent)と同様に、タスク開始時にモデルを選択できるようになりました。Claude向けのAnthropicモデル、Codex向けのOpenAIモデルから選択でき、最新かつ最も高性能なモデルが利用可能になり次第アクセスできます。
+
+
+> **💡 ポイント**: Individual developers gain direct control over the capability-latency-cost trade-off when using AI coding agents, enabling task-appropriate model selection rather than being locked to a single default.
+
+
+> **⚠️ 注意**: The article does not disclose whether different models consume Copilot subscription quota at different rates or have different pricing tiers, which is critical for enterprise cost management.
+
+
+---
+
+
+### 🤖 DependabotとコードスキャンのOIDCサポート
+
+Organization の管理者は、Organization 全体のプライベートレジストリに対してOIDCベースの認証情報を設定できます。OIDCベースの認証では、GitHub Actions ワークフローで[OIDCフェデレーション](https://docs.github.com/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect)を使用する場合と同様に、クラウドIDプロバイダーから短期間有効な認証情報...
+
+
+> **💡 ポイント**: Organization security teams benefit from a substantially reduced secret sprawl risk — long-lived registry credentials no longer need to be stored across potentially hundreds of repository secrets, and the shift to short-lived tokens limits the blast radius of any credential compromise.
+
+
+> **⚠️ 注意**: OIDC support is limited to three registries at GA (AWS CodeArtifact, Azure DevOps Artifacts, JFrog Artifactory) — organizations using other registries such as Sonatype Nexus, npm Enterprise, or GitHub Packages itself cannot use this feature yet.
+
+
+---
+
+
+### 🤖 SBOMエクスポートが非同期処理に対応
+
+新しいWebエクスペリエンスが導入され、ジョブの完了をポーリングする仕組みと、それに対応する新しいAPIエンドポイントが追加されました。これらは非同期で動作し、タイムアウトを解消します。新しいUIを使用するには、リポジトリの**Insights**タブに移動し、**Dependency Graph**をクリックしてから、**Export SBOM**をクリックします。ファイルの準備が完了すると、このページからダウンロードできます。
+
+
+> **💡 ポイント**: Operators of large repositories and monorepos with complex dependency trees will now be able to successfully generate SBOMs that previously failed due to the ten-second timeout, directly improving supply chain compliance coverage.
+
+
+> **⚠️ 注意**: The article does not state whether the legacy synchronous endpoint (GET /repos/{owner}/{repo}/dependency-graph/sbom) is deprecated, still functional, or scheduled for removal. Existing integrations operate under uncertainty about migration urgency.
+
+
+---
+
+
+### 🔒 Secret scanningのパターン更新と製品改善
+
+* **新しいCloudflare検出パターン：** Cloudflareがsecret scanningパートナーになりました。
+
+
+> **💡 ポイント**: Enterprise security managers in EMU environments gain automatic push protection coverage across user-owned forks without requiring additional GHAS licenses per fork, closing a significant credential leakage vector in enterprise fork workflows.
+
+
+> **⚠️ 注意**: The custom pattern validity override is explicitly scoped to custom pattern alerts only; standard GitHub-supported pattern validity remains automatically determined by GitHub's validators and cannot be overridden via the API.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-14 -->
+
+
 ## 📅 2026年4月13日（2件のアップデート）
 
 ![2026年4月13日のサマリー](/images/github-changelog-2026-04/2026-04-13-summary.png)
