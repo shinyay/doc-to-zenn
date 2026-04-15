@@ -15,6 +15,32 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月15日（1件のアップデート）
+
+![2026年4月15日のサマリー](/images/github-changelog-2026-04/2026-04-15-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/15/)
+
+---
+
+
+### 🤖 カスタムプロパティによるCopilotクラウドエージェントの有効化
+
+カスタムプロパティによるCCAの有効化は、設定時に一度だけ評価される点にご注意ください。カスタムプロパティが後から追加、削除、または変更されても、OrganizationのCCAが自動的に有効化・無効化されることはありません。
+
+
+> **💡 ポイント**: Enterprise admins gain the ability to implement staged CCA rollouts across their organization portfolio, enabling controlled adoption without the risk of blanket enablement across all organizations simultaneously.
+
+
+> **⚠️ 注意**: Custom property–based CCA enablement is evaluated once at configuration time only. Organizations will not be automatically enabled or disabled if custom properties are added, removed, or modified after the initial setup. This is explicitly stated as a critical limitation.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-15 -->
+
+
 ## 📅 2026年4月14日（7件のアップデート）
 
 ![2026年4月14日のサマリー](/images/github-changelog-2026-04/2026-04-14-summary.png)
