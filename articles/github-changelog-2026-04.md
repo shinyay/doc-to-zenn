@@ -15,6 +15,60 @@ published: true
 ---
 <!-- DAILY_MARKER -->
 
+## 📅 2026年4月16日（3件のアップデート）
+
+![2026年4月16日のサマリー](/images/github-changelog-2026-04/2026-04-16-summary.png)
+
+📊 [**詳細スライドを見る →**](https://shinyay.github.io/gh-changelog-zenn/2026-04/16/)
+
+---
+
+
+### 🤖 Claude Opus 4.7が一般提供開始
+
+サービスの信頼性向上の取り組みの一環として、モデル提供の合理化を進めています。今後数週間で、Copilot Pro\+のモデルピッカーにおいてOpus 4\.7がOpus 4\.5およびOpus 4\.6を置き換える予定です。ベンチマーク全体で大幅な改善が確認されており、高速で信頼性の高いCopilot体験を確保しつつ、個人ユーザーに最先端のモデルを提供することに注力しています。
+
+
+> **💡 ポイント**: Pro+ individual users gain access to a significantly upgraded Anthropic model for complex coding tasks, but must budget their premium requests carefully given the 7.5× multiplier and the looming end of promotional pricing on April 30.
+
+
+> **⚠️ 注意**: The 7.5× promotional pricing ends April 30, 2026, and the post-promotional multiplier is not disclosed — the long-term cost per request could be substantially higher.
+
+
+---
+
+
+### 🤖 GitHub CLIでエージェントスキルを管理
+
+エージェントスキルは、AIエージェントに特定のタスクの実行方法を教えるための、ポータブルな命令、スクリプト、リソースのセットです。オープンな[Agent Skills仕様](https://agentskills.io)に準拠しており、GitHub Copilot、Claude Code、Cursor、Codex、Gemini CLIなど、複数のエージェントホストで動作します。
+
+
+> **💡 ポイント**: Developers using AI coding agents across any of the six supported hosts can now manage skills with a single, consistent CLI interface rather than manually copying files or maintaining custom scripts, significantly reducing the friction of skill adoption and management.
+
+
+> **⚠️ 注意**: Public preview status: `gh skill` is explicitly 'subject to change without notice,' meaning CLI syntax, metadata formats, and behavior may change before general availability. Early adopters should not build critical workflows around current behavior without accepting this risk.
+
+
+---
+
+
+### 🏛️ ルールインサイトダッシュボードと統一フィルターバー
+
+GitHubリポジトリのルールセットは強力ですが、インシデント中にブロックされたプッシュの急増やバイパスアクティビティのパターンなどの傾向を、ルールインサイトページのデータを掘り下げずに把握することは容易ではありませんでした。
+
+
+> **💡 ポイント**: Repository administrators gain immediate access to a visual dashboard that eliminates the need to manually scan through rule evaluation records to identify trends in blocked pushes or bypass activity, significantly reducing time-to-insight during incidents.
+
+
+> **⚠️ 注意**: Both features are in public preview, meaning they may change, be modified, or potentially be withdrawn before reaching general availability. Organizations should not build critical compliance processes solely on preview features.
+
+
+---
+
+
+<!-- /DAILY_ENTRY:2026-04-16 -->
+
+
 ## 📅 2026年4月15日（1件のアップデート）
 
 ![2026年4月15日のサマリー](/images/github-changelog-2026-04/2026-04-15-summary.png)
