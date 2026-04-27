@@ -2,7 +2,7 @@
 title: "モデルが変われば指示も変わる ─ Opus 4.7 向け Agent Skill を作った"
 emoji: "🎯"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["github", "copilot", "claude", "ai"]
+topics: ["github", "githubcopilot", "claude", "ai"]
 published: true
 ---
 
