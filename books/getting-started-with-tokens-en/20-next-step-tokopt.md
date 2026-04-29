@@ -8,7 +8,7 @@ title: "Closing column — Your next step: tokopt"
 
 ## Thank you for reading this far
 
-What tokens are, where they're born, where they vanish, and what they cost — across **17 chapters and 2 appendices**, we walked together with the perspective that **"numbers change, structure doesn't"**.
+What tokens are, where they're born, where they vanish, and what they cost — across **16 main chapters and 2 appendices**, we walked together with the perspective that **"numbers change, structure doesn't"**.
 
 The goal of this book was never to make you an **"optimization expert"**. It was to give you **fluency in the unit**. **That fluency is the prerequisite to read every optimization technique, benchmark, and new model coming next with the right amount of skepticism and the right amount of enthusiasm**.
 
@@ -57,7 +57,7 @@ Without waiting for the `tokopt` article, things you can **start today**:
 
 | Action | Time required | What you need |
 |--------|---------------|---------------|
-| **Measure your main project's system prompt with `tiktoken`** | 10 min | Python + `tiktoken` |
+| **Measure your main project's system prompt with the tokenizer for the model you actually deploy** | 10 min | Python + the tokenizer matching that model |
 | **Print Appendix B's cheat sheet and stick it on your desk** | 5 min | Printer |
 | **Make a spreadsheet recording Chapter 13's 4 metrics weekly** | 30 min | Spreadsheet |
 | **Put a "quarterly audit" on the team calendar** | 5 min | Calendar |

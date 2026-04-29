@@ -87,7 +87,12 @@ from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3-8B")
 # 認証が必要なリポジトリの場合: HF_TOKEN を環境変数に
 
-token_ids = tokenizer.encode("How many tokens is this sentence?")
+# 注: encode() のデフォルトは add_special_tokens=True なので、
+# テキスト本体だけを正確に数えたいときは明示的に False を渡すこと
+token_ids = tokenizer.encode(
+    "How many tokens is this sentence?",
+    add_special_tokens=False,
+)
 print(len(token_ids))
 ```
 
@@ -111,29 +116,33 @@ console.log(ids.length);
 
 ```ts
 // 2. gpt-tokenizer (依存ゼロ、語彙同梱)
-import { encode } from "gpt-tokenizer";
+// ルート import (`from "gpt-tokenizer"`) はライブラリのデフォルト encoding を返すだけなので、
+// モデルに合わせた正確な計測には model 別 import を使う
+import { encode } from "gpt-tokenizer/model/gpt-4o";
 
 const ids = encode("How many tokens is this sentence?");
 console.log(ids.length);
 ```
 
 ```ts
-// 3. @anthropic-ai/tokenizer (Claude 系の近似 — 公式ではないことに注意)
+// 3. @anthropic-ai/tokenizer は Claude 系の「近似」のみ。
+//    課金や厳密なコンテキスト計測には絶対に使わず、
+//    本物のトークン数は API の count_tokens エンドポイントで取ること。
 import { countTokens } from "@anthropic-ai/tokenizer";
-console.log(countTokens("How many tokens is this sentence?"));
+console.log(countTokens("How many tokens is this sentence?")); // 近似値
 ```
 
 パターンは Python と同じ: **モデルに紐づく tokenizer をロード → encode → length**。違いはバンドルサイズと同梱語彙のラインナップ。
 
 ### プロバイダがローカル tokenizer を公開していない場合
 
-Anthropic Claude や Google Gemini など、**tokenizer を非公開**にしているプロバイダもあります。公式手段は:
+Anthropic Claude や Google Gemini など、**tokenizer を非公開**にしているプロバイダもあります。公式手段は2つあり、それぞれ性質が大きく異なります:
 
-- **API の `count_tokens` エンドポイント**（あれば）を呼ぶ
-- なければ、最小プロンプトで API を呼び、レスポンスの `usage.input_tokens` を読む
+- **API の `count_tokens` エンドポイント**（あれば）を呼ぶ。多くの場合**実際の生成は走らないので追加課金が発生せず**、返るのはプロバイダ側で確定したトークン数です（仕様はプロバイダごとに違うので必ずドキュメント確認）
+- カウント用エンドポイントが無い場合は、**生成 API を最小限のリクエストで呼んで `usage.input_tokens` などを読む**。この方法は**実トークンを確実に消費**します
 
 ```python
-# Anthropic 例
+# Anthropic 例: count_tokens は通常、課金されない見積もり
 import anthropic
 client = anthropic.Anthropic()
 
@@ -145,7 +154,7 @@ print(count.input_tokens)
 ```
 
 ```python
-# OpenAI 例（usage を読む）
+# OpenAI 例: 生成 API の usage を読む（こちらは実生成 → 課金される）
 from openai import OpenAI
 client = OpenAI()
 
@@ -158,7 +167,7 @@ print(resp.usage.prompt_tokens, resp.usage.completion_tokens)
 ```
 
 > [!NOTE]
-> API での計測は**実トークンを消費**します。CI でプロンプトサイズをチェックするような繰り返し計測には、**ローカル tokenizer がある場合はそちらを優先**。API は最後の手段。
+> **「カウント用エンドポイント」と「生成 API の usage を読む」は別物**です。前者は通常無料の見積もり、後者は実生成なので課金されます。CI でプロンプトサイズをチェックするような繰り返し計測では、**ローカル tokenizer がある場合はそちらを優先**し、無ければ**カウント用エンドポイントを優先**、生成 API は最後の手段にしてください。
 
 ---
 

@@ -112,15 +112,16 @@ In other words, **frequent words in the training corpus become single tokens**. 
 
 ### Inference (encode) procedure
 
-Training produces an **ordered list of merge rules**. To encode new text:
+Training produces an **ordered list of merge rules** (learn order = priority). To encode new text, the procedure is **not a single left-to-right pass** but an **iterative highest-priority-pair merge**:
 
 ```
-1. Break text into characters
-2. Apply merge rules in order (earliest learned first)
-3. Done → token sequence
+1. Break text into the smallest units (characters / bytes)
+2. Find the adjacent pair in the current sequence whose merge rule has the highest priority, and merge it
+3. Repeat step 2 until no learned merge rule applies
+4. Done → token sequence
 ```
 
-Implementations like `tiktoken` do this in close to **O(n)** with tries / FSTs.
+The key point is that you do **not** "apply rules in order one by one"; you **pick the single highest-priority pair each step and merge it**. Implementations like `tiktoken` run this loop in close to **O(n)** using priority queues, tries, or FSTs.
 
 ### Byte-level BPE
 
@@ -244,23 +245,20 @@ enc_o200k    = tiktoken.get_encoding("o200k_base")  # GPT-4o
 ## Cross-tokenizer cheat sheet
 
 ```
-┌──────────────────┬──────┬───────────┬──────────┬────────────────┐
-│ Model lineage    │ Algo │ Toolkit   │ Vocab    │ Notes          │
-├──────────────────┼──────┼───────────┼──────────┼────────────────┤
-│ GPT-2/3          │ BPE  │ tiktoken  │ ~50K     │ byte-level     │
-│ GPT-3.5/4        │ BPE  │ tiktoken  │ 100K     │ cl100k_base    │
-│ GPT-4o           │ BPE  │ tiktoken  │ 200K     │ multilingual ↑ │
-│ LLaMA 1/2/3      │ BPE  │ SentP     │ 32K-128K │ byte-level     │
-│ Mistral / Mixtral│ BPE  │ SentP     │ 32K      │ LLaMA-aligned  │
-│ Claude (assumed) │ BPE  │ private   │ ~100K    │ undisclosed    │
-│ Gemini (assumed) │ BPE  │ SentP-ish │ ~256K    │ multilingual   │
-│ BERT             │ WP   │ HF        │ 30K      │ ## prefix      │
-│ T5 / mT5         │ Uni  │ SentP     │ 32K-250K │ stochastic     │
-└──────────────────┴──────┴───────────┴──────────┴────────────────┘
+┌──────────────────────┬───────────────┬───────────────────┬─────────────────────────┐
+│ Algorithm family     │ Common impl.  │ Vocab size range  │ Notes                   │
+├──────────────────────┼───────────────┼───────────────────┼─────────────────────────┤
+│ byte-level BPE       │ tiktoken      │ tens of K – 200K  │ no <UNK> / multilingual │
+│ BPE (SentencePiece)  │ SentencePiece │ tens of K – 200K  │ single binary, all-in-1 │
+│ WordPiece            │ HF tokenizers │ ~tens of K        │ ## prefix / BERT-family │
+│ Unigram              │ SentencePiece │ tens of K – 200K+ │ stochastic / multilingual│
+└──────────────────────┴───────────────┴───────────────────┴─────────────────────────┘
 ```
 
+**Which model uses which is up to the vendor**: OpenAI families publish their vocab via `tiktoken` (`cl100k_base`, `o200k_base`, …); LLaMA families typically use SentencePiece-style BPE; BERT-family uses WordPiece; T5-family uses Unigram. Some vendors (e.g. Anthropic, Google) **do not publish their tokenizer in detail** — for those the only reliable option is the provider's **API token counter** (e.g. a `count_tokens` endpoint).
+
 > [!NOTE]
-> Vendors like **Anthropic and Google do not publish their tokenizers**. For those you have to use the **provider's `count_tokens` endpoint** to measure exactly.
+> Tokenizer choices **change across model generations**. Even within a single vendor, the `tiktoken` encoding name can shift across generations (`p50k_base` → `cl100k_base` → `o200k_base`). Always check the **vendor's current documentation** rather than relying on a frozen mapping.
 
 ---
 
@@ -279,14 +277,14 @@ for enc_name in ["gpt2", "p50k_base", "cl100k_base", "o200k_base"]:
     n = len(enc.encode(text))
     print(f"{enc_name:15s}: {n:4d} tokens")
 
-# Example output:
-# gpt2           :   89 tokens
-# p50k_base      :   89 tokens
-# cl100k_base    :   59 tokens
-# o200k_base     :   42 tokens
+# Counts vary substantially across generations:
+# - older generations (gpt2 / p50k_base) tend to produce more tokens
+# - newer generations (cl100k_base / o200k_base) improve multilingual
+#   efficiency, often using 30–60% fewer tokens for the same multilingual text
+# - run it on your actual text for the real number
 ```
 
-**2× spread on the same text**. Newer-generation tokenizers improve multilingual efficiency dramatically.
+**Across generations, the same text can differ by a multiplicative factor.** Newer-generation tokenizers improve multilingual efficiency dramatically.
 
 Implications:
 - "How many tokens is this text?" is **unanswerable without specifying a model**
@@ -304,7 +302,7 @@ Char BPE typically trains under the assumption that **merges don't cross word (s
 - Source code
 - Production text whose whitespace conventions differ from the training corpus
 
-**Byte-level BPE** drops the assumption — looks at **byte sequences only**. Whitespace, newlines, indentation merge naturally per their frequency. This is the **essence of generalization**.
+**Byte-level BPE** drops the assumption — the base alphabet is just **the 256 byte values**. Whitespace handling itself is a separate design choice (whether you use pretokenization, regex-based splits, etc.). What byte-level buys you is that the "where is a word boundary" decision is **moved into the pretokenization layer** rather than being baked into the algorithm — so whitespace, newlines, and indentation can be merged according to their frequency. This is the **essence of generalization**.
 
 ### Unigram and subword regularization
 
@@ -344,7 +342,7 @@ These **don't appear in normal encoding** (need special preprocessing). Chat API
 ## Common misconceptions
 
 ### ❌ "The tokenizer isn't part of the model"
-**Wrong**. The tokenizer is **trained alongside the model**. Vocab size, distribution, special-token placement are tightly coupled with model design. **Swapping tokenizers breaks performance**.
+**Wrong**. The tokenizer is typically **fit on training data first and then frozen**, and the model's **embedding table and output projection are then trained against that fixed vocabulary**. Vocab size, distribution, and special-token placement are tightly coupled with model design. **Swapping tokenizers breaks performance**.
 
 ### ❌ "BPE and WordPiece are obviously different algorithms"
 **Mostly the same**. Differences are merge criterion (frequency vs likelihood) and boundary marker (leading-space vs `##`); outputs are similar. Real choice = **whatever the model uses**.

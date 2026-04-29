@@ -20,20 +20,13 @@ Intuitively, "Chinese has fewer characters, so it should be cheaper". **The real
 
 ```
 English:  "I met a huge dog."          (17 characters)
-Japanese: "大きな犬に会った。"         (10 characters)
+Japanese: "大きな犬に会った。"         (9 characters)
 Chinese:  "我遇到一只大狗。"           (8 characters)
 ```
 
 **Chinese is shortest on screen** — 8 vs 17, about half. "Chinese version should be half-price" is the natural assumption.
 
-Measured with `cl100k_base`:
-```
-English  :  6 tokens
-Japanese : 14 tokens   ← 2.3× English
-Chinese  : 13 tokens   ← 2.2× English
-```
-
-**Half the screen length, more than 2× the tokens**. That's the phenomenon to dissect.
+But in practice, **even text that looks shorter on screen often produces more tokens than English**. Under an English-centric vocabulary like `cl100k_base`, Japanese and Chinese frequently land at **roughly 2× the English token count** (the exact ratio depends on the tokenizer generation — always measure on your own text). That's the phenomenon to dissect.
 
 ---
 
@@ -53,7 +46,7 @@ What you see on screen — `A`, `é`, `あ`, `中`, `🙂` — is, in memory, 1 
 | ASCII (A-Z, a-z, 0-9, basic punc)    |       1        |
 | Latin extended (é, ñ, ü), Cyrillic, Greek |  2        |
 | Arabic, Hebrew                       |       2        |
-| CJK ideographs (中, 日, 한, あ)      |       3        |
+| CJK ideographs (中, 日)              |       3        |
 | Hangul, Hiragana, Katakana           |       3        |
 | Many emoji, rare scripts             |       4        |
 | Modifier-joined emoji (👨‍👩‍👧‍👦)    |       8–25     |
@@ -62,8 +55,8 @@ What you see on screen — `A`, `é`, `あ`, `中`, `🙂` — is, in memory, 1 
 
 **1 ideograph = 3 bytes**. 1 ASCII letter = 1 byte. **There's a 3× difference at the byte level alone**.
 
-### Fact 3: modern tokenizers see bytes
-Recall **byte-level BPE** from Chapter 3. The tokenizer has no concept of "ideograph" or "emoji". It only sees **byte-sequence frequencies**.
+### Fact 3: modern byte-level BPE tokenizers see bytes
+Recall **byte-level BPE** from Chapter 3. A byte-level BPE tokenizer has no concept of "ideograph" or "emoji" — it only sees **byte-sequence frequencies** (this is the byte-level BPE story; WordPiece and Unigram families may operate at the character level instead).
 
 The training corpus is **mostly English**. So:
 - Frequent English byte patterns are densely registered in vocab
@@ -153,22 +146,24 @@ for lang, text in texts.items():
     print(f"{lang:10s} | {n_chars:5d} | {n_bytes:5d} | {n_tokens:6d} | {ratio:4.1f}×")
 ```
 
-Sample output:
+**Exact numbers depend on the tokenizer version and generation**, but the structural pattern you'll typically see looks like this:
+
 ```
-Lang       | chars | bytes | tokens |  ×Eng
+Lang       | chars | bytes  | tokens trend
 --------------------------------------------------
-English    |    59 |    59 |     11 |  1.0×
-Japanese   |    29 |    87 |     22 |  2.0×
-Chinese    |    14 |    42 |     11 |  1.0×   ← compressed in newer
-Korean     |    33 |    77 |     32 |  2.9×
-Arabic     |    42 |    78 |     20 |  1.8×
+English    | base  | base   | baseline (smallest)
+Japanese   | small | ~3×    | ~2× English
+Chinese    | small | ~3×    | 1–2× English (closer to English in newer gens)
+Korean     | mid   | ~3×    | 2–3× English (root + particle decomposition)
+Arabic     | mid   | ~2×    | 1.5–2× English
 ```
 
 Observations:
-- Japanese: half the characters, double the tokens
-- Korean: highest ratio (root + particle decomposition)
-- Newer `o200k_base` improves Chinese significantly
+- Even when there are fewer characters, **byte count grows** — so token count exceeds English
+- Korean tends to land highest because of root + particle decomposition
+- Newer `o200k_base` notably improves Chinese and Japanese
 - Bytes and tokens **correlate loosely, not perfectly**
+- **Always measure on your own text with the tokenizer you actually use**
 
 ---
 
@@ -277,7 +272,7 @@ In order of effort:
 
 ### Emoji and modern text
 
-Modern UGC — chat, social, reviews — is full of emoji, combining characters, ZWJ joiners. A "single" family emoji `👨‍👩‍👧‍👦` can cost **25 bytes / 4–7 tokens**. For apps processing casual text at scale, **emoji is real recurring cost, not rounding error**.
+Modern UGC — chat, social, reviews — is full of emoji, combining characters, ZWJ joiners. A "single" family emoji `👨‍👩‍👧‍👦` is around **25 bytes** of UTF-8 and can cost **double-digit tokens** depending on the tokenizer. For apps processing casual text at scale, **emoji is real recurring cost, not rounding error** — measure on the tokenizer you actually use.
 
 ```python
 import tiktoken

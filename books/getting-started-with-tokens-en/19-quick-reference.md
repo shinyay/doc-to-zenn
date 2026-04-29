@@ -2,7 +2,7 @@
 title: "Appendix B — Quick reference"
 ---
 
-> **In one line:** This book's 17 chapters + Appendix A **compressed onto a single page**. **A cheat sheet to come back to during real work and use as a decision filter**.
+> **In one line:** This book's 16 main chapters + Appendix A **compressed onto a single page**. **A cheat sheet to come back to during real work and use as a decision filter**.
 
 ---
 
@@ -14,7 +14,7 @@ title: "Appendix B — Quick reference"
 |---|------|------------------|
 | 1 | **Send less** | Trim system prompt, context scoping, summarize history, drop unused tools |
 | 2 | **Receive less** | Terse instructions, fixed JSON schema, no preamble, length cap |
-| 3 | **Pay less per token** | Cheaper model tier, prefix-cache design, matching workflow mode |
+| 3 | **Pay less per token** | Cheaper model tier, prefix-cache design, task-appropriate model routing |
 
 ---
 
@@ -34,19 +34,19 @@ title: "Appendix B — Quick reference"
 
 ---
 
-## 3. The 10 hygiene principles (Chapter 12)
+## 3. Hygiene checklist (the 10 principles from Chapter 12)
 
 ```
-1.  Justify every token              if you can't ask "why is this here?", it's a deletion candidate
-2.  Most stable thing first          maximize cache hit
-3.  Volatile content last            don't break the stable prefix
-4.  Declarative > Imperative         "Output: JSON" beats "Always make sure to use JSON..."
-5.  Aggregate repetitions            don't write the same intent in 3 places
-6.  Periodically delete dead rules   instructions for scenarios that don't happen are dead weight
-7.  Scope and load tools             don't expose all tools to all workflows
-8.  Summarize history → cut it       old turns are worth cutting even when irrecoverable
-9.  Measure before you touch         decide on metrics, not guesses
-10. Sustain the discipline           a one-off cleanup drifts in 3 months
+1.  Stable prefix, volatile suffix        stable up front, volatile at the end
+2.  Load on demand, not always-on          send things only when they're relevant
+3.  Declarative > Imperative               "Output: JSON" beats "Always make sure to use JSON..."
+4.  Output discipline                      explicitly constrain output length
+5.  Minimum sufficient context             just enough context, not more
+6.  Right-size the model                   pick the model tier that matches the task
+7.  Right-size the reasoning effort        match reasoning effort to task difficulty
+8.  End sessions on topic change           cut the session when the topic shifts
+9.  Treat tools as inventory               manage the tool surface like inventory
+10. Measure before optimizing              decide on metrics, not on guesses
 ```
 
 ---

@@ -26,7 +26,7 @@ Inference happens in **two distinct phases**. From the outside they look the sam
 
 When you send a prompt, the model first **reads the entire thing**. This is **prefill**. It pushes each input token through every layer of the network and computes the internal state needed to produce the first output token.
 
-Defining property of prefill: **highly parallel**. The model knows all input tokens before starting, so it processes them in **one big batched pass** using the entire accelerator. GPUs love this. **Doubling input length doesn't double wall-clock time** — the hardware absorbs much of the extra work in parallel.
+Defining property of prefill: **far more parallelizable than decode**. The model knows all input tokens before starting, so it processes them in **one batched pass** using the entire accelerator. GPUs love this, and the **per-token** cost drops sharply versus decode. But **doubling input length does not halve the wall-clock prefill time** — wall-clock prefill still rises materially with sequence length (attention scales superlinearly, the rest at least linearly), and longer prompts cost more compute and more memory bandwidth. Prefill isn't "cheap"; it's "cheap **per token** compared to decode".
 
 ```
 PREFILL
@@ -78,7 +78,7 @@ Short prompts feel snappy. Very long prompts (bloated system messages, packed co
 > **The first second of silence is the most expensive second in the whole interaction** — it's the second the user spends deciding "is this broken?".
 
 > [!TIP]
-> If your prefix is stable, the serving stack can reuse work from prior calls (a **KV-cache hit**). On a hit, most of prefill is skipped and **TTFT collapses to near network round-trip time**.
+> If your prefix is stable, the serving stack can reuse work from prior calls (a **KV-cache hit**). On a hit, most of prefill is skipped and **TTFT shrinks to roughly network round-trip time plus minimal server overhead** (scheduling, cache lookup, the first decode step). It does not collapse to pure RTT — some server-side work always remains.
 
 ### Inter-token latency and tokens-per-second (TPS)
 
@@ -90,7 +90,7 @@ TPS depends mostly on:
 - **Serving stack**: batching, quantization, attention kernels, hardware
 - **Concurrency on the server**: your request shares the GPU with others
 
-TPS is **roughly independent of prompt length**. Once decode starts, the model cranks out tokens at its rate regardless of how big the prompt was.
+TPS is **fairly stable for short-to-moderate prompts but drops once contexts get long**. Each decode step reads the KV cache for all previous tokens out of memory; the longer the prefix, the more cache has to be streamed per step, and decode is memory-bandwidth bound. The right intuition is not "TPS is independent of prompt length" but "you barely feel it on short/moderate prompts; you feel it clearly on long ones".
 
 ### Putting them together
 
@@ -234,7 +234,7 @@ Traditional dense models use **all parameters on every token**. **MoE** activate
 Performance implications:
 - MoE can be **collectively huge yet per-token cheap and fast**
 - Performance under load can be **lumpy** (routing affects which experts get hit, batching is trickier)
-- Per-token price reflects **active**, not **total** parameters → "huge" models can be **surprisingly cheap**
+- Per-token **serving cost** is driven mostly by **active compute, memory, and communication**, not by the total parameter count, so a "huge" MoE can be much cheaper to serve per token than a dense model of the same total size. **API pricing itself is still provider policy**, though — don't read "active params" directly as "what you'll be charged"
 
 ### Public benchmarks vs production reality
 Benchmark TPS uses near-ideal conditions: warm caches, short batch queues, well-tuned hardware. **Production latency is messy**: concurrency varies, caches evict, networks are flaky, long-tail requests stretch the queue, cold starts and retries add overhead.

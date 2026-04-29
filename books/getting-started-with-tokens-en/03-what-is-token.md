@@ -22,7 +22,7 @@ This chapter closes that gap. We'll internalize, with code, **why a unit that is
 
 Neural networks **cannot see text directly**. They see **numbers** — concretely, sequences of numeric vectors.
 
-Before `Hello, world!` is processed, it must be turned into **a sequence of integers**. Each integer is a row index into the model's **embedding table** (learned at training time). Each row is a vector that encodes "the meaning of one unit".
+Before `Hello, world!` is processed, it must be turned into **a sequence of integers**. Each integer is a row index into the model's **embedding table** (learned at training time). Each row is a learned vector that provides the token's **initial representation**; the contextual meaning itself is formed by later layers, depending on the surrounding tokens.
 
 ```
 "Hello, world!" ──[tokenizer]──> [9906, 11, 1917, 0]
@@ -111,7 +111,7 @@ The result is a kind of stratification:
 - **Frequent long words** also become 1 token: `because`, `function`, `important`
 - **Mid-frequency words** split into 2–3 pieces: `tokenization → ["token", "ization"]`
 - **Rare words** split into many: `antidisestablishmentarianism → ["anti", "dis", "establish", "ment", "arian", "ism"]`
-- **Truly unseen input** can fall back to **byte-level** (more later)
+- **In byte-level BPE families**, truly unseen input can fall back to **byte-level** (more later)
 
 ```
 character-level                 subword                    word-level
@@ -166,10 +166,11 @@ print([enc.decode([t]) for t in enc.encode("tokenization")])
 
 ```python
 print([enc.decode([t]) for t in enc.encode("antidisestablishmentarianism")])
-# ['anti', 'dis', 'establish', 'ment', 'arian', 'ism']
+# Example: ['ant', 'idis', 'establish', 'ment', 'arian', 'ism']
+# Exact split varies by tokenizer release; the structural point is that it shatters into multiple subword pieces.
 ```
 
-**6 tokens** (varies by tokenizer). This is where subword **taxes** rare long words. The vocab doesn't have the whole word; instead, it assembles it from familiar **morphemes**.
+**Several tokens** (the exact split varies by tokenizer). This is where subword **taxes** rare long words. The vocab doesn't have the whole word; instead, it assembles it from frequent **subword pieces**. These are not strict linguistic morphemes — they are **fragments learned from frequency**.
 
 ### Example 4: a code snippet
 
@@ -177,16 +178,16 @@ print([enc.decode([t]) for t in enc.encode("antidisestablishmentarianism")])
 def hello_world():
 ```
 
-Typical split:
+An example split:
 ```
-['def', ' hello', '_', 'world', '():', ]
+['def', ' hello', '_world', '():']
 ```
 
-5–6 tokens. Code observations:
+A handful of tokens. **The exact split varies a lot by tokenizer** — some absorb `_` into the surrounding identifier, others break it out as its own token. Code observations:
 
-- **Underscore `_` is its own token** — heavy `snake_case` usage means paying for `_` every time
+- **How `_` in `snake_case` is bundled depends on the tokenizer** — it may be absorbed into the identifier, or split out as its own token
 - **`()` is often one token** (empty parens are common in code)
-- **`:` is its own token**
+- **`:` is often its own token**
 - **Indentation** (leading whitespace/tabs) is its **own token category**, sometimes 4 spaces collapse to 1 token
 
 This is why "code is less token-efficient than prose" — symbols and identifiers everywhere.
@@ -212,8 +213,8 @@ Numbers are the **most variable** category. Some tokenizers have dedicated slots
 print(len(enc.encode("    "))) # 4 spaces → 1 token
 print(len(enc.encode("\n")))   # newline → 1 token
 print(len(enc.encode("\n\n"))) # double newline → 1 token (frequent)
-print(len(enc.encode("🙂")))   # emoji → 3–4 tokens
-print(len(enc.encode("👨‍👩‍👧‍👦"))) # family emoji (composite) → 10+ tokens
+print(len(enc.encode("🙂")))   # simple emoji → a small handful of tokens (≈2 in cl100k_base)
+print(len(enc.encode("👨‍👩‍👧‍👦"))) # family emoji (ZWJ composite) → can hit double-digit tokens
 ```
 
 Emojis are surprisingly **heavy**. A single emoji is multiple Unicode bytes; if not in the learned vocab, the tokenizer **falls back to byte-level**.
@@ -261,7 +262,7 @@ Modern tokenizer vocab typically lives in the **30,000–200,000** range. Why?
 
 Old tokenizers replaced out-of-vocab with `<UNK>`. That is **information loss** — the original spelling is unrecoverable.
 
-**Byte-level tokenizers** (byte-level BPE) eradicated this. By taking the smallest unit to be **the 256 byte values**, *any* Unicode character, emoji, or accidentally-pasted binary fragment is **representable**. Frequent byte sequences merge into larger tokens; rare ones decompose to bytes.
+**Byte-level BPE tokenizers** largely solve this problem. By taking the smallest unit to be **the 256 byte values**, *any* Unicode character, emoji, or accidentally-pasted binary fragment is **representable**. Frequent byte sequences merge into larger tokens; rare ones decompose to bytes. Other tokenizer families like WordPiece or Unigram may still retain `<UNK>` depending on their design.
 
 ```
 "normal text" → a few tokens
@@ -311,7 +312,7 @@ assert text == restored  # True
 
 - **Tokens are subword units** — neither characters nor words; mid-pieces learned from frequency
 - Character-level explodes the sequence; word-level explodes vocab and stumbles on unknowns — subword is the **practical solution**
-- Modern subword tokenizers use **byte-level fallback** to eliminate `<UNK>`
+- Modern **byte-level BPE** tokenizers use byte fallback to largely eliminate `<UNK>` (some WordPiece/Unigram setups can still retain it depending on design)
 - "Character count → token count" and "word count → token count" predictions are **unreliable**. **Measure**.
 - **Leading space** is folded into the next token — know this or be confused
 - **Token IDs are not portable across models**. When comparing "token count", verify the **same tokenizer was used**

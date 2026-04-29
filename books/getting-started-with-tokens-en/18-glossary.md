@@ -26,7 +26,7 @@ title: "Appendix A — Glossary"
 
 ## C
 
-**Cache (prompt cache / prefix cache)** — A mechanism that reuses the processing of common leading token sequences. **Stable-prefix design enables dramatic savings**. → Chapter 10 / Chapter 16
+**Cache (prompt cache / prefix cache)** — A mechanism that reuses the processing of common leading token sequences. **Stable-prefix design enables dramatic savings**. → Chapter 12 / Chapter 13
 
 **Compaction** — Summarizing/compressing past history in long conversations. **Comes with irrecoverable information loss**. → Chapter 10
 
@@ -40,13 +40,13 @@ title: "Appendix A — Glossary"
 
 **Decode** — The phase that **generates tokens one at a time, sequentially**. **Latency depends on both input and output length**. → Chapter 8
 
-**Distillation** — Training a small model on a large model's outputs. **Quality reinforcement when moving across tiers**. → Around Chapter 16
+**Distillation** — Training a small model on a large model's outputs. **Quality reinforcement when moving across tiers**. This book mentions the concept in passing; there is no dedicated chapter.
 
 ---
 
 ## E
 
-**Embedding** — A representation that converts a token ID into a high-dimensional vector. The model's internal "meaning of a word". → Around Chapter 3
+**Embedding** — A **learned vector representation** of a token ID. It's the **initial representation that later transformer layers operate on**, not "the meaning of a word" in any literal sense — better thought of as "a geometric position assigned to each token through training". Note that it lives at the **subword / token level**, not at the word level. → Chapter 3
 
 ---
 
@@ -80,7 +80,7 @@ title: "Appendix A — Glossary"
 
 ## J
 
-**JSON mode** — A feature that forces model output into a JSON schema. **Combines reduced output volume with reliable downstream parsing**. → Chapter 16
+**JSON mode** — A model/provider feature that **constrains output to be valid JSON**. It guarantees "the output will parse as JSON"; **strict conformance to a specific schema is a separate mechanism** (structured outputs / JSON schema enforcement / function calling, etc.). Helps with **reduced output volume and reliable downstream parsing**. → Chapter 16
 
 ---
 

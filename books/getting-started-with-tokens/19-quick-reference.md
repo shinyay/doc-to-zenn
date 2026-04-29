@@ -2,7 +2,7 @@
 title: "付録B — クイックリファレンス"
 ---
 
-> **一言で:** 本書 17 章＋付録 A の**核を 1 ページ**に圧縮。**実務中に立ち戻り、判断のフィルタとして使う**ためのチートシート。
+> **一言で:** 本書 本編 16 章＋付録 A の**核を 1 ページ**に圧縮。**実務中に立ち戻り、判断のフィルタとして使う**ためのチートシート。
 
 ---
 
@@ -14,7 +14,7 @@ title: "付録B — クイックリファレンス"
 |---|------|--------|
 | 1 | **より少なく送る** | システムプロンプト trim、context scoping、履歴要約、未使用ツール drop |
 | 2 | **より少なく受ける** | terse 指示、固定 JSON スキーマ、preamble なし、長さ上限 |
-| 3 | **トークンあたり払う額を減らす** | 安いモデル段、prefix キャッシュ設計、合うワークフロー mode |
+| 3 | **トークンあたり払う額を減らす** | 安いモデル段、prefix キャッシュ設計、タスクに合うモデルへの routing |
 
 ---
 
@@ -34,19 +34,19 @@ title: "付録B — クイックリファレンス"
 
 ---
 
-## 3. 10 の hygiene 原則（第12章）
+## 3. Hygiene 早見（第12章の 10 原則を要約）
 
 ```
-1.  あらゆるトークンを正当化させよ      "なぜここに？"と問えない行は削除候補
-2.  最も安定したものを最初に           cache hit を最大化
-3.  揮発内容は最後に                    安定 prefix を破壊しない
-4.  Declarative > Imperative           "Output: JSON" が "必ず JSON で..." に勝つ
-5.  繰り返しを 1 箇所に集約             同じ意図を 3 箇所書かない
-6.  死んだルールを定期削除               起きないシナリオの指示は dead weight
-7.  ツールはスコープしてロード           全ワークフローに全ツールを exposing しない
-8.  履歴は要約 → 切る                  古い turn は復元不能でも切る価値
-9.  測ってから触る                      推測ではなくメトリックで判断
-10. 規律を継続                          1 度の clean-up は 3 ヶ月で drift する
+1.  安定 prefix、揮発 suffix          先頭ほど不変、末尾ほど可変
+2.  常時オンではなく on-demand ロード   関連時にだけ送る
+3.  Declarative > Imperative           "Output: JSON" が "必ず JSON で..." に勝つ
+4.  Output discipline                   出力長を明示的に制約
+5.  Minimum sufficient context          必要十分なコンテキスト
+6.  Right-size the model                タスクに合うモデル段を選ぶ
+7.  Right-size the reasoning effort     reasoning 強度をタスクに合わせる
+8.  End sessions on topic change        話題が変わったらセッションを切る
+9.  Treat tools as inventory            ツールは在庫管理対象として扱う
+10. Measure before optimizing           推測ではなく計測で判断
 ```
 
 ---

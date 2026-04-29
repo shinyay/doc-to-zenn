@@ -70,7 +70,7 @@ The file isn't **getting more useful with each send**. The model already knew th
 
 ## 2. Tool / function-calling catalog
 
-When you give the model tool-calling capability (function-calling APIs, MCP servers, IDE integrations), **the runtime has to tell the model what tools exist**. That description itself is part of the prompt.
+When you give the model tool-calling capability (function-calling APIs, MCP servers, IDE integrations), **the tool descriptions actually sent to the model are whatever the client/host app decides to include in the prompt.** MCP, for example, only defines that the client can fetch the server's `tools/list`; **how many of those entries the host concatenates into the model prompt on each turn is a host-side implementation decision** (you can include all of them, or pick the relevant ones). So it's not "enabling MCP automatically adds tens of thousands of tokens to every call" — it's **"if your client/IDE forwards the discovered tool set to the model verbatim, you can end up with tens of thousands of tokens of tool definitions"**.
 
 Each tool definition is typically:
 
@@ -88,7 +88,7 @@ A single well-documented tool is often a few hundred tokens. Tools with rich nes
  150 tools  ≈   a small book — sent every turn
 ```
 
-Easy to hit the upper end without realizing. A dozen MCP servers, each with 8–15 tools = **tens of thousands of tokens of tool definitions before the user message even arrives**. Present **whether or not the model uses them**, **whether or not the current task could possibly relate to them**.
+Easy to hit the upper end without realizing. A dozen MCP servers, each exposing 8–15 tools, **and a client/IDE that simply forwards all of them into the model prompt**, can mean **tens of thousands of tokens of tool definitions before the user message even arrives**. They are present **whether or not the model uses them, and whether or not the current task could possibly relate to them** — but only because the client chose to forward everything; smarter clients can scope what they send. **The cost here is set by the host app's prompt-construction policy, not by the MCP protocol itself.**
 
 And present in **every step of an agent loop** — because the catalog is part of what conditions the model to emit valid tool calls.
 
@@ -186,7 +186,7 @@ A useful exercise meanwhile: for any LLM tool you use today, **stop and ask your
 ## Going deeper
 
 ### Prompt caching as a **partial mitigation**
-Most providers offer prompt prefix caching. If the start of your prompt (system prompt, instructions, tool catalog) is identical to your next call, the runtime charges those repeat tokens at a **substantially lower rate** — they're already processed. **Genuinely useful**.
+Many providers offer some form of prompt prefix caching. **A cache hit is not automatic, though — every provider has its own rules** (minimum length to cache, where breakpoints can be placed, cache TTL, billing details). When the start of your prompt (system prompt, instructions, tool catalog) is identical to your next call **byte-for-byte (or token-for-token)** and you satisfy the provider's rules, the runtime can charge those repeat tokens at a **substantially lower rate** — they're already processed. When the conditions line up, this is **genuinely useful**.
 
 **But the iceberg doesn't shrink**. The bill still scales with tokens sent; **only the cached part's unit price drops**. Caching rewards **having a stable, deduplicated prefix**; it doesn't reward **having a small one**. **And cached tokens still count against the context window** — the $ cost drops, but you still pay the **attention and latency cost**.
 

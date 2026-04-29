@@ -135,7 +135,7 @@ If you find more than 2–3 in your own setup, **that's normal**. **The point is
 
 **Symptom**: the agent calls tool A → looks at the result → calls B → looks at the result → **calls A again with the same parameters** → same result → calls B again... The user sees a spinner; the dashboard sees a stream of API calls; **nothing is making progress**.
 
-**Why it hurts**: each loop step pays **the full input cost including the growing history of previous tool calls and results**. A 10-step loop before someone notices = **the cost of 1000 normal turns**. **And when the loop terminates (usually a step limit), the user often doesn't get a useful answer for that money**.
+**Why it hurts**: each loop step pays **the full input cost including the growing history of previous tool calls and results**. A 10-step loop before someone notices ends up costing **far more than a normal direct-answer turn** — because each later step replays a longer history than the step before. **And when the loop finally terminates (usually a step limit), the user often doesn't get a useful answer for that money**, which is what makes it especially painful.
 
 **How to find it**: track tool-call count per user message. Alert on sessions exceeding a sane ceiling. **Repeated identical tool calls with identical parameters in a single session = the smoking gun for a loop**.
 
@@ -249,19 +249,21 @@ Scan your own setup:
 
 ## Going deeper
 
-### Anti-patterns multiply each other
+### Anti-patterns amplify each other
 
-These interact, and the interactions are usually **multiplicative, not additive**. Consider a system that has **all** of: a 5,000-token kitchen-sink prompt, schemas advertised for 20 integrations, and reasoning effort at maximum. **Per-call cost is not the sum of three small overheads — it's the product of three multipliers**. Reasoning runs over a context already swollen by the prompt and tool schemas, so each reasoning step is more expensive. The prompt is replayed for every step of reasoning, so the bloat is paid more times. **By the time the call finishes, the same overheads have been paid in three different ways**.
+These don't show up in isolation, and the interactions are typically **larger than a simple sum** — and through specific mechanisms they can stack **multiplicatively**. Consider a system that has **all** of: a 5,000-token kitchen-sink prompt, schemas advertised for 20 integrations, and reasoning effort at maximum. Reasoning runs over a context already swollen by the prompt and tool schemas, so each reasoning step is more expensive. The prompt is in front of every reasoning step, so its bloat **gets paid for repeatedly**. **By the time the call finishes, the same overheads have been paid for through three different paths**.
 
-**Good news: it works in your favor when fixing**. Halve the prompt and reasoning gets cheaper too, because reasoning input shrinks. Lazy-load tools and both prompt and reasoning overheads drop. Lower reasoning on easy tasks and **the multiplier disappears entirely from bulk traffic**. **Every fix amplifies every other**.
+**Good news: when you fix things, the same amplification runs in your favor**. Halve the prompt and reasoning gets cheaper too, because reasoning input shrinks. Lazy-load tools and both prompt and reasoning overheads drop. Lower reasoning on easy tasks and **its contribution falls out of bulk traffic almost entirely**. **Every fix raises the value of every other fix**.
 
 ```
-    additive view:                multiplicative reality:
+    naïvely additive view:           often "more than the sum":
 
-    cost = base + a + b + c       cost = base × (1+a) × (1+b) × (1+c)
+    cost ≈ base + a + b + c          cost ≈ base × (1+a) × (1+b) × (1+c)
+                                         on the paths where the effects
+                                         genuinely compound
 
-    1 fix → save a                1 fix → proportional savings
-    all 3 fixes → save a+b+c      all 3 fixes → save much more than the sum
+    1 fix → save a                   1 fix → proportional savings
+    all 3 fixes → save a+b+c         all 3 fixes → can save more than the sum
 ```
 
 That's why **an audit pays better than any single optimization**. If you only have time for one pass, **don't deep-dive a single anti-pattern; sweep across the top 3–4**.

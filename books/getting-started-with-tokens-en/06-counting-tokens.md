@@ -87,7 +87,12 @@ from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3-8B")
 # Authenticated repos: set HF_TOKEN env var
 
-token_ids = tokenizer.encode("How many tokens is this sentence?")
+# Note: encode() defaults to add_special_tokens=True, so to count
+# just the body of your text you should explicitly pass False.
+token_ids = tokenizer.encode(
+    "How many tokens is this sentence?",
+    add_special_tokens=False,
+)
 print(len(token_ids))
 ```
 
@@ -109,27 +114,31 @@ console.log(enc.encode("How many tokens is this sentence?").length);
 
 ```ts
 // 2. gpt-tokenizer (zero deps, vocab bundled)
-import { encode } from "gpt-tokenizer";
+// The root import (`from "gpt-tokenizer"`) just gives you the library's default
+// encoding; for model-accurate counts use the model-specific import.
+import { encode } from "gpt-tokenizer/model/gpt-4o";
 console.log(encode("How many tokens is this sentence?").length);
 ```
 
 ```ts
-// 3. @anthropic-ai/tokenizer (Claude approximation — note: not official)
+// 3. @anthropic-ai/tokenizer is an APPROXIMATION of Claude tokenization only.
+//    Do not use it for billing or hard context-window checks; for the real count
+//    use Anthropic's count_tokens endpoint.
 import { countTokens } from "@anthropic-ai/tokenizer";
-console.log(countTokens("How many tokens is this sentence?"));
+console.log(countTokens("How many tokens is this sentence?")); // approximate
 ```
 
 Same pattern as Python: load tokenizer matching model → encode → length.
 
 ### When the provider doesn't publish a local tokenizer
 
-Anthropic Claude and Google Gemini, for example, **don't publish their tokenizer**. Official routes:
+Anthropic Claude and Google Gemini, for example, **don't publish their tokenizer**. Two official routes exist, and they behave very differently:
 
-- Call the API's **`count_tokens` endpoint** if available
-- Otherwise call with a minimal prompt and read `usage.input_tokens`
+- Call the API's **`count_tokens` endpoint** if available — typically **no generation is run, so no per-token billing applies**, and you get the provider's authoritative count (semantics vary per vendor — always check their docs)
+- If no count endpoint exists, **make a minimal generation call and read `usage.input_tokens`** etc. — this path **does consume real tokens**
 
 ```python
-# Anthropic example
+# Anthropic example: count_tokens is usually a non-billed estimate
 import anthropic
 client = anthropic.Anthropic()
 
@@ -141,7 +150,7 @@ print(count.input_tokens)
 ```
 
 ```python
-# OpenAI — read usage
+# OpenAI example: read usage from a real generation (billed)
 from openai import OpenAI
 client = OpenAI()
 
@@ -154,7 +163,7 @@ print(resp.usage.prompt_tokens, resp.usage.completion_tokens)
 ```
 
 > [!NOTE]
-> API-based counting **consumes real tokens**. For repeated CI checks of prompt size, **prefer a local tokenizer** when one exists. API is the last resort.
+> **A "count" endpoint and "reading `usage` from a generation call" are not the same thing.** The former is typically a free estimate; the latter is a real generation and gets billed. For repeated checks (CI, dashboards), prefer a **local tokenizer** when available, then a **dedicated count endpoint**, and only fall back to a real generation as a last resort.
 
 ---
 

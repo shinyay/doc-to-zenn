@@ -16,7 +16,7 @@ Window size dictates almost every later design decision:
 - How much "thinking" you let the model do
 - What breaks when you forget to leave headroom
 
-Picture **a one-turn notebook**. The page count is **fixed**. The whole conversation, all instructions, retrieved chunks, **and the answer about to be written** must all fit. There is no hidden scratch pad. **If you want it in the model's "thinking", it must be on a visible page**.
+Picture **a one-turn notebook**. The page count is **fixed**. The whole conversation, all instructions, retrieved chunks, **and the answer about to be written** must all fit. **There is no extra workspace you control as a user** — the model may keep internal reasoning state, but that too lives inside this window. **If you want it in the model's "thinking", it must be on a visible page**.
 
 ---
 
@@ -122,11 +122,14 @@ Simple experiment to confirm "lost in the middle" yourself:
 
 ```python
 # A pile of irrelevant text + a one-line "secret" in the middle
+# Note: the `pos` values below are CHARACTER offsets (Python string slicing),
+# not token positions. If you want to move the needle by exact token offset,
+# tokenize the filler first and choose insertion points in token space.
 needle = "The secret password is BANANA42."
 filler = "This is filler text. " * 1000  # several thousand tokens
-positions = [0, 500, 1000, 1500, 2000]    # different placements
+char_positions = [0, 500, 1000, 1500, 2000]  # treated as character offsets
 
-for pos in positions:
+for pos in char_positions:
     haystack = filler[:pos] + needle + filler[pos:]
     prompt = f"{haystack}\n\nQuestion: What is the secret password?"
     # send to model, check answer
@@ -193,13 +196,18 @@ Hypothetical, but **"past half = danger zone"** is a useful rule. Not just becau
 
 ## Going deeper
 
-### KV cache, and why long context is **memory-bound**
+### KV cache, and why long-context **decode** is memory-bound
+
+LLM inference has two phases with very different bottlenecks:
+
+- **Prefill** (process the full prompt at once): big parallel matrix multiplies — typically **compute-bound** (limited by raw GPU FLOPs)
+- **Decode** (generate the response one token at a time): each step is dominated by reading the KV cache — **memory-bound** (limited by memory bandwidth)
 
 When the model emits an answer one token at a time, it doesn't redo attention from scratch each step. Instead it stores the **K and V intermediate results for tokens already seen** in a **KV-cache**. Each new token attends to the cache plus itself.
 
-The KV-cache is **fast but big**. Size grows with sequence length × model internal dimension. The dominant cost of long-context inference is **not raw compute but pushing this cache through memory** — that's what "memory-bound" means.
+The KV-cache is **fast but big**. Size grows with sequence length × model internal dimension. **In long-context decode**, the dominant cost is **not raw compute but pushing this cache through memory** — that's what "memory-bound" means here, and it's specifically **the decode-side story**.
 
-This is also why providers can offer discounts on **cached input tokens**: a shared prefix's cache is already in memory, so reuse is **genuinely cheaper** than reconstruction.
+This is also why providers can offer discounts on **cached input tokens**: when the prefill result (the K/V) for a shared prefix is already in memory, reuse is **genuinely cheaper** than reconstruction.
 
 ### Sliding window vs full attention
 

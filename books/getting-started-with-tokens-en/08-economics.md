@@ -45,7 +45,7 @@ The single **most important pricing fact**, and the one that surprises beginners
 
 Why? Not arbitrary pricing — it **reflects underlying compute**.
 
-- **Input is parallel**: a 10,000-token prompt is consumed by the model in **a single forward pass** — one efficiently batched matrix operation. The GPU is densely used → **cheap per token**
+- **Input is parallel**: a 10,000-token prompt is consumed by the model in **a single forward pass** (the prefill) — efficiently batched matrix operations. The GPU is densely used → **cheap per token**
 - **Output is autoregressive (sequential)**: each output token requires **its own forward pass through the entire model**, conditioned on tokens generated so far. No parallelizing the future — generate token 1, then token 2 conditioned on token 1, then token 3 conditioned on tokens 1 and 2…
 
 ```
@@ -58,7 +58,7 @@ INPUT (parallel, cheap per token)        OUTPUT (sequential, expensive per token
                                         pass      pass         pass
 ```
 
-Reading 1M tokens = one big cheap operation. **Writing** 1M tokens = a million sequential expensive operations.
+Reading 1M tokens = one big **parallelizable** prefill — cheap **per token**. **Writing** 1M tokens = a million sequential forward passes, expensive **per token**. The point isn't that reading is absolutely cheap, but that the **per-token cost** is very different.
 
 ### Practical implication
 
@@ -94,7 +94,7 @@ Huge implications for prompt structure:
 - **Stable content first**: system prompt, tool definitions, persistent role, large reference docs unchanged across turns — all at the **start**
 - **Volatile content last**: user's latest message, latest tool result, anything per-turn — at the end, keeping the long expensive prefix above **cacheable**
 
-A 50,000-token system prompt that's identical every call is, at steady state, **orders of magnitude cheaper** than a 50,000-token system prompt regenerated every call. Same token count, ~10× billing difference.
+A 50,000-token system prompt that's identical every call is, at steady state, **roughly an order of magnitude cheaper** than a 50,000-token system prompt regenerated every call. Same token count, ~10× billing difference (the exact ratio depends on provider).
 
 > [!TIP]
 > When redesigning a prompt, ask: "Did I just **break the cacheable prefix by moving one line**?" Reordering one sentence at the top can invalidate every cache below it.
@@ -125,7 +125,7 @@ Putting **volatile data like a timestamp at the top** invalidates **everything b
 
 Newer wrinkle: many newer models are designed to **"think" before answering**. Internally they generate a reasoning token stream (a **private scratch pad**) and only after that emit the visible answer.
 
-The user sees only the **final answer** — but for billing, the **hidden reasoning tokens are real tokens**, generated autoregressively at full output cost. **Almost always billed as output tokens**, even though they're not displayed.
+The user sees only the **final answer** — but for billing, the **hidden reasoning tokens are real tokens**, generated autoregressively at full output cost. **Most providers bill them as output tokens**, but **the exact accounting (folded into output, reported on a separate line, or even free vs paid) varies by provider** — always check the billing docs of the model you use.
 
 ```
 visible to user:    [final answer tokens]

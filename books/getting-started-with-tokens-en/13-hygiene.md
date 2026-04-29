@@ -22,7 +22,7 @@ This chapter walks through **10 principles**. Each is **a principle, not a recip
 
 Modern inference stacks **reuse computation when the prefix of two requests is identical**. The internal representation of the shared prefix is cached, and the next request that starts with the same bytes doesn't have to recompute it. **The cached portion is usually billed at a fraction of normal input price**.
 
-This caching is **positional and strict**. It works **forward from the start of the prompt** and **stops at the first byte that differs**. **A single character change at the top of the prompt invalidates everything after it**.
+This caching is **positional and strict**. It works **forward from the start of the prompt** and **stops at the first token (or serialized prompt segment) that differs** — at the implementation level, matching happens at the tokenized / chat-template level, not on raw user-visible bytes (and providers have their own rules about breakpoints and granularity). **A single character change near the top of the prompt can effectively invalidate everything after it**.
 
 The hygiene rule that falls out is simple: **what doesn't change goes at the top; what does change goes at the bottom**.
 
@@ -82,7 +82,7 @@ This habit alone tends to **halve system prompts on a first pass**.
 
 ## 4. Output discipline
 
-**The output side of the bill is usually the more expensive side per token**. Generated tokens cost a multiple of input tokens, and unlike input — which is capped by the context window — **output is bounded only by what the model decides to generate**.
+**The output side of the bill is usually the more expensive side per token**. Generated tokens cost a multiple of input tokens. Unlike input — which is capped by the context window — output **expands up to the model's / provider's output limit unless you explicitly constrain it** (via `max_tokens` etc.). So it's not just "what the model decides to generate" but "**what the model, the provider's max-output cap, and any limit you set together allow**".
 
 That makes one-line instructions like "**Code only, no explanation**" or "**Reply in three sentences or fewer**" **one of the highest-ROI additions you can make to a prompt**. **Pay a few tokens once, save hundreds per response**.
 

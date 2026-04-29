@@ -79,7 +79,7 @@ Most teams **accidentally live in the plateau or degradation zone** — adding c
 Degradation is no mystery. **Five concrete mechanisms**:
 
 ### 1. Lost in the middle
-The model doesn't weight all tokens equally. Empirical studies consistently show a **U-shaped attention pattern**: information at the **start** and **end** of the context is reliably recalled and used; **information buried in a long middle is systematically de-prioritized**.
+The model doesn't weight all tokens equally. Empirical studies consistently show a **position-dependent recall pattern** (often called "lost in the middle"): information at the **start** and **end** of the context tends to be reliably recalled and used, while **information buried in a long middle is systematically de-prioritized**. It's better understood as a recall-vs-position effect than as one specific "U-shaped attention" mechanism — strength and shape vary by model and task, and newer generations mitigate it to varying degrees.
 
 ```
 attention to a fact, by position in prompt:
@@ -101,7 +101,7 @@ If the critical sentence the answer needs is at line 420 of a 900-line dump, the
 ### 2. Distraction and dilution
 The model distributes attention across the whole prompt. **Every irrelevant token competes with relevant tokens for attention budget**.
 
-Adding 5,000 tokens of "this might help" **lowers the relative weight of the 200 tokens that actually mattered**. The model isn't ignoring the padding — it's **averaging over it**. The S/N ratio of your prompt **directly affects the S/N ratio of the answer**.
+Adding 5,000 tokens of "this might help" **lowers the relative weight of the 200 tokens that actually mattered**. Because attention is softmax-normalized, irrelevant "distractor" tokens **steal attention mass** from the relevant ones — the model isn't literally averaging over the padding; it just becomes **harder for it to sharply select the few tokens that matter**. The S/N ratio of your prompt **directly affects the S/N ratio of the answer**.
 
 A useful mental image: **shouting in a quiet room vs shouting in a stadium**. Same volume, very different effect.
 
@@ -230,10 +230,18 @@ A focused 200-token prompt that names **role, format, and one or two non-negotia
 The advertised window is the upper bound on what the model **accepts**, not what it **uses well**. Empirical studies of long-context utilization **repeatedly** find reasoning quality starts to degrade well before the window is full, and that degradation is **task-dependent**: **extraction tasks hold up longer than multi-hop reasoning tasks**. **When planning a system, treat effective context as the real budget**.
 
 ### Position-dependent recall
-The U-shaped attention pattern means **where you place a fact** matters as much as **whether you include it**. The same critical instruction can produce **visibly different answers** depending on whether it's near the start, in the middle, or right before the user message. **Important rules belong near the top or near the bottom — don't bury them**.
+The position-dependent recall pattern (often called "lost in the middle") means **where you place a fact** matters as much as **whether you include it**. The same critical instruction can produce **visibly different answers** depending on whether it's near the start, in the middle, or right before the user message. **Important rules belong near the top or near the bottom — don't bury them in the middle**.
 
 ### Why fine-tuning or RAG can beat brute-force long context
-For stable domain knowledge (product manual, API reference, style guide), three options: cram everything into the prompt, retrieve relevant slices when needed (RAG), or bake into the weights (fine-tuning). **Cramming is the most expensive per call, scales worst, and pushes you into the degradation zone fastest**. **RAG keeps the prompt small and surgical**. **Fine-tuning removes the knowledge from the token budget entirely**. Brute-force long context **is rarely the best of the three**; **it's just the easiest to reach for**.
+Three broad options for handling domain knowledge: cram everything into the prompt, retrieve relevant slices when needed (RAG), or bake into the weights (fine-tuning). **Cramming is the most expensive per call, scales worst, and pushes you into the degradation zone fastest**.
+
+Each option has its sweet spot:
+
+- **RAG** shines for **large, frequently-updated, or citation-sensitive knowledge**: keeps the prompt small and surgical while letting you pull in fresh content and sources on demand
+- **Fine-tuning** mainly bakes in **behaviors, style, and small recurring knowledge**: things like "always use this output format", "match this tone", or "domain-specific phrasing" move out of the prompt cleanly. It's **not a drop-in replacement for retrieval when the underlying facts are large, changing, or need to be cited** — old or wrong knowledge baked into weights is hard to detect later
+- **Stuffing everything into long context** is **rarely the best of the three**; **it's just the easiest to reach for**
+
+In practice, a strong combination is: **fine-tune for behavior and style, RAG for changing knowledge, and only put what is genuinely needed for this turn into the prompt**.
 
 ### Quality is a distribution, not a number
 There isn't "**a** quality" for a prompt. There's a **distribution of qualities across runs**, and longer/noisier prompts tend to **lower the mean and widen the distribution**. **More variance** = harder to evaluate, easier to miss regressions. **Short focused prompts aren't only better on average — they're more predictable**.

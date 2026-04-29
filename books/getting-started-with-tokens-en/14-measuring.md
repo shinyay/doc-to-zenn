@@ -20,7 +20,7 @@ This chapter is about **the instrumentation layer**. **What to log, how to slice
 
 **You can't manage what you can't see**.
 
-Tokens are different from CPU and memory. **A kernel-level view doesn't come for free**. The only entity that knows exactly how many tokens a request consumed is **the model provider**, and the only moment that information is available is in **the API response**. **If you don't capture it there, it's gone**.
+Tokens are different from CPU and memory. **A kernel-level view doesn't come for free**. The only entity that knows exactly how many tokens a request consumed is **the model provider**. The most reliable low-latency capture point per request is the **API response** itself — providers also expose dashboards, usage APIs, and billing exports after the fact, but for joining each model call to your own structured data, **the API response is the strongest place to record it**. **If you don't capture it there, attaching it to the originating call later is a lot harder.**
 
 The rule is simple: **every model call must produce a usage record**, and **every usage record must be persisted somewhere queryable**. **Not just logs, not just traces — a structured store you can group, filter, and aggregate**.
 
@@ -28,31 +28,31 @@ The rule is simple: **every model call must produce a usage record**, and **ever
 
 ---
 
-## The four token counts
+## The token count categories
 
-Modern providers return multiple token counts. **Field names vary, but conceptually it's almost always four**:
+Modern providers return multiple token counts. **Field names vary by provider, and not every field is always exposed**, but conceptually they fall into these categories:
 
 ```
 ┌──────────────────────────┬──────────────────────────────────────────────┐
-│ field                    │ meaning                                       │
+│ category                 │ meaning                                       │
 ├──────────────────────────┼──────────────────────────────────────────────┤
 │ prompt / input tokens    │ Fresh input you sent on this request.         │
 │                          │ Billed at the standard input rate.            │
 ├──────────────────────────┼──────────────────────────────────────────────┤
 │ cached tokens            │ Portion of input the provider served from a   │
-│                          │ prefix cache. Deeply discounted.              │
+│ (when cache supported)   │ prefix cache. Deeply discounted, when exposed │
 ├──────────────────────────┼──────────────────────────────────────────────┤
 │ completion / output      │ Visible output the model generated.           │
 │ tokens                   │ Billed at the output rate.                    │
 ├──────────────────────────┼──────────────────────────────────────────────┤
-│ reasoning tokens         │ Hidden chain-of-thought the model generated   │
-│ (when applicable)        │ before the visible answer. Billed as output.  │
+│ reasoning tokens         │ Hidden chain-of-thought generated before the  │
+│ (reasoning models)       │ visible answer. Billing semantics vary (below)│
 └──────────────────────────┴──────────────────────────────────────────────┘
 ```
 
-**Always log all four. Always.**
+**Store every usage field the provider actually returns.** Don't assume all four are always present — record exactly what came back on this call into structured columns, and treat missing fields as null.
 
-Why: **the aggregate "tokens used" count is meaningless for cost**. **Two requests with the same total token count can differ by 5–10× in real cost depending on how much was cached and how much was reasoning**.
+Why: **the aggregate "tokens used" count is meaningless for cost**. **Two requests with the same total token count can differ by several-x in real cost depending on how much was cached and how much was reasoning.**
 
 If your usage logger only stores **a single integer**, you have **a logger that can't answer the questions that matter**.
 
@@ -64,13 +64,20 @@ Inside your own systems, **don't price in tokens**. **Price in cost**.
 
 **Cost is the single comparable metric across requests, models, and tenants**. **Two requests with very different token shapes can have the same cost**; **two requests with the same total token count can have very different costs**.
 
-The formula is straightforward:
+The formula is straightforward — but **how reasoning tokens are billed varies by provider** (folded into output, billed on a separate line, or even free), so it's safer to push that variation into a small per-provider helper and have the formula consume whatever rates it returns:
 
 ```
-cost = input_rate     × input_tokens
-     + cached_rate    × cached_tokens
-     + output_rate    × output_tokens
-     + reasoning_rate × reasoning_tokens
+# provider_billing_semantics(provider, model) returns
+# {input_rate, cached_rate, output_rate, reasoning_rate}.
+# Example: one provider may set reasoning_rate = output_rate (folded in),
+# another may report reasoning tokens on a separate field with its own rate.
+
+rates = provider_billing_semantics(provider, model)
+
+cost = rates.input_rate     × input_tokens
+     + rates.cached_rate    × cached_tokens
+     + rates.output_rate    × output_tokens
+     + rates.reasoning_rate × reasoning_tokens
 ```
 
 **Compute it at log time, store it as a column, and use it as the denominator on every dashboard**. "Cost per request", "cost per user per day", "cost per resolved ticket" — **all answerable**. "Tokens per resolved ticket" is **not answerable**, because **it conflates four different things**.
@@ -148,7 +155,7 @@ Track median, p90, p99. **Median = is the typical user getting more expensive ov
 The **real productivity metric** discussed in Chapter 11. **Cost per task without quality is half the picture**; **cost per correct task is the whole picture**.
 
 ### Cache hit ratio
-`cached_tokens / prompt_tokens`. **Direct measurement of whether prefix discipline (Chapter 12) is working**. A drop in the ratio = **something started invalidating the prefix** — usually a recent change to the system prompt or context-assembly path.
+`cached_tokens / (cached_tokens + uncached_input_tokens)`. **A direct measurement of whether prefix discipline (Chapter 12) is working.** Providers differ in whether `prompt_tokens` already includes cached tokens or only the uncached part, so always normalize to **"cached input ÷ total input (cached + uncached)"** before computing the ratio. A drop in this ratio = **something started invalidating the prefix** — usually a recent change to the system prompt or to the context-assembly path.
 
 ### Output / input ratio
 A sudden increase here = often **a prompt regression toward verbosity** — someone added "explain your reasoning" or "be thorough" without considering cost.

@@ -43,7 +43,7 @@ When you encounter a new technique, **first name the move**. "**This trick reduc
 
 ## The seven families of techniques
 
-The techniques worth learning cluster into **7 families**. **Highest return for least effort first**, in roughly the order to adopt them:
+The techniques worth learning cluster into **7 families**. **Highest return for least effort first**, in roughly the order to adopt them. Earlier chapters previewed individual recipes (caching, retrieval, summarization, batching, distillation, etc.); here we **consolidate them into broader operational families** and show where each one sits relative to the three moves.
 
 ### 1. Output control
 
