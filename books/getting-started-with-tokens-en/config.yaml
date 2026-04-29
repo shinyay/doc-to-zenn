@@ -1,0 +1,27 @@
+title: "Getting Started with Tokens — The Unit Behind Every LLM"
+summary: "A definitive, vendor-neutral field guide to the unit that drives every LLM bill, every latency budget, and every context-window error. From subwords and BPE to context windows, prefill vs decode, prompt anatomy, hygiene principles, measurement, anti-patterns, the strategic case for optimization, and the seven technique families that organize all known optimizations. 16 core chapters plus three appendices and a closing column. Written from first principles, deliberately free of vendor prices and model-version specifics so the mental model survives the next price sheet."
+topics: ["llm", "ai", "openai", "tokenization", "claude"]
+published: true
+price: 0
+toc_depth: 2
+chapters:
+  - 01-preface
+  - 02-introduction
+  - 03-what-is-token
+  - 04-tokenization-algorithms
+  - 05-tokens-across-languages
+  - 06-counting-tokens
+  - 07-context-window
+  - 08-economics
+  - 09-performance
+  - 10-where-spent
+  - 11-hidden-consumers
+  - 12-quality-vs-cost
+  - 13-hygiene
+  - 14-measuring
+  - 15-anti-patterns
+  - 16-why-optimize
+  - 17-roadmap
+  - 18-glossary
+  - 19-quick-reference
+  - 20-next-step-tokopt

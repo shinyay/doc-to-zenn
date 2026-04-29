@@ -1,0 +1,27 @@
+title: "トークン超入門 — LLM の「単位」を腑に落とす"
+summary: "LLM の請求書・速度・品質をすべて決める『トークン』を、文字との違いから最適化への道筋まで一気通貫で身体化する決定版ガイド。サブワード、BPE、コンテキストウィンドウ、prefill/decode、prompt anatomy、衛生原則、計測、アンチパターン、9つの最適化理由、3 moves × 7 families まで、価格やモデル名に依存しない first-principles で解説。16本編 + 付録3章 + 巻末コラムの計20章。"
+topics: ["llm", "ai", "openai", "tokenization", "claude"]
+published: true
+price: 0
+toc_depth: 2
+chapters:
+  - 01-preface
+  - 02-introduction
+  - 03-what-is-token
+  - 04-tokenization-algorithms
+  - 05-tokens-across-languages
+  - 06-counting-tokens
+  - 07-context-window
+  - 08-economics
+  - 09-performance
+  - 10-where-spent
+  - 11-hidden-consumers
+  - 12-quality-vs-cost
+  - 13-hygiene
+  - 14-measuring
+  - 15-anti-patterns
+  - 16-why-optimize
+  - 17-roadmap
+  - 18-glossary
+  - 19-quick-reference
+  - 20-next-step-tokopt
