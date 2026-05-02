@@ -26,13 +26,12 @@ GPT-5.5 にも公式の [GPT-5.5 prompting guide](https://developers.openai.com/
 
 そうして作ったのが [`gpt-prompt-optimizer`](https://github.com/shinyay/gpt-prompt-optimizer) です。Claude 側と同じ Agent Skill 形式を採りつつ、新しく **`route` モード**を加えて、コスト最適化のルーティング戦略までプロンプトに落とし込めるようにしています。
 
-この記事では以下の 5 点を共有します。
+この記事では以下の 4 点を共有します。
 
 1. **なぜ GPT-5.5 で型が必要なのか** ─ OpenAI の公式知見と GitHub Copilot からの現実
 2. **Outcome-First GPT-5.5 Brief** ─ 公式の 7 セクション + リポジトリの 2 拡張
 3. **3 モード設計 (generate / audit / `route`)** ─ Claude 側の 2 モードに対する差分
 4. **`route` モードの中身** ─ 安価モデル first → GPT-5.5 escalation のルーティング戦略
-5. **設計の勘所と限界** ─ rubber-duck で 19+4 件の指摘を直した話
 
 > 💡 この記事は **GitHub Copilot から GPT-5.5 を使うこと** を前提にしています。OpenAI の SDK 直接利用 (Responses API / Messages 系) も対象に含みますが、対話 UI として Copilot Chat / Copilot CLI を主に想定しています。
 
@@ -682,64 +681,6 @@ echo "Plan an auth migration..." | scripts/optimize-prompt.sh route \
 
 ---
 
-## 設計の勘所と限界
-
-### audit taxonomy 24 カテゴリは過剰か?
-
-率直な懸念として、**audit カテゴリが 28 種類弱は多すぎないか** という問いがあります。
-
-実装してみての答えは、**「これでも足りない側」** でした。もっと正確に言うと、**route モードを真面目にやるとカテゴリが膨らむ** のです。route 系だけで 9 カテゴリ占めています。
-
-ただ、24 カテゴリを「人間が暗記する」のは現実的でないので、**linter のカテゴリラベルから taxonomy 表を引ける** 構造にしました。`[WARN] Lnnn category: missing-handoff-packet:` と表示されたら、`templates/audit.md` のタクソノミー表で該当行を見れば「いつ発火 / どう直す」がわかる。
-
-### rubber-duck で 19+4 件直した話
-
-このスキルは作りっぱなしではなく、**rubber-duck 専用の sub-agent に critique させる工程** を組み込んでいます。
-
-実際にやったところ、初版で **19 件の指摘** が出ました:
-
-- `gpt-5-4` というスラッグ表記 (正しくは `gpt-5.4`、ドット区切り) ─ これは hard error
-- `Think step by step` を `hidden-chain-of-thought` カテゴリで分類していた (正しくは `legacy-process-overfit` warning)
-- audit template の header が `two blocks` と書いてあるのに contract は 3 ブロック
-- handoff_packet_schema に `budget_priority` が欠けていて `model-routing-and-cost.md` と整合していない
-- ...etc
-
-修正後にもう一度 rubber-duck を回したら、**さらに 4 件の follow-up** が出ました:
-
-- citation-risk ルールが clean fixture を false-positive で叩いていた → トリガーを「primarily grounded」コンテキストに narrow
-- `missing-handoff-packet` チェックが `budget_priority` を見ていない → awk-based の精密 schema-block check を追加
-- legacy preset (`presets/gpt-5.md`) の think-step 行がまだ古い分類のまま
-- README JA route example の handoff schema が欠落
-
-これらも全部直して、**0/1/0/1** の fixture 終了コードを保ったまま整理しました。
-
-> 💡 **ポイント**: スキル開発は **「LLM に critique させる → 直す → もう一度 critique させる」を 1 セット** にすると、人間 1 人レビューよりずっと密度が高まります。`rubber-duck` を意図的にバイアス分離 (Anthropic 慣習との差は無視、OpenAI 公式と矛盾するものだけ flag) することで、cross-model レビューも可能でした。
-
-### linter の精度 vs 偽陽性のトレードオフ
-
-linter の悩みどころは **偽陽性** です。例えば「cite supporting sources when relevant」というだけの 1 文が含まれた coding fixture を `citation-risk` で叩いてしまうと、信頼を損ねます。
-
-対策は 2 段階です。
-
-1. **トリガーを narrow に** ─ `cite | citation` だけで発火させず、`grounded answer | grounded factual | source-backed | citable units | citation marker | cited_text` のように **primarily grounded** コンテキストでだけ発火させる
-2. **fixture でガード** ─ clean fixture を CI 的に「常に exit 0」とテストし続け、新ルール追加時に偽陽性を検知する
-
-完全に偽陽性ゼロは難しいですが、**「fixture を信頼できるか」を継続的に検証する** だけで品質はかなり上がります。
-
-### モデル可用性とコストは変わる
-
-`route` モードは「現時点のコスト感」を反映していますが、**OpenAI のモデルラインナップ・価格・可用性は変わります**。
-
-そのため:
-
-- `model-profiles/*.md` は全ファイルに **「Last reviewed: verify current availability, pricing, multipliers, and host support before production use.」** という一文を必須化
-- 価格の絶対値は書かず、**「relative cost tier」** (Premium / Lower / Cheap) という表現で抽象化
-- `references/copilot-auto-guidance.md` には **「GitHub-Copilot-sourced behavior は OpenAI docs では verify できない」** という Source-attribution NOTE を追加
-
-これらは「**書いた瞬間に古くなる情報を、寿命を伸ばす書き方で扱う**」工夫です。
-
----
-
 ## まとめ
 
 ### LLM ごとの特長 + コストという 3 つ目の軸
@@ -768,12 +709,11 @@ GitHub Copilot から GPT-5.5 を使う場合、人間が触れるのは:
 - 安価モデルからエスカレーションするとき、**handoff packet を構造化していますか**?
 - audit するとき、**「この指摘は型のどのカテゴリか」を機械的に分類できていますか**?
 
-### 4 つのキーメッセージ
+### 3 つのキーメッセージ
 
 1. **モデルが変われば指示も変わる** ─ Claude 4.7 のときと同じ
 2. **GPT-5.5 では「コスト最適なモデル選択」もプロンプト設計の対象** ─ 単一モデル前提を捨てる
 3. **`route` モードは安価パス → GPT-5.5 escalation を構造化する道具** ─ handoff packet がコスト制御の本体
-4. **rubber-duck と linter で「型の精度」を継続的に検証する** ─ Agent Skill は作りっぱなしにしない
 
 LLM は道具ですが、**道具を「組み合わせて使う」設計** が新しい主戦場になっています。
 
