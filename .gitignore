@@ -6,3 +6,6 @@ __pycache__/
 .vscode/
 .idea/
 Thumbs.db
+
+# zenn-reader skill cache (created by .github/skills/zenn-reader/scripts/fetch_zenn_article.py --save)
+.zenn-cache/
